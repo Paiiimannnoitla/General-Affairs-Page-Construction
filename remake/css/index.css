@@ -1,0 +1,88 @@
+body{
+	background:			lightblue;
+	font-family:		微軟正黑體;
+}
+#top-area{
+	height:				10%;
+	background:			honeydew;
+}
+#bottom-area{
+	height:				auto;
+	margin:				auto;
+	
+}
+#toolbar{
+	width:				5%;
+	height:				90%;
+	background:			aliceblue;
+}
+#main-display{
+	position:			absolute;
+	left:				5.5%;
+	top:				11%;
+	background:			floralwhite;
+	width:				95%;
+	height:				100%;
+}
+table{
+	width:				100%;
+	padding:			5px solid ghostwhite;
+}
+th{
+  background-color:		beige;
+  height:				auto;
+}
+
+td{
+  background-color:		azure;
+}
+
+ul{
+	list-style-position:inside;
+	text-align:			left;
+}
+#member-title{	
+	width:				100%;
+	font-size:			250%;
+	text-align:			center;
+}
+.member-occupation{
+	margin:				0px;
+}
+.member-header{
+	font-size:			187.5%;
+}
+.member-header-row{
+	width:				15%;
+	font-size:			160%;
+}
+.member-name{
+	font-size:			125%;
+}
+.member-leader{
+	margin:				0px;
+}
+.member-occupation{
+	font-size:			100%;
+}
+.member-phone-one{
+	font-size:			115%;
+}
+.member-phone-two{
+	font-size:			115%;
+}
+.member-tax{
+	font-size:			145%;
+}
+.dl-title{
+	width:				100%;
+	background:			blanchedalmond;
+}
+.dl-header{
+	width:				auto;
+	text-align:			center;
+}
+.dl-area{
+	width:				80%;
+	text-align:			center;
+}
