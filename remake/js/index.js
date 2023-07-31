@@ -10,7 +10,8 @@ const Postman = (fashion,data) =>{
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
 			fetch(hostname,content).then((res)=>{
-				resolve(res.text())
+				//resolve(res.text())
+				resolve(res)
 			})
 		})
 		return output
@@ -22,7 +23,7 @@ const request = async()=>{
 		const apple = {apple:100}
 		const json = JSON.stringify(apple)
 		const mail = await Postman('POST',json)
-		console.log(mail)
+		console.log(mail.body)
 }
 const tbfunc = ()=>{
 	const mode = []
