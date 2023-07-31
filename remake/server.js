@@ -8,6 +8,7 @@ app.use(cors())
 app.set('port',process.env.PORT || 3000)
 app.use(express.static(__dirname + '/template' ))
 console.log(__dirname)
+// Page renderer
 const render = (name,data=false) =>{
 	let html = fs.readFileSync('./template/' + name + '.html','utf8')
 	if(data){
@@ -18,7 +19,15 @@ const render = (name,data=false) =>{
 	
 	return html
 }
-
+// Scripts import
+/*
+const scriptImporter = () =>{
+	const scriptDir = ('./script')
+	const filelist = fs.readdirSync(scriptDir)
+	for(var i=0;i<filelist.length;i++){
+		require(scriptDir + filelist[i])
+	}
+}*/
 /*
 app.get('/',(req,res)=>{
 	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
@@ -64,29 +73,28 @@ app.use((req,res)=>{
 	res.send(render('404'))
 })*/
 
-app.get('/download/:num',(req,res)=>{
-	console.log(req.params.num)
-	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
-	const isExist = fs.existsSync(path)
-	if(isExist){
-		console.log('downloading')
-		console.log(path)
-		res.download(path,'data.pdf')
-	}else{
-		console.log('no file')
-	}
-})
+
 app.get('/',(req,res)=>{
 	res.send(render('index'))
+	
 })
-app.get('/member',(req,res)=>{
-	res.send(render('member'))
+app.get('/page/:pagename',(req,res)=>{
+	const pagename = req.params.pagename
+	console.log(pagename)
+	const page = fs.readFile('./template/' + pagename + '.html','utf8',(err,data)=>{
+		console.log(err)
+		console.log(data)
+		res.send(data)
+	})
 })
 app.post('/test', (req, res)=>{
   //res.write({apple:'apple'})
   res.send(render('testpage', {name:100}))
 })
-
+app.get('/download/:filename',(req,res)=>{
+	const hostname = 'download/'
+	res.download(hostname + req.params.num)
+})
 app.listen(3000, function () {
   console.log('---Server Start---')
 })
