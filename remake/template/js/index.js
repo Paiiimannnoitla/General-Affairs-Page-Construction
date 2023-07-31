@@ -1,5 +1,4 @@
 const Postman = (fashion,data) =>{
-	//const hostname = 'http://10.6.11.17:3000/test'
 	const hostname = 'http://10.6.11.17:3000/download/100'
 	const content = {
 		/*body:data,*/
