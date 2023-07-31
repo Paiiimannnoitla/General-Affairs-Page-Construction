@@ -1,7 +1,8 @@
 const Postman = (fashion,data) =>{
-	const hostname = 'http://10.6.11.17:3000'
+	//const hostname = 'http://10.6.11.17:3000/test'
+	const hostname = 'http://10.6.11.17:3000/download/100'
 	const content = {
-		body:data,
+		/*body:data,*/
 		headers:{
 			'content-type':'application/json'
 		},
@@ -17,12 +18,13 @@ const Postman = (fashion,data) =>{
 		return output
 	}
 	const reply = response()
+	window.open(hostname)
 	return reply
 }
 const request = async()=>{
 		const apple = {apple:100}
 		const json = JSON.stringify(apple)
-		const mail = await Postman('POST',json)
+		const mail = await Postman('GET',json)
 		console.log(mail.body)
 }
 const tbfunc = ()=>{

@@ -6,13 +6,19 @@ const cors = require('cors')
 app.use(express.json())
 app.use(cors())
 app.set('port',process.env.PORT || 3000)
-const render = (name,data) =>{
-	let html = fs.readFileSync(name,'utf8')
-	for(var i in data){
-		html = html.replaceAll('{' + i + '}', data[i])
+app.use(express.static(__dirname + '/template' ))
+console.log(__dirname)
+const render = (name,data=false) =>{
+	let html = fs.readFileSync('./template/' + name + '.html','utf8')
+	if(data){
+		for(var i in data){
+			html = html.replaceAll('{' + i + '}', data[i])
+		}
 	}
+	
 	return html
 }
+
 /*
 app.get('/',(req,res)=>{
 	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
@@ -50,20 +56,37 @@ app.get('/',(req,res)=>{
 		res.send(html)
 	})
 })
+*/
+/*
 app.use((req,res)=>{
 	res.type('text/plain')
 	res.status(404)
-	res.send('This is a 404 Situation')
-})
-const server = app.listen(app.get('port'),()=>{
-	console.log('running')
-})
-*/
+	res.send(render('404'))
+})*/
 
-app.get('/', function (req, res) {
-  res.send(render('./template/testpage.html', {name:100}))
+app.get('/download/:num',(req,res)=>{
+	console.log(req.params.num)
+	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
+	const isExist = fs.existsSync(path)
+	if(isExist){
+		console.log('downloading')
+		console.log(path)
+		res.download(path,'data.pdf')
+	}else{
+		console.log('no file')
+	}
+})
+app.get('/',(req,res)=>{
+	res.send(render('index'))
+})
+app.get('/member',(req,res)=>{
+	res.send(render('member'))
+})
+app.post('/test', (req, res)=>{
+  //res.write({apple:'apple'})
+  res.send(render('testpage', {name:100}))
 })
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+  console.log('---Server Start---')
 })

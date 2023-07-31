@@ -1,5 +1,8 @@
 
 ---
+	## 2023.05.05		version 0.0.7
+	-- Totally remake for new server and Chrome-only
+---
 	## 2023.05.04		version 0.0.6
 	-- Readjust the design of download.html
 	-- Implement new management at naming
