@@ -1,5 +1,6 @@
-const Postman = (id) =>{
-	const hostname = 'http://10.6.11.17:3000/page/' + id
+const Postman = (id,func='page') =>{
+	const mode = func + '/'
+	const hostname = 'http://10.6.11.17:3000/' + mode + id
 	const content = {
 		//body:data,
 		headers:{
@@ -10,7 +11,12 @@ const Postman = (id) =>{
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
 			fetch(hostname,content).then((res)=>{
-				resolve(res.text())
+				if(func=='page'){
+					resolve(res.text())
+				}else{
+					resolve(res.json())
+				}
+				//resolve(res.text())
 			})
 		})
 		return output
@@ -26,7 +32,7 @@ const Delivery = (addressArr) =>{
 	}else{
 		address = addressArr
 	}
-	const hostname = 'http://10.6.11.17:3000/download/' + address
+	const hostname = 'http://10.6.11.17:3000/get/' + address
 	const content = {
 		headers:{
 			'content-type':'application/json'

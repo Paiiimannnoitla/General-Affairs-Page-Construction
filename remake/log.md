@@ -1,18 +1,26 @@
 @@@Road Map
 	1. Change http to https
-	
+	2. Rewrite colSpan from fixed template to code produce
 	
 	
 	
 	
 	
 ---
+	## 2023.08.02		version 0.0.9 --Member-building
+	-- Add member JSON
+	-- Add member row creating function
+	# Added
+	1. Add json file to store all member-related information
+		-- finished
+	2. Add memHeaderCreate function to read and produce viable member header
+		-- finished
+---
 	## 2023.07.31		version 0.0.8 --Member-building
 	-- Member section infrastructure
 	# Added
 	1. Add basic page loader and member infrasturcture
-		-- finished
-		
+		-- finished		
 ---
 	## 2023.05.05		version 0.0.7
 	-- Totally remake for new server and Chrome-only
