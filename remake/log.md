@@ -5,7 +5,12 @@
 	
 	
 	
-	
+---
+	## 2023.08.07		version 0.1.0 --Member-building
+	-- Function implementation
+	# Added
+	1. Add memTitleCreate function
+		-- finished
 ---
 	## 2023.08.02		version 0.0.9 --Member-building
 	-- Add member JSON

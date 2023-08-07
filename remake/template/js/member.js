@@ -14,6 +14,10 @@ const memLoad = async()=>{
 	const colLen = rowHeader.length + 1
 	const main = document.getElementById('member-main')
 	const content = main.innerHTML
+	const memTitleCreate = ()=>{
+		const output = `<tr><th colspan=`+ colLen +` id='member-title'>組織成員</th></tr>`
+		return output
+	}
 	//Header rendering
 	const memHeaderCreate = ()=>{
 		const headerRow = `<th class='member-header-row'></th>`
@@ -22,11 +26,13 @@ const memLoad = async()=>{
 			const h = rowHeader[i]
 			headerContent = headerContent + `<th class='member-header'>` + h + `</th>`
 		}
-		return headerContent
+		const output = `<tr>` + headerContent + `</tr>`
+		return output
 	}
-	const output = new Promise((resolve)=>{		
+	const output = new Promise((resolve)=>{	
+		const memTitle = memTitleCreate()
 		const memHeader = memHeaderCreate()
-		console.log(memHeader)
+		console.log(memTitle)
 		resolve(true)
 	})
 	return output
