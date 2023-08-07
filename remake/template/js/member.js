@@ -75,18 +75,59 @@ const memStyle = ()=>{
 }
 const memFunc = ()=>{
 	const test = document.getElementById('apple-btn')
+	const save = document.getElementById('save-btn')
+	const main = document.getElementById('member-main')
 	test.addEventListener('click',(event)=>{
 		const main = document.getElementById('member-main')
+		const title = document.getElementById('member-title')
+		const colLen = title.colSpan
 		let data = main.innerHTML
 		const content =`
 		<tr>
-			<th>Apple</th>
-			<td colspan=4>
-				<p>Apfel</p>
+			<th>Title</th>
+			<td colspan=`+colLen+`>
+				<p>Content</p>
 			</td>
 		</tr>`
 		data=data+content
 		main.innerHTML=data
+	})
+	
+	save.addEventListener('click',(event)=>{
+		Delivery('member')
+	})
+	main.addEventListener('click',(event)=>{
+		let cell = event.target
+		const isHeader = cell.tagName == 'TH'
+		if(!isHeader){
+			cell = event.target.closest('td')
+		}
+		const isCell = cell.tagName == 'TD' || 'TH'
+		console.log(cell.tagName)
+		if(isCell){
+			const tr = cell.closest('tr')
+			const x = cell.cellIndex
+			const y = tr.rowIndex
+			const selected = document.querySelector('.mem-selected')
+			console.log(x)
+			console.log(y)
+			if(isHeader){
+				cell.style.background = `rgb(235,235,214)`
+			}else{
+				cell.style.background = `rgb(209,255,255)`
+			}
+			cell.classList.add('mem-selected')
+			if(selected){
+				const isSelHeader = selected.tagName == 'TH'
+				if(isSelHeader){
+					selected.style.background = `beige`
+				}else{
+					selected.style.background = `azure`
+				}
+				selected.classList.remove('mem-selected')
+			}
+			
+		}
 	})
 }
 const memInit = async() =>{

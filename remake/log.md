@@ -8,8 +8,13 @@
 ---
 	## 2023.08.07		version 0.1.0 --Member-build
 	-- Function implementation
+	-- Rebuild function
 	# Added
 	1. Add memTitleCreate function
+		-- finished
+	2. Rebuild function from json parsing to deliver-and-receive
+		-- finished
+	3. Building selection function in member page
 		-- finished
 ---
 	## 2023.08.02		version 0.0.9 --Member-build

@@ -61,6 +61,16 @@ const tbfunc = ()=>{
 		mode['tb-member']=()=>{
 			memInit()
 		}
+		mode['test']=async()=>{
+			const mail = await Postman('memberbk')
+			const updateDiv = document.getElementById('main-display')
+	
+			const output = new Promise((resolve)=>{
+				updateDiv.innerHTML = mail
+				resolve(true)
+			})
+			return output
+		}
 		try{
 			mode[code]()
 		}catch(err){
@@ -71,7 +81,7 @@ const tbfunc = ()=>{
 		const isToolbar = clsCheck(event,'tb-option')
 		if(isToolbar){
 			const id = event.target.id
-			Delivery('member')
+			//Delivery('member')
 			main(id)
 			//request()
 			//Delivery(1000)
