@@ -6,13 +6,13 @@
 	
 	
 ---
-	## 2023.08.07		version 0.1.0 --Member-building
+	## 2023.08.07		version 0.1.0 --Member-build
 	-- Function implementation
 	# Added
 	1. Add memTitleCreate function
 		-- finished
 ---
-	## 2023.08.02		version 0.0.9 --Member-building
+	## 2023.08.02		version 0.0.9 --Member-build
 	-- Add member JSON
 	-- Add member row creating function
 	# Added
@@ -21,7 +21,7 @@
 	2. Add memHeaderCreate function to read and produce viable member header
 		-- finished
 ---
-	## 2023.07.31		version 0.0.8 --Member-building
+	## 2023.07.31		version 0.0.8 --Member-build
 	-- Member section infrastructure
 	# Added
 	1. Add basic page loader and member infrasturcture

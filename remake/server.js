@@ -88,15 +88,22 @@ app.get('/',(req,res)=>{
 })
 app.get('/page/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
-	console.log(pagename)
+	//console.log(pagename)
 	const page = fs.readFile('./template/' + pagename + '.html','utf8',(err,data)=>{
-		console.log(err)
+		//console.log(err)
 		res.send(data)
 	})
 })
 app.post('/test', (req, res)=>{
   //res.write({apple:'apple'})
   res.send(render('testpage', {name:100}))
+})
+app.post('/post/:pagename',(req,res)=>{
+	const pagename = req.params.pagename
+	const html = req.body['html']
+	console.log(html)
+	fs.writeFileSync('./template/' + pagename + 'bk.html',html)
+	res.send(true)
 })
 app.get('/download/:filename',(req,res)=>{
 	const hostname = 'download/'

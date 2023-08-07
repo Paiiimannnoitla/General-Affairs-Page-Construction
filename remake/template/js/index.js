@@ -24,20 +24,17 @@ const Postman = (id,func='page') =>{
 	const reply = response()
 	return reply
 }
-const Delivery = (addressArr) =>{
-	const isArr = addressArr.constructor == Array
-	let address
-	if(isArr){
-		address = addressArr.join('/')
-	}else{
-		address = addressArr
-	}
-	const hostname = 'http://10.6.11.17:3000/get/' + address
+const Delivery = (address) =>{
+	const main = document.getElementById('main-display')
+	const html = {'html':main.innerHTML}
+	const data = JSON.stringify(html)
+	const hostname = 'http://10.6.11.17:3000/post/' + address
 	const content = {
 		headers:{
 			'content-type':'application/json'
 		},
-		method:'GET'
+		body : data,
+		method:'POST'
 	}
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
@@ -48,7 +45,7 @@ const Delivery = (addressArr) =>{
 		return output
 	}
 	const reply = response()
-	window.open(hostname)
+	//window.open(hostname)
 	return reply
 }
 /*
@@ -74,6 +71,7 @@ const tbfunc = ()=>{
 		const isToolbar = clsCheck(event,'tb-option')
 		if(isToolbar){
 			const id = event.target.id
+			Delivery('member')
 			main(id)
 			//request()
 			//Delivery(1000)
