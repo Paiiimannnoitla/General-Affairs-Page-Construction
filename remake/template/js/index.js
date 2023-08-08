@@ -54,12 +54,12 @@ const request = async(letter)=>{
 		const mail = await Postman('GET',json)		
 		return mail
 }*/
-const tbfunc = ()=>{
-	
+const tbfunc = ()=>{	
 	const mode = []
 	const main = (code)=>{
 		mode['tb-member']=()=>{
 			memInit()
+			currPage = 'member'
 		}
 		mode['test']=async()=>{
 			const mail = await Postman('memberbk')

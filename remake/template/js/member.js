@@ -74,11 +74,9 @@ const memStyle = ()=>{
 	return output
 }
 const memFunc = ()=>{
-	const test = document.getElementById('apple-btn')
-	const save = document.getElementById('save-btn')
+	uxLoginCheck()
 	const main = document.getElementById('member-main')
-	test.addEventListener('click',(event)=>{
-		const main = document.getElementById('member-main')
+	document.getElementById('append-btn').addEventListener('click',(event)=>{		
 		const title = document.getElementById('member-title')
 		const colLen = title.colSpan
 		let data = main.innerHTML
@@ -92,10 +90,19 @@ const memFunc = ()=>{
 		data=data+content
 		main.innerHTML=data
 	})
-	
-	save.addEventListener('click',(event)=>{
+	//Save function
+	document.getElementById('save-btn').addEventListener('click',(event)=>{
 		Delivery('member')
 	})
+	//Edit mode activation
+	document.getElementById('edit-btn').addEventListener('click',(event)=>{
+		const btnArr = document.querySelectorAll('.edit-mode')
+		for(var i=0;i<btnArr.length;i++){
+			const btn = btnArr[i]
+			btn.classList.remove('hide')
+		}
+	})
+	//Edit Function
 	main.addEventListener('click',(event)=>{
 		let cell = event.target
 		const isHeader = cell.tagName == 'TH'
@@ -103,7 +110,6 @@ const memFunc = ()=>{
 			cell = event.target.closest('td')
 		}
 		const isCell = cell.tagName == 'TD' || 'TH'
-		console.log(cell.tagName)
 		if(isCell){
 			const tr = cell.closest('tr')
 			const x = cell.cellIndex
@@ -111,21 +117,28 @@ const memFunc = ()=>{
 			const selected = document.querySelector('.mem-selected')
 			console.log(x)
 			console.log(y)
+			//Select
 			if(isHeader){
 				cell.style.background = `rgb(235,235,214)`
 			}else{
 				cell.style.background = `rgb(209,255,255)`
 			}
 			cell.classList.add('mem-selected')
+			cell.contentEditable = 'true'
+			//Un-select
 			if(selected){
-				const isSelHeader = selected.tagName == 'TH'
-				if(isSelHeader){
-					selected.style.background = `beige`
-				}else{
-					selected.style.background = `azure`
-				}
-				selected.classList.remove('mem-selected')
-			}
+				const isSame = selected == cell
+				if(!isSame){
+					const isSelHeader = selected.tagName == 'TH'
+					if(isSelHeader){
+						selected.style.background = `beige`
+					}else{
+						selected.style.background = `azure`
+					}
+					selected.classList.remove('mem-selected')
+					selected.removeAttribute('contenteditable')
+				}			
+			}		
 			
 		}
 	})

@@ -1,10 +1,20 @@
 @@@Road Map
 	1. Change http to https
-	2. Rewrite colSpan from fixed template to code produce
+	2. Add logout function
+		-- processing
+	3. Selection function
+		-- next
+		
 	
 	
-	
-	
+---
+	## 2023.08.08		version 0.1.1 --Member-build
+	-- Function implementation
+	# Added
+	1. Add a basic login interactive function to ensure edit function is protected before login and functions are protected before edit mode
+		-- finished
+	2. Add a login check function to check login status and remain it
+		-- finished
 ---
 	## 2023.08.07		version 0.1.0 --Member-build
 	-- Function implementation
