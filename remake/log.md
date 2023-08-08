@@ -17,6 +17,8 @@
 		-- finished
 	3. Add hide and unhide function to control elements display status
 		-- finished
+	4. Add Logout function and work with Login function
+		-- finished
 ---
 	## 2023.08.07		version 0.1.0 --Member-build
 	-- Function implementation
