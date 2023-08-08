@@ -15,6 +15,8 @@
 		-- finished
 	2. Add a login check function to check login status and remain it
 		-- finished
+	3. Add hide and unhide function to control elements display status
+		-- finished
 ---
 	## 2023.08.07		version 0.1.0 --Member-build
 	-- Function implementation

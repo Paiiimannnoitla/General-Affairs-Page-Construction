@@ -97,10 +97,7 @@ const memFunc = ()=>{
 	//Edit mode activation
 	document.getElementById('edit-btn').addEventListener('click',(event)=>{
 		const btnArr = document.querySelectorAll('.edit-mode')
-		for(var i=0;i<btnArr.length;i++){
-			const btn = btnArr[i]
-			btn.classList.remove('hide')
-		}
+		unhide(btnArr)
 	})
 	//Edit Function
 	main.addEventListener('click',(event)=>{
