@@ -28,9 +28,60 @@ const uxLogin = ()=>{
 }
 const uxSelect = ()=>{
 	
+	const mode = []
+	mode['member'] = (event)=>{
+		const isBelow = event.target.id == 'member'
+		if(!isBelow){
+			let cell = event.target
+			const isHeader = cell.tagName == 'TH'
+			if(!isHeader){
+				cell = event.target.closest('td')
+			}
+			const isCell = cell.tagName == 'TD' || 'TH'
+			if(isCell){
+				const tr = cell.closest('tr')
+				const x = cell.cellIndex
+				const y = tr.rowIndex
+				const selected = document.querySelector('.mem-selected')
+				console.log(x)
+				console.log(y)
+				//Select
+				if(isHeader){
+					cell.style.background = `rgb(235,235,214)`
+				}else{
+					cell.style.background = `rgb(209,255,255)`
+				}
+				cell.classList.add('mem-selected')
+				cell.contentEditable = 'true'
+				//Un-select
+				if(selected){
+					const isSame = selected == cell
+					if(!isSame){
+						const isSelHeader = selected.tagName == 'TH'
+						if(isSelHeader){
+							selected.style.background = `beige`
+						}else{
+							selected.style.background = `azure`
+						}
+						selected.classList.remove('mem-selected')
+						selected.removeAttribute('contenteditable')
+					}			
+				}				
+			}
+		//})
+		}
+	}
+	// Selection Init
+	document.getElementById('main-display').addEventListener('click',(event)=>{
+		const functionArea = event.target.closest('.function-area')
+		if(functionArea){
+			mode[functionArea.id](event)
+		}
+	})
 }
 const uxInit = ()=>{
 	uxLogin()
 	uxSelect()
+	//uxEdit()
 }
 uxInit()

@@ -100,45 +100,7 @@ const memFunc = ()=>{
 		unhide(btnArr)
 	})
 	//Edit Function
-	main.addEventListener('click',(event)=>{
-		let cell = event.target
-		const isHeader = cell.tagName == 'TH'
-		if(!isHeader){
-			cell = event.target.closest('td')
-		}
-		const isCell = cell.tagName == 'TD' || 'TH'
-		if(isCell){
-			const tr = cell.closest('tr')
-			const x = cell.cellIndex
-			const y = tr.rowIndex
-			const selected = document.querySelector('.mem-selected')
-			console.log(x)
-			console.log(y)
-			//Select
-			if(isHeader){
-				cell.style.background = `rgb(235,235,214)`
-			}else{
-				cell.style.background = `rgb(209,255,255)`
-			}
-			cell.classList.add('mem-selected')
-			cell.contentEditable = 'true'
-			//Un-select
-			if(selected){
-				const isSame = selected == cell
-				if(!isSame){
-					const isSelHeader = selected.tagName == 'TH'
-					if(isSelHeader){
-						selected.style.background = `beige`
-					}else{
-						selected.style.background = `azure`
-					}
-					selected.classList.remove('mem-selected')
-					selected.removeAttribute('contenteditable')
-				}			
-			}		
-			
-		}
-	})
+
 }
 const memInit = async() =>{
 	const hasBuild = await memBuild()
