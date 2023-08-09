@@ -13,6 +13,7 @@
 
 ---
 	## 2023.08.09		version 0.1.2 --Member-build
+	-- Clear codes
 	-- Function implementation
 	-- Function enhancement
 	# Added

@@ -1,4 +1,5 @@
 let isLogin = false
+// Return Login and Edit mode status information
 const uxCheck = ()=>{
 	if(isLogin){
 		const isEdit = document.getElementById('unedit-btn').classList.contains('hide')
@@ -10,8 +11,8 @@ const uxCheck = ()=>{
 	}else{
 		return false
 	}	
-	//return !isEdit
 }
+// Edit mode
 const uxEdit = ()=>{
 	document.getElementById('main-display').addEventListener('click',()=>{
 		const isEdit = event.target.id == 'edit-btn'
@@ -30,6 +31,7 @@ const uxEdit = ()=>{
 		}
 	})
 }
+// Remain Login status
 const uxLoginCheck = ()=>{
 	if(isLogin){
 		const btnArr = document.querySelectorAll('.login-mode')
@@ -41,6 +43,7 @@ const uxLoginCheck = ()=>{
 		hide(editbtnArr)
 	}
 }
+// Login mode
 const uxLogin = ()=>{
 	const loginbtn = document.getElementById('login-btn')
 	const logoutbtn = document.getElementById('logout-btn')
@@ -76,28 +79,7 @@ const uxSelectInit = ()=>{
 				cell.classList.add('mem-selected')
 				if(selected){
 					selected.classList.remove('mem-selected')
-				}
-				//Select
-				/*
-				if(isHeader){
-					cell.style.background = `rgb(235,235,214)`
-				}else{
-					cell.style.background = `rgb(209,255,255)`
-				}
-				cell.classList.add('mem-selected')
-				//Un-select
-				if(selected){
-					const isSame = selected == cell
-					if(!isSame){
-						const isSelHeader = selected.tagName == 'TH'
-						if(isSelHeader){
-							selected.style.background = `beige`
-						}else{
-							selected.style.background = `azure`
-						}
-						selected.classList.remove('mem-selected')						
-					}			
-				}	*/			
+				}	
 			}
 		}
 	}
