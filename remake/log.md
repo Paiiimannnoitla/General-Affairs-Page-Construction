@@ -29,6 +29,8 @@
 		-- finished
 	4. Append row function is contenteditable support
 		-- finished
+	5. Port selection color style to memStyle
+		-- finished
 ---
 	## 2023.08.08		version 0.1.1 --Member-build
 	-- Function implementation

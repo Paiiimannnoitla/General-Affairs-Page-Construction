@@ -115,12 +115,14 @@ const uxSelect = ()=>{
 	mode['member'] = 'mem'
 	const cls = '.' + mode[id] + '-selected'
 	const selected = document.querySelectorAll(cls)
-	if(selected){
+	if(selected.length){
 		if(selected.length==1){
 			return selected[0]
 		}else{
 			return selected
 		}
+	}else{
+		return false
 	}
 }
 const uxInit = ()=>{
