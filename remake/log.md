@@ -1,12 +1,20 @@
 @@@Road Map
 	1. Change http to https
 	2. Add logout function
-		-- processing
+		-- finished
 	3. Selection function
-		-- next
-		
+		-- finished
+	4. Cancel edit mode
+		-- finished
 	
-	
+
+
+---
+	## 2023.08.09		version 0.1.2 --Member-build
+	-- Function implementation
+	# Added
+	1. Add cancel button to leave edit mode
+		-- finished
 ---
 	## 2023.08.08		version 0.1.1 --Member-build
 	-- Function implementation

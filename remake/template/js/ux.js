@@ -10,6 +10,24 @@ const uxLoginCheck = ()=>{
 		hide(editbtnArr)
 	}
 }
+const uxEdit = ()=>{
+	document.getElementById('main-display').addEventListener('click',()=>{
+		const isEdit = event.target.id == 'edit-btn'
+		if(isEdit){
+			const editbtn = document.getElementById('edit-btn')
+			const btnArr = document.querySelectorAll('.edit-mode')
+			hide(editbtn)
+			unhide(btnArr)			
+		}
+		const isUnEdit = event.target.id == 'unedit-btn'
+		if(isUnEdit){
+			const editbtn = document.getElementById('edit-btn')
+			const btnArr = document.querySelectorAll('.edit-mode')
+			unhide(editbtn)			
+			hide(btnArr)
+		}
+	})
+}
 const uxLogin = ()=>{
 	const loginbtn = document.getElementById('login-btn')
 	const logoutbtn = document.getElementById('logout-btn')
@@ -26,8 +44,7 @@ const uxLogin = ()=>{
 		uxLoginCheck()
 	})
 }
-const uxSelect = ()=>{
-	
+const uxSelectInit = ()=>{	
 	const mode = []
 	mode['member'] = (event)=>{
 		const isBelow = event.target.id == 'member'
@@ -43,8 +60,6 @@ const uxSelect = ()=>{
 				const x = cell.cellIndex
 				const y = tr.rowIndex
 				const selected = document.querySelector('.mem-selected')
-				console.log(x)
-				console.log(y)
 				//Select
 				if(isHeader){
 					cell.style.background = `rgb(235,235,214)`
@@ -52,7 +67,6 @@ const uxSelect = ()=>{
 					cell.style.background = `rgb(209,255,255)`
 				}
 				cell.classList.add('mem-selected')
-				cell.contentEditable = 'true'
 				//Un-select
 				if(selected){
 					const isSame = selected == cell
@@ -79,9 +93,24 @@ const uxSelect = ()=>{
 		}
 	})
 }
+const uxSelect = ()=>{
+	const id = document.querySelector('.function-area').id
+	const mode = []
+	mode['member'] = 'mem'
+	const cls = '.' + mode[id] + '-selected'
+	const selected = document.querySelectorAll(cls)
+	if(selected){
+		if(selected.length==1){
+			return selected[0]
+		}else{
+			return selected
+		}
+	}
+}
 const uxInit = ()=>{
 	uxLogin()
-	uxSelect()
+	uxEdit()
+	uxSelectInit()
 	//uxEdit()
 }
 uxInit()

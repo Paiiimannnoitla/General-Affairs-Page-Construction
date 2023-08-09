@@ -1,3 +1,7 @@
+/*const memSelect = ()=>{
+	const selected = document.querySelector('.mem-selected')
+	return selected
+}*/
 const memBuild = async() =>{
 	const mail = await Postman('member')
 	const updateDiv = document.getElementById('main-display')
@@ -95,12 +99,20 @@ const memFunc = ()=>{
 		Delivery('member')
 	})
 	//Edit mode activation
+	/*
 	document.getElementById('edit-btn').addEventListener('click',(event)=>{
 		const btnArr = document.querySelectorAll('.edit-mode')
 		unhide(btnArr)
-	})
+	})*/
 	//Edit Function
-
+	main.addEventListener('click',(event)=>{
+		const isEdit = document.querySelector('.edit-mode').classList.contains('hide')
+		if(!isEdit){
+			const cell = uxSelect()
+			cell.contentEditable = 'true'
+		}
+		
+	})
 }
 const memInit = async() =>{
 	const hasBuild = await memBuild()
