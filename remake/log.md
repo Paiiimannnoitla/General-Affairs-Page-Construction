@@ -22,6 +22,8 @@
 	# Change
 	1. Rewrite Unselect status handler
 		-- finished
+	2. Rewrite content edit function to a easier to execute way
+		-- finished
 ---
 	## 2023.08.08		version 0.1.1 --Member-build
 	-- Function implementation

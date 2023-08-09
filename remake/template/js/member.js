@@ -100,9 +100,16 @@ const memFunc = ()=>{
 	document.getElementById('save-btn').addEventListener('click',(event)=>{
 		Delivery('member')
 	})
-
 	
 		//Side: Unselect function
+	document.getElementById('unedit-btn').addEventListener('click',()=>{
+		const btnArr = document.querySelectorAll('tr')
+		for(var i=0;i<btnArr.length;i++){
+			const e = btnArr[i]
+			e.removeAttribute('contenteditable')
+		}
+	})
+	/*
 	main.addEventListener('mousedown',(event)=>{
 		const isEdit = uxCheck() == 'Edit'
 		if(isEdit){
@@ -115,17 +122,24 @@ const memFunc = ()=>{
 				}
 			}					
 		}		
-	})
+	})*/
 		//Side: Content edit 
+	document.getElementById('edit-btn').addEventListener('click',()=>{
+		const btnArr = document.querySelectorAll('tr')
+		for(var i=0;i<btnArr.length;i++){
+			const e = btnArr[i]
+			e.contentEditable = 'true'
+		}
+	})
+		/*
 	main.addEventListener('click',(event)=>{
-		console.log(uxCheck())
 		const isEdit = uxCheck() == 'Edit'
 		if(isEdit){
 			const cell = uxSelect()
 			cell.contentEditable = 'true'
 		}
 		
-	})
+	})*/
 }
 const memInit = async() =>{
 	const hasBuild = await memBuild()
