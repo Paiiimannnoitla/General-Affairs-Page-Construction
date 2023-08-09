@@ -29,12 +29,12 @@ table{
 	padding:			5px solid ghostwhite;
 }
 th{
-  background-color:		beige;
+  background:		beige;
   height:				auto;
 }
 
 td{
-  background-color:		azure;
+  background:		azure;
 }
 
 ul{
@@ -49,6 +49,7 @@ ul{
 .member-occupation{
 	margin:				0px;
 }
+/*
 .member-header{
 	font-size:			187.5%;
 }
@@ -73,7 +74,7 @@ ul{
 }
 .member-tax{
 	font-size:			145%;
-}
+}*/
 .dl-title{
 	width:				100%;
 	background:			blanchedalmond;
@@ -85,4 +86,7 @@ ul{
 .dl-area{
 	width:				80%;
 	text-align:			center;
+}
+.hide{
+	display:			none;
 }
