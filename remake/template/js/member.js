@@ -98,6 +98,9 @@ const memFunc = ()=>{
 	})
 		//Side: Save function
 	document.getElementById('save-btn').addEventListener('click',(event)=>{
+		const evt = new Event('click')
+		const btn = document.getElementById('unedit-btn')
+		btn.dispatchEvent(evt)
 		Delivery('member')
 	})
 	

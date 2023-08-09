@@ -7,13 +7,14 @@
 	4. Cancel edit mode
 		-- finished
 	5. Quit edit mode cancel all editing data
-		-- processing
+		-- finished
 	
 
 
 ---
 	## 2023.08.09		version 0.1.2 --Member-build
 	-- Function implementation
+	-- Function enhancement
 	# Added
 	1. Add cancel button to leave edit mode
 		-- finished
@@ -23,6 +24,8 @@
 	1. Rewrite Unselect status handler
 		-- finished
 	2. Rewrite content edit function to a easier to execute way
+		-- finished
+	3. Add remove content editable status before saving
 		-- finished
 ---
 	## 2023.08.08		version 0.1.1 --Member-build
