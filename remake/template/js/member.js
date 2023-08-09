@@ -80,6 +80,8 @@ const memStyle = ()=>{
 const memFunc = ()=>{
 	uxLoginCheck()
 	const main = document.getElementById('member-main')
+	//Main: Edit Function
+		//Side: Append new row
 	document.getElementById('append-btn').addEventListener('click',(event)=>{		
 		const title = document.getElementById('member-title')
 		const colLen = title.colSpan
@@ -94,20 +96,31 @@ const memFunc = ()=>{
 		data=data+content
 		main.innerHTML=data
 	})
-	//Save function
+		//Side: Save function
 	document.getElementById('save-btn').addEventListener('click',(event)=>{
 		Delivery('member')
 	})
-	//Edit mode activation
-	/*
-	document.getElementById('edit-btn').addEventListener('click',(event)=>{
-		const btnArr = document.querySelectorAll('.edit-mode')
-		unhide(btnArr)
-	})*/
-	//Edit Function
+
+	
+		//Side: Unselect function
+	main.addEventListener('mousedown',(event)=>{
+		const isEdit = uxCheck() == 'Edit'
+		if(isEdit){
+			const selected = uxSelect()
+			if(selected.length){
+				const cell = event.target.closest('td')
+				const isSame = cell == selected
+				if(!isSame){
+					selected.removeAttribute('contenteditable')
+				}
+			}					
+		}		
+	})
+		//Side: Content edit 
 	main.addEventListener('click',(event)=>{
-		const isEdit = document.querySelector('.edit-mode').classList.contains('hide')
-		if(!isEdit){
+		console.log(uxCheck())
+		const isEdit = uxCheck() == 'Edit'
+		if(isEdit){
 			const cell = uxSelect()
 			cell.contentEditable = 'true'
 		}

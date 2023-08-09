@@ -1,14 +1,16 @@
 let isLogin = false
-const uxLoginCheck = ()=>{
+const uxCheck = ()=>{
 	if(isLogin){
-		const btnArr = document.querySelectorAll('.login-mode')
-		unhide(btnArr)
+		const isEdit = document.getElementById('unedit-btn').classList.contains('hide')
+		if(isEdit){
+			return 'Login'
+		}else{
+			return 'Edit'
+		}
 	}else{
-		const loginbtnArr = document.querySelectorAll('.login-mode')
-		const editbtnArr = document.querySelectorAll('.edit-mode')
-		hide(loginbtnArr)
-		hide(editbtnArr)
-	}
+		return false
+	}	
+	//return !isEdit
 }
 const uxEdit = ()=>{
 	document.getElementById('main-display').addEventListener('click',()=>{
@@ -27,6 +29,17 @@ const uxEdit = ()=>{
 			hide(btnArr)
 		}
 	})
+}
+const uxLoginCheck = ()=>{
+	if(isLogin){
+		const btnArr = document.querySelectorAll('.login-mode')
+		unhide(btnArr)
+	}else{
+		const loginbtnArr = document.querySelectorAll('.login-mode')
+		const editbtnArr = document.querySelectorAll('.edit-mode')
+		hide(loginbtnArr)
+		hide(editbtnArr)
+	}
 }
 const uxLogin = ()=>{
 	const loginbtn = document.getElementById('login-btn')
@@ -78,7 +91,7 @@ const uxSelectInit = ()=>{
 							selected.style.background = `azure`
 						}
 						selected.classList.remove('mem-selected')
-						selected.removeAttribute('contenteditable')
+						
 					}			
 				}				
 			}
@@ -86,7 +99,7 @@ const uxSelectInit = ()=>{
 		}
 	}
 	// Selection Init
-	document.getElementById('main-display').addEventListener('click',(event)=>{
+	document.getElementById('main-display').addEventListener('mouseup',(event)=>{
 		const functionArea = event.target.closest('.function-area')
 		if(functionArea){
 			mode[functionArea.id](event)

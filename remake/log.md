@@ -6,6 +6,8 @@
 		-- finished
 	4. Cancel edit mode
 		-- finished
+	5. Quit edit mode cancel all editing data
+		-- processing
 	
 
 
@@ -14,6 +16,11 @@
 	-- Function implementation
 	# Added
 	1. Add cancel button to leave edit mode
+		-- finished
+	2. Add uxSelect to return Login and Editing status
+		-- finished
+	# Change
+	1. Rewrite Unselect status handler
 		-- finished
 ---
 	## 2023.08.08		version 0.1.1 --Member-build
