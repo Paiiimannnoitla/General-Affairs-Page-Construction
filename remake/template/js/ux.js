@@ -73,7 +73,12 @@ const uxSelectInit = ()=>{
 				const x = cell.cellIndex
 				const y = tr.rowIndex
 				const selected = document.querySelector('.mem-selected')
+				cell.classList.add('mem-selected')
+				if(selected){
+					selected.classList.remove('mem-selected')
+				}
 				//Select
+				/*
 				if(isHeader){
 					cell.style.background = `rgb(235,235,214)`
 				}else{
@@ -90,12 +95,10 @@ const uxSelectInit = ()=>{
 						}else{
 							selected.style.background = `azure`
 						}
-						selected.classList.remove('mem-selected')
-						
+						selected.classList.remove('mem-selected')						
 					}			
-				}				
+				}	*/			
 			}
-		//})
 		}
 	}
 	// Selection Init

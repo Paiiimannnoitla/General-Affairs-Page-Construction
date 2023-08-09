@@ -27,6 +27,8 @@
 		-- finished
 	3. Add remove content editable status before saving
 		-- finished
+	4. Append row function is contenteditable support
+		-- finished
 ---
 	## 2023.08.08		version 0.1.1 --Member-build
 	-- Function implementation

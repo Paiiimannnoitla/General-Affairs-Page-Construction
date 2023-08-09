@@ -73,6 +73,36 @@ const memLoad = async()=>{
 }*/
 const memStyle = ()=>{
 	const output = new Promise((resolve)=>{
+		const main = document.getElementById('member-main')
+		main.addEventListener('mousedown',()=>{
+			const selected = uxSelect()
+			console.log(selected)
+			if(selected.length){
+				const isSame = selected == event.target.closest('td')
+				if(!isSame){
+					const isHeader = event.target.tagName = 'TH'
+					if(isHeader){
+						selected.style.background = `beige`
+					}else{
+						selected.style.background = `azure`
+					}
+				}
+			}
+		})
+		main.addEventListener('click',()=>{
+			const selected = uxSelect()
+			if(selected.length){
+				const isSame = selected == event.target.closest('td')
+				if(!isSame){
+					const isHeader = event.target.tagName = 'TH'
+					if(isHeader){
+						selected.style.background = `rgb(235,235,214)`
+					}else{
+						selected.style.background = `rgb(209,255,255)`
+					}
+				}
+			}
+		})
 		resolve(true)
 	})
 	return output
@@ -88,8 +118,8 @@ const memFunc = ()=>{
 		let data = main.innerHTML
 		const content =`
 		<tr>
-			<th>Title</th>
-			<td colspan=`+colLen+`>
+			<th contenteditable='true'>Title</th>
+			<td contenteditable='true' colspan=`+colLen+`>
 				<p>Content</p>
 			</td>
 		</tr>`
@@ -106,43 +136,22 @@ const memFunc = ()=>{
 	
 		//Side: Unselect function
 	document.getElementById('unedit-btn').addEventListener('click',()=>{
-		const btnArr = document.querySelectorAll('tr')
+		const btnArr = document.querySelectorAll('td,th')
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.removeAttribute('contenteditable')
 		}
 	})
-	/*
-	main.addEventListener('mousedown',(event)=>{
-		const isEdit = uxCheck() == 'Edit'
-		if(isEdit){
-			const selected = uxSelect()
-			if(selected.length){
-				const cell = event.target.closest('td')
-				const isSame = cell == selected
-				if(!isSame){
-					selected.removeAttribute('contenteditable')
-				}
-			}					
-		}		
-	})*/
+
 		//Side: Content edit 
 	document.getElementById('edit-btn').addEventListener('click',()=>{
-		const btnArr = document.querySelectorAll('tr')
+		const btnArr = document.querySelectorAll('td,th')
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.contentEditable = 'true'
 		}
 	})
-		/*
-	main.addEventListener('click',(event)=>{
-		const isEdit = uxCheck() == 'Edit'
-		if(isEdit){
-			const cell = uxSelect()
-			cell.contentEditable = 'true'
-		}
-		
-	})*/
+
 }
 const memInit = async() =>{
 	const hasBuild = await memBuild()
