@@ -24,7 +24,7 @@ const memStyle = ()=>{
 				}else{
 					selected.style.background = `azure`
 				}
-				selected.classList.remove('mem-selected')
+				selected.classList.remove('selected')
 			}
 		}
 	}

@@ -1,22 +1,22 @@
 @@@Road Map
-	1. Change http to https
-	6. Make a basic Annouce page template
+	1. 	Change http to https
+	6. 	Make a basic Annouce page template
 		-- finished
-	7. Make a announce publish function	
+	7. 	Make a announce publish function	
 		-- finished
-	8. Add edit announcement content function
+	8. 	Add edit announcement content function
 		-- this branch
-	9. Revert all highlighted and selected cells when cancel in Member page
+	9. 	Revert all highlighted and selected cells when cancel in Member page
 		-- finished
-	6. Upload attchment in announcement
+	6. 	Upload attchment in announcement
 		-- this branch
-	7. Automatically generate fill up date data
+	7. 	Automatically generate fill up date data
 		-- this branch
-	8. Selecting style in Announce page
+	8. 	Selecting style in Announce page
 		-- this branch
-	9. Make a save change button		
+	9.	Make a save change button		
 		-- finished
-	10.Update the announcement given by colleagues.
+	10. Update the announcement given by colleagues.
 		-- this branch
 
 
@@ -33,6 +33,8 @@
 	3. Add save function to Announce page
 		-- finished
 	4. Add uxSave to handle all save function
+		-- finished
+	5. Integrate all selection mode into one
 		-- finished
 	# Changed
 	1. Rewrite memBuild function by new Render function

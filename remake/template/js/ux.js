@@ -79,6 +79,7 @@ const uxLogin = ()=>{
 }
 // Selection mode
 const uxSelectInit = ()=>{	
+	/*
 	const mode = []
 	mode['member'] = (event)=>{
 		const isBelow = event.target.id == 'member'
@@ -100,22 +101,52 @@ const uxSelectInit = ()=>{
 				}	
 			}
 		}
-	}
+	}*/
 	// Selection Init
 	document.getElementById('main-display').addEventListener('mouseup',(event)=>{
 		const functionArea = event.target.closest('.function-area')
 		if(functionArea){
-			mode[functionArea.id](event)
+			//mode[functionArea.id](event)
+			const isBelow = event.target.classList.contains('function-area')
+			if(!isBelow){
+				let cell = event.target
+				const isHeader = cell.tagName == 'TH'
+				if(!isHeader){
+					cell = event.target.closest('td')
+				}
+				const isCell = cell.tagName == 'TD' || 'TH'
+				if(isCell){
+					const tr = cell.closest('tr')
+					const x = cell.cellIndex
+					const y = tr.rowIndex
+					const selected = document.querySelector('.selected')
+					cell.classList.add('selected')
+					if(selected){
+						selected.classList.remove('selected')
+					}	
+				}
+			}
 		}
 	})
 }
 // Select function
 const uxSelect = ()=>{
 	const id = document.querySelector('.function-area').id
+	/*
 	const mode = []
 	mode['member'] = 'mem'
 	const cls = '.' + mode[id] + '-selected'
 	const selected = document.querySelectorAll(cls)
+	if(selected.length){
+		if(selected.length==1){
+			return selected[0]
+		}else{
+			return selected
+		}
+	}else{
+		return false
+	}*/
+	const selected = document.querySelectorAll('.selected')
 	if(selected.length){
 		if(selected.length==1){
 			return selected[0]
