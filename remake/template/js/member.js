@@ -70,13 +70,14 @@ const memFunc = ()=>{
 		data=data+content
 		main.innerHTML=data
 	})
+	/*
 		//Side: Save function
 	document.getElementById('save-btn').addEventListener('click',(event)=>{
 		const evt = new Event('click')
 		const btn = document.getElementById('unedit-btn')
 		btn.dispatchEvent(evt)
 		Delivery('member')
-	})
+	})*/
 	
 		//Side: Unselect function
 	document.getElementById('unedit-btn').addEventListener('click',()=>{

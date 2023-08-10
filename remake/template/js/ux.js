@@ -31,6 +31,20 @@ const uxEdit = ()=>{
 		}
 	})
 }
+// Save function 
+const uxSave = ()=>{
+	document.getElementById('main-display').addEventListener('click',(event)=>{
+		const savebtn = event.target.id == 'save-btn'
+		if(savebtn){
+			const evt = new Event('click')
+			const btn = document.getElementById('unedit-btn')
+			const id = document.querySelector('.function-area').id
+			btn.dispatchEvent(evt)
+			console.log(id)
+			Delivery(id)
+		}		
+	})
+}
 // Remain Login status
 const uxLoginCheck = ()=>{
 	if(isLogin){
@@ -110,6 +124,7 @@ const uxSelect = ()=>{
 const uxInit = ()=>{
 	uxLogin()
 	uxEdit()
+	uxSave()
 	uxSelectInit()
 	//uxEdit()
 }
