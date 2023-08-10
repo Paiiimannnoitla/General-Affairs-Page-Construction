@@ -61,6 +61,7 @@ const uxLoginCheck = ()=>{
 const uxLogin = ()=>{
 	const loginbtn = document.getElementById('login-btn')
 	const logoutbtn = document.getElementById('logout-btn')
+	
 	loginbtn.addEventListener('click',(event)=>{
 		isLogin = true
 		hide(loginbtn)
@@ -72,6 +73,8 @@ const uxLogin = ()=>{
 		unhide(loginbtn)
 		hide(logoutbtn)
 		uxLoginCheck()
+		const uneditbtn = document.getElementById('unedit-btn')
+		uneditbtn.click()
 	})
 }
 const uxSelectInit = ()=>{	

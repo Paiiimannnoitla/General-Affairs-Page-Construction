@@ -10,37 +10,33 @@ const memBuild = async() =>{
 }
 
 const memStyle = ()=>{
-	const output = new Promise((resolve)=>{
-		const main = document.getElementById('member-main')
-		main.addEventListener('mousedown',()=>{
-			const selected = uxSelect()
-			if(selected){
-				const isSame = selected == event.target.closest('td')
-				if(!isSame){
-					const isHeader = selected.tagName == 'TH'
-					if(isHeader){
-						selected.style.background = `beige`
-					}else{
-						selected.style.background = `azure`
-					}
-				}
-			}
-		})
-		main.addEventListener('click',()=>{
-			const selected = uxSelect()
-			if(selected){
-				const isSame = selected == event.target.closest('td')
+	const main = document.getElementById('member-main')
+	main.addEventListener('mousedown',()=>{
+		const selected = uxSelect()
+		if(selected){
+			const isSame = selected == event.target.closest('td')
+			if(!isSame){
 				const isHeader = selected.tagName == 'TH'
 				if(isHeader){
-					selected.style.background = `rgb(235,235,214)`
+					selected.style.background = `beige`
 				}else{
-					selected.style.background = `rgb(209,255,255)`
+					selected.style.background = `azure`
 				}
 			}
-		})
-		resolve(true)
+		}
 	})
-	return output
+	main.addEventListener('click',()=>{
+		const selected = uxSelect()
+		if(selected){
+			const isSame = selected == event.target.closest('td')
+			const isHeader = selected.tagName == 'TH'
+			if(isHeader){
+				selected.style.background = `rgb(235,235,214)`
+			}else{
+				selected.style.background = `rgb(209,255,255)`
+			}
+		}
+	})
 }
 const memFunc = ()=>{
 	uxLoginCheck()
@@ -64,6 +60,7 @@ const memFunc = ()=>{
 		//Side: Unselect function
 	document.getElementById('unedit-btn').addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td,th')
+		console.log(100)
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.removeAttribute('contenteditable')
@@ -84,9 +81,7 @@ const memInit = async() =>{
 	const hasBuild = await memBuild()
 	if(hasBuild){
 		//const hasLoad = await memLoad()
-		const hasStyle = await memStyle()
-		if(hasStyle){
-			const hasFunc = await memFunc()
-		}
+		memStyle()
+		memFunc()
 	}
 }

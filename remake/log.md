@@ -40,6 +40,8 @@
 	# Fixed
 	1. Fix the bug that uxSave cannot trigger unedit event
 		-- finished
+	2. Fix the bug that logout not trigger edit mode deactivation
+		-- finished
 ---
 	## 2023.08.09		version 0.1.2 --Member-build
 	-- Clear codes
