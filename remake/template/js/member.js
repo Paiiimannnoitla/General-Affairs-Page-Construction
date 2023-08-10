@@ -1,14 +1,5 @@
 
 const memBuild = async() =>{
-	/*
-	const mail = await Postman('member')
-	const updateDiv = document.getElementById('main-display')
-	
-	const output = new Promise((resolve)=>{
-		updateDiv.innerHTML = mail
-		resolve(true)
-	})
-	return output*/
 	const isRendered = await Render('member')
 	if(isRendered){
 		const output = new Promise((resolve)=>{
@@ -69,16 +60,7 @@ const memFunc = ()=>{
 		</tr>`
 		data=data+content
 		main.innerHTML=data
-	})
-	/*
-		//Side: Save function
-	document.getElementById('save-btn').addEventListener('click',(event)=>{
-		const evt = new Event('click')
-		const btn = document.getElementById('unedit-btn')
-		btn.dispatchEvent(evt)
-		Delivery('member')
-	})*/
-	
+	})	
 		//Side: Unselect function
 	document.getElementById('unedit-btn').addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td,th')

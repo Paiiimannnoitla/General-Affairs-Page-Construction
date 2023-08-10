@@ -31,14 +31,6 @@ const ancFunc = ()=>{
 		const data = main.innerHTML
 		main.innerHTML = data + content
 	})
-	/*
-	//Side: Save current changes
-	document.getElementById('save-btn').addEventListener('click',()=>{
-		const evt = new Event('click')
-		const btn = document.getElementById('unedit-btn')
-		btn.dispatchEvent(evt)
-		Delivery('announce')
-	})*/
 }
 const ancInit = async()=>{
 	const hasBuild = await ancBuild()

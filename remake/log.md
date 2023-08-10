@@ -7,7 +7,7 @@
 	8. Add edit announcement content function
 		-- this branch
 	9. Revert all highlighted and selected cells when cancel in Member page
-		-- this branch
+		-- processing
 	6. Upload attchment in announcement
 		-- this branch
 	7. Automatically generate fill up date data
@@ -24,6 +24,7 @@
 	## 2023.08.09		version 0.1.3 --Announce-build
 	-- Function implementation
 	-- Rewrite function
+	-- Bug fix
 	# Added
 	1. Add a basic Announce page 
 		-- finished
@@ -31,8 +32,13 @@
 		-- finished
 	3. Add save function to Announce page
 		-- finished
+	4. Add uxSave to handle all save function
+		-- finished
 	# Changed
 	1. Rewrite memBuild function by new Render function
+		-- finished
+	# Fixed
+	1. Fix the bug that uxSave cannot trigger unedit event
 		-- finished
 ---
 	## 2023.08.09		version 0.1.2 --Member-build

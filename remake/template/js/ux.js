@@ -39,8 +39,8 @@ const uxSave = ()=>{
 			const evt = new Event('click')
 			const btn = document.getElementById('unedit-btn')
 			const id = document.querySelector('.function-area').id
-			btn.dispatchEvent(evt)
-			console.log(id)
+			//btn.dispatchEvent(evt)
+			btn.click()
 			Delivery(id)
 		}		
 	})
