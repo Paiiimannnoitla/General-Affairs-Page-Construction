@@ -66,7 +66,7 @@ const tbfunc = ()=>{
 			memInit()
 		}
 		mode['test']=async()=>{
-			const mail = await Postman('memberbk')
+			const mail = await Postman('announcebk')
 			const updateDiv = document.getElementById('main-display')
 	
 			const output = new Promise((resolve)=>{

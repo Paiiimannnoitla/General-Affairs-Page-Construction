@@ -15,7 +15,9 @@
 	8. Selecting style in Announce page
 		-- this branch
 	9. Make a save change button		
-		-- processing
+		-- finished
+	10.Update the announcement given by colleagues.
+		-- this branch
 
 
 ---
@@ -26,6 +28,8 @@
 	1. Add a basic Announce page 
 		-- finished
 	2. Add publish new announcement function
+		-- finished
+	3. Add save function to Announce page
 		-- finished
 	# Changed
 	1. Rewrite memBuild function by new Render function

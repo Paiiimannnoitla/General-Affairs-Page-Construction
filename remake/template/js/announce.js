@@ -16,6 +16,10 @@ const ancStyle = ()=>{
 //Main: Edit function
 const ancFunc = ()=>{
 	uxLoginCheck()
+	//Side: Unselect function
+	document.getElementById('unedit-btn').addEventListener('click',()=>{
+		console.log('cancel')
+	})
 	//Side: Publish new announcement
 	document.getElementById('new-btn').addEventListener('click',()=>{
 		const content = `		<tr>
@@ -29,7 +33,10 @@ const ancFunc = ()=>{
 	})
 	//Side: Save current changes
 	document.getElementById('save-btn').addEventListener('click',()=>{
-		console.log('save')
+		const evt = new Event('click')
+		const btn = document.getElementById('unedit-btn')
+		btn.dispatchEvent(evt)
+		Delivery('announce')
 	})
 }
 const ancInit = async()=>{
