@@ -11,7 +11,7 @@ const ancBuild = async()=>{
 }
 // Style 
 const ancStyle = ()=>{
-	console.log('anc style is over')
+	
 }
 //Main: Edit function
 const ancFunc = ()=>{

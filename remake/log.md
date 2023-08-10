@@ -18,6 +18,7 @@
 		-- finished
 	10. Update the announcement given by colleagues.
 		-- this branch
+	11. Dynamically set style between each page maybe can use some animation
 
 
 ---
@@ -25,6 +26,7 @@
 	-- Function implementation
 	-- Rewrite function
 	-- Bug fix
+	-- Style change
 	-- Clear wasted codes
 	# Added
 	1. Add a basic Announce page 
@@ -41,6 +43,8 @@
 	1. Rewrite memBuild function by new Render function
 		-- finished
 	2. Cntralize the un-select process to unedit buttons
+		-- finished
+	3. Separately set different pages style
 		-- finished
 	# Fixed
 	1. Fix the bug that uxSave cannot trigger unedit event

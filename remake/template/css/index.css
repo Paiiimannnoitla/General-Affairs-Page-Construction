@@ -28,15 +28,20 @@ table{
 	width:				100%;
 	padding:			5px solid ghostwhite;
 }
-th{
-  background:		beige;
-  height:				auto;
+#member th{
+	background:			beige;
+	height:				auto;
 }
 
-td{
-  background:		azure;
+#member td{
+	background:			azure;
 }
-
+#announce th{
+	background:			rgb(225,228,244);
+}
+#announce td{
+	background:			rgb(226,241,253);
+}
 ul{
 	list-style-position:inside;
 	text-align:			left;
@@ -49,32 +54,7 @@ ul{
 .member-occupation{
 	margin:				0px;
 }
-/*
-.member-header{
-	font-size:			187.5%;
-}
-.member-header-row{
-	width:				15%;
-	font-size:			160%;
-}
-.member-name{
-	font-size:			125%;
-}
-.member-leader{
-	margin:				0px;
-}
-.member-occupation{
-	font-size:			100%;
-}
-.member-phone-one{
-	font-size:			115%;
-}
-.member-phone-two{
-	font-size:			115%;
-}
-.member-tax{
-	font-size:			145%;
-}*/
+
 .dl-title{
 	width:				100%;
 	background:			blanchedalmond;
