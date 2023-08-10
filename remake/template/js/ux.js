@@ -26,8 +26,11 @@ const uxEdit = ()=>{
 		if(isUnEdit){
 			const editbtn = document.getElementById('edit-btn')
 			const btnArr = document.querySelectorAll('.edit-mode')
+			const selected = uxSelect()
 			unhide(editbtn)			
-			hide(btnArr)
+			hide(btnArr)			
+			selected.classList.remove('selected')
+			
 		}
 	})
 }
@@ -79,29 +82,6 @@ const uxLogin = ()=>{
 }
 // Selection mode
 const uxSelectInit = ()=>{	
-	/*
-	const mode = []
-	mode['member'] = (event)=>{
-		const isBelow = event.target.id == 'member'
-		if(!isBelow){
-			let cell = event.target
-			const isHeader = cell.tagName == 'TH'
-			if(!isHeader){
-				cell = event.target.closest('td')
-			}
-			const isCell = cell.tagName == 'TD' || 'TH'
-			if(isCell){
-				const tr = cell.closest('tr')
-				const x = cell.cellIndex
-				const y = tr.rowIndex
-				const selected = document.querySelector('.mem-selected')
-				cell.classList.add('mem-selected')
-				if(selected){
-					selected.classList.remove('mem-selected')
-				}	
-			}
-		}
-	}*/
 	// Selection Init
 	document.getElementById('main-display').addEventListener('mouseup',(event)=>{
 		const functionArea = event.target.closest('.function-area')
@@ -132,20 +112,7 @@ const uxSelectInit = ()=>{
 // Select function
 const uxSelect = ()=>{
 	const id = document.querySelector('.function-area').id
-	/*
-	const mode = []
-	mode['member'] = 'mem'
-	const cls = '.' + mode[id] + '-selected'
-	const selected = document.querySelectorAll(cls)
-	if(selected.length){
-		if(selected.length==1){
-			return selected[0]
-		}else{
-			return selected
-		}
-	}else{
-		return false
-	}*/
+
 	const selected = document.querySelectorAll('.selected')
 	if(selected.length){
 		if(selected.length==1){

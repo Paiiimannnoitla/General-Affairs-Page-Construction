@@ -25,6 +25,7 @@
 	-- Function implementation
 	-- Rewrite function
 	-- Bug fix
+	-- Clear wasted codes
 	# Added
 	1. Add a basic Announce page 
 		-- finished
@@ -38,6 +39,8 @@
 		-- finished
 	# Changed
 	1. Rewrite memBuild function by new Render function
+		-- finished
+	2. Cntralize the un-select process to unedit buttons
 		-- finished
 	# Fixed
 	1. Fix the bug that uxSave cannot trigger unedit event
