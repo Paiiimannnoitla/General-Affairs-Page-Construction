@@ -72,16 +72,17 @@ app.use((req,res)=>{
 	res.status(404)
 	res.send(render('404'))
 })*/
-
+/*
 app.get('/load/member',(req,res)=>{
 	const file = fs.readFileSync('./template/data/Member/member.json')
 	//console.log(file)
 	const json = JSON.parse(file)
 	res.send(json)
-})
+})*/
+/*
 app.get('/redirect',(req,res)=>{
 	res.send(render('redirect'))
-})
+})*/
 app.get('/',(req,res)=>{
 	res.send(render('index'))
 	

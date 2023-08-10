@@ -45,21 +45,25 @@ const Delivery = (address) =>{
 		return output
 	}
 	const reply = response()
-	//window.open(hostname)
 	return reply
 }
-/*
-const request = async(letter)=>{
-		const json = JSON.stringify(letter)
-		const mail = await Postman('GET',json)		
-		return mail
-}*/
+const Render = async(e)=>{
+	const mail = await Postman(e)
+	const updateDiv = document.getElementById('main-display')
+	const output = new Promise((resolve)=>{
+		updateDiv.innerHTML = mail
+		resolve(true)		
+	})
+	return output
+}
 const tbfunc = ()=>{	
 	const mode = []
 	const main = (code)=>{
+		mode['tb-announce']=()=>{
+			ancInit()
+		}
 		mode['tb-member']=()=>{
 			memInit()
-			currPage = 'member'
 		}
 		mode['test']=async()=>{
 			const mail = await Postman('memberbk')

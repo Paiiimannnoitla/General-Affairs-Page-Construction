@@ -1,16 +1,20 @@
 @@@Road Map
 	1. Change http to https
-	2. Add logout function
+	6. Make a basic Annouce page template
 		-- finished
-	3. Selection function
-		-- finished
-	4. Cancel edit mode
-		-- finished
-	5. Quit edit mode cancel all editing data
-		-- finished
+	7. Make a announce publish function	
+		-- processing
+	8. Add edit announcement content function
+		-- this branch
 	
 
 
+---
+	## 2023.08.09		version 0.1.3 --Announce-build
+	-- Function implementation
+	# Added
+	1. Add a basic Announce page 
+		-- finished
 ---
 	## 2023.08.09		version 0.1.2 --Member-build
 	-- Clear codes
