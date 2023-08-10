@@ -3,7 +3,7 @@
 	6. Make a basic Annouce page template
 		-- finished
 	7. Make a announce publish function	
-		-- processing
+		-- finished
 	8. Add edit announcement content function
 		-- this branch
 	9. Revert all highlighted and selected cells when cancel in Member page
@@ -14,6 +14,8 @@
 		-- this branch
 	8. Selecting style in Announce page
 		-- this branch
+	9. Make a save change button		
+		-- processing
 
 
 ---
@@ -22,6 +24,8 @@
 	-- Rewrite function
 	# Added
 	1. Add a basic Announce page 
+		-- finished
+	2. Add publish new announcement function
 		-- finished
 	# Changed
 	1. Rewrite memBuild function by new Render function
