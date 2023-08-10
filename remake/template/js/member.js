@@ -1,5 +1,6 @@
 
 const memBuild = async() =>{
+	/*
 	const mail = await Postman('member')
 	const updateDiv = document.getElementById('main-display')
 	
@@ -7,7 +8,14 @@ const memBuild = async() =>{
 		updateDiv.innerHTML = mail
 		resolve(true)
 	})
-	return output
+	return output*/
+	const isRendered = await Render('member')
+	if(isRendered){
+		const output = new Promise((resolve)=>{
+			resolve(true)
+		})
+		return output
+	}
 }
 
 const memStyle = ()=>{

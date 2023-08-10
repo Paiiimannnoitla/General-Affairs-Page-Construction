@@ -6,14 +6,25 @@
 		-- processing
 	8. Add edit announcement content function
 		-- this branch
-	
+	9. Revert all highlighted and selected cells when cancel in Member page
+		-- this branch
+	6. Upload attchment in announcement
+		-- this branch
+	7. Automatically generate fill up date data
+		-- this branch
+	8. Selecting style in Announce page
+		-- this branch
 
 
 ---
 	## 2023.08.09		version 0.1.3 --Announce-build
 	-- Function implementation
+	-- Rewrite function
 	# Added
 	1. Add a basic Announce page 
+		-- finished
+	# Changed
+	1. Rewrite memBuild function by new Render function
 		-- finished
 ---
 	## 2023.08.09		version 0.1.2 --Member-build
