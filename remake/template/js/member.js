@@ -11,7 +11,9 @@ const memBuild = async() =>{
 
 const memStyle = ()=>{
 	const main = document.getElementById('member-main')
-	main.addEventListener('mousedown',()=>{
+	const uneditbtn = document.getElementById('unedit-btn')
+	// Revert style setting
+	const revert = ()=>{
 		const selected = uxSelect()
 		if(selected){
 			const isSame = selected == event.target.closest('td')
@@ -22,8 +24,12 @@ const memStyle = ()=>{
 				}else{
 					selected.style.background = `azure`
 				}
+				selected.classList.remove('mem-selected')
 			}
 		}
+	}
+	main.addEventListener('mousedown',()=>{
+		revert()
 	})
 	main.addEventListener('click',()=>{
 		const selected = uxSelect()
@@ -36,6 +42,9 @@ const memStyle = ()=>{
 				selected.style.background = `rgb(209,255,255)`
 			}
 		}
+	})
+	uneditbtn.addEventListener('click',()=>{
+		revert()
 	})
 }
 const memFunc = ()=>{
@@ -60,7 +69,6 @@ const memFunc = ()=>{
 		//Side: Unselect function
 	document.getElementById('unedit-btn').addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td,th')
-		console.log(100)
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.removeAttribute('contenteditable')

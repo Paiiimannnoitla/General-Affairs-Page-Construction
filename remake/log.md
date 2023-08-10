@@ -7,7 +7,7 @@
 	8. Add edit announcement content function
 		-- this branch
 	9. Revert all highlighted and selected cells when cancel in Member page
-		-- processing
+		-- finished
 	6. Upload attchment in announcement
 		-- this branch
 	7. Automatically generate fill up date data
@@ -41,6 +41,8 @@
 	1. Fix the bug that uxSave cannot trigger unedit event
 		-- finished
 	2. Fix the bug that logout not trigger edit mode deactivation
+		-- finished
+	3. Fix selected status is not dismissed after logout and save
 		-- finished
 ---
 	## 2023.08.09		version 0.1.2 --Member-build

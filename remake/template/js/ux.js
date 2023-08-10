@@ -77,6 +77,7 @@ const uxLogin = ()=>{
 		uneditbtn.click()
 	})
 }
+// Selection mode
 const uxSelectInit = ()=>{	
 	const mode = []
 	mode['member'] = (event)=>{
@@ -108,6 +109,7 @@ const uxSelectInit = ()=>{
 		}
 	})
 }
+// Select function
 const uxSelect = ()=>{
 	const id = document.querySelector('.function-area').id
 	const mode = []
