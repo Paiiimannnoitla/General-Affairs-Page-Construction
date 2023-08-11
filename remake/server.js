@@ -7,7 +7,6 @@ app.use(express.json())
 app.use(cors())
 app.set('port',process.env.PORT || 3000)
 app.use(express.static(__dirname + '/template' ))
-console.log(__dirname)
 // Page renderer
 const render = (name,data=false) =>{
 	let html = fs.readFileSync('./template/' + name + '.html','utf8')

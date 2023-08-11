@@ -1,26 +1,30 @@
 @@@Road Map
 	1. 	Change http to https
-	6. 	Make a basic Annouce page template
-		-- finished
-	7. 	Make a announce publish function	
-		-- finished
 	8. 	Add edit announcement content function
 		-- this branch
-	9. 	Revert all highlighted and selected cells when cancel in Member page
-		-- finished
 	6. 	Upload attchment in announcement
 		-- this branch
 	7. 	Automatically generate fill up date data
 		-- this branch
 	8. 	Selecting style in Announce page
 		-- this branch
-	9.	Make a save change button		
-		-- finished
 	10. Update the announcement given by colleagues.
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
+	12. Add a custom brighter/darker function
+		-- processing
 
 
+---
+	## 2023.08.10		version 0.1.4 --Announce-build
+	-- Function implementation
+	-- Style change
+	# Added
+	1. Add bright adjustment function to handle glowing effect
+		-- finished
+	# Changed
+	1. Change the colo code from css name to rgb code
+		-- finished
 ---
 	## 2023.08.09		version 0.1.3 --Announce-build
 	-- Function implementation

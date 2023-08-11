@@ -20,7 +20,7 @@ const uxEdit = ()=>{
 			const editbtn = document.getElementById('edit-btn')
 			const btnArr = document.querySelectorAll('.edit-mode')
 			hide(editbtn)
-			unhide(btnArr)			
+			unhide(btnArr)	
 		}
 		const isUnEdit = event.target.id == 'unedit-btn'
 		if(isUnEdit){
@@ -42,7 +42,6 @@ const uxSave = ()=>{
 			const evt = new Event('click')
 			const btn = document.getElementById('unedit-btn')
 			const id = document.querySelector('.function-area').id
-			//btn.dispatchEvent(evt)
 			btn.click()
 			Delivery(id)
 		}		
@@ -89,6 +88,7 @@ const uxSelectInit = ()=>{
 			//mode[functionArea.id](event)
 			const isBelow = event.target.classList.contains('function-area')
 			if(!isBelow){
+				
 				let cell = event.target
 				const isHeader = cell.tagName == 'TH'
 				if(!isHeader){
@@ -101,9 +101,11 @@ const uxSelectInit = ()=>{
 					const y = tr.rowIndex
 					const selected = document.querySelector('.selected')
 					cell.classList.add('selected')
+					
 					if(selected){
 						selected.classList.remove('selected')
 					}	
+					bright()
 				}
 			}
 		}
@@ -123,6 +125,15 @@ const uxSelect = ()=>{
 	}else{
 		return false
 	}
+}
+const uxStyle = ()=>{
+	const main = document.getElementById('main-display')
+	main.addEventListener('mousedown',()=>{
+		bright(false)
+	})
+	main.addEventListener('click',()=>{
+		bright()
+	})
 }
 const uxInit = ()=>{
 	uxLogin()

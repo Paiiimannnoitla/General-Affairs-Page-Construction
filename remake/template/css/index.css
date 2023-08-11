@@ -1,10 +1,10 @@
 body{
-	background:			lightblue;
+	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
 }
 #top-area{
 	height:				10%;
-	background:			honeydew;
+	background:			rgb(240,255,240);
 }
 #bottom-area{
 	height:				auto;
@@ -14,27 +14,27 @@ body{
 #toolbar{
 	width:				5%;
 	height:				90%;
-	background:			aliceblue;
+	background:			rgb(240,248,255);
 }
 #main-display{
 	position:			absolute;
 	left:				5.5%;
 	top:				11%;
-	background:			floralwhite;
+	background:			rgb(255,250,240);
 	width:				95%;
 	height:				100%;
 }
 table{
 	width:				100%;
-	padding:			5px solid ghostwhite;
+	padding:			5px solid rgb(248,248,255);
 }
 #member th{
-	background:			beige;
+	background:			rgb(245,245,220);
 	height:				auto;
 }
 
 #member td{
-	background:			azure;
+	background:			rgb(240,255,255);
 }
 #announce th{
 	background:			rgb(225,228,244);
@@ -57,7 +57,7 @@ ul{
 
 .dl-title{
 	width:				100%;
-	background:			blanchedalmond;
+	background:			rgb(255,235,205);
 }
 .dl-header{
 	width:				auto;

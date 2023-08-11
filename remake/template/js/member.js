@@ -20,9 +20,9 @@ const memStyle = ()=>{
 			if(!isSame){
 				const isHeader = selected.tagName == 'TH'
 				if(isHeader){
-					selected.style.background = `beige`
+					selected.style.background = `rgb(245,245,220)`
 				}else{
-					selected.style.background = `azure`
+					selected.style.background = `rgb(240,255,255)`
 				}
 				//selected.classList.remove('selected')
 			}
