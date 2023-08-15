@@ -10,9 +10,11 @@ const memBuild = async() =>{
 }
 
 const memStyle = ()=>{
+	/*
 	const main = document.getElementById('member-main')
 	const uneditbtn = document.getElementById('unedit-btn')
 	// Revert style setting
+	
 	const revert = ()=>{
 		const selected = uxSelect()
 		if(selected){
@@ -45,7 +47,7 @@ const memStyle = ()=>{
 	})
 	uneditbtn.addEventListener('click',()=>{
 		revert()
-	})
+	})*/
 }
 const memFunc = ()=>{
 	uxLoginCheck()

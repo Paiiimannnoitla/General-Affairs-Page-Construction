@@ -16,6 +16,14 @@
 
 
 ---
+	## 2023.08.15		version 0.1.5 --Announce-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that selected cannot be correctly apply when user hightlighted
+		-- finished
+	2. Fix the bug that previous selected element color abnormality
+		-- finished
+---
 	## 2023.08.10		version 0.1.4 --Announce-build
 	-- Function implementation
 	-- Style change

@@ -26,36 +26,37 @@ const unhide = (arr)=>{
 		arr.classList.remove('hide')
 	}
 }
+let prevSelected = ''
 const bright = (dark = true)=>{
-	const cell = uxSelect()
+	let cell = uxSelect()
+	if(!dark){
+		cell = prevSelected
+	}
+	const colorCode = window.getComputedStyle(cell)['background']
+	const upper = colorCode.indexOf('(') + 1
+	const lower = colorCode.indexOf(')')
+	const rgb = colorCode.substring(upper,lower).split(',')
+	const r = rgb[0]-0
+	const g = rgb[1]-0
+	const b = rgb[2]-0
 	if(cell){
-		const ar = 4
-		const ag = 14
-		const ab = 1
-		const colorCode = window.getComputedStyle(cell)['background']
-		const upper = colorCode.indexOf('(') + 1
-		const lower = colorCode.indexOf(')')
-		const rgb = colorCode.substring(upper,lower).split(',')
-		const r = rgb[0]-0
-		const g = rgb[1]-0
-		const b = rgb[2]-0
-		console.log(colorCode)
+		const ar = 10
+		const ag = 10
+		const ab = 10
 		if(dark){
 			const nr = r-ar
 			const ng = g-ag
 			const nb = b-ab
 			const nColorCode = 'rgb(' + nr + ',' + ng + ',' + nb + ')' 
-			console.log(nColorCode)
 			cell.style.background = nColorCode
+			prevSelected = cell
 		}else{
 			const nr = r+ar
 			const ng = g+ag
 			const nb = b+ab
 			const nColorCode = 'rgb(' + nr + ',' + ng + ',' + nb + ')'
-			console.log(nColorCode)
 			cell.style.background = nColorCode			
 		}
-		//console.log(colorCode)
 	}
 	
 }
