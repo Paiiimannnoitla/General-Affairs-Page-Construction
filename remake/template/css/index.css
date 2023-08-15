@@ -1,6 +1,7 @@
 body{
 	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
+	user-select:		none;
 }
 #top-area{
 	height:				10%;

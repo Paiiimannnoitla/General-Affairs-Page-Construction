@@ -103,9 +103,12 @@ const uxSelectInit = ()=>{
 					cell.classList.add('selected')
 					
 					if(selected){
+						
 						selected.classList.remove('selected')
+						/*const evt = new CustomEvent('stylecheck',{detail:{data:event},bubbles:false})
+						event.target.dispatchEvent(evt)*/
 					}	
-					bright()
+					//bright()
 				}
 			}
 		}
@@ -140,6 +143,7 @@ const uxInit = ()=>{
 	uxEdit()
 	uxSave()
 	uxSelectInit()
+	uxStyle()
 	//uxEdit()
 }
 uxInit()
