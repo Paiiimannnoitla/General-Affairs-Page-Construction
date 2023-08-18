@@ -24,6 +24,7 @@ const uxEdit = ()=>{
 		}
 		const isUnEdit = event.target.id == 'unedit-btn'
 		if(isUnEdit){
+			console.log(100)
 			const editbtn = document.getElementById('edit-btn')
 			const btnArr = document.querySelectorAll('.edit-mode')
 			const selected = uxSelect()

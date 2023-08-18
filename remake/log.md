@@ -19,8 +19,12 @@
 
 ---
 	## 2023.08.18		version 0.1.6 --Announce-build
+	-- Function implementation
 	-- Rewrite function
 	-- Bug fix
+	# Added
+	1. Add edit function to announce.json excluding attatchment
+		-- finished
 	# Changed
 	1. Merge bright function preocess from uxStyle to uxSelectInit for simplicity
 		-- finished

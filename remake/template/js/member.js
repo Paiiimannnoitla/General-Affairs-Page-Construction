@@ -9,46 +9,6 @@ const memBuild = async() =>{
 	}
 }
 
-const memStyle = ()=>{
-	/*
-	const main = document.getElementById('member-main')
-	const uneditbtn = document.getElementById('unedit-btn')
-	// Revert style setting
-	
-	const revert = ()=>{
-		const selected = uxSelect()
-		if(selected){
-			const isSame = selected == event.target.closest('td')
-			if(!isSame){
-				const isHeader = selected.tagName == 'TH'
-				if(isHeader){
-					selected.style.background = `rgb(245,245,220)`
-				}else{
-					selected.style.background = `rgb(240,255,255)`
-				}
-				//selected.classList.remove('selected')
-			}
-		}
-	}
-	main.addEventListener('mousedown',()=>{
-		revert()
-	})
-	main.addEventListener('click',()=>{
-		const selected = uxSelect()
-		if(selected){
-			const isSame = selected == event.target.closest('td')
-			const isHeader = selected.tagName == 'TH'
-			if(isHeader){
-				selected.style.background = `rgb(235,235,214)`
-			}else{
-				selected.style.background = `rgb(209,255,255)`
-			}
-		}
-	})
-	uneditbtn.addEventListener('click',()=>{
-		revert()
-	})*/
-}
 const memFunc = ()=>{
 	uxLoginCheck()
 	const main = document.getElementById('member-main')
@@ -90,8 +50,6 @@ const memFunc = ()=>{
 const memInit = async() =>{
 	const hasBuild = await memBuild()
 	if(hasBuild){
-		//const hasLoad = await memLoad()
-		memStyle()
 		memFunc()
 	}
 }

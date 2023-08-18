@@ -31,6 +31,14 @@ const ancFunc = ()=>{
 		const data = main.innerHTML
 		main.innerHTML = data + content
 	})
+	//Side: Content Edit
+	document.getElementById('edit-btn').addEventListener('click',()=>{
+		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
+		for(var i=0;i<btnArr.length;i++){
+			const e = btnArr[i]
+			e.contentEditable = 'true'
+		}
+	})
 }
 const ancInit = async()=>{
 	const hasBuild = await ancBuild()
