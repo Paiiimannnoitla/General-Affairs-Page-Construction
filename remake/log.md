@@ -20,8 +20,12 @@
 ---
 	## 2023.08.18		version 0.1.6 --Announce-build
 	-- Rewrite function
+	-- Bug fix
 	# Changed
 	1. Merge bright function preocess from uxStyle to uxSelectInit for simplicity
+		-- finished
+	# Fixed
+	1. Fix the highlighted effect not fading after save
 		-- finished
 ---
 	## 2023.08.15		version 0.1.5 --Announce-build

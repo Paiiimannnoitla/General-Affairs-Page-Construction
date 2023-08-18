@@ -28,7 +28,8 @@ const uxEdit = ()=>{
 			const btnArr = document.querySelectorAll('.edit-mode')
 			const selected = uxSelect()
 			unhide(editbtn)			
-			hide(btnArr)			
+			hide(btnArr)		
+			bright(false)
 			selected.classList.remove('selected')
 			
 		}
