@@ -100,15 +100,12 @@ const uxSelectInit = ()=>{
 					const x = cell.cellIndex
 					const y = tr.rowIndex
 					const selected = document.querySelector('.selected')
-					cell.classList.add('selected')
-					
+					bright(false)
+					cell.classList.add('selected')					
 					if(selected){
-						
 						selected.classList.remove('selected')
-						/*const evt = new CustomEvent('stylecheck',{detail:{data:event},bubbles:false})
-						event.target.dispatchEvent(evt)*/
 					}	
-					//bright()
+					bright()
 				}
 			}
 		}
@@ -130,13 +127,14 @@ const uxSelect = ()=>{
 	}
 }
 const uxStyle = ()=>{
+	/*
 	const main = document.getElementById('main-display')
 	main.addEventListener('mousedown',()=>{
 		bright(false)
 	})
 	main.addEventListener('click',()=>{
 		bright()
-	})
+	})*/
 }
 const uxInit = ()=>{
 	uxLogin()
@@ -144,6 +142,5 @@ const uxInit = ()=>{
 	uxSave()
 	uxSelectInit()
 	uxStyle()
-	//uxEdit()
 }
 uxInit()

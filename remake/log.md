@@ -13,8 +13,16 @@
 	11. Dynamically set style between each page maybe can use some animation
 	12. Add a custom brighter/darker function
 		-- processing
+	13 Fix the bug that color will white out when repeatedly click
+		-- processing
 
 
+---
+	## 2023.08.18		version 0.1.6 --Announce-build
+	-- Rewrite function
+	# Changed
+	1. Merge bright function preocess from uxStyle to uxSelectInit for simplicity
+		-- finished
 ---
 	## 2023.08.15		version 0.1.5 --Announce-build
 	-- Bug fix
