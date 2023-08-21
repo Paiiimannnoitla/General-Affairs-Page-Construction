@@ -109,7 +109,7 @@ app.post('/upload',(req,res)=>{
 	const string = Buffer.from(data)	
 	const name = req.body['name']
 	fs.writeFileSync('./download/' + address + '/' + name,string)
-	
+	res.send(true)
 })
 app.get('/download/:filename',(req,res)=>{
 	const hostname = 'download/'

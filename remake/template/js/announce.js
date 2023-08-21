@@ -26,7 +26,7 @@ const ancFunc = ()=>{
 		const content = `		<tr>
 			<td contenteditable='true'>Date</td>
 			<td contenteditable='true'>Announcement</td>
-			<td>Attactchment:<input id='testupload' type='file'></input></td>
+			<td><input class='edit-mode upload-btn' type='file'></td>
 		</tr>`
 		const main = document.getElementById('anc-main')
 		const data = main.innerHTML
@@ -40,11 +40,21 @@ const ancFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
-	document.getElementById('send-btn').addEventListener('click',async(event)=>{
-		const f = document.getElementById('testupload')
+	//Side; Upload and auto increment
+	document.getElementById('anc-main').addEventListener('change',async(event)=>{
+		const e = event.target
+		const isUpload = e.classList.contains('upload-btn')
+		if(isUpload){
+			if(e.files.length){
+				const td = e.parentNode
+				const content = `<br><input class='edit-mode upload-btn' type='file'>`
+				td.insertAdjacentHTML('beforeend',content)
+			}
+		}			
+		//const f = document.getElementById('testupload')
 		//console.log(event.target)
-		const cargo = await pack(f.files,'announce')
-		upload(cargo)
+		//const cargo = await pack(f.files,'announce')
+		//upload(cargo)
 	})
 }
 const ancInit = async()=>{

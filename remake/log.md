@@ -30,6 +30,10 @@
 		-- finished
 	3. Add address selection function
 		-- finished
+	4. Add user-uploading function
+		-- finished
+	5. Add auto append new upload button function
+		-- finished
 ---
 	## 2023.08.18		version 0.1.6 --Announce-build
 	-- Function implementation
