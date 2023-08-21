@@ -13,6 +13,7 @@ const ancBuild = async()=>{
 const ancStyle = ()=>{
 	
 }
+
 //Main: Edit function
 const ancFunc = ()=>{
 	uxLoginCheck()
@@ -25,7 +26,7 @@ const ancFunc = ()=>{
 		const content = `		<tr>
 			<td contenteditable='true'>Date</td>
 			<td contenteditable='true'>Announcement</td>
-			<td>Attactchment</td>
+			<td>Attactchment:<input id='testupload' type='file'></input></td>
 		</tr>`
 		const main = document.getElementById('anc-main')
 		const data = main.innerHTML
@@ -38,6 +39,12 @@ const ancFunc = ()=>{
 			const e = btnArr[i]
 			e.contentEditable = 'true'
 		}
+	})
+	document.getElementById('send-btn').addEventListener('click',async(event)=>{
+		const f = document.getElementById('testupload')
+		//console.log(event.target)
+		const a = await pack(f.files)
+		upload(a)
 	})
 }
 const ancInit = async()=>{

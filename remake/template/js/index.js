@@ -47,6 +47,50 @@ const Delivery = (address) =>{
 	const reply = response()
 	return reply
 }
+const upload = (data) =>{
+	const hostname = 'http://10.6.11.17:3000/upload'
+	const content = {
+		headers:{
+			'content-type':'application/json'
+		},
+		body : data,
+		method:'POST'
+	}
+	const response = ()=>{
+		const output = new Promise((resolve)=>{
+			fetch(hostname,content).then((res)=>{
+				resolve(res)
+			})
+		})
+		return output
+	}
+	const reply = response()
+	return reply
+}
+const pack = async(e) =>{
+	const f = e[0]
+	const filename = f['name']
+	const abconvert = (f)=>{
+		const output = new Promise((resolve)=>{
+			const reader = new FileReader()
+			reader.addEventListener('load',()=>{
+				resolve(reader.result)
+			})
+			reader.readAsArrayBuffer(f)
+		})
+		return output
+	}
+	const ajaxconvert = (arr)=>{
+		const uintArr = new Uint8Array(arr)
+		const sArr = Array.from(uintArr)
+		const data = {'file':sArr,'name':filename}
+		const json = JSON.stringify(data)
+		return json
+	}
+	const arrayBuffer = await abconvert(f)
+	const response = await ajaxconvert(arrayBuffer)
+	return response
+}
 const Render = async(e)=>{
 	const mail = await Postman(e)
 	const updateDiv = document.getElementById('main-display')

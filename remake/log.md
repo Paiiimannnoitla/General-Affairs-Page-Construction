@@ -13,10 +13,20 @@
 	11. Dynamically set style between each page maybe can use some animation
 	12. Add a custom brighter/darker function
 		-- processing
-	13 Fix the bug that color will white out when repeatedly click
+	13. Fix the bug that color will white out when repeatedly click
+		-- processing
+	14. Cancel before save
 		-- processing
 
 
+---
+	## 2023.08.21		version 0.2.0 --Announce-build
+	-- Function implementation
+	# Added
+	1. Add a pack function to serialize the uploading file
+		-- finished
+	2. Add a upload function to handle the uploading process
+		-- finished
 ---
 	## 2023.08.18		version 0.1.6 --Announce-build
 	-- Function implementation

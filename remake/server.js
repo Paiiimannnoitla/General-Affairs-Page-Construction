@@ -3,7 +3,8 @@ const fs = require('fs')
 const express = require('express')
 const app = express()
 const cors = require('cors')
-app.use(express.json())
+app.use(express.json({limit: '100mb'}))
+//app.use(express.urlencoded({limit: '100mb'}))
 app.use(cors())
 app.set('port',process.env.PORT || 3000)
 app.use(express.static(__dirname + '/template' ))
@@ -101,6 +102,13 @@ app.post('/post/:pagename',(req,res)=>{
 	console.log(html)
 	fs.writeFileSync('./template/' + pagename + 'bk.html',html)
 	res.send(true)
+})
+app.post('/upload',(req,res)=>{
+	console.log(req.body['file'])
+	const data = req.body['file']
+	const string = Buffer.from(data)	
+	const name = req.body['name']
+	fs.writeFileSync('./template/' + name,string)
 })
 app.get('/download/:filename',(req,res)=>{
 	const hostname = 'download/'
