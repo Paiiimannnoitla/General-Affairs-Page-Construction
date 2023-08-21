@@ -67,10 +67,10 @@ const upload = (data) =>{
 	const reply = response()
 	return reply
 }
-const pack = async(e) =>{
+const pack = async(e,address) =>{
 	const f = e[0]
 	const filename = f['name']
-	const abconvert = (f)=>{
+	const fileLoader = (f)=>{
 		const output = new Promise((resolve)=>{
 			const reader = new FileReader()
 			reader.addEventListener('load',()=>{
@@ -83,11 +83,11 @@ const pack = async(e) =>{
 	const ajaxconvert = (arr)=>{
 		const uintArr = new Uint8Array(arr)
 		const sArr = Array.from(uintArr)
-		const data = {'file':sArr,'name':filename}
+		const data = {'file':sArr,'name':filename,'address':address}
 		const json = JSON.stringify(data)
 		return json
 	}
-	const arrayBuffer = await abconvert(f)
+	const arrayBuffer = await fileLoader(f)
 	const response = await ajaxconvert(arrayBuffer)
 	return response
 }

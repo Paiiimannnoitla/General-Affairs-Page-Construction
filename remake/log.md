@@ -22,10 +22,13 @@
 ---
 	## 2023.08.21		version 0.2.0 --Announce-build
 	-- Function implementation
+	-- Function enhancement
 	# Added
 	1. Add a pack function to serialize the uploading file
 		-- finished
 	2. Add a upload function to handle the uploading process
+		-- finished
+	3. Add address selection function
 		-- finished
 ---
 	## 2023.08.18		version 0.1.6 --Announce-build

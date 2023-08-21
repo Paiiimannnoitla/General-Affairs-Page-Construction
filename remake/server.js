@@ -104,11 +104,12 @@ app.post('/post/:pagename',(req,res)=>{
 	res.send(true)
 })
 app.post('/upload',(req,res)=>{
-	console.log(req.body['file'])
+	const address = req.body['address']
 	const data = req.body['file']
 	const string = Buffer.from(data)	
 	const name = req.body['name']
-	fs.writeFileSync('./template/' + name,string)
+	fs.writeFileSync('./download/' + address + '/' + name,string)
+	
 })
 app.get('/download/:filename',(req,res)=>{
 	const hostname = 'download/'

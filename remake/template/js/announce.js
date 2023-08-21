@@ -43,8 +43,8 @@ const ancFunc = ()=>{
 	document.getElementById('send-btn').addEventListener('click',async(event)=>{
 		const f = document.getElementById('testupload')
 		//console.log(event.target)
-		const a = await pack(f.files)
-		upload(a)
+		const cargo = await pack(f.files,'announce')
+		upload(cargo)
 	})
 }
 const ancInit = async()=>{
