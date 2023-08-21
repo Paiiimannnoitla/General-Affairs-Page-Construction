@@ -3,7 +3,7 @@
 	8. 	Add edit announcement content function
 		-- this branch
 	6. 	Upload attchment in announcement
-		-- this branch
+		-- finished
 	7. 	Automatically generate fill up date data
 		-- this branch
 	8. 	Selecting style in Announce page
@@ -12,11 +12,13 @@
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
 	12. Add a custom brighter/darker function
-		-- processing
+		-- finished
 	13. Fix the bug that color will white out when repeatedly click
-		-- processing
+		-- finished
 	14. Cancel before save
 		-- processing
+	15. Auto append new update area after attachment update
+		-- finished
 
 
 ---
