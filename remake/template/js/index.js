@@ -47,7 +47,7 @@ const Delivery = (address) =>{
 	const reply = response()
 	return reply
 }
-const upload = (data) =>{
+const upload = async(data) =>{
 	const hostname = 'http://10.6.11.17:3000/upload'
 	const content = {
 		headers:{
@@ -59,7 +59,7 @@ const upload = (data) =>{
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
 			fetch(hostname,content).then((res)=>{
-				resolve(res)
+				resolve(res.text())
 			})
 		})
 		return output

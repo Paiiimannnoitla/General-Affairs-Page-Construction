@@ -50,14 +50,14 @@ const ancFunc = ()=>{
 		const isUpload = e.classList.contains('upload-btn')
 		if(isUpload){
 			if(e.files.length){
-				const btn = document.getElementById('send-btn')
+				const td = e.parentNode
+				const btn = td.querySelector('.send-btn')
 				if(btn){
 					btn.remove()
 				}
-				const td = e.parentNode
 				const content = `
 					<br><input class='edit-mode upload-btn' type='file'>
-					<p id='send-btn'>Upload</p>`
+					<p class='send-btn'>Upload</p>`
 				td.insertAdjacentHTML('beforeend',content)
 			}
 		}	
@@ -68,17 +68,17 @@ const ancFunc = ()=>{
 	})
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
-		const isUpload = event.target.id == 'send-btn'
+		const isUpload = event.target.classList.contains('send-btn')
 		if(isUpload){
 			const td = e.parentNode
 			const fileArr = td.querySelectorAll('.upload-btn')
-			console.log(fileArr)
 			const receipt = []
 			for(var i=0;i<fileArr.length;i++){
 				const f = fileArr[i].files
 				if(f.length){
 					const cargo = await pack(f,'announce')
 					receipt[i] = await upload(cargo)
+					//const apple = await upload(cargo)
 				}			
 			}
 			console.log(receipt)

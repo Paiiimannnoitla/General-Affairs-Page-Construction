@@ -40,9 +40,7 @@ app.get('/',(req,res)=>{
 	}
 })*/
 /*
-app.post('/',(req,res)=>{
-	console.log('post')
-	console.log(req.body)
+app.post('/apple',(req,res)=>{
 	res.send('apple')
 	res.end()
 })*/
@@ -103,13 +101,16 @@ app.post('/post/:pagename',(req,res)=>{
 	fs.writeFileSync('./template/' + pagename + 'bk.html',html)
 	res.send(true)
 })
-app.post('/upload',(req,res)=>{
+app.post('/upload',async(req,res)=>{
+	
 	const address = req.body['address']
 	const data = req.body['file']
 	const string = Buffer.from(data)	
 	const name = req.body['name']
-	fs.writeFileSync('./download/' + address + '/' + name,string)
-	res.send(true)
+	const path = './download/' + address + '/' + name
+	fs.writeFileSync(path,string)	
+	res.send(path)
+	res.end()
 })
 app.get('/download/:filename',(req,res)=>{
 	const hostname = 'download/'

@@ -1,7 +1,7 @@
 @@@Road Map
 	1. 	Change http to https
 	8. 	Add edit announcement content function
-		-- this branch
+		-- finished
 	7. 	Automatically generate fill up date data
 		-- this branch
 	8. 	Selecting style in Announce page
@@ -13,13 +13,20 @@
 		-- finished
 	16. return downloadable url 
 		-- processing
-
+	17. Remove upload button when unedit
+		-- processing
+	18. Add duplicate detection function
+		-- processing
+	19. Add edit-off to upload button
+		-- processing
 
 ---
 	## 2023.08.23		version 0.1.8 --Announce-build
 	-- Bug fix
 	# Added
 	1. Add a upload button in each attachment area for uploading control
+		-- finished
+	2. Return downloadable url
 		-- finished
 	# Fixed
 	1. Remove editable content in announce page
