@@ -16,14 +16,17 @@
 
 
 ---
-	## 2023.08.23		version 0.2.1 --Announce-build
+	## 2023.08.23		version 0.1.8 --Announce-build
 	-- Bug fix
+	# Added
+	1. Add a upload button in each attachment area for uploading control
+		-- finished
 	# Fixed
 	1. Remove editable content in announce page
 		-- finished
 	
 ---
-	## 2023.08.21		version 0.2.0 --Announce-build
+	## 2023.08.21		version 0.1.7 --Announce-build
 	-- Function implementation
 	-- Function enhancement
 	# Added

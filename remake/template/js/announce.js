@@ -45,20 +45,44 @@ const ancFunc = ()=>{
 		}
 	})
 	//Side; Upload and auto increment
-	document.getElementById('anc-main').addEventListener('change',async(event)=>{
+	document.getElementById('anc-main').addEventListener('change',(event)=>{
 		const e = event.target
 		const isUpload = e.classList.contains('upload-btn')
 		if(isUpload){
 			if(e.files.length){
+				const btn = document.getElementById('send-btn')
+				if(btn){
+					btn.remove()
+				}
 				const td = e.parentNode
-				const content = `<br><input class='edit-mode upload-btn' type='file'>`
+				const content = `
+					<br><input class='edit-mode upload-btn' type='file'>
+					<p id='send-btn'>Upload</p>`
 				td.insertAdjacentHTML('beforeend',content)
 			}
-		}			
+		}	
 		//const f = document.getElementById('testupload')
 		//console.log(event.target)
 		//const cargo = await pack(f.files,'announce')
 		//upload(cargo)
+	})
+	document.getElementById('anc-main').addEventListener('click',async(event)=>{
+		const e = event.target
+		const isUpload = event.target.id == 'send-btn'
+		if(isUpload){
+			const td = e.parentNode
+			const fileArr = td.querySelectorAll('.upload-btn')
+			console.log(fileArr)
+			const receipt = []
+			for(var i=0;i<fileArr.length;i++){
+				const f = fileArr[i].files
+				if(f.length){
+					const cargo = await pack(f,'announce')
+					receipt[i] = await upload(cargo)
+				}			
+			}
+			console.log(receipt)
+		}
 	})
 }
 const ancInit = async()=>{

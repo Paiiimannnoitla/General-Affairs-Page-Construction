@@ -99,7 +99,7 @@ app.post('/test', (req, res)=>{
 app.post('/post/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
 	const html = req.body['html']
-	console.log(html)
+	//console.log(html)
 	fs.writeFileSync('./template/' + pagename + 'bk.html',html)
 	res.send(true)
 })
