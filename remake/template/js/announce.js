@@ -19,7 +19,11 @@ const ancFunc = ()=>{
 	uxLoginCheck()
 	//Side: Unselect function
 	document.getElementById('unedit-btn').addEventListener('click',()=>{
-		console.log('cancel')
+		const cellArr = document.querySelectorAll('td,th')
+		for(var i=0;i<cellArr.length;i++){
+			const e = cellArr[i]
+			e.removeAttribute('contenteditable')
+		}
 	})
 	//Side: Publish new announcement
 	document.getElementById('new-btn').addEventListener('click',()=>{

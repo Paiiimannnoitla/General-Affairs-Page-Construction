@@ -2,8 +2,6 @@
 	1. 	Change http to https
 	8. 	Add edit announcement content function
 		-- this branch
-	6. 	Upload attchment in announcement
-		-- finished
 	7. 	Automatically generate fill up date data
 		-- this branch
 	8. 	Selecting style in Announce page
@@ -11,16 +9,19 @@
 	10. Update the announcement given by colleagues.
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
-	12. Add a custom brighter/darker function
-		-- finished
-	13. Fix the bug that color will white out when repeatedly click
-		-- finished
 	14. Cancel before save
-		-- processing
-	15. Auto append new update area after attachment update
 		-- finished
+	16. return downloadable url 
+		-- processing
 
 
+---
+	## 2023.08.23		version 0.2.1 --Announce-build
+	-- Bug fix
+	# Fixed
+	1. Remove editable content in announce page
+		-- finished
+	
 ---
 	## 2023.08.21		version 0.2.0 --Announce-build
 	-- Function implementation
