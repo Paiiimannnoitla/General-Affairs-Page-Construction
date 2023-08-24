@@ -30,6 +30,8 @@
 	# Fixed
 	1. Fix the bug that sometimes when unedit may lead to selected-related error
 		-- finished
+	2. Fix the attatchment of announce page can be edit issue
+		-- finished
 ---
 	## 2023.08.23		version 0.1.8 --Announce-build
 	-- Bug fix

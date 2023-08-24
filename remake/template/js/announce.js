@@ -30,7 +30,7 @@ const ancFunc = ()=>{
 		const content = `		<tr>
 			<td contenteditable='true'>Date</td>
 			<td contenteditable='true'>Announcement</td>
-			<td><input class='edit-mode upload-btn' type='file'></td>
+			<td class='edit-off'><input class='edit-mode upload-btn' type='file'></td>
 		</tr>`
 		const main = document.getElementById('anc-main')
 		const data = main.innerHTML
@@ -82,11 +82,11 @@ const ancFunc = ()=>{
 				const r = receipt[i]
 				const arr = r.split('/')
 				const name = arr[arr.length-1]
-				const url = `<p id='` + r + `' class='read-mode hide'>` + name + `</p>`
+				const url = `<p id='` + r + `' class='anc-link'>` + name + `</p>`
 				content = content + url
 			}
 			console.log(content)
-			td.innerHTML = content
+			td.insertAdjacentHTML('afterbegin',content)
 		}
 	})
 }
