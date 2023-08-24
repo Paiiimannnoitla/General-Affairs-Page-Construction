@@ -76,7 +76,6 @@ const ancFunc = ()=>{
 					receipt[i] = await upload(cargo)
 				}			
 			}
-			console.log(receipt)
 			let content = ''
 			for(var i=0;i<receipt.length;i++){
 				const r = receipt[i]
@@ -85,7 +84,10 @@ const ancFunc = ()=>{
 				const url = `<p id='` + r + `' class='anc-link'>` + name + `</p>`
 				content = content + url
 			}
-			console.log(content)
+			const linkArr = td.querySelectorAll('.anc-link')
+			for(var i=0;i<linkArr.length;i++){
+				linkArr[i].remove()
+			}
 			td.insertAdjacentHTML('afterbegin',content)
 		}
 	})

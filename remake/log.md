@@ -14,7 +14,7 @@
 	18. Add duplicate detection function
 		-- processing
 	19. Add edit-off to upload button
-		-- processing
+		-- finished
 
 ---
 	## 2023.08.24		version 0.1.9 --Announce-build
@@ -31,6 +31,8 @@
 	1. Fix the bug that sometimes when unedit may lead to selected-related error
 		-- finished
 	2. Fix the attatchment of announce page can be edit issue
+		-- finished
+	3. Fix the attatchment display duplicate problem
 		-- finished
 ---
 	## 2023.08.23		version 0.1.8 --Announce-build
