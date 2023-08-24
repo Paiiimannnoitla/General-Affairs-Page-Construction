@@ -21,6 +21,13 @@
 		-- processing
 
 ---
+	## 2023.08.24		version 0.1.9 --Announce-build
+	-- Rewrite function
+	# Changed
+	1. Rewrite several function from explicit hostname declaim to central one for public test
+		-- finished
+	
+---
 	## 2023.08.23		version 0.1.8 --Announce-build
 	-- Bug fix
 	# Added

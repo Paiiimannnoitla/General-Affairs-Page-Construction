@@ -1,6 +1,7 @@
+const host = 'http://10.6.11.17:3000/'
 const Postman = (id,func='page') =>{
 	const mode = func + '/'
-	const hostname = 'http://10.6.11.17:3000/' + mode + id
+	const hostname = host + mode + id
 	const content = {
 		//body:data,
 		headers:{
@@ -28,7 +29,7 @@ const Delivery = (address) =>{
 	const main = document.getElementById('main-display')
 	const html = {'html':main.innerHTML}
 	const data = JSON.stringify(html)
-	const hostname = 'http://10.6.11.17:3000/post/' + address
+	const hostname = host + 'post/' + address
 	const content = {
 		headers:{
 			'content-type':'application/json'
@@ -48,7 +49,7 @@ const Delivery = (address) =>{
 	return reply
 }
 const upload = async(data) =>{
-	const hostname = 'http://10.6.11.17:3000/upload'
+	const hostname = host + 'upload/'
 	const content = {
 		headers:{
 			'content-type':'application/json'

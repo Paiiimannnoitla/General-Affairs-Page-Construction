@@ -108,6 +108,7 @@ app.post('/upload',async(req,res)=>{
 	const string = Buffer.from(data)	
 	const name = req.body['name']
 	const path = './download/' + address + '/' + name
+	//const http = 'http://10.6.11.17:3000/' + address + '/' + name
 	fs.writeFileSync(path,string)	
 	res.send(path)
 	res.end()
