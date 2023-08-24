@@ -61,10 +61,6 @@ const ancFunc = ()=>{
 				td.insertAdjacentHTML('beforeend',content)
 			}
 		}	
-		//const f = document.getElementById('testupload')
-		//console.log(event.target)
-		//const cargo = await pack(f.files,'announce')
-		//upload(cargo)
 	})
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
@@ -78,10 +74,19 @@ const ancFunc = ()=>{
 				if(f.length){
 					const cargo = await pack(f,'announce')
 					receipt[i] = await upload(cargo)
-					//const apple = await upload(cargo)
 				}			
 			}
 			console.log(receipt)
+			let content = ''
+			for(var i=0;i<receipt.length;i++){
+				const r = receipt[i]
+				const arr = r.split('/')
+				const name = arr[arr.length-1]
+				const url = `<p id='` + r + `' class='read-mode hide'>` + name + `</p>`
+				content = content + url
+			}
+			console.log(content)
+			td.innerHTML = content
 		}
 	})
 }

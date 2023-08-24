@@ -19,6 +19,8 @@ const uxEdit = ()=>{
 		if(isEdit){
 			const editbtn = document.getElementById('edit-btn')
 			const btnArr = document.querySelectorAll('.edit-mode')
+			const readArr = document.querySelectorAll('.read-mode')
+			hide(readArr)
 			hide(editbtn)
 			unhide(btnArr)	
 		}
@@ -26,12 +28,15 @@ const uxEdit = ()=>{
 		if(isUnEdit){
 			const editbtn = document.getElementById('edit-btn')
 			const btnArr = document.querySelectorAll('.edit-mode')
+			const readArr = document.querySelectorAll('.read-mode')
 			const selected = uxSelect()
+			unhide(readArr)
 			unhide(editbtn)			
 			hide(btnArr)		
 			bright(false)
-			selected.classList.remove('selected')
-			
+			if(selected){
+				selected.classList.remove('selected')
+			}						
 		}
 	})
 }

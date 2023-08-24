@@ -1,7 +1,5 @@
 @@@Road Map
 	1. 	Change http to https
-	8. 	Add edit announcement content function
-		-- finished
 	7. 	Automatically generate fill up date data
 		-- this branch
 	8. 	Selecting style in Announce page
@@ -9,8 +7,6 @@
 	10. Update the announcement given by colleagues.
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
-	14. Cancel before save
-		-- finished
 	16. return downloadable url 
 		-- processing
 	17. Remove upload button when unedit
@@ -22,11 +18,18 @@
 
 ---
 	## 2023.08.24		version 0.1.9 --Announce-build
+	-- Function enhancement
 	-- Rewrite function
+	-- Bug fix
+	# Added
+	1. Add attatchment after uploading
+		-- processing
 	# Changed
 	1. Rewrite several function from explicit hostname declaim to central one for public test
 		-- finished
-	
+	# Fixed
+	1. Fix the bug that sometimes when unedit may lead to selected-related error
+		-- finished
 ---
 	## 2023.08.23		version 0.1.8 --Announce-build
 	-- Bug fix
