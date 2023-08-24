@@ -15,6 +15,8 @@
 		-- processing
 	19. Add edit-off to upload button
 		-- finished
+	20. Item selection function
+		-- processing
 
 ---
 	## 2023.08.24		version 0.1.9 --Announce-build
@@ -24,6 +26,8 @@
 	# Added
 	1. Add attatchment after uploading
 		-- processing
+	2. Add individual item selection function
+		-- procesing
 	# Changed
 	1. Rewrite several function from explicit hostname declaim to central one for public test
 		-- finished

@@ -27,8 +27,12 @@ const unhide = (arr)=>{
 	}
 }
 
-const bright = (dark = true)=>{
-	const cell = uxSelect()
+const bright = (dark=true,isItem=false)=>{
+	let cell = uxSelect()
+	if(isItem){
+		cell = uxSelect(false)
+	}
+	//const cell = uxSelect()
 	if(cell){
 		const colorCode = window.getComputedStyle(cell)['background']
 		const upper = colorCode.indexOf('(') + 1

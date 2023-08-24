@@ -81,7 +81,7 @@ const ancFunc = ()=>{
 				const r = receipt[i]
 				const arr = r.split('/')
 				const name = arr[arr.length-1]
-				const url = `<p id='` + r + `' class='anc-link'>` + name + `</p>`
+				const url = `<p id='` + r + `' class='anc-link select-item'>` + name + `</p>`
 				content = content + url
 			}
 			const linkArr = td.querySelectorAll('.anc-link')

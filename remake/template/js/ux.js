@@ -100,11 +100,21 @@ const uxSelectInit = ()=>{
 				if(!isHeader){
 					cell = event.target.closest('td')
 				}
-				const isCell = cell.tagName == 'TD' || 'TH'
+				//const isCell = cell.tagName == 'TD' || 'TH'
+				const cellArr = []
+				cellArr[0] = cell.tagName == 'TD'
+				cellArr[1] = cell.tagName == 'TH'
+				//cellArr[2] = event.target.classList.contains('select-item')
+				let isCell = 0
+				for(var i=0;i<cellArr.length;i++){
+					isCell = isCell + cellArr[i]
+				}
 				if(isCell){
+					/*
 					const tr = cell.closest('tr')
 					const x = cell.cellIndex
 					const y = tr.rowIndex
+					*/
 					const selected = document.querySelector('.selected')
 					bright(false)
 					cell.classList.add('selected')					
@@ -113,20 +123,44 @@ const uxSelectInit = ()=>{
 					}	
 					bright()
 				}
+				// Option select
+				const itemArr = []
+				itemArr[0] = event.target.classList.contains('select-item')
+				let isItem = 0
+				for(var i=0;i<itemArr.length;i++){
+					isItem = isItem + itemArr[i]
+				}
+				if(isItem){
+					const selected = document.querySelector('.item-selected')
+					bright(false,true)
+					event.target.classList.add('item-selected')
+					if(selected){
+						selected.classList.remove('item-selected')
+					}
+					bright(undefined,true)
+				}
 			}
 		}
 	})
 }
 // Select function
-const uxSelect = ()=>{
+const uxSelect = (cell=true)=>{
 	const id = document.querySelector('.function-area').id
-
-	const selected = document.querySelectorAll('.selected')
+	
+	let selected = document.querySelectorAll('.selected')
 	if(selected.length){
 		if(selected.length==1){
 			return selected[0]
 		}else{
-			return selected
+			if(cell){
+				return selected
+			}else{
+				selected = document.querySelectorAll('.item-selected')
+				if(selected.length){
+					return selected				
+				}
+
+			}			
 		}
 	}else{
 		return false
