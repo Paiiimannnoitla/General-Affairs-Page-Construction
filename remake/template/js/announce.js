@@ -56,7 +56,7 @@ const ancFunc = ()=>{
 					btn.remove()
 				}
 				const content = `
-					<br><input class='edit-mode upload-btn' type='file'>
+					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
 					<p class='send-btn'>Upload</p>`
 				td.insertAdjacentHTML('beforeend',content)
 			}

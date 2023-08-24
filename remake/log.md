@@ -34,6 +34,8 @@
 		-- finished
 	3. Fix the attatchment display duplicate problem
 		-- finished
+	4. Fix the line-break holds space even not in edit mode
+		-- finished
 ---
 	## 2023.08.23		version 0.1.8 --Announce-build
 	-- Bug fix
