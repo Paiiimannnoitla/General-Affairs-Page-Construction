@@ -20,7 +20,13 @@
 		
 ---
 	## 2023.08.25		version 0.2.0 -- Announce-build
+	-- Function implementation
 	-- Style change
+	# Added
+	1. Add extDate function to return current year-month-day information
+		-- finished
+	2. Auto fill up date information when generating announcement
+		-- finished
 	# Change
 	1. No longer use bright function on item selection, use border instead
 		-- finished

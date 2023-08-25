@@ -58,3 +58,12 @@ const bright = (dark=true)=>{
 	}
 	
 }
+
+const extDate = ()=>{
+	const today = new Date()
+	const d = today.getDate()
+	const m = today.getMonth() + 1
+	const y = today.getFullYear()
+	const date = y + '/' + m + '/' + d
+	return date
+}
