@@ -48,7 +48,7 @@ const ancFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
-	//Side; Upload and auto increment
+	//Side: Upload and auto increment
 	document.getElementById('anc-main').addEventListener('change',(event)=>{
 		const e = event.target
 		const isUpload = e.classList.contains('upload-btn')
@@ -61,11 +61,12 @@ const ancFunc = ()=>{
 				}
 				const content = `
 					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
-					<p class='send-btn'>Upload</p>`
+					<p class='send-btn edit-mode'>Upload</p>`
 				td.insertAdjacentHTML('beforeend',content)
 			}
 		}	
 	})
+	//Side: Uploading attachment handler
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
 		const isUpload = event.target.classList.contains('send-btn')
@@ -78,7 +79,6 @@ const ancFunc = ()=>{
 			for(var i=0;i<fileArr.length;i++){
 				const f = fileArr[i].files
 				if(f.length){
-					//const cargo = await pack(f,'announce')
 					const cargo = await pack(f,'announce',id)
 					receipt[i] = await upload(cargo)
 				}			
@@ -99,6 +99,7 @@ const ancFunc = ()=>{
 		}
 	})
 }
+// Initializer
 const ancInit = async()=>{
 	const hasBuild = await ancBuild()
 	if(hasBuild){

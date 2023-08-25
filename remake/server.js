@@ -97,7 +97,6 @@ app.post('/test', (req, res)=>{
 app.post('/post/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
 	const html = req.body['html']
-	//console.log(html)
 	fs.writeFileSync('./template/' + pagename + 'bk.html',html)
 	res.send(true)
 })
@@ -110,7 +109,6 @@ app.post('/upload',async(req,res)=>{
 	const id = req.body['id']
 	const path = './download/' + address + '/' + id 
 	fs.mkdirSync(path, { recursive: true })
-	//const http = 'http://10.6.11.17:3000/' + address + '/' + name
 	fs.writeFileSync(path + '/'+ name,string)	
 	res.send(address + '/' + id + '/' + name)
 	res.end()

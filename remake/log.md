@@ -10,7 +10,7 @@
 	16. return downloadable url 
 		-- processing
 	17. Remove upload button when unedit
-		-- processing
+		-- finished
 	18. Add duplicate detection function
 		-- no longer need
 	20. Item selection function
@@ -38,6 +38,8 @@
 	1. No longer use bright function on item selection, use border instead
 		-- finished
 	2. Add index at announce page
+		-- finished
+	3. Add edit-mode tag to upload button 
 		-- finished
 	
 ---
