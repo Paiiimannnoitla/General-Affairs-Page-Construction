@@ -113,9 +113,14 @@ app.post('/upload',async(req,res)=>{
 	res.send(address + '/' + id + '/' + name)
 	res.end()
 })
-app.get('/download/:filename',(req,res)=>{
+app.get('/download/:page/:id/:filename',(req,res)=>{
 	const hostname = 'download/'
-	res.download(hostname + req.params.num)
+	const page = req.params.page
+	const id = req.params.id
+	const filename = req.params.filename
+	const path = hostname + page + '/' + id + '/' + filename
+	console.log(req.params.filename)
+	res.download(path)
 })
 app.listen(3000, function () {
   console.log('---Server Start---')

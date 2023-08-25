@@ -8,13 +8,13 @@
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
 	16. return downloadable url 
-		-- processing
+		-- finished
 	17. Remove upload button when unedit
 		-- finished
 	18. Add duplicate detection function
 		-- no longer need
 	20. Item selection function
-		-- processing
+		-- finished
 	21. Individual folder for each announcement
 		-- finished
 	22. Remove un-related data when uploading
@@ -34,12 +34,18 @@
 		-- finished
 	4. Create individual folder by announcement id for each announcement
 		-- finished
+	5. Add download function when link is trigger
+		-- finished
 	# Change
 	1. No longer use bright function on item selection, use border instead
 		-- finished
 	2. Add index at announce page
 		-- finished
 	3. Add edit-mode tag to upload button 
+		-- finished
+	4. Hover also trigger link checked
+		-- finished
+	5. Add cursor-pointer to link
 		-- finished
 	
 ---

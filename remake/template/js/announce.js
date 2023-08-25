@@ -98,6 +98,21 @@ const ancFunc = ()=>{
 			td.insertAdjacentHTML('afterbegin',content)
 		}
 	})
+	//Side: Download attachment through Link
+	
+	document.getElementById('anc-main').addEventListener('click',async(event)=>{
+		const e = event.target
+		const isLink = event.target.classList.contains('anc-link')
+		if(isLink){
+			const href = window.location.href + 'download/'
+			const dlurl = e.id
+			const url = href + dlurl 
+			const w = window.open(url)
+			console.log(url)
+			w.blur()
+			window.focus()
+		}
+	})
 }
 // Initializer
 const ancInit = async()=>{
