@@ -71,3 +71,6 @@ ul{
 .hide{
 	display:			none;
 }
+.item-selected{
+	border-style:		solid;
+}

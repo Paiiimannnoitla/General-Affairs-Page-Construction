@@ -132,12 +132,10 @@ const uxSelectInit = ()=>{
 				}
 				if(isItem){
 					const selected = document.querySelector('.item-selected')
-					bright(false,true)
 					event.target.classList.add('item-selected')
 					if(selected){
 						selected.classList.remove('item-selected')
 					}
-					bright(undefined,true)
 				}
 			}
 		}

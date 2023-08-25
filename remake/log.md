@@ -12,12 +12,19 @@
 	17. Remove upload button when unedit
 		-- processing
 	18. Add duplicate detection function
-		-- processing
-	19. Add edit-off to upload button
-		-- finished
+		-- no longer need
 	20. Item selection function
 		-- processing
-
+	21. Individual folder for each announcement
+		-- processing
+		
+---
+	## 2023.08.25		version 0.2.0 -- Announce-build
+	-- Style change
+	# Change
+	1. No longer use bright function on item selection, use border instead
+		-- finished
+	
 ---
 	## 2023.08.24		version 0.1.9 --Announce-build
 	-- Function enhancement
