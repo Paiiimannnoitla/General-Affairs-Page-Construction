@@ -24,6 +24,8 @@
 	# Change
 	1. No longer use bright function on item selection, use border instead
 		-- finished
+	2. Add index at announce page
+		-- finished
 	
 ---
 	## 2023.08.24		version 0.1.9 --Announce-build

@@ -28,6 +28,7 @@ const ancFunc = ()=>{
 	//Side: Publish new announcement
 	document.getElementById('new-btn').addEventListener('click',()=>{
 		const content = `		<tr>
+			<td class='edit-off'>Index</td>
 			<td contenteditable='true'>Date</td>
 			<td contenteditable='true'>Announcement</td>
 			<td class='edit-off'><input class='edit-mode upload-btn' type='file'></td>
