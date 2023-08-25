@@ -71,12 +71,15 @@ const ancFunc = ()=>{
 		const isUpload = event.target.classList.contains('send-btn')
 		if(isUpload){
 			const td = e.parentNode
+			const tr = td.parentNode
+			const id = tr.children[0].innerHTML
 			const fileArr = td.querySelectorAll('.upload-btn')
 			const receipt = []
 			for(var i=0;i<fileArr.length;i++){
 				const f = fileArr[i].files
 				if(f.length){
-					const cargo = await pack(f,'announce')
+					//const cargo = await pack(f,'announce')
+					const cargo = await pack(f,'announce',id)
 					receipt[i] = await upload(cargo)
 				}			
 			}

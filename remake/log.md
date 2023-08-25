@@ -16,11 +16,14 @@
 	20. Item selection function
 		-- processing
 	21. Individual folder for each announcement
+		-- finished
+	22. Remove un-related data when uploading
 		-- processing
 		
 ---
 	## 2023.08.25		version 0.2.0 -- Announce-build
 	-- Function implementation
+	-- Function enhancement
 	-- Style change
 	# Added
 	1. Add extDate function to return current year-month-day information
@@ -28,6 +31,8 @@
 	2. Auto fill up date information when generating announcement
 		-- finished
 	3. Add index auto generated function by counting the number of announcement
+		-- finished
+	4. Create individual folder by announcement id for each announcement
 		-- finished
 	# Change
 	1. No longer use bright function on item selection, use border instead

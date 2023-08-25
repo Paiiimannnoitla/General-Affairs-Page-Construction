@@ -107,10 +107,12 @@ app.post('/upload',async(req,res)=>{
 	const data = req.body['file']
 	const string = Buffer.from(data)	
 	const name = req.body['name']
-	const path = './download/' + address + '/' + name
+	const id = req.body['id']
+	const path = './download/' + address + '/' + id 
+	fs.mkdirSync(path, { recursive: true })
 	//const http = 'http://10.6.11.17:3000/' + address + '/' + name
-	fs.writeFileSync(path,string)	
-	res.send(address + '/' + name)
+	fs.writeFileSync(path + '/'+ name,string)	
+	res.send(address + '/' + id + '/' + name)
 	res.end()
 })
 app.get('/download/:filename',(req,res)=>{

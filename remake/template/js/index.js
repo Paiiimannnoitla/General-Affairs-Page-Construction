@@ -68,7 +68,7 @@ const upload = async(data) =>{
 	const reply = response()
 	return reply
 }
-const pack = async(e,address) =>{
+const pack = async(e,address,id) =>{
 	const f = e[0]
 	const filename = f['name']
 	const fileLoader = (f)=>{
@@ -84,7 +84,7 @@ const pack = async(e,address) =>{
 	const ajaxconvert = (arr)=>{
 		const uintArr = new Uint8Array(arr)
 		const sArr = Array.from(uintArr)
-		const data = {'file':sArr,'name':filename,'address':address}
+		const data = {'file':sArr,'name':filename,'address':address,'id':id}
 		const json = JSON.stringify(data)
 		return json
 	}
