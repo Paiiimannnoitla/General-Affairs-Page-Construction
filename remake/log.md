@@ -27,6 +27,8 @@
 		-- finished
 	2. Auto fill up date information when generating announcement
 		-- finished
+	3. Add index auto generated function by counting the number of announcement
+		-- finished
 	# Change
 	1. No longer use bright function on item selection, use border instead
 		-- finished

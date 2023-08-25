@@ -28,8 +28,10 @@ const ancFunc = ()=>{
 	//Side: Publish new announcement
 	document.getElementById('new-btn').addEventListener('click',()=>{
 		const date = extDate()
-		const content = `		<tr>
-			<td class='edit-off'>Index</td>
+		const ancArr = document.querySelectorAll('.anc-unit')
+		const id = ancArr.length + 1
+		const content = `		<tr class='anc-unit'>
+			<td class='edit-off'>` + id + `</td>
 			<td class='edit-off'>` + date + `</td>
 			<td contenteditable='true'>Announcement</td>
 			<td class='edit-off'><input class='edit-mode upload-btn' type='file'></td>
