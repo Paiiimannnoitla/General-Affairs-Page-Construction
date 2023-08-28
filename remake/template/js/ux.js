@@ -53,6 +53,17 @@ const uxSave = ()=>{
 		}		
 	})
 }
+// Delete function
+const uxDelete = ()=>{
+	document.getElementById('main-display').addEventListener('click',(event)=>{
+		const delbtn = event.target.id == 'delete-btn'
+		if(delbtn){
+			const selected = uxSelect()
+			const tr = selected.closest('tr')
+			tr.remove()
+		}
+	})
+}
 // Remain Login status
 const uxLoginCheck = ()=>{
 	if(isLogin){
@@ -178,6 +189,7 @@ const uxInit = ()=>{
 	uxLogin()
 	uxEdit()
 	uxSave()
+	uxDelete()
 	uxSelectInit()
 	uxStyle()
 }

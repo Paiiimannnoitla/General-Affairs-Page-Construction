@@ -1,28 +1,27 @@
 @@@Road Map
 	1. 	Change http to https
-	7. 	Automatically generate fill up date data
-		-- this branch
 	8. 	Selecting style in Announce page
 		-- this branch
 	10. Update the announcement given by colleagues.
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
-	16. return downloadable url 
-		-- finished
-	17. Remove upload button when unedit
-		-- finished
 	18. Add duplicate detection function
 		-- no longer need
-	20. Item selection function
+	24. Add announce delete function
+		-- processing
+	25. Bug:Add delete row button to member page
+		-- this branch
+	26. When save should move all related files and template to recycle bin instead of overriding
+	27. Bug:When add new announcement sometimes index may be wrong
+		-- processing
+	28. File should be move to recycle bin before delete after deletion in announce page
+		
+---
+	## 2023.08.29		version 0.2.2 -- Announce-build
+	-- Function implementatation
+	# Added
+	1. Add delete button to handle table row deletion
 		-- finished
-	21. Individual folder for each announcement
-		-- finished
-	22. Remove un-related data when uploading
-		-- finished
-	23. Prevent screen flickering when download
-		-- finished
-
-
 ---
 	## 2023.08.28		version 0.2.1 -- Announce-build
 	-- Function implementation
