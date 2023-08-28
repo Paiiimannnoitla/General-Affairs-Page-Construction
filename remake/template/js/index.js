@@ -68,6 +68,17 @@ const upload = async(data) =>{
 	const reply = response()
 	return reply
 }
+const download = async(url,name)=>{
+	const response = await fetch(url)
+	const data = await response.blob()
+	const dlink = window.URL.createObjectURL(data)
+	const e = document.createElement('a')
+	e.href = dlink
+	e.download = name
+	document.body.appendChild(e)
+	e.click()
+	e.remove()
+}
 const pack = async(e,address,id) =>{
 	const f = e[0]
 	const filename = f['name']
