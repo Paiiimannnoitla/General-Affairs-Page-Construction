@@ -18,7 +18,7 @@
 	21. Individual folder for each announcement
 		-- finished
 	22. Remove un-related data when uploading
-		-- processing
+		-- finished
 	23. Prevent screen flickering when download
 		-- finished
 
@@ -31,6 +31,8 @@
 	1. Add download function to handle all download request
 		-- finished
 	2. Rewrite download process by fetch and buffer for no flickering
+		-- finished
+	3. Add file order in pack function and use it to be the signal of clearing directory
 		-- finished
 ---
 	## 2023.08.25		version 0.2.0 -- Announce-build

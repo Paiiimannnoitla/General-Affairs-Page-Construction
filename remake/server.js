@@ -107,7 +107,12 @@ app.post('/upload',async(req,res)=>{
 	const string = Buffer.from(data)	
 	const name = req.body['name']
 	const id = req.body['id']
+	const isDelete = !req.body['order']
 	const path = './download/' + address + '/' + id 
+	if(isDelete){
+		fs.rmSync(path,{ recursive:true,force:true})
+	}
+	
 	fs.mkdirSync(path, { recursive: true })
 	fs.writeFileSync(path + '/'+ name,string)	
 	res.send(address + '/' + id + '/' + name)
@@ -119,7 +124,6 @@ app.get('/download/:page/:id/:filename',(req,res)=>{
 	const id = req.params.id
 	const filename = req.params.filename
 	const path = hostname + page + '/' + id + '/' + filename
-	console.log(req.params.filename)
 	res.download(path)
 })
 app.listen(3000, function () {

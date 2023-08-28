@@ -79,7 +79,7 @@ const download = async(url,name)=>{
 	e.click()
 	e.remove()
 }
-const pack = async(e,address,id) =>{
+const pack = async(e,address,id,order) =>{
 	const f = e[0]
 	const filename = f['name']
 	const fileLoader = (f)=>{
@@ -95,7 +95,7 @@ const pack = async(e,address,id) =>{
 	const ajaxconvert = (arr)=>{
 		const uintArr = new Uint8Array(arr)
 		const sArr = Array.from(uintArr)
-		const data = {'file':sArr,'name':filename,'address':address,'id':id}
+		const data = {'file':sArr,'name':filename,'address':address,'id':id,'order':order}
 		const json = JSON.stringify(data)
 		return json
 	}

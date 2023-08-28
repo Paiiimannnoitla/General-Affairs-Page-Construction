@@ -79,7 +79,7 @@ const ancFunc = ()=>{
 			for(var i=0;i<fileArr.length;i++){
 				const f = fileArr[i].files
 				if(f.length){
-					const cargo = await pack(f,'announce',id)
+					const cargo = await pack(f,'announce',id,i)
 					receipt[i] = await upload(cargo)
 				}			
 			}
