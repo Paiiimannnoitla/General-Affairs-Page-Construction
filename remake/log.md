@@ -32,6 +32,8 @@
 		-- finished
 	2. Add a move to the top button for quickly browsing to the latest
 		-- finished
+	3. After publish a new announce auto move to the top
+		-- finished
 	# Changed
 	1. Rewrite index generating rule in publish function to ensure no id duplicate
 		-- finished

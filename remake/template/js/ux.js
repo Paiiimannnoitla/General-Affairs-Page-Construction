@@ -17,10 +17,10 @@ const uxMove = ()=>{
 	// Move to the top
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		const isTop = event.target.id == 'movetop-btn'
+		console.log(event.target.id)
 		if(isTop){
 			document.getElementById('main-display').scrollIntoView({behavior:'smooth'})
 		}
-		console.log('500')		
 	})
 }
 // Edit mode

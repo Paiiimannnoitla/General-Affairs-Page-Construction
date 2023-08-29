@@ -41,10 +41,9 @@ const ancFunc = ()=>{
 			<td class='edit-off'><input class='edit-mode upload-btn' type='file'></td>
 		</tr>`
 		last.insertAdjacentHTML('beforebegin',content)
-		//const latest = document.querySelector('.anc-unit')
-		//latest.scrollIntoView({behavior:'smooth'})
-		
-		
+		const movebtn = document.getElementById('movetop-btn')
+		event.target.id = 'movetop-btn'
+		movebtn.click()		
 	})
 	//Side: Content Edit
 	document.getElementById('edit-btn').addEventListener('click',()=>{
