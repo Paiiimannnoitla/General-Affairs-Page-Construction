@@ -15,6 +15,8 @@
 	28. File should be move to recycle bin before delete after deletion in announce page
 	29. Reverse the arrangement of announce
 		-- finished
+	30. Remove the warning when download file without https
+		-- processing
 ---
 	## 2023.08.29		version 0.2.2 -- Announce-build
 	-- Function implementatation
@@ -24,6 +26,8 @@
 		-- finished
 	# Changed
 	1. Rewrite index generating rule in publish function to ensure no id duplicate
+		-- finished
+	2. Rewrite the arrangement method by reverse order for more intuitive way
 		-- finished
 ---
 	## 2023.08.28		version 0.2.1 -- Announce-build

@@ -30,7 +30,7 @@ const ancFunc = ()=>{
 		const date = extDate()
 		const ancArr = document.querySelectorAll('.anc-unit')
 		//const id = ancArr.length + 1
-		const last = ancArr[ancArr.length-1]
+		const last = ancArr[0]
 		const lastid = last.children[0].innerHTML
 		const id = Number(lastid) + 1
 		const content = `		<tr class='anc-unit'>
@@ -39,9 +39,14 @@ const ancFunc = ()=>{
 			<td contenteditable='true'>Announcement</td>
 			<td class='edit-off'><input class='edit-mode upload-btn' type='file'></td>
 		</tr>`
-		const main = document.getElementById('anc-main')
-		const data = main.innerHTML
-		main.innerHTML = data + content
+		last.insertAdjacentHTML('beforebegin',content)
+		const latest = document.querySelector('.anc-unit')
+		latest.scrollIntoView({behavior:'smooth'})
+		
+		//const main = document.getElementById('anc-main')
+		//const data = main.innerHTML
+		//main.innerHTML = data + content
+		
 	})
 	//Side: Content Edit
 	document.getElementById('edit-btn').addEventListener('click',()=>{
