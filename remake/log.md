@@ -17,12 +17,20 @@
 		-- finished
 	30. Remove the warning when download file without https
 		-- processing
+	31. Make a move to the top button
+		-- finished
+	32. Make a move to the bottom button
+		-- processing
+	33. Make the announcement area non-overflow
+		-- processing
 ---
 	## 2023.08.29		version 0.2.2 -- Announce-build
 	-- Function implementatation
 	-- Rewrite function
 	# Added
 	1. Add delete button to handle table row deletion
+		-- finished
+	2. Add a move to the top button for quickly browsing to the latest
 		-- finished
 	# Changed
 	1. Rewrite index generating rule in publish function to ensure no id duplicate

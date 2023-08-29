@@ -12,9 +12,20 @@ const uxCheck = ()=>{
 		return false
 	}	
 }
+// Move Function
+const uxMove = ()=>{
+	// Move to the top
+	document.getElementById('main-display').addEventListener('click',(event)=>{
+		const isTop = event.target.id == 'movetop-btn'
+		if(isTop){
+			document.getElementById('main-display').scrollIntoView({behavior:'smooth'})
+		}
+		console.log('500')		
+	})
+}
 // Edit mode
 const uxEdit = ()=>{
-	document.getElementById('main-display').addEventListener('click',()=>{
+	document.getElementById('main-display').addEventListener('click',(event)=>{
 		const isEdit = event.target.id == 'edit-btn'
 		if(isEdit){
 			const editbtn = document.getElementById('edit-btn')
@@ -187,6 +198,7 @@ const uxStyle = ()=>{
 }
 const uxInit = ()=>{
 	uxLogin()
+	uxMove()
 	uxEdit()
 	uxSave()
 	uxDelete()

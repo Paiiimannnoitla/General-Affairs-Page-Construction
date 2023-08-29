@@ -25,6 +25,7 @@ const ancFunc = ()=>{
 			e.removeAttribute('contenteditable')
 		}
 	})
+	
 	//Side: Publish new announcement
 	document.getElementById('new-btn').addEventListener('click',()=>{
 		const date = extDate()
@@ -40,12 +41,9 @@ const ancFunc = ()=>{
 			<td class='edit-off'><input class='edit-mode upload-btn' type='file'></td>
 		</tr>`
 		last.insertAdjacentHTML('beforebegin',content)
-		const latest = document.querySelector('.anc-unit')
-		latest.scrollIntoView({behavior:'smooth'})
+		//const latest = document.querySelector('.anc-unit')
+		//latest.scrollIntoView({behavior:'smooth'})
 		
-		//const main = document.getElementById('anc-main')
-		//const data = main.innerHTML
-		//main.innerHTML = data + content
 		
 	})
 	//Side: Content Edit
