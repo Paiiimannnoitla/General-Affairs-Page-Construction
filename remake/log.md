@@ -5,22 +5,25 @@
 	10. Update the announcement given by colleagues.
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
-	18. Add duplicate detection function
-		-- no longer need
 	24. Add announce delete function
-		-- processing
+		-- finished
 	25. Bug:Add delete row button to member page
 		-- this branch
 	26. When save should move all related files and template to recycle bin instead of overriding
 	27. Bug:When add new announcement sometimes index may be wrong
-		-- processing
+		-- finished
 	28. File should be move to recycle bin before delete after deletion in announce page
-		
+	29. Reverse the arrangement of announce
+		-- finished
 ---
 	## 2023.08.29		version 0.2.2 -- Announce-build
 	-- Function implementatation
+	-- Rewrite function
 	# Added
 	1. Add delete button to handle table row deletion
+		-- finished
+	# Changed
+	1. Rewrite index generating rule in publish function to ensure no id duplicate
 		-- finished
 ---
 	## 2023.08.28		version 0.2.1 -- Announce-build

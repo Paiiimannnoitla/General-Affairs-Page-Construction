@@ -29,7 +29,10 @@ const ancFunc = ()=>{
 	document.getElementById('new-btn').addEventListener('click',()=>{
 		const date = extDate()
 		const ancArr = document.querySelectorAll('.anc-unit')
-		const id = ancArr.length + 1
+		//const id = ancArr.length + 1
+		const last = ancArr[ancArr.length-1]
+		const lastid = last.children[0].innerHTML
+		const id = Number(lastid) + 1
 		const content = `		<tr class='anc-unit'>
 			<td class='edit-off'>` + id + `</td>
 			<td class='edit-off'>` + date + `</td>
