@@ -17,13 +17,15 @@
 	33. Make the announcement area non-overflow
 		-- finished
 	34. Auto line break when announcement is too long
-		-- processing
-		
+		-- finished
+				
 ---
 	## 2023.08.30		version 0.2.3 -- Announce-build
 	-- Style change
 	# Changed
 	1. Separate the function-menu and table and make sure this work without interruption
+		-- finished
+	2. When the line is too long,break the lines
 		-- finished
 ---
 	## 2023.08.29		version 0.2.2 -- Announce-build

@@ -120,7 +120,6 @@ const uxSelectInit = ()=>{
 					cell = event.target.closest('td')
 				}
 				const cellArr = [] 
-				console.log(cell)
 				if(cell){
 					cellArr[0] = cell.tagName == 'TD'
 					cellArr[1] = cell.tagName == 'TH'

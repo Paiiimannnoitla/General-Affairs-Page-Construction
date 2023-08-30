@@ -54,22 +54,22 @@ table{
 }
 #announce td{
 	background:			rgb(226,241,253);
-	overflow-wrap:		break-word;
 }
 #anc-main{
 	width:				100%;
-	
 }
-#anc-th-id{
+.anc-id{
+	width:				10vw;	
+}
+.anc-date{
 	width:				10vw;
 }
-#anc-th-date{
-	width:				10vw;
-}
-#anc-th-content{
+.anc-content{
 	width:				40vw;
+	max-width:			40vw;
+	overflow-wrap:		break-word;
 }
-#anc-th-attatch{
+.anc-attatch{
 	width:				40vw;
 }
 ul{
