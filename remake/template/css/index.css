@@ -2,6 +2,7 @@ body{
 	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
 	user-select:		none;
+	height:				100vh;
 }
 #top-area{
 	height:				10%;
@@ -43,11 +44,33 @@ table{
 #member td{
 	background:			rgb(240,255,255);
 }
+#announce{
+	height:				60vh;
+	width:				100vw;
+	overflow:			auto;
+}
 #announce th{
 	background:			rgb(225,228,244);
 }
 #announce td{
 	background:			rgb(226,241,253);
+	overflow-wrap:		break-word;
+}
+#anc-main{
+	width:				100%;
+	
+}
+#anc-th-id{
+	width:				10vw;
+}
+#anc-th-date{
+	width:				10vw;
+}
+#anc-th-content{
+	width:				40vw;
+}
+#anc-th-attatch{
+	width:				40vw;
 }
 ul{
 	list-style-position:inside;
@@ -79,4 +102,7 @@ ul{
 }
 .item-selected{
 	border-style:		solid;
+}
+.function-area{
+	display:			block;
 }

@@ -17,7 +17,6 @@ const uxMove = ()=>{
 	// Move to the top
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		const isTop = event.target.id == 'movetop-btn'
-		console.log(event.target.id)
 		if(isTop){
 			document.getElementById('main-display').scrollIntoView({behavior:'smooth'})
 		}
@@ -113,19 +112,19 @@ const uxSelectInit = ()=>{
 	document.getElementById('main-display').addEventListener('mouseup',(event)=>{
 		const functionArea = event.target.closest('.function-area')
 		if(functionArea){
-			//mode[functionArea.id](event)
 			const isBelow = event.target.classList.contains('function-area')
-			if(!isBelow){
-				
+			if(!isBelow){				
 				let cell = event.target
 				const isHeader = cell.tagName == 'TH'
 				if(!isHeader){
 					cell = event.target.closest('td')
 				}
-				//const isCell = cell.tagName == 'TD' || 'TH'
-				const cellArr = []
-				cellArr[0] = cell.tagName == 'TD'
-				cellArr[1] = cell.tagName == 'TH'
+				const cellArr = [] 
+				console.log(cell)
+				if(cell){
+					cellArr[0] = cell.tagName == 'TD'
+					cellArr[1] = cell.tagName == 'TH'
+				}				
 				//cellArr[2] = event.target.classList.contains('select-item')
 				let isCell = 0
 				for(var i=0;i<cellArr.length;i++){

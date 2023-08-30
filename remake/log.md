@@ -10,19 +10,21 @@
 	25. Bug:Add delete row button to member page
 		-- this branch
 	26. When save should move all related files and template to recycle bin instead of overriding
-	27. Bug:When add new announcement sometimes index may be wrong
-		-- finished
-	28. File should be move to recycle bin before delete after deletion in announce page
-	29. Reverse the arrangement of announce
-		-- finished
 	30. Remove the warning when download file without https
 		-- processing
-	31. Make a move to the top button
-		-- finished
 	32. Make a move to the bottom button
 		-- processing
 	33. Make the announcement area non-overflow
+		-- finished
+	34. Auto line break when announcement is too long
 		-- processing
+		
+---
+	## 2023.08.30		version 0.2.3 -- Announce-build
+	-- Style change
+	# Changed
+	1. Separate the function-menu and table and make sure this work without interruption
+		-- finished
 ---
 	## 2023.08.29		version 0.2.2 -- Announce-build
 	-- Function implementatation
