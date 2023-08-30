@@ -37,7 +37,7 @@ const ancFunc = ()=>{
 		const content = `		<tr class='anc-unit'>
 			<td class='edit-off'>` + id + `</td>
 			<td class='edit-off'>` + date + `</td>
-			<td contenteditable='true'>Announcement</td>
+			<td contenteditable='true' class='anc-content'>Announcement</td>
 			<td class='edit-off'><input class='edit-mode upload-btn' type='file'></td>
 		</tr>`
 		last.insertAdjacentHTML('beforebegin',content)

@@ -21,7 +21,11 @@
 				
 ---
 	## 2023.08.30		version 0.2.3 -- Announce-build
+	-- Function enhancement
 	-- Style change
+	# Added
+	1. Add anc-content class to anouncement content for further attribute application including overflow-wrap
+		-- finished
 	# Changed
 	1. Separate the function-menu and table and make sure this work without interruption
 		-- finished
