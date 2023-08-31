@@ -17,7 +17,7 @@
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce page
 	37. Bug: Style is changed in Member page
-		-- processing
+		-- fixed
 	38. Make table head fixed
 		-- prcessing
 	
@@ -39,6 +39,8 @@
 	1. Fix the bug that uxMove function is not work at inner table by change the target
 		-- finished
 	2. Fix the bug that uxMove should work at every page not specific page
+		-- finished
+	3. Fix the Member page instable style 
 		-- finished
 ---
 	## 2023.08.30		version 0.2.3 -- Announce-build
