@@ -17,9 +17,9 @@
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce page
 	37. Bug: Style is changed in Member page
-		-- fixed
+		-- finished
 	38. Make table head fixed
-		-- prcessing
+		-- finished
 	
 
 
@@ -34,6 +34,8 @@
 		-- finished
 	# Changed
 	1. Change the overall style to a more stable way
+		-- finished
+	2. Add sticky style to all th in table
 		-- finished
 	# Fixed
 	1. Fix the bug that uxMove function is not work at inner table by change the target
