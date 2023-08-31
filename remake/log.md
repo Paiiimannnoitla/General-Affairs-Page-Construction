@@ -14,8 +14,12 @@
 ---
 	## 2023.08.31		version 0.2.5 -- Test-build
 	-- Function implementation
+	-- Style change
 	# Added
 	1. Add test function for further developing test and operation maintenance
+		-- finished
+	# Changed
+	1. Change the top bar arrangement for further developing
 		-- finished
 ---
 	## 2023.08.31		version 0.2.4 -- Announce-build
