@@ -1,15 +1,12 @@
 @@@Road Map
 	1. 	Change http to https
 	8. 	Selecting style in Announce page
-		-- this branch
 	10. Update the announcement given by colleagues.
-		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
 	25. Bug:Add delete row button to member page
 		-- finished
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
-		-- processing
 	32. Make a move to the bottom button
 		-- finished
 	35. Bug:to the top button not work in new style
