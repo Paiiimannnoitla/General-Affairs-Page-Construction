@@ -97,7 +97,8 @@ app.post('/test', (req, res)=>{
 app.post('/post/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
 	const html = req.body['html']
-	fs.writeFileSync('./template/' + pagename + 'bk.html',html)
+	console.log(pagename)
+	fs.writeFileSync('./template/' + pagename + '.html',html)
 	res.send(true)
 })
 app.post('/upload',async(req,res)=>{

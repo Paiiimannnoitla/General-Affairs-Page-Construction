@@ -63,9 +63,18 @@ const uxSave = ()=>{
 		if(savebtn){
 			const evt = new Event('click')
 			const btn = document.getElementById('unedit-btn')
-			const id = document.querySelector('.function-area').id
+			const main = document.getElementById('main-display')
+			const id = main.querySelectorAll('.function-area')[0].id
 			btn.click()
-			Delivery(id)
+			const testbtn = document.getElementById('test-btn')
+			const isTest = testbtn.classList.contains('hide')
+			if(isTest){
+				console.log('ss')
+				Delivery(id + '-test')
+			}else{
+				console.log(100)
+				Delivery(id)
+			}		
 		}		
 	})
 }
@@ -128,8 +137,7 @@ const uxTest = ()=>{
 		testbtn.classList.add('hide')
 	})
 	
-	testoff.addEventListener('click',()=>{
-		
+	testoff.addEventListener('click',()=>{	
 		const testArr = document.querySelectorAll('.test-mode')
 		for(var i=0;i<testArr.length;i++){
 			const e = testArr[i]

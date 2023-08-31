@@ -9,6 +9,8 @@
 		-- announce page
 	39. Making auto directing function when test mode on
 		-- finished
+	40 Test mode and published mode should not share the same downloads
+		-- processing
 	
 
 ---
@@ -22,6 +24,8 @@
 	2. Add test page loading function when press tb-test load current page alternative
 		-- finished
 	3. Add test off function for leaving test mode
+		-- finished
+	4. Add save switch function to differentiate test mode and published mode
 		-- finished
 	# Changed
 	1. Change the top bar arrangement for further developing
