@@ -18,16 +18,14 @@ const uxMove = ()=>{
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		// Move to the top
 		const isTop = event.target.id == 'movetop-btn'
-		const anc = document.getElementById('announce')
+		const table = document.querySelector('table')
 		if(isTop){
-			//document.getElementById('main-display').scrollIntoView({behavior:'smooth'})
-			anc.scrollTo(0,0)
-			//console.log(anc.scrollHeight)
+			table.scrollTo(0,0)
 		}
 		// Move to the bottom
 		const isBottom = event.target.id == 'movebottom-btn'
 		if(isBottom){
-			anc.scrollTo(0,anc.scrollHeight)
+			table.scrollTo(0,table.scrollHeight)
 		}
 	})
 }

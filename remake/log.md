@@ -29,6 +29,8 @@
 	# Fixed
 	1. Fix the bug that uxMove function is not work at inner table by change the target
 		-- finished
+	2. Fix the bug that uxMove should work at every page not specific page
+		-- finished
 ---
 	## 2023.08.30		version 0.2.3 -- Announce-build
 	-- Function enhancement
