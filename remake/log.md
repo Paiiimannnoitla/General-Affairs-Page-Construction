@@ -11,7 +11,7 @@
 	30. Remove the warning when download file without https
 		-- processing
 	32. Make a move to the bottom button
-		-- processing
+		-- finished
 	35. Bug:to the top button not work in new style
 		-- finished
 	36. Make a smooth scroll animation for jump or move operation
@@ -21,7 +21,11 @@
 
 ---
 	## 2023.08.31		version 0.2.4 -- Announce-build
+	-- Function implementation
 	-- Bug fix
+	# Added
+	1. Add Move to the bottom button for quickly scroll to the bottom
+		-- finished
 	# Fixed
 	1. Fix the bug that uxMove function is not work at inner table by change the target
 		-- finished

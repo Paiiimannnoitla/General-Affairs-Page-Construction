@@ -21,9 +21,14 @@ const uxMove = ()=>{
 		const anc = document.getElementById('announce')
 		if(isTop){
 			//document.getElementById('main-display').scrollIntoView({behavior:'smooth'})
-			anc.scrollTo(0,0,{behavior:'smooth'})
+			anc.scrollTo(0,0)
+			//console.log(anc.scrollHeight)
 		}
+		// Move to the bottom
 		const isBottom = event.target.id == 'movebottom-btn'
+		if(isBottom){
+			anc.scrollTo(0,anc.scrollHeight)
+		}
 	})
 }
 // Edit mode
