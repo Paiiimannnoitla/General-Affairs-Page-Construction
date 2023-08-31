@@ -8,7 +8,7 @@
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce page
 	39. Making auto directing function when test mode on
-		-- processing
+		-- finished
 	
 
 ---
@@ -17,6 +17,8 @@
 	-- Style change
 	# Added
 	1. Add test function for further developing test and operation maintenance
+		-- finished
+	2. Add test page loading function when press tb-test load current page alternative
 		-- finished
 	# Changed
 	1. Change the top bar arrangement for further developing

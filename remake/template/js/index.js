@@ -121,8 +121,17 @@ const tbfunc = ()=>{
 		mode['tb-member']=()=>{
 			memInit()
 		}
-		mode['test']=async()=>{
-			const mail = await Postman('announcebk')
+		mode['tb-test']=async()=>{
+			const main = document.getElementById('main-display')
+			const currPage = main.querySelectorAll('.function-area')
+			let testPage
+			if(currPage.length){
+				testPage = currPage[0].id + '-test'
+			}else{
+				console.log('select a page first')
+			}
+			//const mail = await Postman('announcebk')
+			const mail = await Postman(testPage)
 			const updateDiv = document.getElementById('main-display')
 	
 			const output = new Promise((resolve)=>{
