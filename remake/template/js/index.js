@@ -150,10 +150,7 @@ const tbfunc = ()=>{
 		const isToolbar = clsCheck(event,'tb-option')
 		if(isToolbar){
 			const id = event.target.id
-			//Delivery('member')
 			main(id)
-			//request()
-			//Delivery(1000)
 		}
 	})
 }

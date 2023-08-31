@@ -115,6 +115,8 @@ const uxLogin = ()=>{
 // Test mode
 const uxTest = ()=>{
 	const testbtn = document.getElementById('test-btn')
+	const testoff = document.getElementById('testoff-btn')
+	
 	testbtn.addEventListener('click',()=>{
 		const loginbtn = document.getElementById('login-btn')
 		loginbtn.click()
@@ -123,7 +125,19 @@ const uxTest = ()=>{
 			const e = testArr[i]
 			e.classList.remove('hide')
 		}
+		testbtn.classList.add('hide')
 	})
+	
+	testoff.addEventListener('click',()=>{
+		
+		const testArr = document.querySelectorAll('.test-mode')
+		for(var i=0;i<testArr.length;i++){
+			const e = testArr[i]
+			e.classList.add('hide')
+		}
+		testbtn.classList.remove('hide')
+	})
+	
 }
 // Selection mode
 const uxSelectInit = ()=>{	

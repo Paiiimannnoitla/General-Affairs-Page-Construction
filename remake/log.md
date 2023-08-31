@@ -14,11 +14,14 @@
 ---
 	## 2023.08.31		version 0.2.5 -- Test-build
 	-- Function implementation
+	-- Function enhancement
 	-- Style change
 	# Added
 	1. Add test function for further developing test and operation maintenance
 		-- finished
 	2. Add test page loading function when press tb-test load current page alternative
+		-- finished
+	3. Add test off function for leaving test mode
 		-- finished
 	# Changed
 	1. Change the top bar arrangement for further developing
