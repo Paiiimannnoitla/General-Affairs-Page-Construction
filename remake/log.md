@@ -6,7 +6,7 @@
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
 	25. Bug:Add delete row button to member page
-		-- this branch
+		-- finished
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
 		-- processing
@@ -31,6 +31,8 @@
 	-- Bug fix
 	# Added
 	1. Add Move to the bottom button for quickly scroll to the bottom
+		-- finished
+	2. Add delete button to Member page
 		-- finished
 	# Changed
 	1. Change the overall style to a more stable way
