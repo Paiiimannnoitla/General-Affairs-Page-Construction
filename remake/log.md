@@ -15,16 +15,25 @@
 	35. Bug:to the top button not work in new style
 		-- finished
 	36. Make a smooth scroll animation for jump or move operation
+		-- announce page
+	37. Bug: Style is changed in Member page
 		-- processing
+	38. Make table head fixed
+		-- prcessing
 	
 
 
 ---
 	## 2023.08.31		version 0.2.4 -- Announce-build
+	-- Code arrangement
 	-- Function implementation
+	-- Style change
 	-- Bug fix
 	# Added
 	1. Add Move to the bottom button for quickly scroll to the bottom
+		-- finished
+	# Changed
+	1. Change the overall style to a more stable way
 		-- finished
 	# Fixed
 	1. Fix the bug that uxMove function is not work at inner table by change the target

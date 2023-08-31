@@ -14,7 +14,6 @@ const uxCheck = ()=>{
 }
 // Move Function
 const uxMove = ()=>{
-	
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		// Move to the top
 		const isTop = event.target.id == 'movetop-btn'
