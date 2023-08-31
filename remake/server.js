@@ -3,11 +3,11 @@ const fs = require('fs')
 const express = require('express')
 const app = express()
 const cors = require('cors')
-app.use(express.json())
+app.use(express.json({limit: '100mb'}))
+//app.use(express.urlencoded({limit: '100mb'}))
 app.use(cors())
 app.set('port',process.env.PORT || 3000)
 app.use(express.static(__dirname + '/template' ))
-console.log(__dirname)
 // Page renderer
 const render = (name,data=false) =>{
 	let html = fs.readFileSync('./template/' + name + '.html','utf8')
@@ -40,9 +40,7 @@ app.get('/',(req,res)=>{
 	}
 })*/
 /*
-app.post('/',(req,res)=>{
-	console.log('post')
-	console.log(req.body)
+app.post('/apple',(req,res)=>{
 	res.send('apple')
 	res.end()
 })*/
@@ -72,42 +70,61 @@ app.use((req,res)=>{
 	res.status(404)
 	res.send(render('404'))
 })*/
-
+/*
 app.get('/load/member',(req,res)=>{
 	const file = fs.readFileSync('./template/data/Member/member.json')
 	//console.log(file)
 	const json = JSON.parse(file)
 	res.send(json)
-})
+})*/
+/*
 app.get('/redirect',(req,res)=>{
 	res.send(render('redirect'))
-})
+})*/
 app.get('/',(req,res)=>{
 	res.send(render('index'))
 	
 })
 app.get('/page/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
-	//console.log(pagename)
 	const page = fs.readFile('./template/' + pagename + '.html','utf8',(err,data)=>{
-		//console.log(err)
 		res.send(data)
 	})
 })
 app.post('/test', (req, res)=>{
-  //res.write({apple:'apple'})
   res.send(render('testpage', {name:100}))
 })
 app.post('/post/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
 	const html = req.body['html']
-	console.log(html)
 	fs.writeFileSync('./template/' + pagename + 'bk.html',html)
 	res.send(true)
 })
-app.get('/download/:filename',(req,res)=>{
+app.post('/upload',async(req,res)=>{
+	
+	const address = req.body['address']
+	const data = req.body['file']
+	const string = Buffer.from(data)	
+	const name = req.body['name']
+	const id = req.body['id']
+	const isDelete = !req.body['order']
+	const path = './download/' + address + '/' + id 
+	if(isDelete){
+		fs.rmSync(path,{ recursive:true,force:true})
+	}
+	
+	fs.mkdirSync(path, { recursive: true })
+	fs.writeFileSync(path + '/'+ name,string)	
+	res.send(address + '/' + id + '/' + name)
+	res.end()
+})
+app.get('/download/:page/:id/:filename',(req,res)=>{
 	const hostname = 'download/'
-	res.download(hostname + req.params.num)
+	const page = req.params.page
+	const id = req.params.id
+	const filename = req.params.filename
+	const path = hostname + page + '/' + id + '/' + filename
+	res.download(path)
 })
 app.listen(3000, function () {
   console.log('---Server Start---')

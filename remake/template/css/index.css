@@ -1,83 +1,103 @@
 body{
-	background:			lightblue;
+	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
+	user-select:		none;
+	height:				100vh;
+	width:				100vw;
 }
-#top-area{
-	height:				10%;
-	background:			honeydew;
-}
-#bottom-area{
-	height:				auto;
-	margin:				auto;
-	
-}
-#toolbar{
-	width:				5%;
-	height:				90%;
-	background:			aliceblue;
-}
-#main-display{
-	position:			absolute;
-	left:				5.5%;
-	top:				11%;
-	background:			floralwhite;
-	width:				95%;
-	height:				100%;
-}
-table{
-	width:				100%;
-	padding:			5px solid ghostwhite;
-}
-th{
-  background:		beige;
-  height:				auto;
-}
-
-td{
-  background:		azure;
-}
-
 ul{
 	list-style-position:inside;
 	text-align:			left;
 }
-#member-title{	
+table{
 	width:				100%;
+	padding:			5px solid rgb(248,248,255);
+}
+th{
+	position:			sticky;
+	top:				0;
+}
+#top-area{
+	height:				10vh;
+	background:			rgb(240,255,240);
+	display:			flex;
+}
+#bottom-area{
+	height:				90vh;
+	width:				100vw;
+	margin:				auto;
+	display:			flex;
+}
+#toolbar{
+	width:				5vw;
+	height:				90vh;
+	background:			rgb(240,248,255);
+}
+#main-display{
+	background:			rgb(255,250,240);
+	width:				95vw;
+}
+#announce{
+	height:				60vh;
+	width:				100%;
+	overflow:			auto;
+}
+#announce th{
+	background:			rgb(225,228,244);
+}
+#announce td{
+	background:			rgb(226,241,253);
+}
+#anc-main{
+	width:				100%;
+}
+.anc-id{
+	width:				10vw;	
+}
+.anc-date{
+	width:				10vw;
+}
+.anc-content{
+	width:				40vw;
+	max-width:			40vw;
+	overflow-wrap:		break-word;
+}
+.anc-attatch{
+	width:				40vw;
+}
+.anc-link{
+	cursor:				pointer;
+}
+.anc-link:hover{
+	border-style:		solid;
+}
+
+#member th{
+	background:			rgb(245,245,220);
+	height:				auto;
+}
+
+#member td{
+	background:			rgb(240,255,255);
+}
+#member-title{	
+	width:				95vw;
 	font-size:			250%;
 	text-align:			center;
 }
-.member-occupation{
-	margin:				0px;
-}
-/*
-.member-header{
-	font-size:			187.5%;
-}
 .member-header-row{
-	width:				15%;
-	font-size:			160%;
+	width:				6vw;
 }
-.member-name{
-	font-size:			125%;
-}
-.member-leader{
-	margin:				0px;
+.member-header{
+	
 }
 .member-occupation{
-	font-size:			100%;
+	margin:				0px;
 }
-.member-phone-one{
-	font-size:			115%;
-}
-.member-phone-two{
-	font-size:			115%;
-}
-.member-tax{
-	font-size:			145%;
-}*/
+
 .dl-title{
 	width:				100%;
-	background:			blanchedalmond;
+	background:			rgb(255,235,205);
 }
 .dl-header{
 	width:				auto;
@@ -89,4 +109,10 @@ ul{
 }
 .hide{
 	display:			none;
+}
+.item-selected{
+	border-style:		solid;
+}
+.function-area{
+	display:			block;
 }
