@@ -5,8 +5,6 @@
 	10. Update the announcement given by colleagues.
 		-- this branch
 	11. Dynamically set style between each page maybe can use some animation
-	24. Add announce delete function
-		-- finished
 	25. Bug:Add delete row button to member page
 		-- this branch
 	26. When save should move all related files and template to recycle bin instead of overriding
@@ -14,11 +12,19 @@
 		-- processing
 	32. Make a move to the bottom button
 		-- processing
-	33. Make the announcement area non-overflow
+	35. Bug:to the top button not work in new style
 		-- finished
-	34. Auto line break when announcement is too long
+	36. Make a smooth scroll animation for jump or move operation
+		-- processing
+	
+
+
+---
+	## 2023.08.31		version 0.2.4 -- Announce-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that uxMove function is not work at inner table by change the target
 		-- finished
-				
 ---
 	## 2023.08.30		version 0.2.3 -- Announce-build
 	-- Function enhancement

@@ -14,12 +14,16 @@ const uxCheck = ()=>{
 }
 // Move Function
 const uxMove = ()=>{
-	// Move to the top
+	
 	document.getElementById('main-display').addEventListener('click',(event)=>{
+		// Move to the top
 		const isTop = event.target.id == 'movetop-btn'
+		const anc = document.getElementById('announce')
 		if(isTop){
-			document.getElementById('main-display').scrollIntoView({behavior:'smooth'})
+			//document.getElementById('main-display').scrollIntoView({behavior:'smooth'})
+			anc.scrollTo(0,0,{behavior:'smooth'})
 		}
+		const isBottom = event.target.id == 'movebottom-btn'
 	})
 }
 // Edit mode
