@@ -3,23 +3,20 @@
 	8. 	Selecting style in Announce page
 	10. Update the announcement given by colleagues.
 	11. Dynamically set style between each page maybe can use some animation
-	25. Bug:Add delete row button to member page
-		-- finished
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
-	32. Make a move to the bottom button
-		-- finished
-	35. Bug:to the top button not work in new style
-		-- finished
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce page
-	37. Bug: Style is changed in Member page
-		-- finished
-	38. Make table head fixed
-		-- finished
+	39. Making auto directing function when test mode on
+		-- processing
 	
 
-
+---
+	## 2023.08.31		version 0.2.5 -- Test-build
+	-- Function implementation
+	# Added
+	1. Add test function for further developing test and operation maintenance
+		-- finished
 ---
 	## 2023.08.31		version 0.2.4 -- Announce-build
 	-- Code arrangement

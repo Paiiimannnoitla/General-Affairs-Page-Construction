@@ -112,6 +112,19 @@ const uxLogin = ()=>{
 		uneditbtn.click()
 	})
 }
+// Test mode
+const uxTest = ()=>{
+	const testbtn = document.getElementById('test-btn')
+	testbtn.addEventListener('click',()=>{
+		const loginbtn = document.getElementById('login-btn')
+		loginbtn.click()
+		const testArr = document.querySelectorAll('.test-mode')
+		for(var i=0;i<testArr.length;i++){
+			const e = testArr[i]
+			e.classList.remove('hide')
+		}
+	})
+}
 // Selection mode
 const uxSelectInit = ()=>{	
 	// Selection Init
@@ -206,6 +219,7 @@ const uxInit = ()=>{
 	uxEdit()
 	uxSave()
 	uxDelete()
+	uxTest()
 	uxSelectInit()
 	uxStyle()
 }
