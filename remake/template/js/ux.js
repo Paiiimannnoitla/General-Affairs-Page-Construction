@@ -69,7 +69,7 @@ const uxSave = ()=>{
 			const testbtn = document.getElementById('test-btn')
 			const isTest = testbtn.classList.contains('hide')
 			if(isTest){
-				console.log('ss')
+				console.log('test page save')
 				Delivery(id + '-test')
 			}else{
 				console.log(100)

@@ -92,10 +92,14 @@ const pack = async(e,address,id,order) =>{
 		})
 		return output
 	}
+	const testbtn = document.getElementById('test-btn')
+	const testMode = testbtn.classList.contains('hide')
 	const ajaxconvert = (arr)=>{
 		const uintArr = new Uint8Array(arr)
 		const sArr = Array.from(uintArr)
-		const data = {'file':sArr,'name':filename,'address':address,'id':id,'order':order}
+		const data = {'file':sArr,'name':filename,
+					'address':address,'id':id,
+					'order':order,'test':testMode}
 		const json = JSON.stringify(data)
 		return json
 	}
@@ -151,6 +155,13 @@ const tbfunc = ()=>{
 		if(isToolbar){
 			const id = event.target.id
 			main(id)
+			const title = document.querySelector('title')
+			const isTest = id == 'tb-test'
+			if(isTest){
+				title.innerHTML = '測試頁面'
+			}else{
+				title.innerHTML = '總務組首頁'
+			}
 		}
 	})
 }

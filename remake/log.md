@@ -7,12 +7,20 @@
 	30. Remove the warning when download file without https
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce page
-	39. Making auto directing function when test mode on
-		-- finished
-	40 Test mode and published mode should not share the same downloads
+	40. Test mode and published mode should not share the same downloads
+		-- processing
+	41. When in the test mode uploading related function should be banned in normal page
+		-- processing
+	42. Should add column cut function in Member page
+	43. Bug:All function not work in test page
 		-- processing
 	
-
+---
+	## 2023.09.01		version 0.2.6 -- Test-build
+	-- Function enhancement
+	# Added
+	1. Add a title change when test page is loaded
+		-- finished
 ---
 	## 2023.08.31		version 0.2.5 -- Test-build
 	-- Function implementation

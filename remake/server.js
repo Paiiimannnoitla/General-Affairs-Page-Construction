@@ -102,21 +102,26 @@ app.post('/post/:pagename',(req,res)=>{
 	res.send(true)
 })
 app.post('/upload',async(req,res)=>{
-	
+	const test = req.body['test']
+	let expath = ''
+	if(test){
+		console.log(1)
+		expath = 'test/'
+	}
 	const address = req.body['address']
 	const data = req.body['file']
 	const string = Buffer.from(data)	
 	const name = req.body['name']
 	const id = req.body['id']
 	const isDelete = !req.body['order']
-	const path = './download/' + address + '/' + id 
+	const path = './download/' + expath + address + '/' + id 
 	if(isDelete){
 		fs.rmSync(path,{ recursive:true,force:true})
 	}
 	
 	fs.mkdirSync(path, { recursive: true })
 	fs.writeFileSync(path + '/'+ name,string)	
-	res.send(address + '/' + id + '/' + name)
+	res.send(expath + address + '/' + id + '/' + name)
 	res.end()
 })
 app.get('/download/:page/:id/:filename',(req,res)=>{
