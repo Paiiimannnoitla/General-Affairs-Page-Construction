@@ -24,6 +24,8 @@
 	# Added
 	1. Add a title change when test page is loaded
 		-- finished
+	2. Add test save support to announce and member page
+		-- finished
 	# Fixed
 	1. Fix the bug that test page function not work
 		-- finished

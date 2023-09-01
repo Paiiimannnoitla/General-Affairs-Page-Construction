@@ -1,5 +1,8 @@
 
-const memBuild = async() =>{
+const memBuild = async(test) =>{
+	if(test){
+		return true
+	}
 	const isRendered = await Render('member')
 	if(isRendered){
 		const output = new Promise((resolve)=>{
@@ -47,8 +50,8 @@ const memFunc = ()=>{
 	})
 
 }
-const memInit = async() =>{
-	const hasBuild = await memBuild()
+const memInit = async(test) =>{
+	const hasBuild = await memBuild(test)
 	if(hasBuild){
 		memFunc()
 	}

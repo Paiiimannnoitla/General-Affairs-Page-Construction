@@ -2,7 +2,6 @@
 // Rendering
 const ancBuild = async(test)=>{
 	if(test){
-		console.log(1)
 		return true
 	}
 	const isRendered = await Render('announce')
