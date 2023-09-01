@@ -8,7 +8,7 @@
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce page
 	40. Test mode and published mode should not share the same downloads
-		-- processing
+		-- no longer need
 	41. When in the test mode uploading related function should be banned in normal page
 		-- no longer need
 	42. Should add column cut function in Member page
