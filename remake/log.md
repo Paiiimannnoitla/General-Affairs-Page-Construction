@@ -35,6 +35,9 @@
 	# Chnaged
 	1. Change id and name
 		-- finished
+	2. Basic color palette
+		-- finished
+		
 ---
 	## 2023.09.01		version 0.2.6 -- Test-build
 	-- Function enhancement

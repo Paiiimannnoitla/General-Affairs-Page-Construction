@@ -100,7 +100,27 @@ th{
 .member-occupation{
 	margin:				0px;
 }
-
+#mnl-title{
+	background:			rgb(113,164,218);
+}
+.mnl-affairs .mnl-header{
+	background:			rgb(121,169,220);
+}
+.mnl-affairs{
+	background:			rgb(137,180,225);
+}
+.mnl-finance .mnl-header{
+	background:			rgb(162,195,231);
+}
+.mnl-finance{
+	background:			rgb(186,211,237);
+}
+.mnl-document .mnl-header{
+	background:			rgb(211,226,243);
+}
+.mnl-document{
+	background:			rgb(235,242,249);
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);
