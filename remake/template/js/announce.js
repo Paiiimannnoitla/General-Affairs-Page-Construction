@@ -1,6 +1,10 @@
 
 // Rendering
-const ancBuild = async()=>{
+const ancBuild = async(test)=>{
+	if(test){
+		console.log(1)
+		return true
+	}
 	const isRendered = await Render('announce')
 		if(isRendered){
 			const output = new Promise((resolve)=>{
@@ -42,7 +46,7 @@ const ancFunc = ()=>{
 		</tr>`
 		last.insertAdjacentHTML('beforebegin',content)
 		const movebtn = document.getElementById('movetop-btn')
-		event.target.id = 'movetop-btn'
+		//event.target.id = 'movetop-btn'
 		movebtn.click()		
 	})
 	//Side: Content Edit
@@ -119,8 +123,8 @@ const ancFunc = ()=>{
 	})
 }
 // Initializer
-const ancInit = async()=>{
-	const hasBuild = await ancBuild()
+const ancInit = async(test)=>{
+	const hasBuild = await ancBuild(test)
 	if(hasBuild){
 		ancFunc()
 		ancStyle()

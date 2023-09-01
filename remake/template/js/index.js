@@ -119,13 +119,13 @@ const Render = async(e)=>{
 const tbfunc = ()=>{	
 	const mode = []
 	const main = (code)=>{
-		mode['tb-announce']=()=>{
-			ancInit()
+		mode['tb-announce']=(t)=>{
+			ancInit(t)
 		}
-		mode['tb-member']=()=>{
-			memInit()
+		mode['tb-member']=(t)=>{
+			memInit(t)
 		}
-		mode['tb-test']=async()=>{
+		mode['tb-test']=async(t)=>{
 			const main = document.getElementById('main-display')
 			const currPage = main.querySelectorAll('.function-area')
 			let testPage
@@ -140,12 +140,13 @@ const tbfunc = ()=>{
 	
 			const output = new Promise((resolve)=>{
 				updateDiv.innerHTML = mail
+				mode['tb-' + currPage[0].id](true)
 				resolve(true)
 			})
 			return output
 		}
 		try{
-			mode[code]()
+			mode[code](false)
 		}catch(err){
 			console.log('You should build page:' + code)
 		}		

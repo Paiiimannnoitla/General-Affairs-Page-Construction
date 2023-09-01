@@ -18,8 +18,14 @@
 ---
 	## 2023.09.01		version 0.2.6 -- Test-build
 	-- Function enhancement
+	-- Bug fix
 	# Added
 	1. Add a title change when test page is loaded
+		-- finished
+	# Fixed
+	1. Fix the bug that test page function not work
+		-- finished
+	2. Fix the new-btn in announce page will be replaced as movetop-btn
 		-- finished
 ---
 	## 2023.08.31		version 0.2.5 -- Test-build
