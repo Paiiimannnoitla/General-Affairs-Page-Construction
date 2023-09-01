@@ -14,7 +14,7 @@
 	46. Manual page basic style
 		-- processing
 	47. Edit function in Manual
-		-- processing
+		-- finished
 	48. Add new row function in Manual
 		-- processing
 	49. Add delete row function in Manual
@@ -25,9 +25,12 @@
 ---
 	## 2023.09.01		version 0.2.7 -- Manual-build
 	-- Infrastructure building
+	-- Function implementation
 	-- Style change
 	# Added
 	1. Add basic page of Manual page
+		-- finished
+	2. Add basic content edit function
 		-- finished
 	# Chnaged
 	1. Change id and name

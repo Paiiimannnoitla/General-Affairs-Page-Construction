@@ -15,7 +15,15 @@ const mnlBuild = async(t)=>{
 
 // Main: Edit Function
 const mnlFunc = ()=>{
-	console.log(100)
+	
+	//Side: Content edit
+	document.getElementById('edit-btn').addEventListener('click',()=>{
+		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
+		for(var i=0;i<btnArr.length;i++){
+			const e=btnArr[i]
+			e.contentEditable = 'true'
+		}
+	})
 }
 // Initialize
 const mnlInit = async(t)=>{
