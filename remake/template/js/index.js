@@ -125,6 +125,9 @@ const tbfunc = ()=>{
 		mode['tb-member']=(t)=>{
 			memInit(t)
 		}
+		mode['tb-manual']=(t)=>{
+			mnlInit(t)
+		}
 		mode['tb-test']=async(t)=>{
 			const main = document.getElementById('main-display')
 			const currPage = main.querySelectorAll('.function-area')

@@ -6,17 +6,32 @@
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
 	36. Make a smooth scroll animation for jump or move operation
-		-- announce page
-	40. Test mode and published mode should not share the same downloads
-		-- no longer need
-	41. When in the test mode uploading related function should be banned in normal page
-		-- no longer need
+		-- announce 
+		-- manual
 	42. Should add column cut function in Member page
-	43. Bug:All function not work in test page
-		-- finished
-	44. Bug: test page cannot download
-		-- finished
+	45. Add Manual page uploading function
+		-- processing
+	46. Manual page basic style
+		-- processing
+	47. Edit function in Manual
+		-- processing
+	48. Add new row function in Manual
+		-- processing
+	49. Add delete row function in Manual
+		-- processing
+	50. Keep date as version number in Manual
+		-- processing
 	
+---
+	## 2023.09.01		version 0.2.7 -- Manual-build
+	-- Infrastructure building
+	-- Style change
+	# Added
+	1. Add basic page of Manual page
+		-- finished
+	# Chnaged
+	1. Change id and name
+		-- finished
 ---
 	## 2023.09.01		version 0.2.6 -- Test-build
 	-- Function enhancement
