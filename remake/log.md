@@ -10,7 +10,7 @@
 	40. Test mode and published mode should not share the same downloads
 		-- processing
 	41. When in the test mode uploading related function should be banned in normal page
-		-- processing
+		-- no longer need
 	42. Should add column cut function in Member page
 	43. Bug:All function not work in test page
 		-- finished
@@ -30,6 +30,8 @@
 	2. Fix the new-btn in announce page will be replaced as movetop-btn
 		-- finished
 	3. Fix the test page download function by add a new route
+		-- finished
+	4. Fix the bug warning in test page when no current page
 		-- finished
 ---
 	## 2023.08.31		version 0.2.5 -- Test-build

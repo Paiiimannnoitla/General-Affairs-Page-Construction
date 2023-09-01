@@ -133,6 +133,7 @@ const tbfunc = ()=>{
 				testPage = currPage[0].id + '-test'
 			}else{
 				console.log('select a page first')
+				return
 			}
 			//const mail = await Postman('announcebk')
 			const mail = await Postman(testPage)
