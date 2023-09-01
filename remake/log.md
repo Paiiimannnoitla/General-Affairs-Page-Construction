@@ -26,6 +26,7 @@
 	## 2023.09.01		version 0.2.7 -- Manual-build
 	-- Infrastructure building
 	-- Function implementation
+	-- Rewrite function
 	-- Style change
 	# Added
 	1. Add basic page of Manual page
@@ -36,6 +37,8 @@
 	1. Change id and name
 		-- finished
 	2. Basic color palette
+		-- finished
+	3. Rewrite bright function by remove property
 		-- finished
 		
 ---
