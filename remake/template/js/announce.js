@@ -118,6 +118,7 @@ const ancFunc = ()=>{
 			const dlurl = e.id
 			const url = href + dlurl 
 			const name = e.innerHTML
+			console.log(url)
 			download(url,name)
 		}
 	})

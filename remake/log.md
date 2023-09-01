@@ -13,7 +13,9 @@
 		-- processing
 	42. Should add column cut function in Member page
 	43. Bug:All function not work in test page
-		-- processing
+		-- finished
+	44. Bug: test page cannot download
+		-- finished
 	
 ---
 	## 2023.09.01		version 0.2.6 -- Test-build
@@ -26,6 +28,8 @@
 	1. Fix the bug that test page function not work
 		-- finished
 	2. Fix the new-btn in announce page will be replaced as movetop-btn
+		-- finished
+	3. Fix the test page download function by add a new route
 		-- finished
 ---
 	## 2023.08.31		version 0.2.5 -- Test-build

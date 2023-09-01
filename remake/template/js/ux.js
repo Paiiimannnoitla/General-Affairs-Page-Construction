@@ -72,6 +72,7 @@ const uxSave = ()=>{
 				console.log('test page save')
 				Delivery(id + '-test')
 			}else{
+				
 				console.log('Current page saved')
 				Delivery(id)
 			}		

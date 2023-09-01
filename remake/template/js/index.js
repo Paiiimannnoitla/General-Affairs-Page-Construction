@@ -160,8 +160,10 @@ const tbfunc = ()=>{
 			const isTest = id == 'tb-test'
 			if(isTest){
 				title.innerHTML = '測試頁面'
+				title.classList.add('test-on')
 			}else{
 				title.innerHTML = '總務組首頁'
+				title.classList.remove('test-on')
 			}
 		}
 	})

@@ -132,6 +132,14 @@ app.get('/download/:page/:id/:filename',(req,res)=>{
 	const path = hostname + page + '/' + id + '/' + filename
 	res.download(path)
 })
+app.get('/download/test/:page/:id/:filename',(req,res)=>{
+	const hostname = 'download/test/'
+	const page = req.params.page
+	const id = req.params.id
+	const filename = req.params.filename
+	const path = hostname + page + '/' + id + '/' + filename
+	res.download(path)
+})
 app.listen(3000, function () {
   console.log('---Server Start---')
 })
