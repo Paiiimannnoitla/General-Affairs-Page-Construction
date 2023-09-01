@@ -92,10 +92,14 @@ const pack = async(e,address,id,order) =>{
 		})
 		return output
 	}
+	const testbtn = document.getElementById('test-btn')
+	const testMode = testbtn.classList.contains('hide')
 	const ajaxconvert = (arr)=>{
 		const uintArr = new Uint8Array(arr)
 		const sArr = Array.from(uintArr)
-		const data = {'file':sArr,'name':filename,'address':address,'id':id,'order':order}
+		const data = {'file':sArr,'name':filename,
+					'address':address,'id':id,
+					'order':order,'test':testMode}
 		const json = JSON.stringify(data)
 		return json
 	}
@@ -115,24 +119,35 @@ const Render = async(e)=>{
 const tbfunc = ()=>{	
 	const mode = []
 	const main = (code)=>{
-		mode['tb-announce']=()=>{
-			ancInit()
+		mode['tb-announce']=(t)=>{
+			ancInit(t)
 		}
-		mode['tb-member']=()=>{
-			memInit()
+		mode['tb-member']=(t)=>{
+			memInit(t)
 		}
-		mode['test']=async()=>{
-			const mail = await Postman('announcebk')
+		mode['tb-test']=async(t)=>{
+			const main = document.getElementById('main-display')
+			const currPage = main.querySelectorAll('.function-area')
+			let testPage
+			if(currPage.length){
+				testPage = currPage[0].id + '-test'
+			}else{
+				console.log('select a page first')
+				return
+			}
+			//const mail = await Postman('announcebk')
+			const mail = await Postman(testPage)
 			const updateDiv = document.getElementById('main-display')
 	
 			const output = new Promise((resolve)=>{
 				updateDiv.innerHTML = mail
+				mode['tb-' + currPage[0].id](true)
 				resolve(true)
 			})
 			return output
 		}
 		try{
-			mode[code]()
+			mode[code](false)
 		}catch(err){
 			console.log('You should build page:' + code)
 		}		
@@ -141,10 +156,16 @@ const tbfunc = ()=>{
 		const isToolbar = clsCheck(event,'tb-option')
 		if(isToolbar){
 			const id = event.target.id
-			//Delivery('member')
 			main(id)
-			//request()
-			//Delivery(1000)
+			const title = document.querySelector('title')
+			const isTest = id == 'tb-test'
+			if(isTest){
+				title.innerHTML = '測試頁面'
+				title.classList.add('test-on')
+			}else{
+				title.innerHTML = '總務組首頁'
+				title.classList.remove('test-on')
+			}
 		}
 	})
 }

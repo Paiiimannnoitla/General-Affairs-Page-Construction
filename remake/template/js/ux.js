@@ -63,9 +63,19 @@ const uxSave = ()=>{
 		if(savebtn){
 			const evt = new Event('click')
 			const btn = document.getElementById('unedit-btn')
-			const id = document.querySelector('.function-area').id
+			const main = document.getElementById('main-display')
+			const id = main.querySelectorAll('.function-area')[0].id
 			btn.click()
-			Delivery(id)
+			const testbtn = document.getElementById('test-btn')
+			const isTest = testbtn.classList.contains('hide')
+			if(isTest){
+				console.log('test page save')
+				Delivery(id + '-test')
+			}else{
+				
+				console.log('Current page saved')
+				Delivery(id)
+			}		
 		}		
 	})
 }
@@ -111,6 +121,32 @@ const uxLogin = ()=>{
 		const uneditbtn = document.getElementById('unedit-btn')
 		uneditbtn.click()
 	})
+}
+// Test mode
+const uxTest = ()=>{
+	const testbtn = document.getElementById('test-btn')
+	const testoff = document.getElementById('testoff-btn')
+	
+	testbtn.addEventListener('click',()=>{
+		const loginbtn = document.getElementById('login-btn')
+		loginbtn.click()
+		const testArr = document.querySelectorAll('.test-mode')
+		for(var i=0;i<testArr.length;i++){
+			const e = testArr[i]
+			e.classList.remove('hide')
+		}
+		testbtn.classList.add('hide')
+	})
+	
+	testoff.addEventListener('click',()=>{	
+		const testArr = document.querySelectorAll('.test-mode')
+		for(var i=0;i<testArr.length;i++){
+			const e = testArr[i]
+			e.classList.add('hide')
+		}
+		testbtn.classList.remove('hide')
+	})
+	
 }
 // Selection mode
 const uxSelectInit = ()=>{	
@@ -206,6 +242,7 @@ const uxInit = ()=>{
 	uxEdit()
 	uxSave()
 	uxDelete()
+	uxTest()
 	uxSelectInit()
 	uxStyle()
 }

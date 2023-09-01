@@ -3,23 +3,55 @@
 	8. 	Selecting style in Announce page
 	10. Update the announcement given by colleagues.
 	11. Dynamically set style between each page maybe can use some animation
-	25. Bug:Add delete row button to member page
-		-- finished
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
-	32. Make a move to the bottom button
-		-- finished
-	35. Bug:to the top button not work in new style
-		-- finished
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce page
-	37. Bug: Style is changed in Member page
+	40. Test mode and published mode should not share the same downloads
+		-- no longer need
+	41. When in the test mode uploading related function should be banned in normal page
+		-- no longer need
+	42. Should add column cut function in Member page
+	43. Bug:All function not work in test page
 		-- finished
-	38. Make table head fixed
+	44. Bug: test page cannot download
 		-- finished
 	
-
-
+---
+	## 2023.09.01		version 0.2.6 -- Test-build
+	-- Function enhancement
+	-- Bug fix
+	# Added
+	1. Add a title change when test page is loaded
+		-- finished
+	2. Add test save support to announce and member page
+		-- finished
+	# Fixed
+	1. Fix the bug that test page function not work
+		-- finished
+	2. Fix the new-btn in announce page will be replaced as movetop-btn
+		-- finished
+	3. Fix the test page download function by add a new route
+		-- finished
+	4. Fix the bug warning in test page when no current page
+		-- finished
+---
+	## 2023.08.31		version 0.2.5 -- Test-build
+	-- Function implementation
+	-- Function enhancement
+	-- Style change
+	# Added
+	1. Add test function for further developing test and operation maintenance
+		-- finished
+	2. Add test page loading function when press tb-test load current page alternative
+		-- finished
+	3. Add test off function for leaving test mode
+		-- finished
+	4. Add save switch function to differentiate test mode and published mode
+		-- finished
+	# Changed
+	1. Change the top bar arrangement for further developing
+		-- finished
 ---
 	## 2023.08.31		version 0.2.4 -- Announce-build
 	-- Code arrangement
