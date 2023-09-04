@@ -46,13 +46,18 @@ const uxEdit = ()=>{
 			const btnArr = document.querySelectorAll('.edit-mode')
 			const readArr = document.querySelectorAll('.read-mode')
 			const selected = uxSelect()
+			const selecteditem = document.querySelectorAll('.item-selected')
 			unhide(readArr)
 			unhide(editbtn)			
 			hide(btnArr)		
 			bright(false)
 			if(selected){
 				selected.classList.remove('selected')
-			}						
+			}	
+			if(selecteditem.length){
+				console.log(200)
+				selecteditem[0].classList.remove('item-selected')
+			}
 		}
 	})
 }

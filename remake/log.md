@@ -13,14 +13,21 @@
 		-- processing
 	46. Manual page basic style
 		-- processing
-	47. Edit function in Manual
-		-- finished
 	48. Add new row function in Manual
 		-- processing
 	49. Add delete row function in Manual
 		-- processing
 	50. Keep date as version number in Manual
 		-- processing
+	51. Bug:Save attachment hight in announce page
+		-- processing
+	
+---
+	## 2023.09.04		version 0.2.8 -- Manual-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that item-selected effect not removed whild unedit
+		-- finished
 	
 ---
 	## 2023.09.01		version 0.2.7 -- Manual-build

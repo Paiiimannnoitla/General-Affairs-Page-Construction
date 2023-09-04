@@ -49,12 +49,6 @@ const bright = (dark=true)=>{
 			const nColorCode = 'rgb(' + nr + ',' + ng + ',' + nb + ')' 
 			cell.style.background = nColorCode
 		}else{
-			/*
-			const nr = r+ar
-			const ng = g+ag
-			const nb = b+ab
-			const nColorCode = 'rgb(' + nr + ',' + ng + ',' + nb + ')'*/
-			//cell.style.background = nColorCode	
 			cell.style.removeProperty('background')
 		}
 	}
