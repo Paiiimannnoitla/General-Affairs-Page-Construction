@@ -3,7 +3,7 @@ body{
 	font-family:		微軟正黑體;
 	user-select:		none;
 	height:				100vh;
-	width:				100vw;
+	width:				98vw;
 }
 ul{
 	list-style-position:inside;
@@ -17,8 +17,21 @@ th{
 	position:			sticky;
 	top:				0;
 }
+.hide{
+	display:			none;
+}
+.item-selected{
+	border-style:		solid;
+}
+.function-area{
+	display:			block;
+	height:				60vh;
+	width:				93vw;
+	overflow:			auto;	
+}
 #top-area{
 	height:				10vh;
+	width:				98vw;
 	background:			rgb(240,255,240);
 	display:			flex;
 }
@@ -30,7 +43,7 @@ th{
 }
 #bottom-area{
 	height:				90vh;
-	width:				100vw;
+	width:				98vw;
 	margin:				auto;
 	display:			flex;
 }
@@ -43,11 +56,12 @@ th{
 	background:			rgb(255,250,240);
 	width:				95vw;
 }
+/*
 #announce{
 	height:				60vh;
 	width:				100%;
 	overflow:			auto;
-}
+}*/
 #announce th{
 	background:			rgb(225,228,244);
 }
@@ -100,7 +114,16 @@ th{
 .member-occupation{
 	margin:				0px;
 }
+/*
+#manual{
+	height:				60vh;
+	width:				100%;
+}*/
+#mnl-main{
+	width:				100%;	
+}
 #mnl-title{
+
 	background:			rgb(113,164,218);
 }
 .mnl-affairs .mnl-header{
@@ -132,13 +155,4 @@ th{
 .dl-area{
 	width:				80%;
 	text-align:			center;
-}
-.hide{
-	display:			none;
-}
-.item-selected{
-	border-style:		solid;
-}
-.function-area{
-	display:			block;
 }

@@ -19,14 +19,18 @@
 		-- processing
 	50. Keep date as version number in Manual
 		-- processing
-	51. Bug:Save attachment hight in announce page
-		-- processing
+	51. Bug:Save attachment highlighted effect in announce page
+		-- finished
 	
 ---
 	## 2023.09.04		version 0.2.8 -- Manual-build
 	-- Bug fix
+	-- Style change
 	# Fixed
 	1. Fix the bug that item-selected effect not removed whild unedit
+		-- finished
+	# Changed
+	1. Adjust basic width and height style
 		-- finished
 	
 ---
