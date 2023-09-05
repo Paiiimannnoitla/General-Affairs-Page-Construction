@@ -21,7 +21,15 @@
 		-- processing
 	51. Bug:Save attachment highlighted effect in announce page
 		-- finished
-	
+	52. Set the structure style of Manual page
+		-- processing
+
+---
+	## 2023.09.05		version 0.2.9 -- Manual-build
+	-- Style change
+	# Changed
+	1. Change the overall height and width setting
+		-- finished
 ---
 	## 2023.09.04		version 0.2.8 -- Manual-build
 	-- Bug fix

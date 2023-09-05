@@ -2,7 +2,7 @@ body{
 	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
 	user-select:		none;
-	height:				100vh;
+	height:				98vh;
 	width:				98vw;
 }
 ul{
@@ -26,11 +26,17 @@ th{
 .function-area{
 	display:			block;
 	height:				60vh;
-	width:				93vw;
+	width:				90vw;
 	overflow:			auto;	
 }
+#function-menu{
+	height:				auto;
+	bottom:				0;
+	position:			auto;
+	background:			rgb(238,241,252);
+}
 #top-area{
-	height:				10vh;
+	height:				8vh;
 	width:				98vw;
 	background:			rgb(240,255,240);
 	display:			flex;
@@ -48,13 +54,13 @@ th{
 	display:			flex;
 }
 #toolbar{
-	width:				5vw;
+	width:				8vw;
 	height:				90vh;
 	background:			rgb(240,248,255);
 }
 #main-display{
 	background:			rgb(255,250,240);
-	width:				95vw;
+	width:				90vw;
 }
 /*
 #announce{
