@@ -19,9 +19,9 @@
 		-- processing
 	50. Keep date as version number in Manual
 		-- processing
-	51. Bug:Save attachment highlighted effect in announce page
-		-- finished
 	52. Set the structure style of Manual page
+		-- finished
+	53. Bug:Some cell black out when click
 		-- processing
 
 ---
@@ -29,6 +29,8 @@
 	-- Style change
 	# Changed
 	1. Change the overall height and width setting
+		-- finished
+	2. Set the basic style of Manual page
 		-- finished
 ---
 	## 2023.09.04		version 0.2.8 -- Manual-build

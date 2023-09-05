@@ -13,9 +13,16 @@ table{
 	width:				100%;
 	padding:			5px solid rgb(248,248,255);
 }
+tr{
+	width:				100%;
+}
 th{
+	width:				90vw;
 	position:			sticky;
 	top:				0;
+}
+tbody{
+	width:				100%;
 }
 .hide{
 	display:			none;
@@ -74,9 +81,10 @@ th{
 #announce td{
 	background:			rgb(226,241,253);
 }
+/*
 #anc-main{
 	width:				100%;
-}
+}*/
 .anc-id{
 	width:				10vw;	
 }
@@ -120,22 +128,14 @@ th{
 .member-occupation{
 	margin:				0px;
 }
-/*
-#manual{
-	height:				60vh;
-	width:				100%;
-}*/
-#mnl-main{
-	width:				100%;	
-}
 #mnl-title{
-
-	background:			rgb(113,164,218);
+	background:			rgb(103,154,208);
 }
 .mnl-affairs .mnl-header{
 	background:			rgb(121,169,220);
 }
 .mnl-affairs{
+	width:				100%;
 	background:			rgb(137,180,225);
 }
 .mnl-finance .mnl-header{
@@ -149,6 +149,16 @@ th{
 }
 .mnl-document{
 	background:			rgb(235,242,249);
+}
+.mnl-id{
+	width:				5%;
+	text-align:			center;
+}
+.mnl-name{
+	width:				25%;
+}
+.mnl-file{
+	width:				70%;
 }
 .dl-title{
 	width:				100%;
