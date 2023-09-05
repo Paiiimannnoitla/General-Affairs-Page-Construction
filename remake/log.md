@@ -22,15 +22,19 @@
 	52. Set the structure style of Manual page
 		-- finished
 	53. Bug:Some cell black out when click
-		-- processing
+		-- fixed
 
 ---
 	## 2023.09.05		version 0.2.9 -- Manual-build
+	-- Bug fix
 	-- Style change
 	# Changed
 	1. Change the overall height and width setting
 		-- finished
 	2. Set the basic style of Manual page
+		-- finished
+	# Fixed
+	1. Fix the bug that some cells in Manual page display black color when selected
 		-- finished
 ---
 	## 2023.09.04		version 0.2.8 -- Manual-build

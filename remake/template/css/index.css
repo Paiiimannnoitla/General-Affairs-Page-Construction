@@ -96,7 +96,7 @@ tbody{
 	max-width:			40vw;
 	overflow-wrap:		break-word;
 }
-.anc-attatch{
+.anc-attach{
 	width:				40vw;
 }
 .anc-link{
@@ -134,20 +134,41 @@ tbody{
 .mnl-affairs .mnl-header{
 	background:			rgb(121,169,220);
 }
-.mnl-affairs{
-	width:				100%;
+.mnl-affairs .mnl-id{
+
+	background:			rgb(137,180,225);
+}
+.mnl-affairs .mnl-name{
+
+	background:			rgb(137,180,225);
+}
+.mnl-affairs .mnl-file{
+
 	background:			rgb(137,180,225);
 }
 .mnl-finance .mnl-header{
 	background:			rgb(162,195,231);
 }
-.mnl-finance{
+.mnl-finance .mnl-id{
 	background:			rgb(186,211,237);
 }
+.mnl-finance .mnl-name{
+	background:			rgb(186,211,237);
+}
+.mnl-finance .mnl-file{
+	background:			rgb(186,211,237);
+}
+
 .mnl-document .mnl-header{
 	background:			rgb(211,226,243);
 }
-.mnl-document{
+.mnl-document .mnl-id{
+	background:			rgb(235,242,249);
+}
+.mnl-document .mnl-name{
+	background:			rgb(235,242,249);
+}
+.mnl-document .mnl-file{
 	background:			rgb(235,242,249);
 }
 .mnl-id{

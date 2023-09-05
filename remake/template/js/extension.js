@@ -28,7 +28,6 @@ const unhide = (arr)=>{
 }
 
 const bright = (dark=true)=>{
-	//let cell = uxSelect()
 	const cell = uxSelect()
 	if(cell){
 		const colorCode = window.getComputedStyle(cell)['background']
@@ -38,10 +37,10 @@ const bright = (dark=true)=>{
 		const r = rgb[0]-0
 		const g = rgb[1]-0
 		const b = rgb[2]-0
-	
 		const ar = 10
 		const ag = 10
 		const ab = 10
+		
 		if(dark){
 			const nr = r-ar
 			const ng = g-ag
