@@ -104,6 +104,7 @@ const uxLoginCheck = ()=>{
 		const loginbtnArr = document.querySelectorAll('.login-mode')
 		const editbtnArr = document.querySelectorAll('.edit-mode')
 		hide(loginbtnArr)
+		console.log(loginbtnArr)
 		hide(editbtnArr)
 	}
 }
@@ -124,7 +125,9 @@ const uxLogin = ()=>{
 		hide(logoutbtn)
 		uxLoginCheck()
 		const uneditbtn = document.getElementById('unedit-btn')
-		uneditbtn.click()
+		if(uneditbtn){
+			uneditbtn.click()
+		}		
 	})
 }
 // Test mode
@@ -230,6 +233,26 @@ const uxSelect = (cell=true)=>{
 	}else{
 		return false
 	}
+}
+// Upload function
+const uxUpload = ()=>{
+	document.getElementById('main-display').addEventListener('change',(event)=>{
+		const e = event.target
+		const isUpload = e.classList.contains('upload-btn')
+		if(isUpload){
+			if(e.files.length){
+				const td = e.parentNode
+				const btn = td.querySelector('.send-btn')
+				if(btn){
+					btn.remove()
+				}
+				const content = `
+					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+					<p class='send-btn edit-mode'>Upload</p>`
+				td.insertAdjacentHTML('beforeend',content)
+			}
+		}	
+	})
 }
 // Download function
 const uxDownload = ()=>{

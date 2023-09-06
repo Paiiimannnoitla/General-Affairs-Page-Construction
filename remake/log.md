@@ -29,6 +29,7 @@
 	-- Function enhancement
 	-- Rewire function
 	-- Style change
+	-- Fixed
 	# Added
 	1. Add download-proof in edit mode for link selection
 		-- finished
@@ -36,6 +37,9 @@
 		-- finished
 	# Changed
 	1. Add the edit setting uploading setting to Manual page
+		-- finished
+	# Fixed
+	1. Fix the bug that uxLogin may warn when no unedit button
 		-- finished
 ---
 	## 2023.09.05		version 0.2.9 -- Manual-build

@@ -57,6 +57,7 @@ const ancFunc = ()=>{
 		}
 	})
 	//Side: Upload and auto increment
+	/*
 	document.getElementById('anc-main').addEventListener('change',(event)=>{
 		const e = event.target
 		const isUpload = e.classList.contains('upload-btn')
@@ -73,7 +74,7 @@ const ancFunc = ()=>{
 				td.insertAdjacentHTML('beforeend',content)
 			}
 		}	
-	})
+	})*/
 	//Side: Uploading attachment handler
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
