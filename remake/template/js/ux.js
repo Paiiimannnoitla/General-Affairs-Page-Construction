@@ -104,7 +104,6 @@ const uxLoginCheck = ()=>{
 		const loginbtnArr = document.querySelectorAll('.login-mode')
 		const editbtnArr = document.querySelectorAll('.edit-mode')
 		hide(loginbtnArr)
-		console.log(loginbtnArr)
 		hide(editbtnArr)
 	}
 }

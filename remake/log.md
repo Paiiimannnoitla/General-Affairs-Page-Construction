@@ -24,16 +24,18 @@
 	55. Make upload link and download as a general function
 		-- finished
 	56. Bug:Edit button not hide in Manual page
-		-- processing
+		-- finished
 	57. Upload process should happen only when save button is pressed
 		-- prcessing
+	58. Remove empty input files to one when upload
+		-- processing
 
 ---
 	## 2023.09.06		version 0.3.0 -- Manual-build
 	-- Function enhancement
 	-- Rewire function
 	-- Style change
-	-- Fixed
+	-- Bug fix
 	# Added
 	1. Add download-proof in edit mode for link selection
 		-- finished
@@ -48,6 +50,8 @@
 		-- finished
 	# Fixed
 	1. Fix the bug that uxLogin may warn when no unedit button
+		-- finished
+	2. Fix the bug that login status not apply at Manual page
 		-- finished
 ---
 	## 2023.09.05		version 0.2.9 -- Manual-build

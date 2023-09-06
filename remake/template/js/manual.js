@@ -15,7 +15,7 @@ const mnlBuild = async(t)=>{
 
 // Main: Edit Function
 const mnlFunc = ()=>{
-	
+	uxLoginCheck()
 	//Side: Content edit
 	document.getElementById('edit-btn').addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
