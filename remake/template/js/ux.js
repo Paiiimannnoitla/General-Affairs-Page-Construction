@@ -234,7 +234,7 @@ const uxSelect = (cell=true)=>{
 		return false
 	}
 }
-// Upload function
+// Upload Button Setting
 const uxUploadSet = ()=>{
 	document.getElementById('main-display').addEventListener('change',(event)=>{
 		const e = event.target
@@ -253,6 +253,26 @@ const uxUploadSet = ()=>{
 			}
 		}	
 	})
+}
+// Upload function
+const uxUpload = async(funcArea,uploadArea,id,isClear=true)=>{
+	const fileArr = uploadArea.querySelectorAll('.upload-btn')
+	const receipt = []
+	let n = 1
+	if(isClear){
+		n = 0
+	}
+	let a = 0
+	for(var i=0;i<fileArr.length;i++){
+		const f = fileArr[i].files
+		if(f.length){
+			const cargo = await pack(f,funcArea,id,n)
+			receipt[a] = await upload(cargo)
+			a = a + 1
+			n = n + 1
+		}
+	}
+	return receipt
 }
 // Download function
 const uxDownload = ()=>{

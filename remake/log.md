@@ -22,9 +22,11 @@
 	54. Add download link remove function
 		-- processing
 	55. Make upload link and download as a general function
-		-- processing
+		-- finished
 	56. Bug:Edit button not hide in Manual page
 		-- processing
+	57. Upload process should happen only when save button is pressed
+		-- prcessing
 
 ---
 	## 2023.09.06		version 0.3.0 -- Manual-build
@@ -38,6 +40,8 @@
 	2. Rewire downloaf function to uxDownload
 		-- finished
 	3. Rewire update button related function to uxUploadSet
+		-- finished
+	4. Add uxUpload function to handle all uploading process
 		-- finished
 	# Changed
 	1. Add the edit setting uploading setting to Manual page

@@ -65,6 +65,8 @@ const ancFunc = ()=>{
 			const td = e.parentNode
 			const tr = td.parentNode
 			const id = tr.children[0].innerHTML
+			const receipt = await uxUpload('announce',td,id)
+			/*
 			const fileArr = td.querySelectorAll('.upload-btn')
 			const receipt = []
 			for(var i=0;i<fileArr.length;i++){
@@ -73,7 +75,7 @@ const ancFunc = ()=>{
 					const cargo = await pack(f,'announce',id,i)
 					receipt[i] = await upload(cargo)
 				}			
-			}
+			}*/
 			let content = ''
 			for(var i=0;i<receipt.length;i++){
 				const r = receipt[i]
