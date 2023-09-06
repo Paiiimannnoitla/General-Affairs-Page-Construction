@@ -19,11 +19,17 @@
 		-- processing
 	50. Keep date as version number in Manual
 		-- processing
-	52. Set the structure style of Manual page
-		-- finished
-	53. Bug:Some cell black out when click
-		-- fixed
+	54. Add download link remove function
+		-- processing
+	55. Make upload link and download as a general function
+		-- processing
 
+---
+	## 2023.09.06		version 0.3.0 -- Manual-build
+	-- Function enhancement
+	# Added
+	1. Add download-proof in edit mode for link selection
+		-- finished
 ---
 	## 2023.09.05		version 0.2.9 -- Manual-build
 	-- Bug fix

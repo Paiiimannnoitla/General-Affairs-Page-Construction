@@ -69,22 +69,14 @@ tbody{
 	background:			rgb(255,250,240);
 	width:				90vw;
 }
-/*
-#announce{
-	height:				60vh;
-	width:				100%;
-	overflow:			auto;
-}*/
+
 #announce th{
 	background:			rgb(225,228,244);
 }
 #announce td{
 	background:			rgb(226,241,253);
 }
-/*
-#anc-main{
-	width:				100%;
-}*/
+
 .anc-id{
 	width:				10vw;	
 }
