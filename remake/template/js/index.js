@@ -97,6 +97,7 @@ const pack = async(e,address,id,order) =>{
 	const ajaxconvert = (arr)=>{
 		const uintArr = new Uint8Array(arr)
 		const sArr = Array.from(uintArr)
+		// If order starts with 0. clear directory will activate
 		const data = {'file':sArr,'name':filename,
 					'address':address,'id':id,
 					'order':order,'test':testMode}

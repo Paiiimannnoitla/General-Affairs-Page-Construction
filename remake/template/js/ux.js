@@ -231,6 +231,23 @@ const uxSelect = (cell=true)=>{
 		return false
 	}
 }
+// Download function
+const uxDownload = ()=>{
+	document.getElementById('main-display').addEventListener('click',async(event)=>{
+		const e = event.target
+		const isLink = event.target.classList.contains('dl-link')
+		if(isLink){
+			const isEdit = uxCheck() == 'Login'
+			if(isEdit){
+				const href = window.location.href + 'download/'
+				const dlurl = e.id
+				const url = href + dlurl 
+				const name = e.innerHTML
+				download(url,name)
+			}		
+		}
+	})
+}
 const uxStyle = ()=>{
 	/*
 	const main = document.getElementById('main-display')
@@ -249,6 +266,7 @@ const uxInit = ()=>{
 	uxDelete()
 	uxTest()
 	uxSelectInit()
+	uxDownload()
 	uxStyle()
 }
 uxInit()

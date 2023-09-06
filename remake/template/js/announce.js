@@ -96,7 +96,7 @@ const ancFunc = ()=>{
 				const r = receipt[i]
 				const arr = r.split('/')
 				const name = arr[arr.length-1]
-				const url = `<p id='` + r + `' class='anc-link select-item'>` + name + `</p>`
+				const url = `<p id='` + r + `' class='anc-link dl-link select-item'>` + name + `</p>`
 				content = content + url
 			}
 			const linkArr = td.querySelectorAll('.anc-link')
@@ -107,7 +107,7 @@ const ancFunc = ()=>{
 		}
 	})
 	//Side: Download attachment through Link
-	
+	/*
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
 		const isLink = event.target.classList.contains('anc-link')
@@ -121,7 +121,7 @@ const ancFunc = ()=>{
 				download(url,name)
 			}		
 		}
-	})
+	})*/
 }
 // Initializer
 const ancInit = async(test)=>{
