@@ -28,10 +28,14 @@
 	## 2023.09.06		version 0.3.0 -- Manual-build
 	-- Function enhancement
 	-- Rewire function
+	-- Style change
 	# Added
 	1. Add download-proof in edit mode for link selection
 		-- finished
 	2. Rewire downloaf function to uxDownload
+		-- finished
+	# Changed
+	1. Add the edit setting uploading setting to Manual page
 		-- finished
 ---
 	## 2023.09.05		version 0.2.9 -- Manual-build
