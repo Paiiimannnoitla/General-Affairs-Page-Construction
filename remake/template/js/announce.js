@@ -56,25 +56,7 @@ const ancFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
-	//Side: Upload and auto increment
-	/*
-	document.getElementById('anc-main').addEventListener('change',(event)=>{
-		const e = event.target
-		const isUpload = e.classList.contains('upload-btn')
-		if(isUpload){
-			if(e.files.length){
-				const td = e.parentNode
-				const btn = td.querySelector('.send-btn')
-				if(btn){
-					btn.remove()
-				}
-				const content = `
-					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
-					<p class='send-btn edit-mode'>Upload</p>`
-				td.insertAdjacentHTML('beforeend',content)
-			}
-		}	
-	})*/
+	
 	//Side: Uploading attachment handler
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target

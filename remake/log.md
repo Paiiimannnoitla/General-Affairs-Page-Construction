@@ -23,6 +23,8 @@
 		-- processing
 	55. Make upload link and download as a general function
 		-- processing
+	56. Bug:Edit button not hide in Manual page
+		-- processing
 
 ---
 	## 2023.09.06		version 0.3.0 -- Manual-build
@@ -34,6 +36,8 @@
 	1. Add download-proof in edit mode for link selection
 		-- finished
 	2. Rewire downloaf function to uxDownload
+		-- finished
+	3. Rewire update button related function to uxUploadSet
 		-- finished
 	# Changed
 	1. Add the edit setting uploading setting to Manual page

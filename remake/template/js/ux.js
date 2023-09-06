@@ -235,7 +235,7 @@ const uxSelect = (cell=true)=>{
 	}
 }
 // Upload function
-const uxUpload = ()=>{
+const uxUploadSet = ()=>{
 	document.getElementById('main-display').addEventListener('change',(event)=>{
 		const e = event.target
 		const isUpload = e.classList.contains('upload-btn')
@@ -289,6 +289,7 @@ const uxInit = ()=>{
 	uxDelete()
 	uxTest()
 	uxSelectInit()
+	uxUploadSet()
 	uxDownload()
 	uxStyle()
 }
