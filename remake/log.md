@@ -21,15 +21,18 @@
 		-- processing
 	54. Add download link remove function
 		-- processing
-	55. Make upload link and download as a general function
-		-- finished
-	56. Bug:Edit button not hide in Manual page
-		-- finished
 	57. Upload process should happen only when save button is pressed
 		-- prcessing
 	58. Remove empty input files to one when upload
 		-- processing
 
+
+---
+	## 2023.09.08		version 0.3.1 -- Manual-build
+	-- Function enhancement
+	# Added
+	1. Add temporary link before save
+		-- finished
 ---
 	## 2023.09.06		version 0.3.0 -- Manual-build
 	-- Function enhancement

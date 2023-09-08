@@ -27,6 +27,11 @@ const ancFunc = ()=>{
 			const e = cellArr[i]
 			e.removeAttribute('contenteditable')
 		}
+		const uploadArr = document.querySelectorAll('.upload-zone')
+		for(var i=0;i<uploadArr.length;i++){
+			const e = uploadArr[i]
+			e.classList.remove('upload-zone')
+		}
 	})
 	
 	//Side: Publish new announcement
@@ -55,11 +60,14 @@ const ancFunc = ()=>{
 		}
 	})
 	
-	//Side: Uploading attachment handler
+	//Side: Uploading preparation
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
 		const isUpload = event.target.classList.contains('send-btn')
 		if(isUpload){
+			const td = e.parentNode
+			td.classList.add('upload-zone')
+			/*
 			const td = e.parentNode
 			const tr = td.parentNode
 			const id = tr.children[0].innerHTML
@@ -77,6 +85,33 @@ const ancFunc = ()=>{
 				linkArr[i].remove()
 			}
 			td.insertAdjacentHTML('afterbegin',content)
+			*/
+		}
+	})
+	//Side: Main uploading Function
+	document.getElementById('main-display').addEventListener('click',async(event)=>{
+		const isSave = event.target.classList.contains('save-btn')
+		if(isSave){
+			const uploadArr = document.querySelectorAll('.upload-zone')
+			for(var i=0;i<uploadArr.length;i++){
+				const td = uploadArr[i]
+				const tr = td.parentNode
+				const id = tr.children[0].innerHTML
+				const receipt = await uxUpload('announce',td,id)
+				let content = ''
+				for(var i=0;i<receipt.length;i++){
+					const r = receipt[i]
+					const arr = r.split('/')
+					const name = arr[arr.length-1]
+					const url = `<p id='` + r + `' class='anc-link dl-link select-item'>` + name + `</p>`
+					content = content + url
+				}
+				const linkArr = td.querySelectorAll('.anc-link')
+				for(var i=0;i<linkArr.length;i++){
+					linkArr[i].remove()
+				}
+				td.insertAdjacentHTML('afterbegin',content)
+			}
 		}
 	})
 }

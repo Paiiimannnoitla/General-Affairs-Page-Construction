@@ -235,6 +235,7 @@ const uxSelect = (cell=true)=>{
 }
 // Upload Button Setting
 const uxUploadSet = ()=>{
+	// Append new upload button
 	document.getElementById('main-display').addEventListener('change',(event)=>{
 		const e = event.target
 		const isUpload = e.classList.contains('upload-btn')
@@ -251,6 +252,29 @@ const uxUploadSet = ()=>{
 				td.insertAdjacentHTML('beforeend',content)
 			}
 		}	
+	})
+	// Generate temporary downloadl link
+	document.getElementById('main-display').addEventListener('click',(event)=>{
+		const e = event.target
+		const isUpload = e.classList.contains('send-btn')
+		if(isUpload){
+			const cell = e.parentNode
+			const fileArr = cell.querySelectorAll('.upload-btn')
+			let content = ''
+			for(var i=0;i<fileArr.length;i++){
+				const f = fileArr[i].files
+				if(f.length){
+					const name = f[0].name
+					const url = `<p id="` + name +`" class='anc-link-temp dl-link select-item'>` + name + `</p>`
+					content = content + url
+				}						
+			}
+			const linkArr = cell.querySelectorAll('.dl-link')
+			for(var i=0;i<linkArr.length;i++){
+				linkArr[i].remove()
+			}
+			cell.insertAdjacentHTML('afterbegin',content)
+		}
 	})
 }
 // Upload function
@@ -269,6 +293,8 @@ const uxUpload = async(funcArea,uploadArea,id,isClear=true)=>{
 			receipt[a] = await upload(cargo)
 			a = a + 1
 			n = n + 1
+		}else{
+			fileArr[i].remove()
 		}
 	}
 	return receipt
