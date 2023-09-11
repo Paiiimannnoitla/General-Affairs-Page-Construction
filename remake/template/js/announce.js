@@ -67,12 +67,17 @@ const ancFunc = ()=>{
 		const isUpload = event.target.classList.contains('send-btn')
 		if(isUpload){
 			const td = e.parentNode
+			console.log(td)
 			td.classList.add('upload-zone')
 			const brArr = td.querySelectorAll('br')
 			for(var i=1;i<brArr.length;i++){
 				brArr[i].remove()
-			}
-			/*
+			}		
+		}
+		/*
+		const isSave = event.target.classList.contains('save-btn')
+		if(isSave){
+			console.log(event.target)
 			const td = e.parentNode
 			const tr = td.parentNode
 			const id = tr.children[0].innerHTML
@@ -90,8 +95,8 @@ const ancFunc = ()=>{
 				linkArr[i].remove()
 			}
 			td.insertAdjacentHTML('afterbegin',content)
-			*/
-		}
+			uxSave()
+		}*/
 	})
 	//Side: Main uploading Function
 	document.getElementById('main-display').addEventListener('click',async(event)=>{

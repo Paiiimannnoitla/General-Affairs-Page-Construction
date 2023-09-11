@@ -22,8 +22,10 @@
 	54. Add download link remove function
 		-- processing
 	57. Upload process should happen only when save button is pressed
-		-- prcessing
+		-- finished
 	58. Remove empty input files to one when upload
+		-- finished
+	59. Reassign style from anc-link to dl-link
 		-- processing
 
 
@@ -38,6 +40,8 @@
 	2. Rewrite uxSave function for new save mechanism
 		-- finished
 	3. Add file input auto remove function
+		-- finished
+	4. Upload files only when saving 
 		-- finished
 ---
 	## 2023.09.08		version 0.3.1 -- Manual-build

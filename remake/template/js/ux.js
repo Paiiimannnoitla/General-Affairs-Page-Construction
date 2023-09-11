@@ -47,24 +47,6 @@ const uxEdit = ()=>{
 			const funcArea = main.querySelectorAll('.function-area')[0].id
 			const toolbar = document.getElementById('tb-' + funcArea)
 			toolbar.click()
-			/*
-			const editbtn = document.getElementById('edit-btn')
-			const btnArr = document.querySelectorAll('.edit-mode')
-			const readArr = document.querySelectorAll('.read-mode')
-			const selected = uxSelect()
-			const selecteditem = document.querySelectorAll('.item-selected')
-			unhide(readArr)
-			unhide(editbtn)			
-			hide(btnArr)		
-			bright(false)
-			if(selected){
-				selected.classList.remove('selected')
-			}	
-			if(selecteditem.length){
-				console.log(200)
-				selecteditem[0].classList.remove('item-selected')
-			}
-			*/
 		}
 	})
 }
@@ -94,29 +76,7 @@ const uxCancel = ()=>{
 	unhide(readArr)
 	
 }
-// Save function 
-const uxSave = ()=>{
-	document.getElementById('main-display').addEventListener('click',(event)=>{
-		const savebtn = event.target.id == 'save-btn'
-		if(savebtn){
-			uxCancel()
-			const editbtn = document.getElementById('edit-btn')
-			const main = document.getElementById('main-display')
-			const id = main.querySelectorAll('.function-area')[0].id
-			const testbtn = document.getElementById('test-btn')
-			const isTest = testbtn.classList.contains('hide')
-			if(isTest){
-				console.log('test page save')
-				Delivery(id + '-test')
-			}else{				
-				console.log('Current page saved')
-				Delivery(id)
-				
-			}	
-			unhide(editbtn)			
-		}		
-	})
-}
+
 // Delete function
 const uxDelete = ()=>{
 	document.getElementById('main-display').addEventListener('click',(event)=>{
@@ -208,7 +168,6 @@ const uxSelectInit = ()=>{
 					cellArr[0] = cell.tagName == 'TD'
 					cellArr[1] = cell.tagName == 'TH'
 				}				
-				//cellArr[2] = event.target.classList.contains('select-item')
 				let isCell = 0
 				for(var i=0;i<cellArr.length;i++){
 					isCell = isCell + cellArr[i]
@@ -358,6 +317,69 @@ const uxDownload = ()=>{
 				download(url,name)
 			}		
 		}
+	})
+}
+// Save function 
+const uxSave = ()=>{
+	/*
+	uxCancel()
+	console.log(100)
+	const editbtn = document.getElementById('edit-btn')
+	const main = document.getElementById('main-display')
+	const id = main.querySelectorAll('.function-area')[0].id
+	const testbtn = document.getElementById('test-btn')
+	const isTest = testbtn.classList.contains('hide')
+	const uploadArr = document.querySelectorAll('.upload-zone')
+	if(isTest){
+		console.log('test page save')
+		Delivery(id + '-test')
+	}else{				
+		console.log('Current page saved')
+		Delivery(id)			
+	}	
+	unhide(editbtn)*/
+	
+	document.getElementById('main-display').addEventListener('click',async(event)=>{
+		const savebtn = event.target.id == 'save-btn'
+		if(savebtn){
+					
+			console.log(200)
+			const editbtn = document.getElementById('edit-btn')
+			const main = document.getElementById('main-display')
+			const funcArea = main.querySelectorAll('.function-area')[0].id
+			const testbtn = document.getElementById('test-btn')
+			const isTest = testbtn.classList.contains('hide')
+			const uploadArr = document.querySelectorAll('.upload-zone')
+			for(var i=0;i<uploadArr.length;i++){
+				const f = uploadArr[i]
+				const tr = f.parentNode
+				const id = tr.children[0].innerHTML
+				const receipt = await uxUpload(funcArea,f,id)
+				let content = ''
+				console.log(receipt)
+				for(var j=0;j<receipt.length;j++){
+					const r = receipt[j]
+					const arr = r.split('/')
+					const name = arr[arr.length-1]
+					const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+					content = content + url
+				}
+				const uploadPart = `
+					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+					<p class='send-btn edit-mode'>Upload</p>`
+				content = content + uploadPart
+				f.innerHTML = content
+			}
+			uxCancel()
+			if(isTest){
+				console.log('test page save')
+				Delivery(funcArea + '-test')
+			}else{				
+				console.log('Current page saved')
+				Delivery(funcArea)			
+			}	
+			unhide(editbtn)			
+		}		
 	})
 }
 const uxStyle = ()=>{
