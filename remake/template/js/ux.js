@@ -321,24 +321,6 @@ const uxDownload = ()=>{
 }
 // Save function 
 const uxSave = ()=>{
-	/*
-	uxCancel()
-	console.log(100)
-	const editbtn = document.getElementById('edit-btn')
-	const main = document.getElementById('main-display')
-	const id = main.querySelectorAll('.function-area')[0].id
-	const testbtn = document.getElementById('test-btn')
-	const isTest = testbtn.classList.contains('hide')
-	const uploadArr = document.querySelectorAll('.upload-zone')
-	if(isTest){
-		console.log('test page save')
-		Delivery(id + '-test')
-	}else{				
-		console.log('Current page saved')
-		Delivery(id)			
-	}	
-	unhide(editbtn)*/
-	
 	document.getElementById('main-display').addEventListener('click',async(event)=>{
 		const savebtn = event.target.id == 'save-btn'
 		if(savebtn){
@@ -383,14 +365,7 @@ const uxSave = ()=>{
 	})
 }
 const uxStyle = ()=>{
-	/*
-	const main = document.getElementById('main-display')
-	main.addEventListener('mousedown',()=>{
-		bright(false)
-	})
-	main.addEventListener('click',()=>{
-		bright()
-	})*/
+
 }
 const uxInit = ()=>{
 	uxLogin()

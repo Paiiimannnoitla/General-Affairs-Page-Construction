@@ -91,13 +91,6 @@ tbody{
 .anc-attach{
 	width:				40vw;
 }
-.anc-link{
-	cursor:				pointer;
-}
-.anc-link:hover{
-	border-style:		solid;
-}
-
 #member th{
 	background:			rgb(245,245,220);
 	height:				auto;
@@ -184,4 +177,10 @@ tbody{
 .dl-area{
 	width:				80%;
 	text-align:			center;
+}
+.dl-link{
+	cursor:				pointer;
+}
+.dl-link:hover{
+	border-style:		solid;
 }
