@@ -268,6 +268,7 @@ const uxUploadSet = ()=>{
 					n = n + 1
 				}
 			}
+			nullArr.reverse()
 			for(var i=1;i<nullArr.length;i++){
 				const f = nullArr[i]
 				f.remove()
@@ -324,8 +325,6 @@ const uxSave = ()=>{
 	document.getElementById('main-display').addEventListener('click',async(event)=>{
 		const savebtn = event.target.id == 'save-btn'
 		if(savebtn){
-					
-			console.log(200)
 			const editbtn = document.getElementById('edit-btn')
 			const main = document.getElementById('main-display')
 			const funcArea = main.querySelectorAll('.function-area')[0].id

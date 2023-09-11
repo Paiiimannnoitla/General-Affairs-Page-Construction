@@ -26,9 +26,9 @@
 	58. Remove empty input files to one when upload
 		-- finished
 	59. Reassign style from anc-link to dl-link
-		-- processing
+		-- finished
 	60. Keep the last file input when clearing
-		-- processing
+		-- finished
 	61. Make td as big as border limit
 		-- finished
 ---
@@ -50,6 +50,8 @@
 	1. Change the style of dl-link as a general style
 		-- finished
 	2. Fix the size of border
+		-- finished
+	3. Reverse the removing order of file input
 		-- finished
 ---
 	## 2023.09.08		version 0.3.1 -- Manual-build
