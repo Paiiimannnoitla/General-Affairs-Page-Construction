@@ -28,9 +28,11 @@ const uxMove = ()=>{
 		}
 	})
 }
+
 // Edit mode
 const uxEdit = ()=>{
-	document.getElementById('main-display').addEventListener('click',(event)=>{
+	const main = document.getElementById('main-display')
+	main.addEventListener('click',(event)=>{
 		const isEdit = event.target.id == 'edit-btn'
 		if(isEdit){
 			const editbtn = document.getElementById('edit-btn')
@@ -42,6 +44,10 @@ const uxEdit = ()=>{
 		}
 		const isUnEdit = event.target.id == 'unedit-btn'
 		if(isUnEdit){
+			const funcArea = main.querySelectorAll('.function-area')[0].id
+			const toolbar = document.getElementById('tb-' + funcArea)
+			toolbar.click()
+			/*
 			const editbtn = document.getElementById('edit-btn')
 			const btnArr = document.querySelectorAll('.edit-mode')
 			const readArr = document.querySelectorAll('.read-mode')
@@ -58,29 +64,56 @@ const uxEdit = ()=>{
 				console.log(200)
 				selecteditem[0].classList.remove('item-selected')
 			}
+			*/
 		}
 	})
+}
+
+// Quit edit mode
+const uxCancel = ()=>{
+	const editArr = document.querySelectorAll('td,th')
+	for(var i=0;i<editArr.length;i++){
+		editArr[i].removeAttribute('contenteditable')
+	}
+	const uploadArr = document.querySelectorAll('.upload-zone')
+	for(var i=0;i<uploadArr.length;i++){
+		uploadArr[i].classList.remove('upload-zone')
+	}
+	const selectArr = document.querySelectorAll('.selected')
+	for(var i=0;i<selectArr.length;i++){
+		bright(false)
+		selectArr[i].classList.remove('selected')
+	}
+	const itemArr = document.querySelectorAll('.item-selected')
+	for(var i=0;i<itemArr.length;i++){
+		itemArr[i].classList.remove('item-selected')
+	}
+	const editmodeArr = document.querySelectorAll('.edit-mode')
+	const readArr = document.querySelectorAll('.read-mode')
+	hide(editmodeArr)
+	unhide(readArr)
+	
 }
 // Save function 
 const uxSave = ()=>{
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		const savebtn = event.target.id == 'save-btn'
 		if(savebtn){
-			const evt = new Event('click')
-			const btn = document.getElementById('unedit-btn')
+			uxCancel()
+			const editbtn = document.getElementById('edit-btn')
 			const main = document.getElementById('main-display')
 			const id = main.querySelectorAll('.function-area')[0].id
-			btn.click()
 			const testbtn = document.getElementById('test-btn')
 			const isTest = testbtn.classList.contains('hide')
 			if(isTest){
 				console.log('test page save')
 				Delivery(id + '-test')
-			}else{
-				
+			}else{				
 				console.log('Current page saved')
 				Delivery(id)
-			}		
+				
+			}	
+			unhide(editbtn)			
 		}		
 	})
 }
@@ -97,6 +130,8 @@ const uxDelete = ()=>{
 }
 // Remain Login status
 const uxLoginCheck = ()=>{
+	const editbtnArr = document.querySelectorAll('.edit-mode')
+	hide(editbtnArr)
 	if(isLogin){
 		const btnArr = document.querySelectorAll('.login-mode')
 		unhide(btnArr)
@@ -261,13 +296,22 @@ const uxUploadSet = ()=>{
 			const cell = e.parentNode
 			const fileArr = cell.querySelectorAll('.upload-btn')
 			let content = ''
+			const nullArr = []
+			let n = 0
 			for(var i=0;i<fileArr.length;i++){
 				const f = fileArr[i].files
 				if(f.length){
 					const name = f[0].name
 					const url = `<p id="` + name +`" class='anc-link-temp dl-link select-item'>` + name + `</p>`
 					content = content + url
-				}						
+				}else{
+					nullArr[n] = fileArr[i]
+					n = n + 1
+				}
+			}
+			for(var i=1;i<nullArr.length;i++){
+				const f = nullArr[i]
+				f.remove()
 			}
 			const linkArr = cell.querySelectorAll('.dl-link')
 			for(var i=0;i<linkArr.length;i++){

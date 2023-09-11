@@ -27,6 +27,18 @@
 		-- processing
 
 
+
+---
+	## 2023.09.11		version 0.3.2 -- Manual-build
+	-- Function implementatation
+	-- Rewrite function
+	# Added
+	1. Add uxCancel function to handle all preparation before save
+		-- finished
+	2. Rewrite uxSave function for new save mechanism
+		-- finished
+	3. Add file input auto remove function
+		-- finished
 ---
 	## 2023.09.08		version 0.3.1 -- Manual-build
 	-- Function enhancement

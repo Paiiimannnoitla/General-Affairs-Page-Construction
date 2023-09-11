@@ -21,6 +21,7 @@ const ancStyle = ()=>{
 const ancFunc = ()=>{
 	uxLoginCheck()
 	//Side: Unselect function
+	/*
 	document.getElementById('unedit-btn').addEventListener('click',()=>{
 		const cellArr = document.querySelectorAll('td,th')
 		for(var i=0;i<cellArr.length;i++){
@@ -32,7 +33,7 @@ const ancFunc = ()=>{
 			const e = uploadArr[i]
 			e.classList.remove('upload-zone')
 		}
-	})
+	})*/
 	
 	//Side: Publish new announcement
 	document.getElementById('new-btn').addEventListener('click',()=>{
@@ -67,6 +68,10 @@ const ancFunc = ()=>{
 		if(isUpload){
 			const td = e.parentNode
 			td.classList.add('upload-zone')
+			const brArr = td.querySelectorAll('br')
+			for(var i=1;i<brArr.length;i++){
+				brArr[i].remove()
+			}
 			/*
 			const td = e.parentNode
 			const tr = td.parentNode

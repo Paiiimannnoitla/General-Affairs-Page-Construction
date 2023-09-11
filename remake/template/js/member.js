@@ -32,13 +32,14 @@ const memFunc = ()=>{
 		main.innerHTML=data
 	})	
 		//Side: Unselect function
+		/*
 	document.getElementById('unedit-btn').addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td,th')
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.removeAttribute('contenteditable')
 		}
-	})
+	})*/
 
 		//Side: Content edit 
 	document.getElementById('edit-btn').addEventListener('click',()=>{
