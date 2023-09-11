@@ -12,6 +12,7 @@ ul{
 table{
 	width:				100%;
 	padding:			5px solid rgb(248,248,255);
+	
 }
 tr{
 	width:				100%;
@@ -21,8 +22,18 @@ th{
 	position:			sticky;
 	top:				0;
 }
+td{
+	height:				auto;
+	
+}
 tbody{
 	width:				100%;
+}
+p{
+	margin:				5px;
+	border:				3px;
+	border-style:		solid; 
+	border-color:		transparent;
 }
 .hide{
 	display:			none;
@@ -182,5 +193,5 @@ tbody{
 	cursor:				pointer;
 }
 .dl-link:hover{
-	border-style:		solid;
+	border-color:		black;
 }

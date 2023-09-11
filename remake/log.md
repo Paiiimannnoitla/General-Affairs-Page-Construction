@@ -29,7 +29,8 @@
 		-- processing
 	60. Keep the last file input when clearing
 		-- processing
-
+	61. Make td as big as border limit
+		-- finished
 ---
 	## 2023.09.11		version 0.3.2 -- Manual-build
 	-- Function implementatation
@@ -47,6 +48,8 @@
 		-- finished
 	# Changed
 	1. Change the style of dl-link as a general style
+		-- finished
+	2. Fix the size of border
 		-- finished
 ---
 	## 2023.09.08		version 0.3.1 -- Manual-build
