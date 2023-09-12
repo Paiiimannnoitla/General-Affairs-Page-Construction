@@ -25,6 +25,10 @@
 		-- finished
 	63. Bug: testpage would jump back to normal page after save
 		-- finished
+	64. Add dynamic upload function
+		-- processing
+	65. Bug: page is saved when link is template
+		-- finished
 ---
 	## 2023.09.12		version 0.3.2.1 -- Manual-build
 	-- Function implementation
@@ -36,6 +40,8 @@
 	1. Fix the bug that br cannot be removed
 		-- finished
 	2. Fix the bug that save function redirect page to normal page from testpage
+		-- finished
+	3. Apply asynchronous way to uxUploadWriter
 		-- finished
 	
 ---
