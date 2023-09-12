@@ -44,9 +44,20 @@ const uxEdit = ()=>{
 		}
 		const isUnEdit = event.target.id == 'unedit-btn'
 		if(isUnEdit){
+			const testbtn = document.getElementById('test-btn')
+			const isTest = testbtn.classList.contains('hide')
+			if(isTest){
+				const testpage = document.getElementById('tb-test')
+				testpage.click()
+			}else{
+				const funcArea = main.querySelectorAll('.function-area')[0].id
+				const toolbar = document.getElementById('tb-' + funcArea)
+				toolbar.click()
+			}
+			/*
 			const funcArea = main.querySelectorAll('.function-area')[0].id
 			const toolbar = document.getElementById('tb-' + funcArea)
-			toolbar.click()
+			toolbar.click()*/
 		}
 	})
 }
