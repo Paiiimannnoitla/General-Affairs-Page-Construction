@@ -49,15 +49,18 @@ const ancFunc = ()=>{
 	//Side: Uploading preparation
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
-		const isUpload = event.target.classList.contains('send-btn')
+		const isUpload = e.classList.contains('send-btn')
 		if(isUpload){
 			const td = e.parentNode
-			console.log(td)
 			td.classList.add('upload-zone')
 			const brArr = td.querySelectorAll('br')
-			for(var i=1;i<brArr.length;i++){
+			/*
+			for(var i=brArr.length;i>1;i--){
+				brArr[i-1].remove()
+			}		*/
+			for(var i=0;i<brArr.length;i++){
 				brArr[i].remove()
-			}		
+			}
 		}
 
 	})

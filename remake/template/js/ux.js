@@ -320,6 +320,34 @@ const uxDownload = ()=>{
 		}
 	})
 }
+// Save Writer
+const uxSaveWriter = async(funcArea,nameCode=0)=>{
+	const uploadArr = document.querySelectorAll('.upload-zone')
+	const nameMode = [
+		main = (arr)=>{return arr[arr.length-1]},
+		date = ()=>{return extDate(true,'.')}
+	]
+	for(var i=0;i<uploadArr.length;i++){
+		const f = uploadArr[i]
+		const tr = f.parentNode
+		const id = tr.children[0].innerHTML
+		const receipt = await uxUpload(funcArea,f,id)
+		let content = ''
+		for(var j=0;j<receipt.length;j++){
+			const r = receipt[j]
+			const arr = r.split('/')
+			//const name = arr[arr.length-1]
+			const name = nameMode[0](arr)
+			const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+			content = content + url
+		}
+		const uploadPart = `
+			<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+			<p class='send-btn edit-mode'>Upload</p>`
+		content = content + uploadPart
+		f.innerHTML = content
+	}
+}
 // Save function 
 const uxSave = ()=>{
 	document.getElementById('main-display').addEventListener('click',async(event)=>{
@@ -330,6 +358,8 @@ const uxSave = ()=>{
 			const funcArea = main.querySelectorAll('.function-area')[0].id
 			const testbtn = document.getElementById('test-btn')
 			const isTest = testbtn.classList.contains('hide')
+			uxSaveWriter(funcArea)
+			/*
 			const uploadArr = document.querySelectorAll('.upload-zone')
 			for(var i=0;i<uploadArr.length;i++){
 				const f = uploadArr[i]
@@ -350,7 +380,7 @@ const uxSave = ()=>{
 					<p class='send-btn edit-mode'>Upload</p>`
 				content = content + uploadPart
 				f.innerHTML = content
-			}
+			}*/
 			uxCancel()
 			if(isTest){
 				console.log('test page save')

@@ -24,6 +24,15 @@ const mnlFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
+	//Side: Uploading preparation
+	document.getElementById('mnl-main').addEventListener('click',async(event)=>{
+		const e = event.target
+		const isUpload = e.classList.contains('send-btn')
+		if(isUpload){
+			const td = e.parentNode
+			td.classList.add('upload-zone')
+		}
+	})
 }
 // Initialize
 const mnlInit = async(t)=>{

@@ -54,11 +54,15 @@ const bright = (dark=true)=>{
 	
 }
 
-const extDate = ()=>{
+const extDate = (isTaiwan=false,n='/')=>{
+	let ex = 0
+	if(isTaiwan){
+		ex = 1911
+	}
 	const today = new Date()
 	const d = today.getDate()
 	const m = today.getMonth() + 1
-	const y = today.getFullYear()
-	const date = y + '/' + m + '/' + d
+	const y = today.getFullYear() - ex
+	const date = y + n + m + n + d
 	return date
 }

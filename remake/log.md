@@ -21,16 +21,19 @@
 		-- processing
 	54. Add download link remove function
 		-- processing
-	57. Upload process should happen only when save button is pressed
+	62. Bug:br cannot be removed in announce page
 		-- finished
-	58. Remove empty input files to one when upload
+---
+	## 2023.09.12		version 0.3.2.1 -- Manual-build
+	-- Function implementation
+	-- Bug fix
+	# Added
+	1. Add uxUploadWriter too handle different case of uploading
 		-- finished
-	59. Reassign style from anc-link to dl-link
+	# Fixed
+	1. Fix the bug that br cannot be removed
 		-- finished
-	60. Keep the last file input when clearing
-		-- finished
-	61. Make td as big as border limit
-		-- finished
+	
 ---
 	## 2023.09.11		version 0.3.2 -- Manual-build
 	-- Function implementatation
