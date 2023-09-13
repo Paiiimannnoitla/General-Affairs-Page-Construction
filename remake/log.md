@@ -28,7 +28,7 @@
 	67. Bug: File upload failed when multiple upload-zone
 		-- finished
 	68. More advanced upload function
-		-- processing
+		-- finished
 ---
 	## 2023.09.13		version 0.3.3 -- Manual-build
 	-- Rewire function
@@ -38,6 +38,9 @@
 	1. Rebuild announce page save and upload function		
 		-- finished
 	2. Add Upload function to manual page
+		-- finished
+	# Changed
+	1. Rewrite download related function both server and client ends for better dynamics
 		-- finished
 	# Fixed
 	1. Fix the bug that multiple upload fail in announce page

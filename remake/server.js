@@ -122,6 +122,12 @@ app.post('/upload',async(req,res)=>{
 	res.send(expath + address + '/' + id + '/' + name)
 	res.end()
 })
+app.post('/download',(req,res)=>{
+	const hostname = 'download/'
+	const path = hostname + req.body['path']
+	res.download(path)
+})
+/*
 app.get('/download/:page/:id/:filename',(req,res)=>{
 	const hostname = 'download/'
 	const page = req.params.page
@@ -138,7 +144,7 @@ app.get('/download/test/:page/:id/:filename',(req,res)=>{
 	const filename = req.params.filename
 	const path = hostname + page + '/' + id + '/' + filename
 	res.download(path)
-})
+})*/
 app.listen(3000, function () {
   console.log('---Server Start---')
 })

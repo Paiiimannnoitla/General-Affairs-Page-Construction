@@ -69,10 +69,21 @@ const upload = async(data) =>{
 	return reply
 }
 const download = async(url,name)=>{
-	console.log(url)
-	const response = await fetch(url)
-	const data = await response.blob()
-	const dlink = window.URL.createObjectURL(data)
+	//console.log(url)
+	const hostname = host + 'download/'
+	const data = {'path':url}
+	const json = JSON.stringify(data)
+	const content = {
+		headers:{
+			'content-type':'application/json'
+		},
+		body : json,
+		method : 'POST'
+	}
+	//const response = await fetch(url)
+	const response = await fetch(hostname,content)
+	const file = await response.blob()
+	const dlink = window.URL.createObjectURL(file)
 	const e = document.createElement('a')
 	e.href = dlink
 	e.download = name
