@@ -238,9 +238,11 @@ const uxSelect = (cell=true)=>{
 		return false
 	}
 }
+
 // Upload Button Setting
 const uxUploadSet = ()=>{
 	// Append new upload button
+	/*
 	document.getElementById('main-display').addEventListener('change',(event)=>{
 		const e = event.target
 		const isUpload = e.classList.contains('upload-btn')
@@ -257,7 +259,7 @@ const uxUploadSet = ()=>{
 				td.insertAdjacentHTML('beforeend',content)
 			}
 		}	
-	})
+	})*/
 	// Generate temporary downloadl link
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		const e = event.target
@@ -332,20 +334,20 @@ const uxDownload = ()=>{
 	})
 }
 // Save Writer
+/*
 const uxSaveWriter = async(funcArea)=>{
-	const promiseArr = []
 	const uploadArr = document.querySelectorAll('.upload-zone')
-	let nameCode
 	const varArr = {
-		'announce':	()=>{nameCode=0},
-		'manual':	()=>{nameCode=1}
+		announce:	[0,1],
+		manual:		[1,0]
 	}
+	const [nameCode,keepPrev,isClear] = varArr[funcArea]
 	const nameMode = [
 		main = (arr)=>{return arr[arr.length-1]},
 		date = ()=>{return extDate(true,'.')}
 	]
 	if(uploadArr.length){
-		varArr[funcArea]()
+		varArr[funcArea]
 	}
 	
 	for(var i=0;i<uploadArr.length;i++){
@@ -358,7 +360,7 @@ const uxSaveWriter = async(funcArea)=>{
 			const r = receipt[j]
 			const arr = r.split('/')
 			const name = nameMode[nameCode](arr)
-			const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+			const url = `<p id='` + r + `' class='dl-link select-item' download=`+ name +`>` + name + `</p>`
 			content = content + url
 		}
 		const uploadPart = `
@@ -368,9 +370,10 @@ const uxSaveWriter = async(funcArea)=>{
 		f.innerHTML = content
 	}
 	return true
-}
+}*/
 // Save function 
 const uxSave = ()=>{
+	/*
 	document.getElementById('main-display').addEventListener('click',async(event)=>{
 		const savebtn = event.target.id == 'save-btn'
 		if(savebtn){
@@ -392,7 +395,21 @@ const uxSave = ()=>{
 				unhide(editbtn)
 			}	
 		}		
-	})
+	})*/
+	const editbtn = document.getElementById('edit-btn')
+	const main = document.getElementById('main-display')
+	const funcArea = main.querySelectorAll('.function-area')[0].id
+	const testbtn = document.getElementById('test-btn')
+	const isTest = testbtn.classList.contains('hide')
+	uxCancel()
+	if(isTest){
+		console.log('test page save')
+		Delivery(funcArea + '-test')
+	}else{				
+		console.log('Current page saved')
+		Delivery(funcArea)			
+	}	
+	unhide(editbtn)		
 }
 const uxStyle = ()=>{
 
@@ -401,7 +418,7 @@ const uxInit = ()=>{
 	uxLogin()
 	uxMove()
 	uxEdit()
-	uxSave()
+	//uxSave()
 	uxDelete()
 	uxTest()
 	uxSelectInit()

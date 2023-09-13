@@ -16,7 +16,6 @@ const ancBuild = async(test)=>{
 const ancStyle = ()=>{
 	
 }
-
 //Main: Edit function
 const ancFunc = ()=>{
 	uxLoginCheck()
@@ -45,7 +44,24 @@ const ancFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
-	
+	//Side: File input append
+	document.getElementById('anc-main').addEventListener('change',(event)=>{
+		const e = event.target
+		const isUpload = e.classList.contains('upload-btn')
+		if(isUpload){
+			if(e.files.length){
+				const td = e.parentNode
+				const btn = td.querySelector('.send-btn')
+				if(btn){
+					btn.remove()
+				}
+				const content = `
+					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+					<p class='send-btn edit-mode'>Upload</p>`
+				td.insertAdjacentHTML('beforeend',content)
+			}
+		}	
+	})
 	//Side: Uploading preparation
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
@@ -54,10 +70,6 @@ const ancFunc = ()=>{
 			const td = e.parentNode
 			td.classList.add('upload-zone')
 			const brArr = td.querySelectorAll('br')
-			/*
-			for(var i=brArr.length;i>1;i--){
-				brArr[i-1].remove()
-			}		*/
 			for(var i=0;i<brArr.length;i++){
 				brArr[i].remove()
 			}
@@ -65,8 +77,8 @@ const ancFunc = ()=>{
 
 	})
 	//Side: Main uploading Function
-	document.getElementById('main-display').addEventListener('click',async(event)=>{
-		const isSave = event.target.classList.contains('save-btn')
+	document.getElementById('function-menu').addEventListener('click',async(event)=>{
+		const isSave = event.target.id == 'save-btn'
 		if(isSave){
 			const uploadArr = document.querySelectorAll('.upload-zone')
 			for(var i=0;i<uploadArr.length;i++){
@@ -79,15 +91,22 @@ const ancFunc = ()=>{
 					const r = receipt[i]
 					const arr = r.split('/')
 					const name = arr[arr.length-1]
-					const url = `<p id='` + r + `' class='anc-link dl-link select-item'>` + name + `</p>`
+					const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
 					content = content + url
 				}
+				/*
 				const linkArr = td.querySelectorAll('.anc-link')
 				for(var i=0;i<linkArr.length;i++){
 					linkArr[i].remove()
 				}
-				td.insertAdjacentHTML('afterbegin',content)
+				td.insertAdjacentHTML('afterbegin',content)*/
+				const uploadPart = `
+					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+					<p class='send-btn edit-mode'>Upload</p>`
+				content = content + uploadPart
+				td.innerHTML = content
 			}
+			uxSave()
 		}
 	})
 }

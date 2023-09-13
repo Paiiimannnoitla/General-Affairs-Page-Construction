@@ -21,13 +21,15 @@
 		-- processing
 	54. Add download link remove function
 		-- processing
-	62. Bug:br cannot be removed in announce page
-		-- finished
-	63. Bug: testpage would jump back to normal page after save
-		-- finished
 	64. Add dynamic upload function
 		-- processing
-	65. Bug: page is saved when link is template
+	66. Separate save function and related function
+		-- processing
+---
+	## 2023.09.13		version 0.3.3 -- Manual-build
+	-- Rewire function
+	# Added
+	1. Rebuild announce page save and upload function		
 		-- finished
 ---
 	## 2023.09.12		version 0.3.2.1 -- Manual-build
