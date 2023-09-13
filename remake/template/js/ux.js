@@ -299,8 +299,8 @@ const uxDownload = ()=>{
 		const e = event.target
 		const isLink = event.target.classList.contains('dl-link')
 		if(isLink){
-			const isEdit = uxCheck() == 'Login'
-			if(isEdit){
+			const isEdit = uxCheck() == 'Edit'
+			if(!isEdit){
 				const href = window.location.href + 'download/'
 				const dlurl = e.id
 				const url = href + dlurl 

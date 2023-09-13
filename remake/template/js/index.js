@@ -69,6 +69,7 @@ const upload = async(data) =>{
 	return reply
 }
 const download = async(url,name)=>{
+	console.log(url)
 	const response = await fetch(url)
 	const data = await response.blob()
 	const dlink = window.URL.createObjectURL(data)

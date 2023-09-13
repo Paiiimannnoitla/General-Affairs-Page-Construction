@@ -22,11 +22,13 @@
 	54. Add download link remove function
 		-- processing
 	64. Add dynamic upload function
-		-- processing
+		-- no longer need
 	66. Separate save function and related function
 		-- processing
 	67. Bug: File upload failed when multiple upload-zone
 		-- finished
+	68. More advanced upload function
+		-- processing
 ---
 	## 2023.09.13		version 0.3.3 -- Manual-build
 	-- Rewire function
@@ -38,7 +40,9 @@
 	2. Add Upload function to manual page
 		-- finished
 	# Fixed
-	1. Fix the bug that multiple upload fail in annoce page
+	1. Fix the bug that multiple upload fail in announce page
+		-- finished
+	2. Fix the bug that user cannot download attachment
 		-- finished
 ---
 	## 2023.09.12		version 0.3.2.1 -- Manual-build
