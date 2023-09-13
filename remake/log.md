@@ -30,9 +30,12 @@
 ---
 	## 2023.09.13		version 0.3.3 -- Manual-build
 	-- Rewire function
+	-- Function implementation
 	-- Bug fix
 	# Added
 	1. Rebuild announce page save and upload function		
+		-- finished
+	2. Add Upload function to manual page
 		-- finished
 	# Fixed
 	1. Fix the bug that multiple upload fail in annoce page

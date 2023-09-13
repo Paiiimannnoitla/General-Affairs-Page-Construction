@@ -81,9 +81,7 @@ const ancFunc = ()=>{
 		const isSave = event.target.id == 'save-btn'
 		if(isSave){
 			const uploadArr = document.querySelectorAll('.upload-zone')
-			console.log(uploadArr)
-			for(var i=0;i<uploadArr.length;i++){
-				
+			for(var i=0;i<uploadArr.length;i++){			
 				const td = uploadArr[i]
 				console.log(td)
 				const tr = td.parentNode

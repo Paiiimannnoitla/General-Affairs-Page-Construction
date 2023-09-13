@@ -304,7 +304,9 @@ const uxDownload = ()=>{
 				const href = window.location.href + 'download/'
 				const dlurl = e.id
 				const url = href + dlurl 
-				const name = e.innerHTML
+				const arr = dlurl.split('/')
+				const name = arr[arr.length-1]
+				//const name = e.innerHTML
 				download(url,name)
 			}		
 		}
