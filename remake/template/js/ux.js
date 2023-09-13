@@ -54,10 +54,6 @@ const uxEdit = ()=>{
 				const toolbar = document.getElementById('tb-' + funcArea)
 				toolbar.click()
 			}
-			/*
-			const funcArea = main.querySelectorAll('.function-area')[0].id
-			const toolbar = document.getElementById('tb-' + funcArea)
-			toolbar.click()*/
 		}
 	})
 }
@@ -241,25 +237,6 @@ const uxSelect = (cell=true)=>{
 
 // Upload Button Setting
 const uxUploadSet = ()=>{
-	// Append new upload button
-	/*
-	document.getElementById('main-display').addEventListener('change',(event)=>{
-		const e = event.target
-		const isUpload = e.classList.contains('upload-btn')
-		if(isUpload){
-			if(e.files.length){
-				const td = e.parentNode
-				const btn = td.querySelector('.send-btn')
-				if(btn){
-					btn.remove()
-				}
-				const content = `
-					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
-					<p class='send-btn edit-mode'>Upload</p>`
-				td.insertAdjacentHTML('beforeend',content)
-			}
-		}	
-	})*/
 	// Generate temporary downloadl link
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		const e = event.target
@@ -333,69 +310,9 @@ const uxDownload = ()=>{
 		}
 	})
 }
-// Save Writer
-/*
-const uxSaveWriter = async(funcArea)=>{
-	const uploadArr = document.querySelectorAll('.upload-zone')
-	const varArr = {
-		announce:	[0,1],
-		manual:		[1,0]
-	}
-	const [nameCode,keepPrev,isClear] = varArr[funcArea]
-	const nameMode = [
-		main = (arr)=>{return arr[arr.length-1]},
-		date = ()=>{return extDate(true,'.')}
-	]
-	if(uploadArr.length){
-		varArr[funcArea]
-	}
-	
-	for(var i=0;i<uploadArr.length;i++){
-		const f = uploadArr[i]
-		const tr = f.parentNode
-		const id = tr.children[0].innerHTML
-		const receipt = await uxUpload(funcArea,f,id)
-		let content = ''
-		for(var j=0;j<receipt.length;j++){
-			const r = receipt[j]
-			const arr = r.split('/')
-			const name = nameMode[nameCode](arr)
-			const url = `<p id='` + r + `' class='dl-link select-item' download=`+ name +`>` + name + `</p>`
-			content = content + url
-		}
-		const uploadPart = `
-			<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
-			<p class='send-btn edit-mode'>Upload</p>`
-		content = content + uploadPart
-		f.innerHTML = content
-	}
-	return true
-}*/
+
 // Save function 
 const uxSave = ()=>{
-	/*
-	document.getElementById('main-display').addEventListener('click',async(event)=>{
-		const savebtn = event.target.id == 'save-btn'
-		if(savebtn){
-			const editbtn = document.getElementById('edit-btn')
-			const main = document.getElementById('main-display')
-			const funcArea = main.querySelectorAll('.function-area')[0].id
-			const testbtn = document.getElementById('test-btn')
-			const isTest = testbtn.classList.contains('hide')
-			const isReady = await uxSaveWriter(funcArea)
-			if(isReady){
-				uxCancel()
-				if(isTest){
-					console.log('test page save')
-					Delivery(funcArea + '-test')
-				}else{				
-					console.log('Current page saved')
-					Delivery(funcArea)			
-				}	
-				unhide(editbtn)
-			}	
-		}		
-	})*/
 	const editbtn = document.getElementById('edit-btn')
 	const main = document.getElementById('main-display')
 	const funcArea = main.querySelectorAll('.function-area')[0].id

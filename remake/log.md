@@ -25,11 +25,17 @@
 		-- processing
 	66. Separate save function and related function
 		-- processing
+	67. Bug: File upload failed when multiple upload-zone
+		-- finished
 ---
 	## 2023.09.13		version 0.3.3 -- Manual-build
 	-- Rewire function
+	-- Bug fix
 	# Added
 	1. Rebuild announce page save and upload function		
+		-- finished
+	# Fixed
+	1. Fix the bug that multiple upload fail in annoce page
 		-- finished
 ---
 	## 2023.09.12		version 0.3.2.1 -- Manual-build

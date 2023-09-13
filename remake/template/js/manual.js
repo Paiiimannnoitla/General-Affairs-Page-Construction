@@ -33,6 +33,13 @@ const mnlFunc = ()=>{
 			td.classList.add('upload-zone')
 		}
 	})
+	//Side: Main uploading Function
+	document.getElementById('function-menu').addEventListener('click',async(event)=>{
+		const isSave = event.target.id == 'save-btn'
+		if(isSave){
+			const uploadArr = document.querySelectorAll('.upload-zone')
+		}
+	})
 }
 // Initialize
 const mnlInit = async(t)=>{
