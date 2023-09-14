@@ -16,6 +16,27 @@ const mnlBuild = async(t)=>{
 // Main: Edit Function
 const mnlFunc = ()=>{
 	uxLoginCheck()
+	//Side: Move to specifc Area
+	document.getElementById('function-menu').addEventListener('click',(event)=>{
+		const e = event.target
+		const isMove = e.id == 'mnl-btn-move'
+		if(isMove){
+			const table = document.querySelector('table')
+			table.scrollTo(0,0)
+			const department = e.classList[0]
+			const header = document.getElementById(department)
+			const placeholder = window.outerHeight - window.innerHeight
+			const height = header.getBoundingClientRect().top - placeholder
+			table.scrollTo(0,height)
+		}
+		/*
+		const table = document.querySelector('table')
+		table.scrollTo(0,0)
+		const e = document.getElementById('mnl-finance')
+		const apple = e.getBoundingClientRect().top
+		console.log(apple)	
+		table.scrollTo(0,apple)*/
+	})
 	//Side: Content edit
 	document.getElementById('edit-btn').addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')

@@ -18,11 +18,15 @@
 	49. Add delete row function in Manual
 		-- processing
 	50. Keep date as version number in Manual
-		-- processing
+		-- finished
 	54. Add download link remove function
 		-- processing
 	69. Classify affairs, documdent and budget in manual upload function
 		-- finished
+	70. Scroll to the top of each deparment
+		-- finished
+	71. Bug: New append row in manual page cannot edit
+		-- processing
 ---
 	## 2023.09.14		version 0.3.4 -- Manual-build
 	-- Function implementation
@@ -31,6 +35,8 @@
 	1. Add upload function to manual page
 		-- finished
 	2. Add new row append function manual page
+		-- finished
+	3. Add scroll to the top function to rach department
 		-- finished
 	# Changed
 	1. Rewrite save function in direct way rather than proxy way
