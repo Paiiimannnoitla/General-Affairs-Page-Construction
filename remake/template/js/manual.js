@@ -41,8 +41,10 @@ const mnlFunc = ()=>{
 			for(var i=0;i<uploadArr.length;i++){
 				const td = uploadArr[i]
 				const tr = td.parentNode
+				const exPath = tr.classList[0].substring(4)
+				const path = 'manual/' + exPath
 				const id = tr.children[0].innerHTML
-				const receipt = await uxUpload('manual/apple',td,id)
+				const receipt = await uxUpload(path,td,id)
 				let content = ''
 				for(var a=0;a<receipt.length;a++){
 					const r = receipt[a]

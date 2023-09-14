@@ -21,13 +21,13 @@
 		-- processing
 	54. Add download link remove function
 		-- processing
-	64. Add dynamic upload function
-		-- no longer need
-	66. Separate save function and related function
-		-- processing
-	67. Bug: File upload failed when multiple upload-zone
+	69. Classify affairs, documdent and budget in manual upload function
 		-- finished
-	68. More advanced upload function
+---
+	## 2023.09.14		version 0.3.4 -- Manual-build
+	-- Function implementation
+	# Added
+	1. Add upload function to manual page
 		-- finished
 ---
 	## 2023.09.13		version 0.3.3 -- Manual-build
