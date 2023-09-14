@@ -77,6 +77,30 @@ const ancFunc = ()=>{
 
 	})
 	//Side: Main uploading Function
+	document.getElementById('save-btn').addEventListener('click',async(event)=>{
+		const uploadArr = document.querySelectorAll('.upload-zone')
+		for(var i=0;i<uploadArr.length;i++){			
+			const td = uploadArr[i]
+			const tr = td.parentNode
+			const id = tr.children[0].innerHTML
+			const receipt = await uxUpload('announce',td,id)
+			let content = ''
+			for(var j=0;j<receipt.length;j++){
+				const r = receipt[j]
+				const arr = r.split('/')
+				const name = arr[arr.length-1]
+				const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+				content = content + url
+			}
+			const uploadPart = `
+				<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+				<p class='send-btn edit-mode'>Upload</p>`
+			content = content + uploadPart
+			td.innerHTML = content
+		}
+		uxSave()
+	})
+	/*
 	document.getElementById('function-menu').addEventListener('click',async(event)=>{
 		const isSave = event.target.id == 'save-btn'
 		if(isSave){
@@ -103,7 +127,7 @@ const ancFunc = ()=>{
 			}
 			uxSave()
 		}
-	})
+	})*/
 }
 // Initializer
 const ancInit = async(test)=>{

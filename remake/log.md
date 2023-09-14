@@ -26,8 +26,12 @@
 ---
 	## 2023.09.14		version 0.3.4 -- Manual-build
 	-- Function implementation
+	-- Rewrite function
 	# Added
 	1. Add upload function to manual page
+		-- finished
+	# Changed
+	1. Rewrite save function in direct way rather than proxy way
 		-- finished
 ---
 	## 2023.09.13		version 0.3.3 -- Manual-build

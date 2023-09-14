@@ -34,6 +34,31 @@ const mnlFunc = ()=>{
 		}
 	})
 	//Side: Main uploading Function
+	document.getElementById('save-btn').addEventListener('click',async(event)=>{
+		const uploadArr = document.querySelectorAll('.upload-zone')
+		for(var i=0;i<uploadArr.length;i++){
+			const td = uploadArr[i]
+			const tr = td.parentNode
+			const exPath = tr.classList[0].substring(4)
+			const path = 'manual/' + exPath
+			const id = tr.children[0].innerHTML
+			const receipt = await uxUpload(path,td,id)
+			let content = ''
+			for(var a=0;a<receipt.length;a++){
+				const r = receipt[a]
+				const arr = r.split('/')
+				const name = extDate(true,'-')
+				const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+				content = content + url
+			}
+			const inputPart = `<input class="edit-mode upload-btn hide" type="file">`
+			const uploadPart = `<p class='send-btn edit-mode'>Upload</p>`
+			content = content + inputPart + uploadPart
+			td.innerHTML = content
+		}
+		uxSave()
+	})
+	/*
 	document.getElementById('function-menu').addEventListener('click',async(event)=>{
 		const isSave = event.target.id == 'save-btn'
 		if(isSave){
@@ -60,7 +85,9 @@ const mnlFunc = ()=>{
 			}
 		uxSave()
 		}
-	})
+	})*/
+	//Side: Add new file
+	document.getElementById('')
 }
 // Initialize
 const mnlInit = async(t)=>{

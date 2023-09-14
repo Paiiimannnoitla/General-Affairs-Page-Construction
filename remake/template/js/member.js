@@ -39,6 +39,10 @@ const memFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
+		//Side: Save Function
+	document.getElementById('save-btn').addEventListener('click',()=>{
+		uxSave()
+	})
 
 }
 const memInit = async(test) =>{
