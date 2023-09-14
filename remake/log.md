@@ -10,11 +10,11 @@
 		-- manual
 	42. Should add column cut function in Member page
 	45. Add Manual page uploading function
-		-- processing
+		-- finished
 	46. Manual page basic style
 		-- processing
 	48. Add new row function in Manual
-		-- processing
+		-- finished
 	49. Add delete row function in Manual
 		-- processing
 	50. Keep date as version number in Manual
@@ -29,6 +29,8 @@
 	-- Rewrite function
 	# Added
 	1. Add upload function to manual page
+		-- finished
+	2. Add new row append function manual page
 		-- finished
 	# Changed
 	1. Rewrite save function in direct way rather than proxy way

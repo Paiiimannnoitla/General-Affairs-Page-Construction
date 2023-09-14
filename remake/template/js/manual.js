@@ -87,7 +87,26 @@ const mnlFunc = ()=>{
 		}
 	})*/
 	//Side: Add new file
-	document.getElementById('')
+	document.getElementById('new-btn').addEventListener('click',(event)=>{
+		const selected = uxSelect()
+		if(selected){
+			const tr = selected.closest('tr')
+			if(tr.classList.length){
+				const department = tr.classList[0]	
+				const start = document.querySelector('.' + department + '.mnl-title')
+				const firstData = start.nextElementSibling
+				const lastid = firstData.children[0].innerHTML
+				const id = Number(lastid) + 1
+				const prefix = `<tr class="`+ department +`">`
+				const idPart = `<td class="mnl-id">`+ id +`</td>`
+				const namePart = `<td class="mnl-name">name</td>`
+				const attachPart = `<td class="mnl-file edit-off"><input class="edit-mode upload-btn" type="file"><p class="send-btn edit-mode">Upload</p></td>`
+				const suffix = `</tr>`
+				const content = prefix + idPart + namePart + attachPart + suffix
+				start.insertAdjacentHTML('afterend',content)
+			}					
+		}		
+	})
 }
 // Initialize
 const mnlInit = async(t)=>{
