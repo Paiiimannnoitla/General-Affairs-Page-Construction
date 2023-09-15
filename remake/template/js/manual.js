@@ -90,14 +90,13 @@ const mnlFunc = ()=>{
 				const start = document.querySelector('.' + department + '.mnl-title')
 				const firstData = start.nextElementSibling
 				const lastid = firstData.children[0].innerHTML
-				const id = Number(lastid) + 1
+				let id = Number(lastid) + 1
 				const prefix = `<tr class="`+ department +`">`
 				const idPart = `<td class="mnl-id edit-off">`+ id +`</td>`
 				const namePart = `<td class="mnl-name" contenteditable="true">name</td>`
 				const attachPart = `<td class="mnl-file edit-off"><input class="edit-mode upload-btn" type="file"><p class="send-btn edit-mode">Upload</p></td>`
 				const suffix = `</tr>`
 				const content = prefix + idPart + namePart + attachPart + suffix
-				console.log(content)
 				start.insertAdjacentHTML('afterend',content)
 			}					
 		}		

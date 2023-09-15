@@ -91,7 +91,10 @@ const uxDelete = ()=>{
 		if(delbtn){
 			const selected = uxSelect()
 			const tr = selected.closest('tr')
-			tr.remove()
+			const isProtected = tr.classList.contains('non-delete')
+			if(!isProtected){
+				tr.remove()
+			}		
 		}
 	})
 }
