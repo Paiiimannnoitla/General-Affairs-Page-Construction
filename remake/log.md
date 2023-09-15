@@ -10,11 +10,11 @@
 		-- manual
 	42. Should add column cut function in Member page
 	46. Manual page basic style
-		-- processing
+		-- finished
 	49. Add delete row function in Manual
-		-- processing
+		-- finished
 	54. Add download link remove function
-		-- processing
+		-- no longer need
 	71. Bug: New append row in manual page cannot edit
 		-- finished
 	72. It should be a hint to show the file input area
