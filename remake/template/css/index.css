@@ -192,6 +192,9 @@ p{
 .bus-affairs td{
 	background:			rgb(236,252,237);
 }
+.bus-affairs .bus-placeholder{
+	background:			rgb(202,247,201);
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);
