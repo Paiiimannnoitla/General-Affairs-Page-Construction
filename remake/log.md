@@ -6,17 +6,169 @@
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
 	36. Make a smooth scroll animation for jump or move operation
-		-- announce page
-	40. Test mode and published mode should not share the same downloads
-		-- no longer need
-	41. When in the test mode uploading related function should be banned in normal page
-		-- no longer need
+		-- announce 
+		-- manual
 	42. Should add column cut function in Member page
-	43. Bug:All function not work in test page
+	46. Manual page basic style
 		-- finished
-	44. Bug: test page cannot download
+	49. Add delete row function in Manual
+		-- finished
+	54. Add download link remove function
+		-- no longer need
+	71. Bug: New append row in manual page cannot edit
+		-- finished
+	72. It should be a hint to show the file input area
+		-- processing
+---
+	## 2023.09.15		version 0.3.5 -- Manual-build
+	-- Function enhancement
+	-- Bug fix
+	# Added
+	1. Add non-delete flag check to accurate deletion
+		-- finished
+	# Fixed
+	1. Fix the bug that new appended row cannot be edited
+		-- finished
+---
+	## 2023.09.14		version 0.3.4 -- Manual-build
+	-- Function implementation
+	-- Rewrite function
+	# Added
+	1. Add upload function to manual page
+		-- finished
+	2. Add new row append function manual page
+		-- finished
+	3. Add scroll to the top function to rach department
+		-- finished
+	# Changed
+	1. Rewrite save function in direct way rather than proxy way
+		-- finished
+---
+	## 2023.09.13		version 0.3.3 -- Manual-build
+	-- Rewire function
+	-- Function implementation
+	-- Bug fix
+	# Added
+	1. Rebuild announce page save and upload function		
+		-- finished
+	2. Add Upload function to manual page
+		-- finished
+	# Changed
+	1. Rewrite download related function both server and client ends for better dynamics
+		-- finished
+	# Fixed
+	1. Fix the bug that multiple upload fail in announce page
+		-- finished
+	2. Fix the bug that user cannot download attachment
+		-- finished
+---
+	## 2023.09.12		version 0.3.2.1 -- Manual-build
+	-- Function implementation
+	-- Bug fix
+	# Added
+	1. Add uxUploadWriter too handle different case of uploading
+		-- finished
+	# Fixed
+	1. Fix the bug that br cannot be removed
+		-- finished
+	2. Fix the bug that save function redirect page to normal page from testpage
+		-- finished
+	3. Apply asynchronous way to uxUploadWriter
 		-- finished
 	
+---
+	## 2023.09.11		version 0.3.2 -- Manual-build
+	-- Function implementatation
+	-- Rewrite function
+	-- Clear wasted codes
+	-- Style change
+	# Added
+	1. Add uxCancel function to handle all preparation before save
+		-- finished
+	2. Rewrite uxSave function for new save mechanism
+		-- finished
+	3. Add file input auto remove function
+		-- finished
+	4. Upload files only when saving 
+		-- finished
+	# Changed
+	1. Change the style of dl-link as a general style
+		-- finished
+	2. Fix the size of border
+		-- finished
+	3. Reverse the removing order of file input
+		-- finished
+---
+	## 2023.09.08		version 0.3.1 -- Manual-build
+	-- Function enhancement
+	# Added
+	1. Add temporary link before save
+		-- finished
+---
+	## 2023.09.06		version 0.3.0 -- Manual-build
+	-- Function enhancement
+	-- Rewire function
+	-- Style change
+	-- Bug fix
+	# Added
+	1. Add download-proof in edit mode for link selection
+		-- finished
+	2. Rewire downloaf function to uxDownload
+		-- finished
+	3. Rewire update button related function to uxUploadSet
+		-- finished
+	4. Add uxUpload function to handle all uploading process
+		-- finished
+	# Changed
+	1. Add the edit setting uploading setting to Manual page
+		-- finished
+	# Fixed
+	1. Fix the bug that uxLogin may warn when no unedit button
+		-- finished
+	2. Fix the bug that login status not apply at Manual page
+		-- finished
+---
+	## 2023.09.05		version 0.2.9 -- Manual-build
+	-- Bug fix
+	-- Style change
+	# Changed
+	1. Change the overall height and width setting
+		-- finished
+	2. Set the basic style of Manual page
+		-- finished
+	# Fixed
+	1. Fix the bug that some cells in Manual page display black color when selected
+		-- finished
+---
+	## 2023.09.04		version 0.2.8 -- Manual-build
+	-- Bug fix
+	-- Style change
+	# Fixed
+	1. Fix the bug that item-selected effect not removed whild unedit
+		-- finished
+	# Changed
+	1. Adjust basic width and height style
+		-- finished
+	
+---
+	## 2023.09.01		version 0.2.7 -- Manual-build
+	-- Infrastructure building
+	-- Function implementation
+	-- Rewrite function
+	-- Style change
+	# Added
+	1. Add basic page of Manual page
+		-- finished
+	2. Add basic content edit function
+		-- finished
+	# Chnaged
+	1. Change id and name
+		-- finished
+	2. Basic color palette
+		-- finished
+	3. Rewrite bright function by remove property
+		-- finished
+		
 ---
 	## 2023.09.01		version 0.2.6 -- Test-build
 	-- Function enhancement

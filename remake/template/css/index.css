@@ -2,8 +2,8 @@ body{
 	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
 	user-select:		none;
-	height:				100vh;
-	width:				100vw;
+	height:				98vh;
+	width:				98vw;
 }
 ul{
 	list-style-position:inside;
@@ -12,13 +12,50 @@ ul{
 table{
 	width:				100%;
 	padding:			5px solid rgb(248,248,255);
+	
+}
+tr{
+	width:				100%;
 }
 th{
+	width:				90vw;
 	position:			sticky;
 	top:				0;
 }
+td{
+	height:				auto;
+	
+}
+tbody{
+	width:				100%;
+}
+p{
+	margin:				5px;
+	border:				3px;
+	border-style:		solid; 
+	border-color:		transparent;
+}
+.hide{
+	display:			none;
+}
+.item-selected{
+	border-style:		solid;
+}
+.function-area{
+	display:			block;
+	height:				60vh;
+	width:				90vw;
+	overflow:			auto;	
+}
+#function-menu{
+	height:				auto;
+	bottom:				0;
+	position:			auto;
+	background:			rgb(238,241,252);
+}
 #top-area{
-	height:				10vh;
+	height:				8vh;
+	width:				98vw;
 	background:			rgb(240,255,240);
 	display:			flex;
 }
@@ -30,33 +67,27 @@ th{
 }
 #bottom-area{
 	height:				90vh;
-	width:				100vw;
+	width:				98vw;
 	margin:				auto;
 	display:			flex;
 }
 #toolbar{
-	width:				5vw;
+	width:				8vw;
 	height:				90vh;
 	background:			rgb(240,248,255);
 }
 #main-display{
 	background:			rgb(255,250,240);
-	width:				95vw;
+	width:				90vw;
 }
-#announce{
-	height:				60vh;
-	width:				100%;
-	overflow:			auto;
-}
+
 #announce th{
 	background:			rgb(225,228,244);
 }
 #announce td{
 	background:			rgb(226,241,253);
 }
-#anc-main{
-	width:				100%;
-}
+
 .anc-id{
 	width:				10vw;	
 }
@@ -68,16 +99,9 @@ th{
 	max-width:			40vw;
 	overflow-wrap:		break-word;
 }
-.anc-attatch{
+.anc-attach{
 	width:				40vw;
 }
-.anc-link{
-	cursor:				pointer;
-}
-.anc-link:hover{
-	border-style:		solid;
-}
-
 #member th{
 	background:			rgb(245,245,220);
 	height:				auto;
@@ -100,7 +124,59 @@ th{
 .member-occupation{
 	margin:				0px;
 }
+#mnl-title{
+	background:			rgb(103,154,208);
+}
+.mnl-affairs .mnl-header{
+	background:			rgb(121,169,220);
+}
+.mnl-affairs .mnl-id{
 
+	background:			rgb(137,180,225);
+}
+.mnl-affairs .mnl-name{
+
+	background:			rgb(137,180,225);
+}
+.mnl-affairs .mnl-file{
+
+	background:			rgb(137,180,225);
+}
+.mnl-finance .mnl-header{
+	background:			rgb(162,195,231);
+}
+.mnl-finance .mnl-id{
+	background:			rgb(186,211,237);
+}
+.mnl-finance .mnl-name{
+	background:			rgb(186,211,237);
+}
+.mnl-finance .mnl-file{
+	background:			rgb(186,211,237);
+}
+
+.mnl-document .mnl-header{
+	background:			rgb(211,226,243);
+}
+.mnl-document .mnl-id{
+	background:			rgb(235,242,249);
+}
+.mnl-document .mnl-name{
+	background:			rgb(235,242,249);
+}
+.mnl-document .mnl-file{
+	background:			rgb(235,242,249);
+}
+.mnl-id{
+	width:				5%;
+	text-align:			center;
+}
+.mnl-name{
+	width:				25%;
+}
+.mnl-file{
+	width:				70%;
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);
@@ -113,12 +189,9 @@ th{
 	width:				80%;
 	text-align:			center;
 }
-.hide{
-	display:			none;
+.dl-link{
+	cursor:				pointer;
 }
-.item-selected{
-	border-style:		solid;
-}
-.function-area{
-	display:			block;
+.dl-link:hover{
+	border-color:		black;
 }

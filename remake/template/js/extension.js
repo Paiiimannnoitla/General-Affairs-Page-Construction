@@ -28,7 +28,6 @@ const unhide = (arr)=>{
 }
 
 const bright = (dark=true)=>{
-	//let cell = uxSelect()
 	const cell = uxSelect()
 	if(cell){
 		const colorCode = window.getComputedStyle(cell)['background']
@@ -38,10 +37,10 @@ const bright = (dark=true)=>{
 		const r = rgb[0]-0
 		const g = rgb[1]-0
 		const b = rgb[2]-0
-	
 		const ar = 10
 		const ag = 10
 		const ab = 10
+		
 		if(dark){
 			const nr = r-ar
 			const ng = g-ag
@@ -49,21 +48,21 @@ const bright = (dark=true)=>{
 			const nColorCode = 'rgb(' + nr + ',' + ng + ',' + nb + ')' 
 			cell.style.background = nColorCode
 		}else{
-			const nr = r+ar
-			const ng = g+ag
-			const nb = b+ab
-			const nColorCode = 'rgb(' + nr + ',' + ng + ',' + nb + ')'
-			cell.style.background = nColorCode			
+			cell.style.removeProperty('background')
 		}
 	}
 	
 }
 
-const extDate = ()=>{
+const extDate = (isTaiwan=false,n='/')=>{
+	let ex = 0
+	if(isTaiwan){
+		ex = 1911
+	}
 	const today = new Date()
 	const d = today.getDate()
 	const m = today.getMonth() + 1
-	const y = today.getFullYear()
-	const date = y + '/' + m + '/' + d
+	const y = today.getFullYear() - ex
+	const date = y + n + m + n + d
 	return date
 }

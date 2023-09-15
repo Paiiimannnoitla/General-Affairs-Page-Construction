@@ -97,7 +97,6 @@ app.post('/test', (req, res)=>{
 app.post('/post/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
 	const html = req.body['html']
-	console.log(pagename)
 	fs.writeFileSync('./template/' + pagename + '.html',html)
 	res.send(true)
 })
@@ -105,7 +104,6 @@ app.post('/upload',async(req,res)=>{
 	const test = req.body['test']
 	let expath = ''
 	if(test){
-		console.log(1)
 		expath = 'test/'
 	}
 	const address = req.body['address']
@@ -124,6 +122,12 @@ app.post('/upload',async(req,res)=>{
 	res.send(expath + address + '/' + id + '/' + name)
 	res.end()
 })
+app.post('/download',(req,res)=>{
+	const hostname = 'download/'
+	const path = hostname + req.body['path']
+	res.download(path)
+})
+/*
 app.get('/download/:page/:id/:filename',(req,res)=>{
 	const hostname = 'download/'
 	const page = req.params.page
@@ -134,12 +138,13 @@ app.get('/download/:page/:id/:filename',(req,res)=>{
 })
 app.get('/download/test/:page/:id/:filename',(req,res)=>{
 	const hostname = 'download/test/'
+	//console.log(filename)
 	const page = req.params.page
 	const id = req.params.id
 	const filename = req.params.filename
 	const path = hostname + page + '/' + id + '/' + filename
 	res.download(path)
-})
+})*/
 app.listen(3000, function () {
   console.log('---Server Start---')
 })

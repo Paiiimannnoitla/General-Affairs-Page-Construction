@@ -16,24 +16,13 @@ const ancBuild = async(test)=>{
 const ancStyle = ()=>{
 	
 }
-
 //Main: Edit function
 const ancFunc = ()=>{
 	uxLoginCheck()
-	//Side: Unselect function
-	document.getElementById('unedit-btn').addEventListener('click',()=>{
-		const cellArr = document.querySelectorAll('td,th')
-		for(var i=0;i<cellArr.length;i++){
-			const e = cellArr[i]
-			e.removeAttribute('contenteditable')
-		}
-	})
-	
 	//Side: Publish new announcement
 	document.getElementById('new-btn').addEventListener('click',()=>{
 		const date = extDate()
 		const ancArr = document.querySelectorAll('.anc-unit')
-		//const id = ancArr.length + 1
 		const last = ancArr[0]
 		const lastid = last.children[0].innerHTML
 		const id = Number(lastid) + 1
@@ -45,7 +34,6 @@ const ancFunc = ()=>{
 		</tr>`
 		last.insertAdjacentHTML('beforebegin',content)
 		const movebtn = document.getElementById('movetop-btn')
-		//event.target.id = 'movetop-btn'
 		movebtn.click()		
 	})
 	//Side: Content Edit
@@ -56,7 +44,7 @@ const ancFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
-	//Side: Upload and auto increment
+	//Side: File input append
 	document.getElementById('anc-main').addEventListener('change',(event)=>{
 		const e = event.target
 		const isUpload = e.classList.contains('upload-btn')
@@ -74,53 +62,72 @@ const ancFunc = ()=>{
 			}
 		}	
 	})
-	//Side: Uploading attachment handler
+	//Side: Uploading preparation
 	document.getElementById('anc-main').addEventListener('click',async(event)=>{
 		const e = event.target
-		const isUpload = event.target.classList.contains('send-btn')
+		const isUpload = e.classList.contains('send-btn')
 		if(isUpload){
 			const td = e.parentNode
+			td.classList.add('upload-zone')
+			const brArr = td.querySelectorAll('br')
+			for(var i=0;i<brArr.length;i++){
+				brArr[i].remove()
+			}
+		}
+
+	})
+	//Side: Main uploading Function
+	document.getElementById('save-btn').addEventListener('click',async(event)=>{
+		const uploadArr = document.querySelectorAll('.upload-zone')
+		for(var i=0;i<uploadArr.length;i++){			
+			const td = uploadArr[i]
 			const tr = td.parentNode
 			const id = tr.children[0].innerHTML
-			const fileArr = td.querySelectorAll('.upload-btn')
-			const receipt = []
-			for(var i=0;i<fileArr.length;i++){
-				const f = fileArr[i].files
-				if(f.length){
-					const cargo = await pack(f,'announce',id,i)
-					receipt[i] = await upload(cargo)
-				}			
-			}
+			const receipt = await uxUpload('announce',td,id)
 			let content = ''
-			for(var i=0;i<receipt.length;i++){
-				const r = receipt[i]
+			for(var j=0;j<receipt.length;j++){
+				const r = receipt[j]
 				const arr = r.split('/')
 				const name = arr[arr.length-1]
-				const url = `<p id='` + r + `' class='anc-link select-item'>` + name + `</p>`
+				const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
 				content = content + url
 			}
-			const linkArr = td.querySelectorAll('.anc-link')
-			for(var i=0;i<linkArr.length;i++){
-				linkArr[i].remove()
+			const uploadPart = `
+				<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+				<p class='send-btn edit-mode'>Upload</p>`
+			content = content + uploadPart
+			td.innerHTML = content
+		}
+		uxSave()
+	})
+	/*
+	document.getElementById('function-menu').addEventListener('click',async(event)=>{
+		const isSave = event.target.id == 'save-btn'
+		if(isSave){
+			const uploadArr = document.querySelectorAll('.upload-zone')
+			for(var i=0;i<uploadArr.length;i++){			
+				const td = uploadArr[i]
+				console.log(td)
+				const tr = td.parentNode
+				const id = tr.children[0].innerHTML
+				const receipt = await uxUpload('announce',td,id)
+				let content = ''
+				for(var j=0;j<receipt.length;j++){
+					const r = receipt[j]
+					const arr = r.split('/')
+					const name = arr[arr.length-1]
+					const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+					content = content + url
+				}
+				const uploadPart = `
+					<br class='edit-mode'><input class='edit-mode upload-btn' type='file'>
+					<p class='send-btn edit-mode'>Upload</p>`
+				content = content + uploadPart
+				td.innerHTML = content
 			}
-			td.insertAdjacentHTML('afterbegin',content)
+			uxSave()
 		}
-	})
-	//Side: Download attachment through Link
-	
-	document.getElementById('anc-main').addEventListener('click',async(event)=>{
-		const e = event.target
-		const isLink = event.target.classList.contains('anc-link')
-		if(isLink){
-			
-			const href = window.location.href + 'download/'
-			const dlurl = e.id
-			const url = href + dlurl 
-			const name = e.innerHTML
-			console.log(url)
-			download(url,name)
-		}
-	})
+	})*/
 }
 // Initializer
 const ancInit = async(test)=>{
