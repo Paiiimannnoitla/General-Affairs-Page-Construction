@@ -9,16 +9,15 @@
 		-- announce 
 		-- manual
 	42. Should add column cut function in Member page
-	46. Manual page basic style
-		-- finished
-	49. Add delete row function in Manual
-		-- finished
-	54. Add download link remove function
-		-- no longer need
-	71. Bug: New append row in manual page cannot edit
-		-- finished
 	72. It should be a hint to show the file input area
 		-- processing
+---
+	## 2023.09.15		version 0.3.6 -- Buisness-build
+	-- Infrastructure build
+	# Added
+	1. Build the basic structure of business page
+		-- finished
+	
 ---
 	## 2023.09.15		version 0.3.5 -- Manual-build
 	-- Function enhancement
