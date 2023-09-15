@@ -12,6 +12,8 @@
 	72. It should be a hint to show the file input area
 		-- processing
 	73. Hover function-menu should have highlight effect
+	74. Set the style of each department in business page
+		-- processing
 ---
 	## 2023.09.15		version 0.3.6 -- Buisness-build
 	-- Function implementation
@@ -21,6 +23,8 @@
 	1. Build the basic structure of business page
 		-- finished
 	2. Add new job append button
+		-- finished
+	3. Add department switch function
 		-- finished
 	# Changed
 	1. Set basic style of business page

@@ -16,6 +16,22 @@ const busFunc = ()=>{
 	uxLoginCheck()
 	const main = document.getElementById('bus-main')
 	//Main: Edit Function
+		//Side: Department selection
+	document.getElementById('bus-department').addEventListener('click',(event)=>{
+		const e = event.target
+		const isHeader = e.classList.contains('bus-header')
+		const selected = document.querySelector('.selected-department')
+		selected.classList.remove('selected-department')
+		e.classList.add('selected-department')
+		const prev = selected.id
+		const department = e.id
+		const prevArr = document.querySelectorAll('.' + prev)
+		hide(prevArr)
+		const currArr = document.querySelectorAll('.' + department)
+		unhide(currArr)
+		const currName = e.innerHTML
+		document.getElementById('bus-text').children[0].innerHTML = currName
+	})
 		//Side: Append new row
 	document.getElementById('new-btn').addEventListener('click',(event)=>{		
 		
