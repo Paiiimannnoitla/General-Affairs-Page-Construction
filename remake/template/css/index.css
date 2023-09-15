@@ -177,6 +177,21 @@ p{
 .mnl-file{
 	width:				70%;
 }
+#bus-title{
+	background:			rgb(102,241,160);
+}
+.bus-header{
+	background:			rgb(152,246,189);
+}
+#bus-text th{
+	background:			rgb(200,249,220);
+}
+.bus-affairs .bus-member{
+	background:			rgb(222,250,232);
+}
+.bus-affairs td{
+	background:			rgb(236,252,237);
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);

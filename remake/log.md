@@ -14,10 +14,13 @@
 ---
 	## 2023.09.15		version 0.3.6 -- Buisness-build
 	-- Infrastructure build
+	-- Style change
 	# Added
 	1. Build the basic structure of business page
 		-- finished
-	
+	# Changed
+	1. Set basic style of business page
+		-- finished
 ---
 	## 2023.09.15		version 0.3.5 -- Manual-build
 	-- Function enhancement
