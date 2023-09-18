@@ -15,7 +15,7 @@
 	74. Set the style of each department in business page
 		-- processing
 	75. Bug:When click edit button placeholder cannot unhide
-		-- processing
+		-- finished
 ---
 	## 2023.09.18		version 0.3.7 -- Buisness-build
 	-- Function enhancement
@@ -27,6 +27,9 @@
 		-- finished
 	# Changed
 	1. Set finance department color theme
+		-- finished
+	# Fixed
+	1. Add mutation observer to edit function to ensure table is refreshed after press edit button
 		-- finished
 ---
 	## 2023.09.15		version 0.3.6 -- Buisness-build

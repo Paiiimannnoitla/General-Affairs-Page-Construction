@@ -65,14 +65,29 @@ const busFunc = ()=>{
 		}
 	})
 		//Side: Content edit 
-	document.getElementById('edit-btn').addEventListener('click',()=>{
+	const editbtn = document.getElementById('edit-btn')
+	editbtn.addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.contentEditable = 'true'
 		}
 		const selected = document.querySelector('.selected-department')
-		selected.click()
+		const config = { attributes: true, childList: true, subtree: true }
+		const callback = (mutArr)=>{
+			for(let mutation of mutArr){
+				if(mutation.type === 'attributes'){
+					const state = mutation.target.classList.contains('hide')
+					if(state){
+						selected.click()
+						observer.disconnect()
+					}
+				}
+			}
+		}
+		const observer = new MutationObserver(callback)
+		observer.observe(editbtn,config)
+		
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',()=>{

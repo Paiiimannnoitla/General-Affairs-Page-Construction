@@ -35,7 +35,6 @@ const uxEdit = ()=>{
 	main.addEventListener('click',(event)=>{
 		const isEdit = event.target.id == 'edit-btn'
 		if(isEdit){
-			console.log(100)
 			const editbtn = document.getElementById('edit-btn')
 			const btnArr = document.querySelectorAll('.edit-mode')
 			const readArr = document.querySelectorAll('.read-mode')
