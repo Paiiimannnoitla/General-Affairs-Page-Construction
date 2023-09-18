@@ -14,6 +14,20 @@
 	73. Hover function-menu should have highlight effect
 	74. Set the style of each department in business page
 		-- processing
+	75. Bug:When click edit button placeholder cannot unhide
+		-- processing
+---
+	## 2023.09.18		version 0.3.7 -- Buisness-build
+	-- Function enhancement
+	-- Style change
+	# Added
+	1. Switch color theme by select department
+		-- finished
+	2. Hide and unhide placeholder by check if edit mode on
+		-- finished
+	# Changed
+	1. Set finance department color theme
+		-- finished
 ---
 	## 2023.09.15		version 0.3.6 -- Buisness-build
 	-- Function implementation

@@ -27,10 +27,20 @@ const busFunc = ()=>{
 		const department = e.id
 		const prevArr = document.querySelectorAll('.' + prev)
 		hide(prevArr)
-		const currArr = document.querySelectorAll('.' + department)
-		unhide(currArr)
+		const status = uxCheck() == 'Edit'
+		if(status){			
+			const currArr = document.querySelectorAll('.' + department)
+			unhide(currArr)
+		}else{
+			const currArr = document.querySelectorAll('.' + department + ':not(.bus-new)')
+			unhide(currArr)
+		}	
 		const currName = e.innerHTML
-		document.getElementById('bus-text').children[0].innerHTML = currName
+		const updateDiv = document.getElementById('bus-text')
+		updateDiv.children[0].innerHTML = currName		
+		const newColor = e.id + '-color'
+		const prevColor = updateDiv.classList[1]
+		updateDiv.classList.replace(prevColor,newColor)
 	})
 		//Side: Append new row
 	document.getElementById('new-btn').addEventListener('click',(event)=>{		
@@ -61,6 +71,8 @@ const busFunc = ()=>{
 			const e = btnArr[i]
 			e.contentEditable = 'true'
 		}
+		const selected = document.querySelector('.selected-department')
+		selected.click()
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',()=>{
