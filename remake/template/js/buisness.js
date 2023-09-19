@@ -104,6 +104,43 @@ const busFunc = ()=>{
 			headArr.rowSpan = row -1
 		}
 	})
+		//Side: Delete Function
+	document.getElementById('delete-btn-bus').addEventListener('click',()=>{
+		const cell = uxSelect()
+		const tr = cell.closest('tr')
+		const id = tr.rowIndex
+		const isMember = tr.classList.contains('bus-member-head')
+		const main = document.getElementById('bus-main')
+		const nodeList = main.children
+		const table = document.getElementById('business')
+			//Select Name
+		if(isMember){
+			tr.remove()
+			for(var i=id;i<nodeList.length;i++){
+				const e = table.rows[id])
+				const isHead = e.classList.contains('bus-member-head')				
+				if(isHead){
+					return
+				}
+				e.remove()
+			}
+		}
+			//Select Job
+		const isJob = id > 2
+		if(isJob){
+			for(var i=id;i>2;i--){
+				const e = nodeList[i]
+				const isHead = e.classList.contains('bus-member-head')
+				if(isHead){
+					const head = e.children[0]
+					const row = head.rowSpan - 1
+					head.rowSpan = row
+					tr.remove()
+					return
+				}
+			}
+		}
+	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',()=>{
 		uxSave()

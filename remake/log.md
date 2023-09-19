@@ -27,6 +27,8 @@
 		-- finished
 	2. Add row span dynamic change function for delete function 
 		-- finished
+	3. To fit the multiple row behavior and some special relationship between each row. I make a brand new delete function for business page
+		-- finished
 	# Changed
 	1. Set the document department basic color theme
 		-- finished
