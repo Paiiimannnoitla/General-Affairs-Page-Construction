@@ -14,7 +14,13 @@
 	73. Hover function-menu should have highlight effect
 	74. Set the style of each department in business page
 		-- processing
-	75. Bug:When click edit button placeholder cannot unhide
+	76. Add delete function to buisness page
+		-- processing
+---
+	## 2023.09.19		version 0.3.8 -- Buisness-build
+	-- Style change
+	# Changed
+	1. Set the document department basic color theme
 		-- finished
 ---
 	## 2023.09.18		version 0.3.7 -- Buisness-build

@@ -177,6 +177,9 @@ p{
 .mnl-file{
 	width:				70%;
 }
+#business{
+	background:			rgb(221,222,255);
+}
 #bus-title{
 	background:			rgb(102,241,160);
 }
@@ -211,19 +214,19 @@ p{
 	background:			rgb(215,237,247);
 }
 #bus-document.bus-header{
-	background:			rgb(152,246,189);
+	background:			rgb(255,177,177);
 }
 .bus-document-color th{
-	background:			rgb(200,249,220);
+	background:			rgb(255,210,210);
 }
 .bus-document .bus-member{
-	background:			rgb(222,250,232);
+	background:			rgb(255,233,233);
 }
 .bus-document td{
-	background:			rgb(220,247,220);
+	background:			rgb(251,238,220);
 }
 .bus-document .bus-placeholder{
-	background:			rgb(202,247,201);
+	background:			rgb(243,223,195);
 }
 .dl-title{
 	width:				100%;
