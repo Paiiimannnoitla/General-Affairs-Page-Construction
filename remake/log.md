@@ -25,6 +25,8 @@
 	# Added
 	1. Add delete function in buisness page
 		-- finished
+	2. Add row span dynamic change function for delete function 
+		-- finished
 	# Changed
 	1. Set the document department basic color theme
 		-- finished

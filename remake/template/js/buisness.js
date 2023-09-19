@@ -72,6 +72,12 @@ const busFunc = ()=>{
 			const e = btnArr[i]
 			e.contentEditable = 'true'
 		}
+		const headArr = document.querySelectorAll('.bus-member')
+		for(var i=0;i<headArr.length;i++){
+			const e = headArr[i]
+			const row = e.rowSpan
+			e.rowSpan = row +1
+		}
 		const selected = document.querySelector('.selected-department')
 		const config = { attributes: true, childList: true, subtree: true }
 		const callback = (mutArr)=>{
@@ -88,6 +94,15 @@ const busFunc = ()=>{
 		const observer = new MutationObserver(callback)
 		observer.observe(editbtn,config)
 		
+	})
+		//Side: Unedit Function
+	document.getElementById('unedit-btn').addEventListener('click',()=>{
+		const headArr = document.querySelectorAll('.bus-member')
+		for(var i=0;i<headArr.length;i++){
+			const e = headArr[i]
+			const row = headArr.rowSpan
+			headArr.rowSpan = row -1
+		}
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',()=>{

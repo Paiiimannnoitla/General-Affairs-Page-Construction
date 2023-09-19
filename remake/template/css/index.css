@@ -228,6 +228,10 @@ p{
 .bus-document .bus-placeholder{
 	background:			rgb(243,223,195);
 }
+.bus-empty{
+	padding:			0;
+	display:			none;
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);
