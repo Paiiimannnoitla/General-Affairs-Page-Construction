@@ -16,9 +16,15 @@
 		-- processing
 	76. Add delete function to buisness page
 		-- processing
+	77. Bug: placeholders only append at the first member
+		-- processing
 ---
 	## 2023.09.19		version 0.3.8 -- Buisness-build
+	-- Function implementation
 	-- Style change
+	# Added
+	1. Add delete function in buisness page
+		-- finished
 	# Changed
 	1. Set the document department basic color theme
 		-- finished

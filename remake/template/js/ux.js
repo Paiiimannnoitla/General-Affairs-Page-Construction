@@ -93,7 +93,37 @@ const uxDelete = ()=>{
 			const tr = selected.closest('tr')
 			const isProtected = tr.classList.contains('non-delete')
 			if(!isProtected){
-				tr.remove()
+				const num = tr.childElementCount
+				let isRemove = true
+				let n =0
+				for(var i=0;i<num;i++){
+					const e = tr.children[i]
+					const row = e.rowSpan - 1
+					console.log(e)
+					console.log(row)
+					if(row){
+						e.rowSpan = row
+						isRemove = false
+					}else{
+						n = n + 1
+						e.classList.add('delete-sign')
+						console.log(e)
+					}
+				}
+				const isAll = n == num
+				if(isAll){
+					console.log('all')
+					tr.remove()
+				}else{
+					console.log('part')
+					const delArr = document.querySelectorAll('.delete-sign')
+					console.log(delArr)
+					for(var i=0;i<delArr.length;i++){
+						const e = delArr[i]
+						e.remove()
+					}
+				}
+				
 			}		
 		}
 	})
