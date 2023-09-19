@@ -13,15 +13,16 @@
 		-- processing
 	73. Hover function-menu should have highlight effect
 	74. Set the style of each department in business page
-		-- processing
+		-- finished
 	76. Add delete function to buisness page
-		-- processing
+		-- finished
 	77. Bug: placeholders only append at the first member
-		-- processing
+		-- finished
 ---
 	## 2023.09.19		version 0.3.8 -- Buisness-build
 	-- Function implementation
 	-- Style change
+	-- Bug fix
 	# Added
 	1. Add delete function in buisness page
 		-- finished
@@ -33,6 +34,9 @@
 		-- finished
 	# Changed
 	1. Set the document department basic color theme
+		-- finished
+	# Fixed
+	1. Fix the bug that rowspan alwalys change the first member when append job
 		-- finished
 ---
 	## 2023.09.18		version 0.3.7 -- Buisness-build
