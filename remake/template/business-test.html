@@ -4,38 +4,70 @@
 			<th colspan="3" id="bus-title" class="edit-off">主管職責</th>
 		</tr>
 		<tr id="bus-department" class="non-delete">
-			<th id="bus-affairs" class="bus-header selected-department">主管事務</th>	
-			<th id="bus-finance" class="bus-header">主管預算</th>
-			<th id="bus-document" class="bus-header">主管文書</th>
+			<th id="bus-affairs" class="bus-header selected-department" style="">主管事務</th>	
+			<th id="bus-finance" class="bus-header" style="">主管預算</th>
+			<th id="bus-document" class="bus-header" style="">主管文書</th>
 		</tr>
-		<tr id="bus-text" class="non-delete">
+		<tr id="bus-text" class="non-delete bus-affairs-color edit-off">
 			<th colspan="3">主管事務</th>
 		</tr>
 		<tr class="bus-affairs bus-member-head">
-			<td rowspan="5" class="bus-member" style="">陳旺志</td>
-			<td colspan="2" class="" style="">資安聯絡人</td>
+			<td rowspan="5" class="bus-member">陳旺志</td>
+			<td colspan="2" class="bus-empty"></td>
+		</tr>
+		<tr class="bus-affairs">
+			<td colspan="2">資安聯絡人</td>
 		</tr>
 		<tr class="bus-affairs">
 			<td colspan="2" class="" style="">網頁設計</td>
 		</tr>
-		<tr class="bus-affairs"><td colspan="2" class="" style="">環保專員<br></td></tr><tr class="bus-affairs"><td colspan="2">Input here</td></tr><tr class="bus-affairs non-delete edit-mode hide">
+		<tr class="bus-affairs">
+			<td colspan="2">Input here</td>
+		</tr><tr class="bus-affairs bus-new non-delete">
 			<td colspan="2" class="bus-placeholder edit-off" style="">新增項目</td>
 		</tr>
-		<tr class="hide bus-finance">
-			<td></td>
-			<td></td>
+		<tr class="bus-affairs bus-member-head">
+			<td rowspan="4" class="bus-member">江紹謙</td>
+			<td colspan="2" class="bus-empty"></td>
 		</tr>
-		<tr class="hide bus-document">
-			<td></td>
-			<td></td>
+		<tr class="bus-affairs">
+			<td colspan="2">旅費報銷</td>
+		</tr>
+		<tr class="bus-affairs">
+			<td colspan="2">文具管理</td>
+		</tr>
+		<tr class="bus-affairs bus-new non-delete">
+			<td colspan="2" class="bus-placeholder edit-off">新增項目</td>
+		</tr>
+		<tr class="bus-finance bus-member-head hide">
+			<td rowspan="3" class="bus-member">余奕慶</td>		
+			<td colspan="2" class="bus-empty"></td>
+		</tr>
+		<tr class="bus-finance hide">
+			<td colspan="2">課長</td>
+		</tr>
+		<tr class="bus-finance bus-new non-delete hide">
+			<td colspan="2" class="bus-placeholder edit-off">新增項目</td>
+		</tr>
+		<tr class="bus-document bus-member-head hide">
+			<td rowspan="3" class="bus-member">李梅君</td>
+			<td colspan="2" class="bus-empty"></td>
+		</tr>
+		<tr class="bus-document hide">
+			<td colspan="2">課長</td>
+		</tr>
+		<tr class="bus-document bus-new non-delete hide">
+			<td colspan="2" class="bus-placeholder edit-off">新增項目</td>
 		</tr>
 	</tbody>
 </table>
 <div id="function-menu" class="function-area">
+	<p id="movetop-btn">To the Top</p>
+	<p id="movebottom-btn">To the bottom</p>
 	<p id="edit-btn" class="login-mode hide">Edit</p>
 	<p id="unedit-btn" class="edit-mode hide">Cancel</p>
-	<p id="new-btn" class="edit-mode hide">Add new file</p>
-	<p id="delete-btn" class="edit-mode hide">Delete file</p>
+	<p id="new-btn" class="edit-mode hide">Add new member</p>
+	<p id="delete-btn-bus" class="edit-mode hide">Delete file</p>
 	<p id="save-btn" class="edit-mode hide">Save</p>
 </div>
 		

@@ -11,7 +11,17 @@ const busBuild = async(test) =>{
 		return output
 	}
 }
-
+const busHead = (tr)=>{
+	const nodeList = document.getElementById('bus-main').children
+	const id = tr.rowIndex
+	for(var i=id;i>2;i--){
+		const e = nodeList[i]
+		const isHead = e.classList.contains('bus-member-head')
+		if(isHead){
+			return e
+		}
+	}
+}
 const busFunc = ()=>{
 	uxLoginCheck()
 	const main = document.getElementById('bus-main')
@@ -56,12 +66,14 @@ const busFunc = ()=>{
 			const first = head.children[0]
 			const row = first.rowSpan
 			first.rowSpan = row + 1
-			const prefix = `<tr class='bus-affairs'>`
+			const prefix = `<tr class='`+ department +`'>`
 			const job = `<td colspan='2' contenteditable='true'>Input here</td>`
 			const suffix = `</tr>`
 			const content = prefix + job + suffix
 			const tr = e.parentNode
 			tr.insertAdjacentHTML('beforebegin',content)
+			
+			
 		}
 	})
 		//Side: Content edit 
@@ -117,7 +129,7 @@ const busFunc = ()=>{
 		if(isMember){
 			tr.remove()
 			for(var i=id;i<nodeList.length;i++){
-				const e = table.rows[id])
+				const e = table.rows[id]
 				const isHead = e.classList.contains('bus-member-head')				
 				if(isHead){
 					return
@@ -128,6 +140,13 @@ const busFunc = ()=>{
 			//Select Job
 		const isJob = id > 2
 		if(isJob){
+			const headtr = busHead(tr)
+			const head = headtr.children[0]
+			const row = head.rowSpan - 1
+			head.rowSpan = row
+			tr.remove()
+			return
+			/*
 			for(var i=id;i>2;i--){
 				const e = nodeList[i]
 				const isHead = e.classList.contains('bus-member-head')
@@ -138,7 +157,7 @@ const busFunc = ()=>{
 					tr.remove()
 					return
 				}
-			}
+			}*/
 		}
 	})
 		//Side: Save Function

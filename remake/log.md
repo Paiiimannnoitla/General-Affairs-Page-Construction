@@ -29,6 +29,8 @@
 		-- finished
 	3. To fit the multiple row behavior and some special relationship between each row. I make a brand new delete function for business page
 		-- finished
+	4. Add busHead function for quickly getting member-head
+		-- finished
 	# Changed
 	1. Set the document department basic color theme
 		-- finished
