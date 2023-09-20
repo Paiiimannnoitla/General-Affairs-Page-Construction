@@ -141,6 +141,9 @@ const tbfunc = ()=>{
 		mode['tb-manual']=(t)=>{
 			mnlInit(t)
 		}
+		mode['tb-business']=(t)=>{
+			busInit(t)
+		}
 		mode['tb-test']=async(t)=>{
 			const main = document.getElementById('main-display')
 			const currPage = main.querySelectorAll('.function-area')

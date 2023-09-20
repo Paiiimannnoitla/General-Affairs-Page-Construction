@@ -9,16 +9,67 @@
 		-- announce 
 		-- manual
 	42. Should add column cut function in Member page
-	46. Manual page basic style
-		-- finished
-	49. Add delete row function in Manual
-		-- finished
-	54. Add download link remove function
-		-- no longer need
-	71. Bug: New append row in manual page cannot edit
-		-- finished
 	72. It should be a hint to show the file input area
 		-- processing
+	73. Hover function-menu should have highlight effect
+	78. Add new member function
+		-- finished
+---
+	## 2023.09.20		version 0.3.9 -- Buisness-build
+	-- Function implementation
+	# Added
+	1. Add member appended function
+		-- finished
+---
+	## 2023.09.19		version 0.3.8 -- Buisness-build
+	-- Function implementation
+	-- Style change
+	-- Bug fix
+	# Added
+	1. Add delete function in buisness page
+		-- finished
+	2. Add row span dynamic change function for delete function 
+		-- finished
+	3. To fit the multiple row behavior and some special relationship between each row. I make a brand new delete function for business page
+		-- finished
+	4. Add busHead function for quickly getting member-head
+		-- finished
+	# Changed
+	1. Set the document department basic color theme
+		-- finished
+	# Fixed
+	1. Fix the bug that rowspan alwalys change the first member when append job
+		-- finished
+---
+	## 2023.09.18		version 0.3.7 -- Buisness-build
+	-- Function enhancement
+	-- Style change
+	# Added
+	1. Switch color theme by select department
+		-- finished
+	2. Hide and unhide placeholder by check if edit mode on
+		-- finished
+	# Changed
+	1. Set finance department color theme
+		-- finished
+	# Fixed
+	1. Add mutation observer to edit function to ensure table is refreshed after press edit button
+		-- finished
+---
+	## 2023.09.15		version 0.3.6 -- Buisness-build
+	-- Function implementation
+	-- Infrastructure build
+	-- Style change
+	# Added
+	1. Build the basic structure of business page
+		-- finished
+	2. Add new job append button
+		-- finished
+	3. Add department switch function
+		-- finished
+	# Changed
+	1. Set basic style of business page
+		-- finished
 ---
 	## 2023.09.15		version 0.3.5 -- Manual-build
 	-- Function enhancement
