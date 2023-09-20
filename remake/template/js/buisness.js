@@ -54,7 +54,27 @@ const busFunc = ()=>{
 		updateDiv.classList.replace(prevColor,newColor)
 	})
 		//Side: Append new row
-	document.getElementById('new-btn').addEventListener('click',(event)=>{		
+	document.getElementById('new-btn').addEventListener('click',(event)=>{	
+		const department = document.querySelector('.selected-department').id
+		const suffix = `</tr>`
+		const memberPrefix = `<tr class="`+ department +` bus-member-head">`
+		const namePart = `<td rowspan="3" class="bus-member" contenteditable='true'>Please input name here</td>`
+		const emptyPart = `<td colspan="2" class='bus-empty'></td>`
+		const member = memberPrefix + namePart + emptyPart + suffix
+		
+		const jobPrefix = `<tr class="`+ department +`">`
+		const jobPart = `<td colspan="2" contenteditable='true' >Please input content here</td>`
+		const job = jobPrefix + jobPart + suffix
+		
+		const newPrefix = `<tr class="`+department+` bus-new non-delete">`
+		const contentPart=`<td colspan="2" class="bus-placeholder edit-off">新增項目</td>`
+		const placeholder = newPrefix + contentPart + suffix
+		
+		const content = member + job + placeholder
+		
+		const trArr = document.querySelectorAll('.' + department)
+		const updateDiv = trArr[trArr.length-1]
+		updateDiv.insertAdjacentHTML('afterend',content)
 		
 	})	
 		//Side: Append new job row
@@ -73,9 +93,7 @@ const busFunc = ()=>{
 			const head = busHead(tr)
 			const member = head.children[0]
 			const row = member.rowSpan + 1
-			member.rowSpan = row
-			
-			
+			member.rowSpan = row		
 		}
 	})
 		//Side: Content edit 
@@ -148,18 +166,6 @@ const busFunc = ()=>{
 			head.rowSpan = row
 			tr.remove()
 			return
-			/*
-			for(var i=id;i>2;i--){
-				const e = nodeList[i]
-				const isHead = e.classList.contains('bus-member-head')
-				if(isHead){
-					const head = e.children[0]
-					const row = head.rowSpan - 1
-					head.rowSpan = row
-					tr.remove()
-					return
-				}
-			}*/
 		}
 	})
 		//Side: Save Function

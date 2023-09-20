@@ -12,11 +12,13 @@
 	72. It should be a hint to show the file input area
 		-- processing
 	73. Hover function-menu should have highlight effect
-	74. Set the style of each department in business page
+	78. Add new member function
 		-- finished
-	76. Add delete function to buisness page
-		-- finished
-	77. Bug: placeholders only append at the first member
+---
+	## 2023.09.20		version 0.3.9 -- Buisness-build
+	-- Function implementation
+	# Added
+	1. Add member appended function
 		-- finished
 ---
 	## 2023.09.19		version 0.3.8 -- Buisness-build
