@@ -144,6 +144,9 @@ const tbfunc = ()=>{
 		mode['tb-business']=(t)=>{
 			busInit(t)
 		}
+		mode['tb-sop']=(t)=>{
+			sopInit(t)
+		}
 		mode['tb-test']=async(t)=>{
 			const main = document.getElementById('main-display')
 			const currPage = main.querySelectorAll('.function-area')
@@ -168,6 +171,7 @@ const tbfunc = ()=>{
 		try{
 			mode[code](false)
 		}catch(err){
+			console.log(err)
 			console.log('You should build page:' + code)
 		}		
 	}

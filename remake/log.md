@@ -12,7 +12,13 @@
 	72. It should be a hint to show the file input area
 		-- processing
 	73. Hover function-menu should have highlight effect
-	78. Add new member function
+	79. Make basic buisness infrastructure
+		-- processing
+---
+	## 2023.09.20		version 0.3.9 -- SOP-build
+	-- Infrastructrue building
+	# Added
+	1. Basic page build
 		-- finished
 ---
 	## 2023.09.20		version 0.3.9 -- Buisness-build
