@@ -20,70 +20,20 @@ const render = (name,data=false) =>{
 	return html
 }
 // Scripts import
-/*
-const scriptImporter = () =>{
-	const scriptDir = ('./script')
-	const filelist = fs.readdirSync(scriptDir)
-	for(var i=0;i<filelist.length;i++){
-		require(scriptDir + filelist[i])
-	}
-}*/
-/*
-app.get('/',(req,res)=>{
-	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
-	const isExist = fs.existsSync(path)
-	if(isExist){
-		console.log('downloading')
-		res.download(path,'data.pdf')
-	}else{
-		console.log('no file')
-	}
-})*/
-/*
-app.post('/apple',(req,res)=>{
-	res.send('apple')
-	res.end()
-})*/
-/*
-app.post('/',(req,res)=>{
-	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
-	const isExist = fs.existsSync(path)
-	if(isExist){
-		console.log('downloading')
-		res.download(path,'data.pdf')
-	}else{
-		console.log('no file')
-	}
-})
-app.get('/',(req,res)=>{
-	const page = 'testpage.html'
-	res.render(page,{
-		name:'apple'
-	},(err,html)=>{
-		res.send(html)
-	})
-})
-*/
-/*
-app.use((req,res)=>{
-	res.type('text/plain')
-	res.status(404)
-	res.send(render('404'))
-})*/
-/*
-app.get('/load/member',(req,res)=>{
-	const file = fs.readFileSync('./template/data/Member/member.json')
-	//console.log(file)
-	const json = JSON.parse(file)
-	res.send(json)
-})*/
-/*
-app.get('/redirect',(req,res)=>{
-	res.send(render('redirect'))
-})*/
+
 app.get('/',(req,res)=>{
 	res.send(render('index'))
 	
+})
+app.post('/load/:func',(req,res)=>{
+	const func = req.params.func + '/'
+	const exArr = req.body['data']
+	const extra = exArr.join('/')
+	console.log('./template/load' + func + extra + '.html')
+	const page = fs.readFile('./template/load/' + func + extra + '.html','utf8',(err,data)=>{
+		console.log(data)
+		res.send(data)
+	})
 })
 app.get('/page/:pagename',(req,res)=>{
 	const pagename = req.params.pagename

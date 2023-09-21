@@ -12,12 +12,36 @@ const Postman = (id,func='page') =>{
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
 			fetch(hostname,content).then((res)=>{
+				resolve(res.text())
+				/*
 				if(func=='page'){
 					resolve(res.text())
 				}else{
 					resolve(res.json())
-				}
+				}*/
 				//resolve(res.text())
+			})
+		})
+		return output
+	}
+	const reply = response()
+	return reply
+}
+const load = (func,extra)=>{
+	const hostname = host + 'load/' + func 
+	const data = {'data':extra}
+	const json = JSON.stringify(data)
+	const content = {
+		headers:{
+			'content-type':'application/json'
+		},
+		body : json,
+		method:'POST'
+	}
+	const response = ()=>{
+		const output = new Promise((resolve)=>{
+			fetch(hostname,content).then((res)=>{
+				resolve(res.text())
 			})
 		})
 		return output
@@ -120,12 +144,12 @@ const pack = async(e,address,id,order) =>{
 	const response = await ajaxconvert(arrayBuffer)
 	return response
 }
-const Render = async(e)=>{
-	const mail = await Postman(e)
+const Render = async(e,func='page')=>{
+	const mail = await Postman(e,func)
 	const updateDiv = document.getElementById('main-display')
 	const output = new Promise((resolve)=>{
 		updateDiv.innerHTML = mail
-		resolve(true)		
+		resolve(true)				
 	})
 	return output
 }

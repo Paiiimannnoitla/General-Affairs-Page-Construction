@@ -12,6 +12,9 @@ const sopBuild = async(test) =>{
 	}
 }
 
+const sopRender = (id)=>{
+	
+}
 const sopFunc = ()=>{
 	uxLoginCheck()
 	const main = document.getElementById('sop-main')
@@ -23,6 +26,17 @@ const sopFunc = ()=>{
 			const e = btnArr[i]
 			e.contentEditable = 'true'
 		}
+	})
+	// SOP content loader
+	document.getElementById('main-display').addEventListener('click',async(event)=>{
+		const isHead = event.target.tagName == 'TH'
+		if(isHead){
+			const html = await load('sop',[1])
+			const thead = event.target.closest('thead')
+			const tbody = thead.nextElementSibling
+			tbody.innerHTML = html
+		}
+		
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',()=>{

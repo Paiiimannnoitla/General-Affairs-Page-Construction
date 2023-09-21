@@ -14,6 +14,13 @@
 	73. Hover function-menu should have highlight effect
 	79. Make basic buisness infrastructure
 		-- processing
+		
+---
+	## 2023.09.21		version 0.4.0 -- SOP-build
+	-- Function implementatation
+	# Added
+	1. Add load function to realize partial content loading
+		-- finished
 ---
 	## 2023.09.20		version 0.3.9 -- SOP-build
 	-- Infrastructrue building
