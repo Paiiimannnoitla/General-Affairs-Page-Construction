@@ -10,11 +10,17 @@
 		-- manual
 	42. Should add column cut function in Member page
 	72. It should be a hint to show the file input area
-		-- processing
 	73. Hover function-menu should have highlight effect
 	79. Make basic buisness infrastructure
+		-- finished
+	80. SOP page Style
 		-- processing
-		
+---
+	## 2023.09.22		version 0.4.1 -- SOP-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that sop function works in other pages
+		-- finished
 ---
 	## 2023.09.21		version 0.4.0 -- SOP-build
 	-- Function implementatation

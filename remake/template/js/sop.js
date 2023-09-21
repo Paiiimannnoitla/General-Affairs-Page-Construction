@@ -28,7 +28,7 @@ const sopFunc = ()=>{
 		}
 	})
 	// SOP content loader
-	document.getElementById('main-display').addEventListener('click',async(event)=>{
+	document.getElementById('sop-main').addEventListener('click',async(event)=>{
 		const isHead = event.target.tagName == 'TH'
 		if(isHead){
 			const html = await load('sop',[1])
