@@ -27,7 +27,7 @@ const sopFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
-	// SOP content loader
+		//Side: SOP content loader
 	document.getElementById('sop-main').addEventListener('click',async(event)=>{
 		const isHead = event.target.tagName == 'TH'
 		if(isHead){

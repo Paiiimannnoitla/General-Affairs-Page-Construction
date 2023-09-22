@@ -232,6 +232,15 @@ p{
 	padding:			0;
 	display:			none;
 }
+.sop-form-header{
+	background:			rgb(234,230,242);
+}
+.sop-form-subheader{
+	background:			rgb(171,234,242);
+}
+.sop-form-row{
+	background:			rgb(230,242,234);
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);

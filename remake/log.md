@@ -17,7 +17,11 @@
 		-- processing
 ---
 	## 2023.09.22		version 0.4.1 -- SOP-build
+	-- Page build
 	-- Bug fix
+	# Added
+	1. Table build
+		-- finished
 	# Fixed
 	1. Fix the bug that sop function works in other pages
 		-- finished
