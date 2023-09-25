@@ -248,7 +248,7 @@ p{
 	background:			rgb(187,250,255);
 }
 .sop-form-intro{
-	background:			rgb(193,255,255);
+	background:			rgb(219,255,255);
 }
 .sop-form-sort{
 	background:			rgb(230,242,234);
@@ -272,10 +272,33 @@ p{
 	background:			rgb(255,211,252);
 }
 .sop-btn{
-	background:			rgb(241,233,229);
+	background:			rgb(211,225,239);
+	text-align:			center;
+	width:				25%;
 }
 .sop-btn-warn{
 	background:			rgb(255,208,229);
+	text-align:			center;
+	width:				25%;
+}
+.sop-chapter-id{
+	width:				10%;
+}
+.sop-chapter-content{
+	width:				90%;
+}
+.sop-id{
+	width:				5%;
+	text-align:			center;
+}
+.sop-short{
+	width:				25%;
+}
+.sop-long{
+	width:				50%;
+}
+.sop-attach{
+	width:				20%;
 }
 .dl-title{
 	width:				100%;

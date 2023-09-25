@@ -21,6 +21,8 @@
 	# Changed
 	1. Set color theme
 		-- finished
+	2. Set text align and size
+		-- finished
 	
 ---
 	## 2023.09.22		version 0.4.1 -- SOP-build
