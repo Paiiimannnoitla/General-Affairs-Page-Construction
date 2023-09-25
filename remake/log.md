@@ -16,6 +16,13 @@
 	80. SOP page Style
 		-- processing
 ---
+	## 2023.09.25		version 0.4.2 -- SOP-build
+	-- Style change
+	# Changed
+	1. Set color theme
+		-- finished
+	
+---
 	## 2023.09.22		version 0.4.1 -- SOP-build
 	-- Page build
 	-- Bug fix
