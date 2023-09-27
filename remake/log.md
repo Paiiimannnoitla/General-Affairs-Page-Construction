@@ -24,6 +24,8 @@
 	# Changed
 	1. Rewrite load function
 		-- finished
+	2. Rewrite SOP content loader
+		-- finished
 ---
 	## 2023.09.25		version 0.4.2 -- SOP-build
 	-- Style change

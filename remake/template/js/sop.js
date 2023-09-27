@@ -44,15 +44,13 @@ const sopFunc = ()=>{
 	})
 		//Side: SOP content loader
 	document.getElementById('sop-main').addEventListener('click',async(event)=>{
-		const isHead = event.target.tagName == 'TH'
-		if(isHead){
-			
+		const isHead = event.target.classList.contains('sop-form-header')
+		if(isHead){			
 			const thead = event.target.closest('thead')
 			const id = thead.id
 			const html = await load('sop',[1],'sop')
 			const tbody = thead.nextElementSibling
-			tbody.innerHTML = html
-			
+			tbody.innerHTML = html		
 		}
 		
 	})
