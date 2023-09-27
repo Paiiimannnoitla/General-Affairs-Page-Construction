@@ -24,6 +24,8 @@
 		-- finished
 	2. Rewrite sopSave function
 		-- finished
+	3. Add save function to SOP page
+		-- finished
 	# Changed
 	1. Rewrite load function
 		-- finished

@@ -50,7 +50,7 @@ app.post('/post/:pagename',(req,res)=>{
 	if(path){
 		const loadPath = './template/load/'+ pagename + '/' + path + '/'
 		fs.mkdirSync(loadPath, { recursive: true })
-		fs.writeFileSync(loadPath + 'sop-form.html',html)
+		fs.writeFileSync(loadPath + pagename + '.html',html)
 	}else{
 		fs.writeFileSync('./template/' + path + '/' + pagename + '.html',html)
 	}

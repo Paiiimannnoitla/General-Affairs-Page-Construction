@@ -30,13 +30,12 @@ const sopSave = async()=>{
 			}
 			const isSaved = await Delivery(func,id,content)
 			if(isSaved){		
-				u.classList.remove('updated')
+				//u.classList.remove('updated')
 				resolve(true)
 			}
 		})		
 	}
 	const output = await Promise.all(promiseChain)
-	console.log(output)
 	return output
 }
 const sopFunc = ()=>{
@@ -56,6 +55,7 @@ const sopFunc = ()=>{
 		const isHead = event.target.classList.contains('sop-form-header')
 		if(isHead){			
 			const thead = event.target.closest('thead')
+			const table = thead.parentNode.classList.add('updated')
 			const id = thead.id.substring(4)
 			const html = await load('sop',[id],'sop')
 			const tbody = thead.nextElementSibling
@@ -63,8 +63,17 @@ const sopFunc = ()=>{
 		}		
 	})
 		//Side: Save Function
-	document.getElementById('save-btn').addEventListener('click',()=>{
-		sopSave()
+	document.getElementById('save-btn').addEventListener('click',async()=>{
+		const isSaved = await sopSave()
+		if(isSaved){
+			const updateArr = document.querySelectorAll('.updated')
+			for(var i=0;i<updateArr.length;i++){
+				const u = updateArr[i]
+				u.classList.remove('updated')
+				u.children[1].innerHTML = ''
+			}
+			uxSave()
+		}
 		//uxSave()
 	})
 
