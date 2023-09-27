@@ -80,9 +80,7 @@ const Delivery = (address,path='',textData = '') =>{
 		const main = document.getElementById('main-display')
 		t = main.innerHTML
 	}	
-	//const html = {'html':main.innerHTML,'path':path}
 	const html = {'html':t,'path':path}
-	console.log(html)
 	const data = JSON.stringify(html)
 	const hostname = host + 'post/' + address
 	const content = {
@@ -95,7 +93,8 @@ const Delivery = (address,path='',textData = '') =>{
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
 			fetch(hostname,content).then((res)=>{
-				resolve(res)
+				//resolve(res)
+				resolve(true)
 			})
 		})
 		return output

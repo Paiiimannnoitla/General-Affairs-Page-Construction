@@ -16,19 +16,28 @@ const sopSave = async()=>{
 	const receipt = []
 	const testbtn = document.getElementById('test-btn')
 	const isTest = testbtn.classList.contains('hide')
+	const promiseChain = []
 	for(var i=0;i<updateArr.length;i++){
-		const u = updateArr[i]
-		const tbody = u.children[1]
-		const content = tbody.innerHTML
-		const sopid = u.children[0].id
-		const id = sopid.substring(4)
-		if(isTest){
-			Delivery('sop-test',id,content)
-		}else{
-			Delivery('sop',id,content)
-		}
-		
+		promiseChain[i] = new Promise(async(resolve)=>{
+			const u = updateArr[i]
+			const tbody = u.children[1]
+			const content = tbody.innerHTML
+			const sopid = u.children[0].id
+			const id = sopid.substring(4)
+			let func = 'sop'
+			if(isTest){
+				func = func + '-test'
+			}
+			const isSaved = await Delivery(func,id,content)
+			if(isSaved){		
+				u.classList.remove('updated')
+				resolve(true)
+			}
+		})		
 	}
+	const output = await Promise.all(promiseChain)
+	console.log(output)
+	return output
 }
 const sopFunc = ()=>{
 	uxLoginCheck()
@@ -47,12 +56,11 @@ const sopFunc = ()=>{
 		const isHead = event.target.classList.contains('sop-form-header')
 		if(isHead){			
 			const thead = event.target.closest('thead')
-			const id = thead.id
-			const html = await load('sop',[1],'sop')
+			const id = thead.id.substring(4)
+			const html = await load('sop',[id],'sop')
 			const tbody = thead.nextElementSibling
 			tbody.innerHTML = html		
-		}
-		
+		}		
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',()=>{
