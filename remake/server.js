@@ -47,7 +47,15 @@ app.post('/test', (req, res)=>{
 app.post('/post/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
 	const html = req.body['html']
-	fs.writeFileSync('./template/' + pagename + '.html',html)
+	const path = req.body['path']
+	if(path){
+		const loadPath = './template/load/'+ pagename + '/' + path + '/'
+		fs.mkdirSync(loadPath, { recursive: true })
+		fs.writeFileSync(loadPath + 'sop-form.html',html)
+	}else{
+		fs.writeFileSync('./template/' + path + '/' + pagename + '.html',html)
+	}
+	//fs.writeFileSync('./template/' + pagename + '.html',html)
 	res.send(true)
 })
 app.post('/upload',async(req,res)=>{

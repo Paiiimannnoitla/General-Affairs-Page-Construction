@@ -11,10 +11,15 @@
 	42. Should add column cut function in Member page
 	72. It should be a hint to show the file input area
 	73. Hover function-menu should have highlight effect
-	79. Make basic buisness infrastructure
-		-- finished
 	80. SOP page Style
 		-- processing
+		
+---
+	## 2023.09.27		version 0.4.3 -- SOP-build
+	-- Function implementatation
+	# Added
+	1. Add partial save function
+		-- finished
 ---
 	## 2023.09.25		version 0.4.2 -- SOP-build
 	-- Style change
@@ -22,8 +27,7 @@
 	1. Set color theme
 		-- finished
 	2. Set text align and size
-		-- finished
-	
+		-- finished	
 ---
 	## 2023.09.22		version 0.4.1 -- SOP-build
 	-- Page build

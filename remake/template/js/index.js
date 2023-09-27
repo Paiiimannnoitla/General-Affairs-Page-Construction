@@ -49,9 +49,40 @@ const load = (func,extra)=>{
 	const reply = response()
 	return reply
 }
-const Delivery = (address) =>{
-	const main = document.getElementById('main-display')
-	const html = {'html':main.innerHTML}
+/*
+const save = (func,extra,html)=>{
+	const hostname = host + 'save/' + func 
+	const data = {'path':extra,'data':html}
+	const json = JSON.stringify(data)
+	const content = {
+		headers:{
+			'content-type':'application/json'
+		},
+		body : json,
+		method:'POST'
+	}
+	const response = ()=>{
+		const output = new Promise((resolve)=>{
+			fetch(hostname,content).then((res)=>{
+				resolve(res.text())
+			})
+		})
+		return output
+	}
+	const reply = response()
+	return reply
+}*/
+const Delivery = (address,path='',textData = '') =>{
+	let t = ''
+	if(textData){
+		t = textData
+	}else{
+		const main = document.getElementById('main-display')
+		t = main.innerHTML
+	}	
+	//const html = {'html':main.innerHTML,'path':path}
+	const html = {'html':t,'path':path}
+	console.log(html)
 	const data = JSON.stringify(html)
 	const hostname = host + 'post/' + address
 	const content = {
@@ -115,8 +146,9 @@ const download = async(url,name)=>{
 	e.click()
 	e.remove()
 }
-const pack = async(e,address,id,order) =>{
+const pack = async(e,address,id,order,name) =>{
 	const f = e[0]
+	
 	const filename = f['name']
 	const fileLoader = (f)=>{
 		const output = new Promise((resolve)=>{
