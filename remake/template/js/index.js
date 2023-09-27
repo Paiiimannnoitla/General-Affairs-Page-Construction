@@ -27,9 +27,9 @@ const Postman = (id,func='page') =>{
 	const reply = response()
 	return reply
 }
-const load = (func,extra)=>{
+const load = (func,extra,name)=>{
 	const hostname = host + 'load/' + func 
-	const data = {'data':extra}
+	const data = {'data':extra,'name':name}
 	const json = JSON.stringify(data)
 	const content = {
 		headers:{

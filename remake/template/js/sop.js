@@ -46,8 +46,10 @@ const sopFunc = ()=>{
 	document.getElementById('sop-main').addEventListener('click',async(event)=>{
 		const isHead = event.target.tagName == 'TH'
 		if(isHead){
-			const html = await load('sop',[1])
+			
 			const thead = event.target.closest('thead')
+			const id = thead.id
+			const html = await load('sop',[1],'sop')
 			const tbody = thead.nextElementSibling
 			tbody.innerHTML = html
 			

@@ -17,8 +17,12 @@
 ---
 	## 2023.09.27		version 0.4.3 -- SOP-build
 	-- Function implementatation
+	-- Rewrite function
 	# Added
 	1. Add partial save function
+		-- finished
+	# Changed
+	1. Rewrite load function
 		-- finished
 ---
 	## 2023.09.25		version 0.4.2 -- SOP-build

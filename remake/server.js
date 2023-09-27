@@ -28,10 +28,9 @@ app.get('/',(req,res)=>{
 app.post('/load/:func',(req,res)=>{
 	const func = req.params.func + '/'
 	const exArr = req.body['data']
+	const name = req.body['name']
 	const extra = exArr.join('/')
-	console.log('./template/load' + func + extra + '.html')
-	const page = fs.readFile('./template/load/' + func + extra + '.html','utf8',(err,data)=>{
-		console.log(data)
+	const page = fs.readFile('./template/load/' + func + extra + '/' + name + '.html','utf8',(err,data)=>{
 		res.send(data)
 	})
 })
