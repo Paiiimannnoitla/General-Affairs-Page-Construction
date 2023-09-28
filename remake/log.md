@@ -13,7 +13,13 @@
 	73. Hover function-menu should have highlight effect
 	80. SOP page Style
 		-- processing
-		
+
+---
+	## 2023.09.28		version 0.4.4 -- SOP-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that edit-off class is useless in SOP page
+		-- finished
 ---
 	## 2023.09.27		version 0.4.3 -- SOP-build
 	-- Function implementatation

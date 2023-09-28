@@ -44,7 +44,7 @@ const sopFunc = ()=>{
 	//Main: Edit Function
 		//Side: Content edit 
 	document.getElementById('edit-btn').addEventListener('click',()=>{
-		const btnArr = document.querySelectorAll('td,th')
+		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.contentEditable = 'true'
@@ -61,6 +61,13 @@ const sopFunc = ()=>{
 			const tbody = thead.nextElementSibling
 			tbody.innerHTML = html		
 		}		
+	})
+		//Side:	Add new step 
+	document.getElementById('sop-main').addEventListener('click',(event)=>{
+		const isButton = event.target.classList.contains('sop-btn-newstep')
+		if(isButton){
+			console.log('new step')
+		}
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',async()=>{
