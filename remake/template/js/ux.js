@@ -59,7 +59,7 @@ const uxEdit = ()=>{
 }
 
 // Quit edit mode
-const uxCancel = ()=>{
+const uxCancel = (isAll=true)=>{
 	const editArr = document.querySelectorAll('td,th')
 	for(var i=0;i<editArr.length;i++){
 		editArr[i].removeAttribute('contenteditable')
@@ -77,11 +77,12 @@ const uxCancel = ()=>{
 	for(var i=0;i<itemArr.length;i++){
 		itemArr[i].classList.remove('item-selected')
 	}
-	const editmodeArr = document.querySelectorAll('.edit-mode')
-	const readArr = document.querySelectorAll('.read-mode')
-	hide(editmodeArr)
-	unhide(readArr)
-	
+	if(isAll){
+		const editmodeArr = document.querySelectorAll('.edit-mode')
+		const readArr = document.querySelectorAll('.read-mode')
+		hide(editmodeArr)
+		unhide(readArr)
+	}	
 }
 
 // Delete function

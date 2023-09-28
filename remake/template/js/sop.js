@@ -12,6 +12,7 @@ const sopBuild = async(test) =>{
 	}
 }
 const sopSave = async()=>{
+	uxCancel(false)
 	const updateArr = document.querySelectorAll('.updated')
 	const receipt = []
 	const testbtn = document.getElementById('test-btn')
