@@ -13,9 +13,17 @@
 	73. Hover function-menu should have highlight effect
 	80. SOP page Style
 		-- processing
-	81. Bug:bright function error in SOP page
+	82. Add append new form function 
 		-- finished
-
+	83. Add append content function when no record
+		-- processing
+---
+	## 2023.10.02		version 0.4.5 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add append new SOP form function
+		-- finished
+		
 ---
 	## 2023.09.28		version 0.4.4 -- SOP-build
 	-- Bug fix

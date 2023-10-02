@@ -52,7 +52,7 @@ const sopFunc = ()=>{
 		}
 	})
 		//Side: SOP content loader
-	document.getElementById('sop-main').addEventListener('click',async(event)=>{
+	main.addEventListener('click',async(event)=>{
 		const isHead = event.target.classList.contains('sop-form-header')
 		if(isHead){			
 			const thead = event.target.closest('thead')
@@ -64,11 +64,38 @@ const sopFunc = ()=>{
 		}		
 	})
 		//Side:	Add new step 
-	document.getElementById('sop-main').addEventListener('click',(event)=>{
+	main.addEventListener('click',(event)=>{
 		const isButton = event.target.classList.contains('sop-btn-newstep')
 		if(isButton){
 			console.log('new step')
 		}
+	})
+	
+		//Side: Add new SOP Form
+	document.getElementById('new-btn').addEventListener('click',()=>{
+		const selected = uxSelect()
+		if(selected){
+			const insertDiv = selected.closest('.sop-form-init')
+			let id = main.children.length + 1			
+			while(document.querySelector('.sop-' + id)){
+				id= id+1
+			}
+			const sopid = 'sop-' + id
+			const prefix = `<tr class='sop-form-init'><td class="edit-off"><table class="sop-form">`
+			const suffix = `</table></td></tr>`
+			
+			const theadPrefix = `<thead id="`+ sopid +`">`
+			const trPart = `<tr><th colspan="4" class="sop-form-header" contenteditable="true">Title</th></tr>`
+			const theadSuffix = `</thead>`
+			const tbodyPart = `<tbody class="`+ sopid +`"></tbody>`
+			const theadPart = theadPrefix + trPart + theadSuffix
+			const contentPart = theadPart + tbodyPart
+			
+			const content = prefix + contentPart + suffix
+			
+			insertDiv.insertAdjacentHTML('afterend',content)		
+		}
+		
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',async()=>{
