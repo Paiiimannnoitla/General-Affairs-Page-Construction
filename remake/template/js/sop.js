@@ -51,6 +51,31 @@ const sopFunc = ()=>{
 			e.contentEditable = 'true'
 		}
 	})
+		//Side:	Content selection
+	main.addEventListener('click',(event)=>{
+		const e = event.target
+		const isEditable = e.contentEditable == 'true'
+		if(isEditable){
+			
+			const isFocused = e.classList.contains('focused')
+			if(!isFocused){
+				const range = document.createRange()
+				range.selectNodeContents(e)
+				const sel = window.getSelection()
+				sel.removeAllRanges()
+				sel.addRange(range)
+				const focusDiv = document.querySelector('.focused')
+				if(focusDiv){
+					const isSame = focusDiv == e
+					if(!isSame){	
+						focusDiv.classList.remove('focused')
+					}
+				}
+				
+				e.classList.add('focused')			
+			}
+		}
+	})
 		//Side: SOP content loader
 	main.addEventListener('click',async(event)=>{
 		const isHead = event.target.classList.contains('sop-form-header')
