@@ -58,14 +58,12 @@ const sopFunc = ()=>{
 			const thead = event.target.closest('thead')
 			const table = thead.parentNode.classList.add('updated')
 			const id = thead.id.substring(4)
-			const html = await load('sop',[id],'sop')
-			if(html){
-				const tbody = thead.nextElementSibling
-				tbody.innerHTML = html	
-			}else{
-				console.log('apple')
+			let html = await load('sop',[id],'sop')
+			if(!html){
+				html = await load('sop',[0],'sop')
 			}
-			
+			const tbody = thead.nextElementSibling
+			tbody.innerHTML = html	
 		}		
 	})
 		//Side:	Add new step 

@@ -14,9 +14,14 @@
 	80. SOP page Style
 		-- processing
 	83. Add append content function when no record
-		-- processing
+		-- finished
 		
-		
+---
+	## 2023.10.04		version 0.4.7 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. Add id-0 as the basic template if no content then load it
+		-- finished
 ---
 	## 2023.10.03		version 0.4.6 -- SOP-build
 	-- Function enhancement
