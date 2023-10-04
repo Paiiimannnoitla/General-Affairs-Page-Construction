@@ -39,17 +39,28 @@ const sopSave = async()=>{
 	const output = await Promise.all(promiseChain)
 	return output
 }
+// Activate cells edit attribute
+const sopEdit = ()=>{
+	const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
+	for(var i=0;i<btnArr.length;i++){
+		const e = btnArr[i]
+		e.contentEditable = 'true'
+	}
+}
+//All direct function in SOP page
 const sopFunc = ()=>{
 	uxLoginCheck()
 	const main = document.getElementById('sop-main')
 	//Main: Edit Function
 		//Side: Content edit 
 	document.getElementById('edit-btn').addEventListener('click',()=>{
+		sopEdit()
+		/*
 		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
 		for(var i=0;i<btnArr.length;i++){
 			const e = btnArr[i]
 			e.contentEditable = 'true'
-		}
+		}*/
 	})
 		//Side:	Content selection
 	main.addEventListener('click',(event)=>{
@@ -89,6 +100,10 @@ const sopFunc = ()=>{
 			}
 			const tbody = thead.nextElementSibling
 			tbody.innerHTML = html	
+			const isEdit = uxCheck() == 'Edit'
+			if(isEdit){
+				sopEdit()
+			}		
 		}		
 	})
 		//Side:	Add new step 

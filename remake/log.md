@@ -16,7 +16,7 @@
 	83. Add append content function when no record
 		-- finished
 	84. Bug: when load sop form in edit mode will not editable
-		-- processing
+		-- finished
 		
 ---
 	## 2023.10.04		version 0.4.7 -- SOP-build
@@ -26,6 +26,11 @@
 	1. Add id-0 as the basic template if no content then load it
 		-- finished
 	2. Add a function to auto select all content for first edit to increase edit efficiency
+		-- finished
+	3. Add sopEdit function to activate contenteditable attributes
+		-- finished
+	# Fixed
+	1. Fix the bug that load sop form will disable contenteditable status
 		-- finished
 ---
 	## 2023.10.03		version 0.4.6 -- SOP-build
