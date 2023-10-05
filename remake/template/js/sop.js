@@ -89,11 +89,39 @@ const sopFunc = ()=>{
 	})
 		//Side: SOP content loader
 	main.addEventListener('click',async(event)=>{
-		const isHead = event.target.classList.contains('sop-form-header')
-		if(isHead){			
-			const thead = event.target.closest('thead')
-			const table = thead.parentNode.classList.add('updated')
+		const e = event.target
+		const isHead = e.classList.contains('sop-form-header')
+		if(isHead){		
+			const isEdit = uxCheck() == 'Edit'
+			const thead = e.closest('thead')
+			const tbody = thead.nextElementSibling
+			const table = thead.parentNode
+			//const table = thead.parentNode.classList.add('updated')
 			const id = thead.id.substring(4)
+			const isUpdated = table.classList.contains('updated')
+			if(isUpdated){
+				const isHide = tbody.classList.contains('hide')
+				if(isHide){
+					unhide(tbody)
+					tbody.classList.remove('not-save')
+				}else{
+					hide(tbody)
+					tbody.classList.add('not-save')
+				}
+			}else{
+				//Loading extra content
+				let html = await load('sop',[id],'sop')
+				if(!html){
+					html = await load('sop',[0],'sop')
+				}				
+				tbody.innerHTML = html	
+				table.classList.add('updated')
+				const isEdit = uxCheck() == 'Edit'
+				if(isEdit){
+					sopEdit()
+				}
+			}
+			/*
 			let html = await load('sop',[id],'sop')
 			if(!html){
 				html = await load('sop',[0],'sop')
@@ -103,7 +131,7 @@ const sopFunc = ()=>{
 			const isEdit = uxCheck() == 'Edit'
 			if(isEdit){
 				sopEdit()
-			}		
+			}	*/	
 		}		
 	})
 		//Side:	Add new step 

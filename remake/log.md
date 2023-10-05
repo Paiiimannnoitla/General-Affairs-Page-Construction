@@ -17,7 +17,20 @@
 		-- finished
 	84. Bug: when load sop form in edit mode will not editable
 		-- finished
-		
+	85. Delete selected sop form
+		-- processing
+	86. Collapsing function for sop form
+		-- finished
+	87. Not save when the sop form is not expanding
+		-- processing
+
+---
+	## 2023.10.05		version 0.4.8 -- SOP-build
+	-- Function implementation
+	
+	# Added
+	1. Add expanding and collapsing function to sop form
+		-- finisehd
 ---
 	## 2023.10.04		version 0.4.7 -- SOP-build
 	-- Function enhancement
