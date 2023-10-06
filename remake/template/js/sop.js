@@ -152,6 +152,14 @@ const sopFunc = ()=>{
 		insertDiv.insertAdjacentHTML('afterend',content)	
 		
 	})
+		//Side: Delete SOP Form
+	document.getElementById('sop-btn-delete').addEventListener('click',()=>{
+		const selected = uxSelect()
+		if(selected){
+			const sopform = selected.closest('.sop-form-init')
+			sopform.remove()
+		}
+	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',async()=>{
 		const isSaved = await sopSave()
