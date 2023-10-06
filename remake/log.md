@@ -14,12 +14,13 @@
 	80. SOP page Style
 		-- processing
 	85. Delete selected sop form
-		-- processing
+		-- finished
 	87. Not save when the sop form is not expanding
 		-- finished
 	88. Warn before delete whole SOP form
-		-- finished
-
+		-- processing
+	89. Prevent form menu display when non-edit mode in sop page
+		-- processing
 
 ---
 	## 2023.10.06		version 0.4.9 -- SOP-build
@@ -31,6 +32,8 @@
 	2. Add not-save area do not save function into sopSave
 		-- finished
 	3. Add SOP form delete function
+		-- finished
+	4. Add SOP form row delete function
 		-- finished
 ---
 	## 2023.10.05		version 0.4.8 -- SOP-build

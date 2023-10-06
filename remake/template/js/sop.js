@@ -117,14 +117,50 @@ const sopFunc = ()=>{
 			}
 		}		
 	})
-		//Side:	Add new step 
-	main.addEventListener('click',(event)=>{
-		const isButton = event.target.classList.contains('sop-btn-newstep')
-		if(isButton){
-			console.log('new step')
+		//Side: SOP Form menu button function
+	main.addEventListener('mousedown',(event)=>{
+		const e = event.target
+		const delArr = ['sop-form-row']
+		const has = (arr,el=e)=>{
+			const isArray = arr.constructor == Array
+			if(isArray){
+				let n = 0
+				for(var i=0;i<arr.length;i++){
+					n = n + el.classList.contains(arr[i])
+				}
+				return n 
+			}else{
+				return el.classList.contains(arr)
+			}
+		}
+		/*
+		const isDelete =	e.classList.contains('sop-btn-delete')
+		const isNote =		e.classList.contains('sop-btn-newnote')
+		const isChapter = 	e.classList.contains('sop-btn-newchapter')
+		const isStep = 		e.classList.contains('sop-btn-newstep')*/
+		const isDelete =	has('sop-btn-delete')
+		const isNote =		has('sop-btn-newnote')
+		const isChapter = 	has('sop-btn-newchapter')
+		const isStep = 		has('sop-btn-newstep')
+		if(isDelete){
+			const selected = uxSelect()
+			if(selected){
+				const isValid = has(delArr,selected)
+				if(isValid){
+					selected.closest('tr').remove()
+				}
+			}
+		}
+		if(isNote){
+			console.log('note')
+		}
+		if(isChapter){
+			console.log('chapter')
+		}
+		if(isStep){
+			console.log('step')
 		}
 	})
-	
 		//Side: Add new SOP Form
 	document.getElementById('new-btn').addEventListener('click',()=>{
 		let selected = uxSelect()
@@ -153,7 +189,7 @@ const sopFunc = ()=>{
 		
 	})
 		//Side: Delete SOP Form
-	document.getElementById('sop-btn-delete').addEventListener('click',()=>{
+	document.getElementById('sop-btn-deleteform').addEventListener('click',()=>{
 		const selected = uxSelect()
 		if(selected){
 			const sopform = selected.closest('.sop-form-init')
