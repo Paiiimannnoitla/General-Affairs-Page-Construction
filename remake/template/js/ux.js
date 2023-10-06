@@ -77,6 +77,14 @@ const uxCancel = (isAll=true)=>{
 	for(var i=0;i<itemArr.length;i++){
 		itemArr[i].classList.remove('item-selected')
 	}
+	const focusArr = document.querySelectorAll('.focused')
+	for(var i=0;i<focusArr.length;i++){
+		focusArr[i].classList.remove('focused')
+	}
+	const notArr = document.querySelectorAll('.not-save')
+	for(var i=0;i<notArr.length;i++){
+		notArr[i].classList.remove('not-save')
+	}
 	if(isAll){
 		const editmodeArr = document.querySelectorAll('.edit-mode')
 		const readArr = document.querySelectorAll('.read-mode')

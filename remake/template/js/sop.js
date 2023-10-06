@@ -13,7 +13,7 @@ const sopBuild = async(test) =>{
 }
 const sopSave = async()=>{
 	uxCancel(false)
-	const updateArr = document.querySelectorAll('.updated')
+	const updateArr = document.querySelectorAll('.updated:not(.not-save)')
 	const receipt = []
 	const testbtn = document.getElementById('test-btn')
 	const isTest = testbtn.classList.contains('hide')
@@ -32,6 +32,7 @@ const sopSave = async()=>{
 			const isSaved = await Delivery(func,id,content)
 			if(isSaved){		
 				//u.classList.remove('updated')
+				console.log(u.querySelector('.sop-form-header').innerHTML + ' is saved')
 				resolve(true)
 			}
 		})		
@@ -55,12 +56,6 @@ const sopFunc = ()=>{
 		//Side: Content edit 
 	document.getElementById('edit-btn').addEventListener('click',()=>{
 		sopEdit()
-		/*
-		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
-		for(var i=0;i<btnArr.length;i++){
-			const e = btnArr[i]
-			e.contentEditable = 'true'
-		}*/
 	})
 		//Side:	Content selection
 	main.addEventListener('click',(event)=>{
@@ -96,17 +91,16 @@ const sopFunc = ()=>{
 			const thead = e.closest('thead')
 			const tbody = thead.nextElementSibling
 			const table = thead.parentNode
-			//const table = thead.parentNode.classList.add('updated')
 			const id = thead.id.substring(4)
 			const isUpdated = table.classList.contains('updated')
 			if(isUpdated){
 				const isHide = tbody.classList.contains('hide')
 				if(isHide){
 					unhide(tbody)
-					tbody.classList.remove('not-save')
+					table.classList.remove('not-save')
 				}else{
 					hide(tbody)
-					tbody.classList.add('not-save')
+					table.classList.add('not-save')
 				}
 			}else{
 				//Loading extra content
@@ -121,17 +115,6 @@ const sopFunc = ()=>{
 					sopEdit()
 				}
 			}
-			/*
-			let html = await load('sop',[id],'sop')
-			if(!html){
-				html = await load('sop',[0],'sop')
-			}
-			const tbody = thead.nextElementSibling
-			tbody.innerHTML = html	
-			const isEdit = uxCheck() == 'Edit'
-			if(isEdit){
-				sopEdit()
-			}	*/	
 		}		
 	})
 		//Side:	Add new step 

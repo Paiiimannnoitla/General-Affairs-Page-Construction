@@ -13,21 +13,24 @@
 	73. Hover function-menu should have highlight effect
 	80. SOP page Style
 		-- processing
-	83. Add append content function when no record
-		-- finished
-	84. Bug: when load sop form in edit mode will not editable
-		-- finished
 	85. Delete selected sop form
 		-- processing
-	86. Collapsing function for sop form
-		-- finished
 	87. Not save when the sop form is not expanding
-		-- processing
+		-- finished
 
+
+---
+	## 2023.10.06		version 0.4.9 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. Add not-save and focused attribute clean process into uxCancel
+		-- finished
+	2. Add not-save area do not save function into sopSave
+		-- finished
+	
 ---
 	## 2023.10.05		version 0.4.8 -- SOP-build
 	-- Function implementation
-	
 	# Added
 	1. Add expanding and collapsing function to sop form
 		-- finisehd
