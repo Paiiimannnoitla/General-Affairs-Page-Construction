@@ -17,6 +17,8 @@
 		-- processing
 	89. Prevent form menu display when non-edit mode in sop page
 		-- finished
+	90. Cut big size data into segment and combine them after upload
+		-- processing
 
 ---
 	## 2023.10.11		version 0.5.0 -- SOP-build

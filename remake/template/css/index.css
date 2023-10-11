@@ -80,7 +80,33 @@ p{
 	background:			rgb(255,250,240);
 	width:				90vw;
 }
-
+#box{
+	height:			100vh;
+	width:			100vw;
+	position:		fixed;
+	left:			0;
+	top:			0;
+	display:		block;
+}
+#box-filter{
+	height:			100%;
+	width:			100%;
+	background:		rgb(14,14,14);
+	z-index:		9997;
+	position:		fixed;
+	display:		block;
+	opacity:		0.3;
+}
+#box-main{
+	height:			250px;
+	width:			400px;
+	background:		rgb(247,247,247);
+	z-index:		9998;
+	position:		fixed;
+	left:			calc(50vw - 200px);
+	top:			calc(50vh - 125px);
+	display:		block;
+}
 #announce th{
 	background:			rgb(225,228,244);
 }
