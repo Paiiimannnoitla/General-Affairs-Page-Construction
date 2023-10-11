@@ -155,7 +155,31 @@ const sopFunc = ()=>{
 			console.log('chapter')
 		}
 		if(isStep){
-			console.log('step')
+			const selected = uxSelect()
+			console.log(selected)
+			if(selected){
+				const prefix = `<tr>`
+				const idPart = `<td class="sop-form-row sop-id">id placeholder</td>`
+				const shortPart = `<td class="sop-form-row sop-short" contenteditable='true'>Please input short description</td>`
+				const longPart = `<td class="sop-form-row sop-long" contenteditable='true'>Please input long description</td>`
+				const attachPart = `<td class="sop-form-row sop-attach" contenteditable='true'>Upload function is wip</td>` 
+				const suffix = `</tr>`
+				const content = prefix + idPart + shortPart + longPart + attachPart + suffix 
+				
+				const isRow = selected.classList.contains('sop-form-row')
+				const isSort = selected.classList.contains('sop-form-sort')
+				const isValid = isRow + isSort
+				let insertDiv = ''
+				if(isValid){
+					insertDiv = selected.parentNode
+				}else{
+					const sopform = selected.closest('.sop-form')
+					const rowArr = sopform.querySelectorAll('.sop-form-row')
+					const lastRow = rowArr[rowArr.length-1]
+					insertDiv = lastRow.parentNode
+				}
+				insertDiv.insertAdjacentHTML('afterend',content)				
+			}
 		}
 	})
 		//Side: Add new SOP Form

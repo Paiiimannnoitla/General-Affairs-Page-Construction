@@ -19,12 +19,16 @@
 		-- finished
 	90. Cut big size data into segment and combine them after upload
 		-- processing
+	91. Add id writer function in sop page
+		-- processing
 
 ---
 	## 2023.10.11		version 0.5.0 -- SOP-build
 	-- Function implementation
 	# Added
 	1. Add form menu protect function
+		-- finished
+	2. Add insert new step function
 		-- finished
 ---
 	## 2023.10.06		version 0.4.9 -- SOP-build
