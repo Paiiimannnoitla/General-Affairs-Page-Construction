@@ -47,6 +47,8 @@ const sopEdit = ()=>{
 		const e = btnArr[i]
 		e.contentEditable = 'true'
 	}
+	const hideArr = document.querySelectorAll('.sop-btn-table.hide')
+	unhide(hideArr)
 }
 //All direct function in SOP page
 const sopFunc = ()=>{
@@ -133,11 +135,6 @@ const sopFunc = ()=>{
 				return el.classList.contains(arr)
 			}
 		}
-		/*
-		const isDelete =	e.classList.contains('sop-btn-delete')
-		const isNote =		e.classList.contains('sop-btn-newnote')
-		const isChapter = 	e.classList.contains('sop-btn-newchapter')
-		const isStep = 		e.classList.contains('sop-btn-newstep')*/
 		const isDelete =	has('sop-btn-delete')
 		const isNote =		has('sop-btn-newnote')
 		const isChapter = 	has('sop-btn-newchapter')

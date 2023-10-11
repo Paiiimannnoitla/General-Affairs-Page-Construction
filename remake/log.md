@@ -13,15 +13,17 @@
 	73. Hover function-menu should have highlight effect
 	80. SOP page Style
 		-- processing
-	85. Delete selected sop form
-		-- finished
-	87. Not save when the sop form is not expanding
-		-- finished
 	88. Warn before delete whole SOP form
 		-- processing
 	89. Prevent form menu display when non-edit mode in sop page
-		-- processing
+		-- finished
 
+---
+	## 2023.10.11		version 0.5.0 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add form menu protect function
+		-- finished
 ---
 	## 2023.10.06		version 0.4.9 -- SOP-build
 	-- Function enhancement
