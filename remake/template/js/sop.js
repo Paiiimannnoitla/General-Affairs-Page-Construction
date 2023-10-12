@@ -123,6 +123,7 @@ const sopFunc = ()=>{
 	main.addEventListener('mousedown',(event)=>{
 		const e = event.target
 		const delArr = ['sop-form-row']
+			//Class list checker
 		const has = (arr,el=e)=>{
 			const isArray = arr.constructor == Array
 			if(isArray){
@@ -135,6 +136,7 @@ const sopFunc = ()=>{
 				return el.classList.contains(arr)
 			}
 		}
+			//id generate and overwrite
 		const idWrite = (sopform)=>{
 			const newRow = document.querySelector('.new-id')
 			newRow.classList.remove('new-id')
@@ -155,7 +157,14 @@ const sopFunc = ()=>{
 			if(selected){
 				const isValid = has(delArr,selected)
 				if(isValid){
-					selected.closest('tr').remove()
+					//selected.closest('tr').remove()
+					const delDiv = selected.closest('tr')
+					const sopform = delDiv.nextElementSibling
+					const isRow = has('sop-id',sopform.children[0])
+					if(isRow){
+						sopform.children[0].classList.add('new-id')
+						idWrite(sopform)
+					}
 				}
 			}
 		}
@@ -165,7 +174,7 @@ const sopFunc = ()=>{
 		if(isChapter){
 			console.log('chapter')
 		}
-		//Side: Add a new step
+			//Side: Add a new step
 		if(isStep){
 			const selected = uxSelect()
 			if(selected){
@@ -177,31 +186,21 @@ const sopFunc = ()=>{
 				const suffix = `</tr>`
 				const content = prefix + idPart + shortPart + longPart + attachPart + suffix 
 				
-				const isRow = selected.classList.contains('sop-form-row')
-				const isSort = selected.classList.contains('sop-form-sort')
-				const isValid = isRow + isSort
-				
-				const sopform = selected.closest('.sop-form')
-				let insertDiv = ''
-				if(isValid){
+				//const sopform = selected.closest('.sop-form')
+				const selForm = selected.closest('.sop-form')
+				const sopform= e.closest('.sop-form')
+				const isSame = selForm == sopform
+				const isValid = has(['sop-form-row','sop-form-sort'],selected)
+				const isBoth = isSame + isValid == 2
+				if(isBoth){
 					insertDiv = selected.parentNode
-				}else{
+				}else{				
 					const rowArr = sopform.querySelectorAll('.sop-form-row')
 					const lastRow = rowArr[rowArr.length-1]
 					insertDiv = lastRow.parentNode
 				}
 				insertDiv.insertAdjacentHTML('afterend',content)
-				idWrite(sopform)
-				/*
-				const newRow = document.querySelector('.new-id')
-				newRow.classList.remove('new-id')
-				const idArr = sopform.querySelectorAll('.sop-id')
-				const currid = Array.prototype.indexOf.call(idArr,newRow)
-				const idLen = idArr.length
-				for(var i=currid;i<idLen;i++){
-					const id = idArr[i]
-					id.innerHTML = i
-				}	*/			
+				idWrite(sopform)		
 			}
 		}
 	})

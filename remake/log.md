@@ -28,10 +28,13 @@
 	## 2023.10.12		version 0.5.1 -- SOP-build
 	-- Function enhancement
 	-- Function implementation
+	-- Clear wasted codes
 	# Added
 	1. Add id generation and writing functions
 		-- finished
 	2. id generation and writer function is separated as an independent function called idWrite
+		-- finished
+	3. Add new step cross form support make sure always append at correct position
 		-- finished
 ---
 	## 2023.10.11		version 0.5.0 -- SOP-build
