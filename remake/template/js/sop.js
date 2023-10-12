@@ -154,12 +154,12 @@ const sopFunc = ()=>{
 		if(isChapter){
 			console.log('chapter')
 		}
+		//Side: Add a new step
 		if(isStep){
 			const selected = uxSelect()
-			console.log(selected)
 			if(selected){
 				const prefix = `<tr>`
-				const idPart = `<td class="sop-form-row sop-id">id placeholder</td>`
+				const idPart = `<td class="sop-form-row sop-id new-id">id placeholder</td>`
 				const shortPart = `<td class="sop-form-row sop-short" contenteditable='true'>Please input short description</td>`
 				const longPart = `<td class="sop-form-row sop-long" contenteditable='true'>Please input long description</td>`
 				const attachPart = `<td class="sop-form-row sop-attach" contenteditable='true'>Upload function is wip</td>` 
@@ -169,16 +169,26 @@ const sopFunc = ()=>{
 				const isRow = selected.classList.contains('sop-form-row')
 				const isSort = selected.classList.contains('sop-form-sort')
 				const isValid = isRow + isSort
+				
+				const sopform = selected.closest('.sop-form')
 				let insertDiv = ''
 				if(isValid){
 					insertDiv = selected.parentNode
 				}else{
-					const sopform = selected.closest('.sop-form')
 					const rowArr = sopform.querySelectorAll('.sop-form-row')
 					const lastRow = rowArr[rowArr.length-1]
 					insertDiv = lastRow.parentNode
 				}
-				insertDiv.insertAdjacentHTML('afterend',content)				
+				insertDiv.insertAdjacentHTML('afterend',content)
+				const newRow = document.querySelector('.new-id')
+				newRow.classList.remove('new-id')
+				const idArr = sopform.querySelectorAll('.sop-id')
+				const currid = Array.prototype.indexOf.call(idArr,newRow)
+				const idLen = idArr.length
+				for(var i=currid;i<idLen;i++){
+					const id = idArr[i]
+					id.innerHTML = i
+				}				
 			}
 		}
 	})

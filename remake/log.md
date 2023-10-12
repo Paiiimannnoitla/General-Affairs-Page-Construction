@@ -15,13 +15,17 @@
 		-- processing
 	88. Warn before delete whole SOP form
 		-- processing
-	89. Prevent form menu display when non-edit mode in sop page
-		-- finished
 	90. Cut big size data into segment and combine them after upload
 		-- processing
 	91. Add id writer function in sop page
 		-- processing
 
+---
+	## 2023.10.12		version 0.5.1 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. Add id generation and writing functions
+		-- finished
 ---
 	## 2023.10.11		version 0.5.0 -- SOP-build
 	-- Function implementation
