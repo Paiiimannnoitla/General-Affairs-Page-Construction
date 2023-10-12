@@ -18,13 +18,20 @@
 	90. Cut big size data into segment and combine them after upload
 		-- processing
 	91. Add id writer function in sop page
+		-- finished
+	92. Add id updating function in delete
+		-- processing
+	93. Add attachment upload function
 		-- processing
 
 ---
 	## 2023.10.12		version 0.5.1 -- SOP-build
 	-- Function enhancement
+	-- Function implementation
 	# Added
 	1. Add id generation and writing functions
+		-- finished
+	2. id generation and writer function is separated as an independent function called idWrite
 		-- finished
 ---
 	## 2023.10.11		version 0.5.0 -- SOP-build

@@ -135,6 +135,17 @@ const sopFunc = ()=>{
 				return el.classList.contains(arr)
 			}
 		}
+		const idWrite = (sopform)=>{
+			const newRow = document.querySelector('.new-id')
+			newRow.classList.remove('new-id')
+			const idArr = sopform.querySelectorAll('.sop-id')
+			const currid = Array.prototype.indexOf.call(idArr,newRow)
+			const idLen = idArr.length
+			for(var i=currid;i<idLen;i++){
+				const id = idArr[i]
+				id.innerHTML = i
+			}
+		}
 		const isDelete =	has('sop-btn-delete')
 		const isNote =		has('sop-btn-newnote')
 		const isChapter = 	has('sop-btn-newchapter')
@@ -180,6 +191,8 @@ const sopFunc = ()=>{
 					insertDiv = lastRow.parentNode
 				}
 				insertDiv.insertAdjacentHTML('afterend',content)
+				idWrite(sopform)
+				/*
 				const newRow = document.querySelector('.new-id')
 				newRow.classList.remove('new-id')
 				const idArr = sopform.querySelectorAll('.sop-id')
@@ -188,7 +201,7 @@ const sopFunc = ()=>{
 				for(var i=currid;i<idLen;i++){
 					const id = idArr[i]
 					id.innerHTML = i
-				}				
+				}	*/			
 			}
 		}
 	})
