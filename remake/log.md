@@ -17,13 +17,19 @@
 		-- processing
 	90. Cut big size data into segment and combine them after upload
 		-- processing
-	91. Add id writer function in sop page
-		-- finished
 	92. Add id updating function in delete
-		-- processing
+		-- finished
 	93. Add attachment upload function
 		-- processing
+	94. Add delete row id write function
+		-- finished
 
+---
+	## 2023.10.13		version 0.5.2 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. Add id writer support to delete row function
+		-- finished
 ---
 	## 2023.10.12		version 0.5.1 -- SOP-build
 	-- Function enhancement

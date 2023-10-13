@@ -153,16 +153,19 @@ const sopFunc = ()=>{
 		const isChapter = 	has('sop-btn-newchapter')
 		const isStep = 		has('sop-btn-newstep')
 		if(isDelete){
+			//Side: Delete row
 			const selected = uxSelect()
 			if(selected){
 				const isValid = has(delArr,selected)
 				if(isValid){
 					//selected.closest('tr').remove()
 					const delDiv = selected.closest('tr')
-					const sopform = delDiv.nextElementSibling
-					const isRow = has('sop-id',sopform.children[0])
+					const sopRow = delDiv.nextElementSibling
+					delDiv.remove()
+					const isRow = has('sop-id',sopRow.children[0])
 					if(isRow){
-						sopform.children[0].classList.add('new-id')
+						sopRow.children[0].classList.add('new-id')
+						const sopform = sopRow.closest('.sop-form')
 						idWrite(sopform)
 					}
 				}
@@ -186,7 +189,6 @@ const sopFunc = ()=>{
 				const suffix = `</tr>`
 				const content = prefix + idPart + shortPart + longPart + attachPart + suffix 
 				
-				//const sopform = selected.closest('.sop-form')
 				const selForm = selected.closest('.sop-form')
 				const sopform= e.closest('.sop-form')
 				const isSame = selForm == sopform
