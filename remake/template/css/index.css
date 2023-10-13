@@ -326,6 +326,18 @@ p{
 .sop-attach{
 	width:				20%;
 }
+.sop-note{
+	
+}
+.sop-note-header{
+	width:				5%;
+	text-align:			center;
+	background:			rgb(255,219,220);	
+}
+.sop-note-content{
+	width:				95%;
+	background:			rgb(255,239,239);
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);

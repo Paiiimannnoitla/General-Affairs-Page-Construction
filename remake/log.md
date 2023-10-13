@@ -23,10 +23,13 @@
 		-- processing
 	94. Add delete row id write function
 		-- finished
+	95. Add expand and collapse button
+		-- processing
 
 ---
 	## 2023.10.13		version 0.5.2 -- SOP-build
 	-- Function enhancement
+	-- Style Change
 	# Added
 	1. Add id writer support to delete row function
 		-- finished
