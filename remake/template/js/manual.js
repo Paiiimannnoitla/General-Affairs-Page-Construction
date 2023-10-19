@@ -60,7 +60,7 @@ const mnlFunc = ()=>{
 			let content = ''
 			for(var a=0;a<receipt.length;a++){
 				const r = receipt[a]
-				const arr = r.split('/')
+				//const arr = r.split('/')
 				const name = extDate(true,'-')
 				const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
 				content = content + url

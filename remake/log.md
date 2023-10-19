@@ -17,15 +17,24 @@
 		-- processing
 	90. Cut big size data into segment and combine them after upload
 		-- processing
-	92. Add id updating function in delete
-		-- finished
 	93. Add attachment upload function
 		-- processing
-	94. Add delete row id write function
-		-- finished
 	95. Add expand and collapse button
 		-- processing
+	96. Bug: Update button append when no data uploading
+		-- finished
+	97. Add upload button append support
+		-- processing
+	98. Bug: Hide upload button out of edit mode
+		-- processing
 
+---
+	## 2023.10.19		version 0.5.3 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Rewrite sop upload function as sopUpload 
+		-- finished
+	
 ---
 	## 2023.10.13		version 0.5.2 -- SOP-build
 	-- Function enhancement

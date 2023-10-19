@@ -119,6 +119,45 @@ const sopFunc = ()=>{
 			}
 		}		
 	})
+		//Side: SOP Form attach upload preparation
+	main.addEventListener('click',(event)=>{
+		const e = event.target
+		const isUpload = e.classList.contains('send-btn')
+		if(isUpload){
+			const td = e.parentNode
+			td.classList.add('upload-zone')
+		}		
+	})
+		//Side: Main uploading Function
+	//document.getElementById('save-btn').addEventListener('click',async(event)=>{
+	const sopUpload = async()=>{
+		const uploadArr = document.querySelectorAll('.upload-zone')
+		for(var i=0;i<uploadArr.length;i++){
+			const td = uploadArr[i]
+			const tbody = td.closest('tbody')
+			const exPath = tbody.classList[0].substring(4)			
+			const path = 'sop/' + exPath
+			
+			const tr = td.parentNode
+			const id = tr.children[0].innerHTML
+			
+			const receipt = await uxUpload(path,td,id)
+			let content = ''
+			for(var a=0;a<receipt.length;a++){
+				const r = receipt[a]
+				const arr = r.split('/')
+				const name = arr[arr.length-1]
+				const url = `<p = id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+				content = content + url
+			}
+			const inputPart = `<input class="edit-mode upload-btn hide" type="file">`
+			const uploadPart = `<p class='send-btn edit-mode'>Upload</p>`
+			content = content + inputPart + uploadPart
+			td.innerHTML = content			
+		}
+		return true
+	//})
+	}
 		//Side: SOP Form menu button function
 	main.addEventListener('mousedown',(event)=>{
 		const e = event.target
@@ -243,6 +282,20 @@ const sopFunc = ()=>{
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',async()=>{
+		const isUpload = await sopUpload()
+		if(isUpload){
+			const isSaved = await sopSave()
+			if(isSaved){
+				const updateArr = document.querySelectorAll('.updated')
+				for(var i=0;i<updateArr.length;i++){
+					const u = updateArr[i]
+					u.classList.remove('updated')
+					u.children[1].innerHTML = ''
+				}
+				uxSave()
+			}
+		}
+		/*
 		const isSaved = await sopSave()
 		if(isSaved){
 			const updateArr = document.querySelectorAll('.updated')
@@ -252,8 +305,7 @@ const sopFunc = ()=>{
 				u.children[1].innerHTML = ''
 			}
 			uxSave()
-		}
-		//uxSave()
+		}*/
 	})
 
 }
