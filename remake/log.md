@@ -24,15 +24,20 @@
 	96. Bug: Update button append when no data uploading
 		-- finished
 	97. Add upload button append support
-		-- processing
+		-- finished
 	98. Bug: Hide upload button out of edit mode
 		-- finished
+	99. BUG: sop form had wanky behavior to update hide display
+		-- processing
 
 ---
 	## 2023.10.19		version 0.5.3 -- SOP-build
 	-- Function implementation
+	-- Function enhancement
 	# Added
 	1. Rewrite sop upload function as sopUpload 
+		-- finished
+	2. Add update support to add new step function
 		-- finished
 	# Fixed
 	1. Fix the bug that upload button not hide out of edit mode

@@ -147,7 +147,7 @@ const sopFunc = ()=>{
 				const r = receipt[a]
 				const arr = r.split('/')
 				const name = arr[arr.length-1]
-				const url = `<p = id='` + r + `' class='dl-link select-item'>` + name + `</p>`
+				const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
 				content = content + url
 			}
 			const inputPart = `<input class="edit-mode upload-btn hide" type="file">`
@@ -224,7 +224,13 @@ const sopFunc = ()=>{
 				const idPart = `<td class="sop-form-row sop-id new-id">id placeholder</td>`
 				const shortPart = `<td class="sop-form-row sop-short" contenteditable='true'>Please input short description</td>`
 				const longPart = `<td class="sop-form-row sop-long" contenteditable='true'>Please input long description</td>`
-				const attachPart = `<td class="sop-form-row sop-attach" contenteditable='true'>Upload function is wip</td>` 
+				
+				const atchPrefix = `<td class="sop-form-row sop-attach">`
+				const atchInput = `<input class="edit-mode upload-btn" type="file">`
+				const atchUpload = `<p class="send-btn edit-mode">Upload</p>`
+				const atchSuffix = `</td>`
+				const attachPart = atchPrefix + atchInput + atchUpload + atchSuffix
+				
 				const suffix = `</tr>`
 				const content = prefix + idPart + shortPart + longPart + attachPart + suffix 
 				
@@ -295,17 +301,6 @@ const sopFunc = ()=>{
 				uxSave()
 			}
 		}
-		/*
-		const isSaved = await sopSave()
-		if(isSaved){
-			const updateArr = document.querySelectorAll('.updated')
-			for(var i=0;i<updateArr.length;i++){
-				const u = updateArr[i]
-				u.classList.remove('updated')
-				u.children[1].innerHTML = ''
-			}
-			uxSave()
-		}*/
 	})
 
 }
