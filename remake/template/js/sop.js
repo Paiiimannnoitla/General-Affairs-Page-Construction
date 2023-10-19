@@ -12,7 +12,8 @@ const sopBuild = async(test) =>{
 	}
 }
 const sopSave = async()=>{
-	uxCancel(false)
+	//uxCancel(false)
+	uxCancel()
 	const updateArr = document.querySelectorAll('.updated:not(.not-save)')
 	const receipt = []
 	const testbtn = document.getElementById('test-btn')
@@ -153,7 +154,8 @@ const sopFunc = ()=>{
 			const inputPart = `<input class="edit-mode upload-btn hide" type="file">`
 			const uploadPart = `<p class='send-btn edit-mode hide'>Upload</p>`
 			content = content + inputPart + uploadPart
-			td.innerHTML = content			
+			td.innerHTML = content
+			console.log(1)
 		}
 		return true
 	//})
@@ -290,6 +292,7 @@ const sopFunc = ()=>{
 	document.getElementById('save-btn').addEventListener('click',async()=>{
 		const isUpload = await sopUpload()
 		if(isUpload){
+			console.log(2)
 			const isSaved = await sopSave()
 			if(isSaved){
 				const updateArr = document.querySelectorAll('.updated')

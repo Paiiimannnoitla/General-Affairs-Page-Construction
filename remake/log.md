@@ -28,7 +28,7 @@
 	98. Bug: Hide upload button out of edit mode
 		-- finished
 	99. BUG: sop form had wanky behavior to update hide display
-		-- processing
+		-- finished
 
 ---
 	## 2023.10.19		version 0.5.3 -- SOP-build
@@ -41,6 +41,8 @@
 		-- finished
 	# Fixed
 	1. Fix the bug that upload button not hide out of edit mode
+		-- finished
+	2. Fix the update display issue by change save uxCancel setting
 		-- finished
 	
 ---
