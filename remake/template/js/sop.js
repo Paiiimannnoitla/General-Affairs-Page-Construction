@@ -151,7 +151,7 @@ const sopFunc = ()=>{
 				content = content + url
 			}
 			const inputPart = `<input class="edit-mode upload-btn hide" type="file">`
-			const uploadPart = `<p class='send-btn edit-mode'>Upload</p>`
+			const uploadPart = `<p class='send-btn edit-mode hide'>Upload</p>`
 			content = content + inputPart + uploadPart
 			td.innerHTML = content			
 		}

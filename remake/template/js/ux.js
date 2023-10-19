@@ -313,14 +313,11 @@ const uxDownload = ()=>{
 		if(isLink){
 			const isEdit = uxCheck() == 'Edit'
 			if(!isEdit){
-				//const href = window.location.href + 'download/'
 				const href = ''
 				const dlurl = e.id
-				console.log(dlurl)
 				const url = href + dlurl 
 				const arr = dlurl.split('/')
 				const name = arr[arr.length-1]
-				//const name = e.innerHTML
 				download(url,name)
 			}		
 		}
