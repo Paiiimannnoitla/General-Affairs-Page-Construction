@@ -24,16 +24,21 @@
 		-- processing
 	101. Append new file input after upload
 		-- finished
+	102. BUG: SOP form function menu cannot apply bright function properly
+		-- finished
 
 ---
 	## 2023.10.20		version 0.5.4 -- SOP-build
 	-- Function implementation
+	-- Bug fix
 	# Added
 	1. Append new file input after file upload (before send)
 		-- finished
 	2. Clear empty file input only keep one
 		-- finished
-		
+	# Fixed
+	1. Fix the bug that remove highlight function cannot properly apply at sop form function menu
+		-- finished
 	
 ---
 	## 2023.10.19		version 0.5.3 -- SOP-build

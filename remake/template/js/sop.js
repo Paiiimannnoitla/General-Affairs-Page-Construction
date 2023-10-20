@@ -221,6 +221,8 @@ const sopFunc = ()=>{
 		const isNote =		has('sop-btn-newnote')
 		const isChapter = 	has('sop-btn-newchapter')
 		const isStep = 		has('sop-btn-newstep')
+		const isTrigger = isDelete + isNote + isChapter + isStep
+		
 		if(isDelete){
 			//Side: Delete row
 			const selected = uxSelect()
@@ -280,6 +282,10 @@ const sopFunc = ()=>{
 				idWrite(sopform)		
 			}
 		}
+		if(isTrigger){
+			e.style.removeProperty('background')
+		}
+		
 	})
 		//Side: Add new SOP Form
 	document.getElementById('new-btn').addEventListener('click',()=>{
