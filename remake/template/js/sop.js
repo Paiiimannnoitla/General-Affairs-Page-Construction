@@ -120,6 +120,36 @@ const sopFunc = ()=>{
 			}
 		}		
 	})
+		//Side: SOP Form attach file input manager
+	main.addEventListener('change',(event)=>{
+		const e = event.target
+		const isUpload = e.classList.contains('upload-btn')
+		if(isUpload){
+			const td = e.parentNode
+			const inputArr = td.querySelectorAll('input')
+			const len = inputArr.length
+			if(len){
+				let n = 0			
+				for(var i=0;i<len;i++){
+					const el = inputArr[len-i-1]
+					const isOccupied = el.files[0]
+					if(!isOccupied){
+						if(n){
+							el.remove()
+						}else{
+							n = 1
+						}
+					}
+				}
+				if(!n){
+					const content = `<input class="edit-mode upload-btn" type="file">`
+					const insertDiv = inputArr[len-1]
+					insertDiv.insertAdjacentHTML('afterend',content)
+				}
+			}
+			
+		}
+	})
 		//Side: SOP Form attach upload preparation
 	main.addEventListener('click',(event)=>{
 		const e = event.target
@@ -130,7 +160,6 @@ const sopFunc = ()=>{
 		}		
 	})
 		//Side: Main uploading Function
-	//document.getElementById('save-btn').addEventListener('click',async(event)=>{
 	const sopUpload = async()=>{
 		const uploadArr = document.querySelectorAll('.upload-zone')
 		for(var i=0;i<uploadArr.length;i++){
@@ -158,7 +187,6 @@ const sopFunc = ()=>{
 			console.log(1)
 		}
 		return true
-	//})
 	}
 		//Side: SOP Form menu button function
 	main.addEventListener('mousedown',(event)=>{

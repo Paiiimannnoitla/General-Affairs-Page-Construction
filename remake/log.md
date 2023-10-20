@@ -8,6 +8,7 @@
 	36. Make a smooth scroll animation for jump or move operation
 		-- announce 
 		-- manual
+		-- sop
 	42. Should add column cut function in Member page
 	72. It should be a hint to show the file input area
 	73. Hover function-menu should have highlight effect
@@ -17,19 +18,23 @@
 		-- processing
 	90. Cut big size data into segment and combine them after upload
 		-- processing
-	93. Add attachment upload function
-		-- processing
 	95. Add expand and collapse button
 		-- processing
-	96. Bug: Update button append when no data uploading
-		-- finished
-	97. Add upload button append support
-		-- finished
-	98. Bug: Hide upload button out of edit mode
-		-- finished
-	99. BUG: sop form had wanky behavior to update hide display
+	100. Add new chapter function
+		-- processing
+	101. Append new file input after upload
 		-- finished
 
+---
+	## 2023.10.20		version 0.5.4 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Append new file input after file upload (before send)
+		-- finished
+	2. Clear empty file input only keep one
+		-- finished
+		
+	
 ---
 	## 2023.10.19		version 0.5.3 -- SOP-build
 	-- Function implementation
