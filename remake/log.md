@@ -51,6 +51,8 @@
 		-- finished
 	4. Add append note function
 		-- finished
+	5. Add chapter change tracker function
+		-- finished
 	# Fixed
 	1. Fix the bug that remove highlight function cannot properly apply at sop form function menu
 		-- finished

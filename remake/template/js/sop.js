@@ -11,6 +11,17 @@ const sopBuild = async(test) =>{
 		return output
 	}
 }
+const idWrite = (sopform)=>{
+	const newRow = document.querySelector('.new-id')
+	newRow.classList.remove('new-id')
+	const idArr = sopform.querySelectorAll('.sop-id')
+	const currid = Array.prototype.indexOf.call(idArr,newRow)
+	const idLen = idArr.length
+	for(var i=currid;i<idLen;i++){
+		const id = idArr[i]
+		id.innerHTML = i
+	}
+}
 const sopSave = async()=>{
 	//uxCancel(false)
 	uxCancel()
@@ -120,6 +131,22 @@ const sopFunc = ()=>{
 			}
 		}		
 	})
+		//Side: SOP Form chapter content tracker
+	main.addEventListener('input',(event)=>{
+		const e = event.target
+		const isChapter = e.classList.contains('sop-form-chapter')
+		const sopform = e.closest('.sop-form')
+		const chArr = sopform.querySelectorAll('.sop-chapter-content')
+		const currid = Array.prototype.indexOf.call(chArr,e)
+		
+		const bookArr = sopform.querySelectorAll('.sop-form-bookmark')
+		const bookmark= bookArr[currid]
+		
+		const chname = e.innerHTML
+		const chid = e.previousElementSibling.innerHTML
+		const content = chid + ':' + chname
+		bookmark.innerHTML = content
+	})
 		//Side: SOP Form attach file input manager
 	main.addEventListener('change',(event)=>{
 		const e = event.target
@@ -205,6 +232,7 @@ const sopFunc = ()=>{
 				return el.classList.contains(arr)
 			}
 		}
+		/*
 			//id generate and overwrite
 		const idWrite = (sopform)=>{
 			const newRow = document.querySelector('.new-id')
@@ -216,7 +244,7 @@ const sopFunc = ()=>{
 				const id = idArr[i]
 				id.innerHTML = i
 			}
-		}
+		}*/
 		const isDelete =	has('sop-btn-delete')
 		const isNote =		has('sop-btn-newnote')
 		const isChapter = 	has('sop-btn-newchapter')
