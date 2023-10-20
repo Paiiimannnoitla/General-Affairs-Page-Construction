@@ -26,6 +26,10 @@
 		-- finished
 	102. BUG: SOP form function menu cannot apply bright function properly
 		-- finished
+	103. BUG: It should not allow all steps are deleted
+		-- finished
+	104. BUG: When there is a note idWriter may misfunctioned
+		-- processing
 
 ---
 	## 2023.10.20		version 0.5.4 -- SOP-build
@@ -38,6 +42,8 @@
 		-- finished
 	# Fixed
 	1. Fix the bug that remove highlight function cannot properly apply at sop form function menu
+		-- finished
+	2. Fix the bug that users can delete all steps 
 		-- finished
 	
 ---

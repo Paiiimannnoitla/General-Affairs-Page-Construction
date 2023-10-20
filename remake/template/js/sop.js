@@ -229,14 +229,26 @@ const sopFunc = ()=>{
 			if(selected){
 				const isValid = has(delArr,selected)
 				if(isValid){
-					//selected.closest('tr').remove()
 					const delDiv = selected.closest('tr')
 					const sopRow = delDiv.nextElementSibling
-					delDiv.remove()
+					
+					// Delete or Clear handler
+					const sopform = sopRow.closest('.sop-form') 
+					const idnum = sopform.querySelectorAll('.sop-id').length
+					if(idnum>2){
+						delDiv.remove()
+					}else{
+						delDiv.children[0].innerHTML = 1
+						delDiv.children[1].innerHTML = ''
+						delDiv.children[2].innerHTML = ''
+						
+						const atchInput = `<input class="edit-mode upload-btn" type="file">`
+						const atchUpload = `<p class="send-btn edit-mode">Upload</p>`
+						delDiv.children[3].innerHTML = atchInput + atchUpload
+					}
 					const isRow = has('sop-id',sopRow.children[0])
 					if(isRow){
-						sopRow.children[0].classList.add('new-id')
-						const sopform = sopRow.closest('.sop-form')
+						sopRow.children[0].classList.add('new-id')						
 						idWrite(sopform)
 					}
 				}
