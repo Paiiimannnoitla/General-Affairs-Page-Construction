@@ -260,7 +260,22 @@ const sopFunc = ()=>{
 			}
 		}
 		if(isNote){
-			console.log('note')
+			const selected = uxSelect()
+			if(selected){
+				const isRow = has('sop-form-row',selected)
+				if(isRow){
+					const tr = selected.parentNode
+					const prefix = `<tr class="sop-note">`
+					const headerPart = `<td contenteditable='true' class="sop-form-row sop-note-header">註解</td>`
+					const contentPart = `<td colspan="3" class="sop-form-row sop-note-content" style="">Insert note </td>`
+					const suffix = `</tr>`
+				
+					const content = prefix + headerPart + contentPart + suffix
+					tr.insertAdjacentHTML('afterend',content)
+				}
+				
+				
+			}
 		}
 		if(isChapter){
 			console.log('chapter')

@@ -33,6 +33,8 @@
 	105. BUG: Note should be delete with its steps
 		-- finished
 	106. Add new note function	
+		-- finished
+	107. BUG: Step should can only be added after a step not between or before a note
 		-- processing
 
 ---
@@ -46,6 +48,8 @@
 	2. Clear empty file input only keep one
 		-- finished
 	3. Clear all notes belonged to deleted steps
+		-- finished
+	4. Add append note function
 		-- finished
 	# Fixed
 	1. Fix the bug that remove highlight function cannot properly apply at sop form function menu
