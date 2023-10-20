@@ -272,9 +272,7 @@ const sopFunc = ()=>{
 				
 					const content = prefix + headerPart + contentPart + suffix
 					tr.insertAdjacentHTML('afterend',content)
-				}
-				
-				
+				}				
 			}
 		}
 		if(isChapter){
@@ -305,6 +303,9 @@ const sopFunc = ()=>{
 				const isBoth = isSame + isValid == 2
 				if(isBoth){
 					insertDiv = selected.parentNode
+					while(has('sop-note',insertDiv.nextElementSibling)){
+						insertDiv = insertDiv.nextElementSibling
+					}
 				}else{				
 					const rowArr = sopform.querySelectorAll('.sop-form-row')
 					const lastRow = rowArr[rowArr.length-1]

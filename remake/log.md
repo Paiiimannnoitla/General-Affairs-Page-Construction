@@ -35,7 +35,7 @@
 	106. Add new note function	
 		-- finished
 	107. BUG: Step should can only be added after a step not between or before a note
-		-- processing
+		-- finished
 
 ---
 	## 2023.10.20		version 0.5.4 -- SOP-build
@@ -56,7 +56,8 @@
 		-- finished
 	2. Fix the bug that users can delete all steps 
 		-- finished
-	
+	3. Fix the bug that sep is added to wrong position when there is note
+		-- finished
 ---
 	## 2023.10.19		version 0.5.3 -- SOP-build
 	-- Function implementation
