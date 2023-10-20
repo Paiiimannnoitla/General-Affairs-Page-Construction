@@ -29,16 +29,23 @@
 	103. BUG: It should not allow all steps are deleted
 		-- finished
 	104. BUG: When there is a note idWriter may misfunctioned
+		-- finished
+	105. BUG: Note should be delete with its steps
+		-- finished
+	106. Add new note function	
 		-- processing
 
 ---
 	## 2023.10.20		version 0.5.4 -- SOP-build
 	-- Function implementation
+	-- Function enhancement
 	-- Bug fix
 	# Added
 	1. Append new file input after file upload (before send)
 		-- finished
 	2. Clear empty file input only keep one
+		-- finished
+	3. Clear all notes belonged to deleted steps
 		-- finished
 	# Fixed
 	1. Fix the bug that remove highlight function cannot properly apply at sop form function menu

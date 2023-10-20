@@ -230,7 +230,7 @@ const sopFunc = ()=>{
 				const isValid = has(delArr,selected)
 				if(isValid){
 					const delDiv = selected.closest('tr')
-					const sopRow = delDiv.nextElementSibling
+					let sopRow = delDiv.nextElementSibling
 					
 					// Delete or Clear handler
 					const sopform = sopRow.closest('.sop-form') 
@@ -245,6 +245,11 @@ const sopFunc = ()=>{
 						const atchInput = `<input class="edit-mode upload-btn" type="file">`
 						const atchUpload = `<p class="send-btn edit-mode">Upload</p>`
 						delDiv.children[3].innerHTML = atchInput + atchUpload
+					}
+					while(has('sop-note',sopRow)){
+						const target = sopRow
+						sopRow = target.nextElementSibling
+						target.remove()
 					}
 					const isRow = has('sop-id',sopRow.children[0])
 					if(isRow){
