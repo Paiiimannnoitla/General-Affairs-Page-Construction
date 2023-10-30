@@ -22,6 +22,12 @@ const idWrite = (sopform)=>{
 		id.innerHTML = i
 	}
 }
+const formCount = (e)=>{
+	const sopform = e.closest('.sop-form')
+	const trArr = sopform.children[1].children
+	const num = Array.prototype.indexOf.call(trArr,e)
+	return num
+}
 const sopSave = async()=>{
 	//uxCancel(false)
 	uxCancel()
@@ -232,19 +238,6 @@ const sopFunc = ()=>{
 				return el.classList.contains(arr)
 			}
 		}
-		/*
-			//id generate and overwrite
-		const idWrite = (sopform)=>{
-			const newRow = document.querySelector('.new-id')
-			newRow.classList.remove('new-id')
-			const idArr = sopform.querySelectorAll('.sop-id')
-			const currid = Array.prototype.indexOf.call(idArr,newRow)
-			const idLen = idArr.length
-			for(var i=currid;i<idLen;i++){
-				const id = idArr[i]
-				id.innerHTML = i
-			}
-		}*/
 		const isDelete =	has('sop-btn-delete')
 		const isNote =		has('sop-btn-newnote')
 		const isChapter = 	has('sop-btn-newchapter')
@@ -304,7 +297,71 @@ const sopFunc = ()=>{
 			}
 		}
 		if(isChapter){
-			console.log('chapter')
+			const selected = uxSelect()
+			if(selected){
+				const clsArr = ['sop-form-row','sop-form-chapter']
+				const isRow = has(clsArr,selected)
+				if(isRow){
+					const tr = selected.parentNode
+					const prefix = `<tr>`
+					const suffix = `</tr>`
+					
+					const chid = `<th colspan='1' class='sop-form-chapter sop-chapter-id edit-off'>Chapter</th>`
+					const chTitle = `<th colspan="3" contenteditable='true' class="sop-form-chapter sop-chapter-content"></th>`
+					const chPart = prefix + chid + chTitle + suffix
+					
+					const introContent = `<td colspan="4" class="sop-form-intro"></td>`
+					const introPart = prefix + introContent + suffix
+					
+					const sortid = `<th class="sop-form-sort sop-id edit-off">步驟</th>`
+					const sortShort = `<th class="sop-form-sort sop-short edit-off">簡要</th>`
+					const sortLong = `<th class="sop-form-sort sop-long edit-off">詳述</th>`
+					const sortAttach = `<th class="sop-form-sort sop-attach edit-off">附件</th>`
+					const sortPart = prefix + sortid + sortShort + sortLong + sortAttach + suffix
+					
+					const rowid = `<td class="sop-form-row sop-id">1</td>`
+					const rowShort = `<td contenteditable='true' class="sop-form-row sop-short"></td>`
+					const rowLong = `<td contenteditable='true' class="sop-form-row sop-long"></td>`
+					const rowAttach = `<td class="sop-form-row sop-attach"><input class="edit-mode upload-btn" type="file"><p class="send-btn edit-mode">Upload</p></td>`
+					const rowPart = prefix + rowid + rowShort + rowLong + rowAttach + suffix
+					
+					const content = chPart + introPart + sortPart + rowPart
+					
+					const sopform = tr.closest('.sop-form')
+					const trArr = sopform.children[1].children
+					const chidArr = sopform.querySelectorAll('.sop-chapter-id')
+					
+					const chArr = []
+					for(var i=0;i<chidArr.length;i++){
+						const e = chidArr[i]
+						chArr[i] = e.parentNode
+					}
+					
+					const chnumArr = []
+					for(var i=0;i<chArr.length;i++){
+						const e = chArr[i]
+						chnumArr[i] = Array.prototype.indexOf.call(trArr,e)
+					}
+					
+					const currPos = formCount(tr)
+					let insertPos = ''
+					if(currPos>chnumArr[chnumArr.length-1]){
+						insertPos = trArr.length-2
+					}else{
+						for(var i=0;i<chnumArr.length;i++){
+							const e = chnumArr[i]
+							if(e>currPos){
+								insertPos = e - 1
+								break
+							}
+						}
+					}
+					
+					
+					const insertDiv = trArr[insertPos]
+					insertDiv.insertAdjacentHTML('afterend',content)
+				}
+			}
 		}
 			//Side: Add a new step
 		if(isStep){

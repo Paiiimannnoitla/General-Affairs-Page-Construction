@@ -1,6 +1,5 @@
 @@@Road Map
 	1. 	Change http to https
-	8. 	Selecting style in Announce page
 	10. Update the announcement given by colleagues.
 	11. Dynamically set style between each page maybe can use some animation
 	26. When save should move all related files and template to recycle bin instead of overriding
@@ -21,22 +20,16 @@
 	95. Add expand and collapse button
 		-- processing
 	100. Add new chapter function
-		-- processing
-	101. Append new file input after upload
 		-- finished
-	102. BUG: SOP form function menu cannot apply bright function properly
+	108. Add upload processing display
+		
+		
+---
+	## 2023.10.30		version 0.5.5 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add append new chapter function
 		-- finished
-	103. BUG: It should not allow all steps are deleted
-		-- finished
-	104. BUG: When there is a note idWriter may misfunctioned
-		-- finished
-	105. BUG: Note should be delete with its steps
-		-- finished
-	106. Add new note function	
-		-- finished
-	107. BUG: Step should can only be added after a step not between or before a note
-		-- finished
-
 ---
 	## 2023.10.20		version 0.5.4 -- SOP-build
 	-- Function implementation
