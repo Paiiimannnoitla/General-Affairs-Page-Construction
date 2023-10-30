@@ -302,10 +302,12 @@ const sopFunc = ()=>{
 				const clsArr = ['sop-form-row','sop-form-chapter']
 				const isRow = has(clsArr,selected)
 				if(isRow){
+					// Chapter content making
 					const tr = selected.parentNode
 					const prefix = `<tr>`
 					const suffix = `</tr>`
 					
+					const chnum = ''
 					const chid = `<th colspan='1' class='sop-form-chapter sop-chapter-id edit-off'>Chapter</th>`
 					const chTitle = `<th colspan="3" contenteditable='true' class="sop-form-chapter sop-chapter-content"></th>`
 					const chPart = prefix + chid + chTitle + suffix
@@ -326,7 +328,7 @@ const sopFunc = ()=>{
 					const rowPart = prefix + rowid + rowShort + rowLong + rowAttach + suffix
 					
 					const content = chPart + introPart + sortPart + rowPart
-					
+					// Insert positioning
 					const sopform = tr.closest('.sop-form')
 					const trArr = sopform.children[1].children
 					const chidArr = sopform.querySelectorAll('.sop-chapter-id')
@@ -356,10 +358,17 @@ const sopFunc = ()=>{
 							}
 						}
 					}
-					
-					
+					// Write chapter content					
 					const insertDiv = trArr[insertPos]
 					insertDiv.insertAdjacentHTML('afterend',content)
+					// Catalogue updating
+					const bookmark = 'Chapter ' + chnum + ':'
+					const bmcontent = `<tr><td class="sop-form-bookmark edit-off">`+ bookmark +`</td></tr>`
+					
+					const outroPos = sopform.querySelector('.sop-bookmark-outro')
+					const bminsertPos = outroPos.parentNode
+					bminsertPos.insertAdjacentHTML('beforebegin',bmcontent)
+					
 				}
 			}
 		}

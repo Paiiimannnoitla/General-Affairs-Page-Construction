@@ -27,8 +27,11 @@
 ---
 	## 2023.10.30		version 0.5.5 -- SOP-build
 	-- Function implementation
+	-- Function enhancement
 	# Added
 	1. Add append new chapter function
+		-- finished
+	2. Add auto append bookmark function
 		-- finished
 ---
 	## 2023.10.20		version 0.5.4 -- SOP-build
