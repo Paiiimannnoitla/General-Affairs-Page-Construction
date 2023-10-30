@@ -22,6 +22,10 @@
 	100. Add new chapter function
 		-- finished
 	108. Add upload processing display
+	109. Auto add chapter id when add chapter
+		-- processing
+	110. BUG: New appended chapter cannot be tracked by bookmark
+		-- processing
 		
 		
 ---
@@ -32,6 +36,8 @@
 	1. Add append new chapter function
 		-- finished
 	2. Add auto append bookmark function
+		-- finished
+	3. Auto re-order the id of chapter
 		-- finished
 ---
 	## 2023.10.20		version 0.5.4 -- SOP-build
