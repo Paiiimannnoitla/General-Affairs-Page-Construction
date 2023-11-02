@@ -22,6 +22,7 @@ const idWrite = (sopform)=>{
 		id.innerHTML = i
 	}
 }
+	//Counting this element is position at the n-th
 const formCount = (e)=>{
 	const sopform = e.closest('.sop-form')
 	const trArr = sopform.children[1].children
@@ -141,17 +142,18 @@ const sopFunc = ()=>{
 	main.addEventListener('input',(event)=>{
 		const e = event.target
 		const isChapter = e.classList.contains('sop-form-chapter')
-		const sopform = e.closest('.sop-form')
-		const chArr = sopform.querySelectorAll('.sop-chapter-content')
-		const currid = Array.prototype.indexOf.call(chArr,e)
+		if(isChapter){
+			const sopform = e.closest('.sop-form')
+			const chArr = sopform.querySelectorAll('.sop-chapter-content')
+			const currid = Array.prototype.indexOf.call(chArr,e)
 		
-		const bookArr = sopform.querySelectorAll('.sop-form-bookmark')
-		const bookmark= bookArr[currid]
-		
-		const chname = e.innerHTML
-		const chid = e.previousElementSibling.innerHTML
-		const content = chid + ':' + chname
-		bookmark.innerHTML = content
+			const bookArr = sopform.querySelectorAll('.sop-form-bookmark')
+			const bookmark= bookArr[currid]
+			const chname = e.innerHTML
+			const chid = e.previousElementSibling.innerHTML
+			const content = chid + ':' + chname
+			bookmark.innerHTML = content
+		}	
 	})
 		//Side: SOP Form attach file input manager
 	main.addEventListener('change',(event)=>{
@@ -365,12 +367,14 @@ const sopFunc = ()=>{
 					const insertDiv = trArr[insertPos]
 					insertDiv.insertAdjacentHTML('afterend',content)
 					// Catalogue updating
+					/*
 					const bmcontent = `<tr><td class="sop-form-bookmark edit-off"></td></tr>`
 					
 					const outroPos = sopform.querySelector('.sop-bookmark-outro')
 					const bminsertPos = outroPos.parentNode
 					bminsertPos.insertAdjacentHTML('beforebegin',bmcontent)
-					
+					*/
+					// Auto sort chapter id
 					const newch = insertDiv.nextElementSibling
 					const newchid = newch.querySelector('.sop-chapter-id')
 					for(var i=0;i<followArr.length;i++){
@@ -378,8 +382,16 @@ const sopFunc = ()=>{
 						const id = chnumLen - followArr.length + i + 2
 						e.children[0].innerHTML = 'Chapter ' + id
 					}
-					newch.children[0].innerHTML = 'Chapter ' + (chnumLen - followArr.length + 1)
+					const newchidnum = chnumLen - followArr.length + 1
+					//newch.children[0].innerHTML = 'Chapter ' + (chnumLen - followArr.length + 1)
+					newch.children[0].innerHTML = 'Chapter ' + newchidnum
+					// Catalogue updating
+					const bmtitle = 'Chapter ' + newchidnum + ':'
+					const bmcontent = `<tr><td class="sop-form-bookmark edit-off">`+bmtitle+`</td></tr>`
 					
+					const outroPos = sopform.querySelector('.sop-bookmark-outro')
+					const bminsertPos = outroPos.parentNode
+					bminsertPos.insertAdjacentHTML('beforebegin',bmcontent)
 	
 				}
 			}

@@ -23,11 +23,18 @@
 		-- finished
 	108. Add upload processing display
 	109. Auto add chapter id when add chapter
-		-- processing
+		-- finished
 	110. BUG: New appended chapter cannot be tracked by bookmark
+		-- finished
+	111. Add display last editor information
 		-- processing
 		
-		
+---
+	## 2023.11.02		version 0.5.6 -- SOP-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bookmark chapter auto tracker function by giving a default value
+		-- finished
 ---
 	## 2023.10.30		version 0.5.5 -- SOP-build
 	-- Function implementation
