@@ -28,12 +28,20 @@
 		-- finished
 	113. Re-arrange outro funcion in sop page
 		-- processing
+	114. Make function menu fix at bottom
+		-- processing
+	115. Delete chapter also delete bookmark
+		-- finished
+	116. Re-order the chapter id
+		-- processing
 
 ---
 	## 2023.11.03		version 0.5.7 -- SOP-build
 	-- Function enhancement
 	# Added
 	1. Add chapter delete function
+		-- finished
+	2. Remove corresponding bookmark
 		-- finished
 ---
 	## 2023.11.02		version 0.5.6 -- SOP-build

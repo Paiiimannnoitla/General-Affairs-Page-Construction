@@ -293,12 +293,9 @@ const sopFunc = ()=>{
 					
 					const chcurrid = Array.prototype.indexOf.call(chArr,currch)
 					
-					//let chlastid = ''
 					let lastid = ''
 					const isLast = chcurrid == chArr.length - 1
 					if(isLast){
-						console.log(1)
-						//chlastid = chcurrid
 						const lastch = sopform.querySelector('.sop-btn-table').parentNode.parentNode
 						lastid = formCount(lastch)
 						
@@ -307,19 +304,17 @@ const sopFunc = ()=>{
 						const lastch = chArr[chlastid]
 						lastid = formCount(lastch)
 					}
-					/*
-					console.log(chlastid)
-					const lastch = chArr[chlastid]
-					console.log(lastch)
-					const lastid = formCount(lastch)*/
+					
 					const delCount = lastid - currid
 					const trArr = sopform.children[1].children
-					//Delete
+					// Delete Chapter
 					for(var i=0;i<delCount;i++){
-						console.log(trArr[currid])
 						trArr[currid].remove()
 					}
-					
+					// Delete Bookmark
+					const bmArr = sop.querySelectorAll('.sop-form-bookmark')
+					const bmtr = bmArr[chcurrid].parentNode
+					bmtr.remove()
 					
 				}
 			}
