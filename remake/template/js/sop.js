@@ -250,8 +250,9 @@ const sopFunc = ()=>{
 			//Side: Delete row
 			const selected = uxSelect()
 			if(selected){
-				const isValid = has(delArr,selected)
-				if(isValid){
+				const isNormal = has(delArr,selected)
+				const isch = has('sop-form-chapter',selected)
+				if(isNormal){
 					const delDiv = selected.closest('tr')
 					let sopRow = delDiv.nextElementSibling
 					
@@ -279,6 +280,47 @@ const sopFunc = ()=>{
 						sopRow.children[0].classList.add('new-id')						
 						idWrite(sopform)
 					}
+				}else if(isch){
+					//Positioning
+					const sopform = selected.closest('.sop-form')
+					const chidArr = sopform.querySelectorAll('.sop-chapter-id')
+					const chArr = []
+					for(var i=0;i<chidArr.length;i++){
+						chArr[i] = chidArr[i].parentNode
+					}
+					const currch = selected.parentNode
+					const currid = formCount(currch)
+					
+					const chcurrid = Array.prototype.indexOf.call(chArr,currch)
+					
+					//let chlastid = ''
+					let lastid = ''
+					const isLast = chcurrid == chArr.length - 1
+					if(isLast){
+						console.log(1)
+						//chlastid = chcurrid
+						const lastch = sopform.querySelector('.sop-btn-table').parentNode.parentNode
+						lastid = formCount(lastch)
+						
+					}else{
+						const chlastid = chcurrid + 1
+						const lastch = chArr[chlastid]
+						lastid = formCount(lastch)
+					}
+					/*
+					console.log(chlastid)
+					const lastch = chArr[chlastid]
+					console.log(lastch)
+					const lastid = formCount(lastch)*/
+					const delCount = lastid - currid
+					const trArr = sopform.children[1].children
+					//Delete
+					for(var i=0;i<delCount;i++){
+						console.log(trArr[currid])
+						trArr[currid].remove()
+					}
+					
+					
 				}
 			}
 		}
@@ -366,14 +408,6 @@ const sopFunc = ()=>{
 					// Write chapter content					
 					const insertDiv = trArr[insertPos]
 					insertDiv.insertAdjacentHTML('afterend',content)
-					// Catalogue updating
-					/*
-					const bmcontent = `<tr><td class="sop-form-bookmark edit-off"></td></tr>`
-					
-					const outroPos = sopform.querySelector('.sop-bookmark-outro')
-					const bminsertPos = outroPos.parentNode
-					bminsertPos.insertAdjacentHTML('beforebegin',bmcontent)
-					*/
 					// Auto sort chapter id
 					const newch = insertDiv.nextElementSibling
 					const newchid = newch.querySelector('.sop-chapter-id')
@@ -383,7 +417,6 @@ const sopFunc = ()=>{
 						e.children[0].innerHTML = 'Chapter ' + id
 					}
 					const newchidnum = chnumLen - followArr.length + 1
-					//newch.children[0].innerHTML = 'Chapter ' + (chnumLen - followArr.length + 1)
 					newch.children[0].innerHTML = 'Chapter ' + newchidnum
 					// Catalogue updating
 					const bmtitle = 'Chapter ' + newchidnum + ':'
