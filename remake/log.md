@@ -34,7 +34,7 @@
 		-- Delete-chapter
 			-- finished
 		-- Delete-row
-			-- processing
+			-- finished
 		-- Note
 		-- Chapter
 		-- Step
@@ -51,6 +51,8 @@
 		-- finished
 	# Fixed
 	1. Fix the bug that delete chapter function not work at the last chapter
+		-- finished
+	2. Fix the bug that when there are multiple chapter delete steps caulsing step order miscalculating
 		-- finished
 ---
 	## 2023.11.03		version 0.5.7 -- SOP-build

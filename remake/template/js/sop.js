@@ -16,11 +16,16 @@ const idWrite = (sopform)=>{
 	newRow.classList.remove('new-id')
 	const idArr = sopform.querySelectorAll('.sop-id')
 	const currid = Array.prototype.indexOf.call(idArr,newRow)
-	const idLen = idArr.length
+	const currtr = newRow.parentNode
+	for(var i=currid;i<idArr;i++){
+		const isRow = currtr.children.classList('sop-id')
+		idArr[i].innerHTML = i
+	}
+	/*const idLen = idArr.length
 	for(var i=currid;i<idLen;i++){
 		const id = idArr[i]
 		id.innerHTML = i
-	}
+	}*/
 }
 	//Counting this element is position at the n-th
 const formCount = (e)=>{
@@ -281,6 +286,7 @@ const sopFunc = ()=>{
 						sopRow.children[0].classList.add('new-id')						
 						idWrite(sopform)
 					}
+			//Side: Delete chapter
 				}else if(isch){
 					//Positioning
 					const sopform = selected.closest('.sop-form')
@@ -306,7 +312,6 @@ const sopFunc = ()=>{
 						const chlastid = chcurrid + 1
 						const lastch = chArr[chlastid]
 						lastid = formCount(lastch)
-						console.log(lastid)
 					}
 					
 					const delCount = lastid - currid
