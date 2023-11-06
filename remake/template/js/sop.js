@@ -224,7 +224,8 @@ const sopFunc = ()=>{
 		return true
 	}
 		//Side: SOP Form menu button function
-	main.addEventListener('mousedown',(event)=>{
+	//main.addEventListener('mousedown',(event)=>{
+	document.getElementById('sop-form-function-menu').addEventListener('mousedown',(event)=>{
 		const e = event.target
 		const delArr = ['sop-form-row']
 			//Class list checker
@@ -283,6 +284,7 @@ const sopFunc = ()=>{
 				}else if(isch){
 					//Positioning
 					const sopform = selected.closest('.sop-form')
+					const trArr = sopform.children[1].children
 					const chidArr = sopform.querySelectorAll('.sop-chapter-id')
 					const chArr = []
 					for(var i=0;i<chidArr.length;i++){
@@ -296,17 +298,19 @@ const sopFunc = ()=>{
 					let lastid = ''
 					const isLast = chcurrid == chArr.length - 1
 					if(isLast){
-						const lastch = sopform.querySelector('.sop-btn-table').parentNode.parentNode
-						lastid = formCount(lastch)
+						//const lastch = sopform.querySelector('.sop-btn-table').parentNode.parentNode
+						const lasttr = trArr[trArr.length-1]
+						lastid = formCount(lasttr) + 1
 						
 					}else{
 						const chlastid = chcurrid + 1
 						const lastch = chArr[chlastid]
 						lastid = formCount(lastch)
+						console.log(lastid)
 					}
 					
 					const delCount = lastid - currid
-					const trArr = sopform.children[1].children
+					
 					// Delete Chapter
 					for(var i=0;i<delCount;i++){
 						trArr[currid].remove()
@@ -320,11 +324,11 @@ const sopFunc = ()=>{
 						const bmsortArr = Array.prototype.slice.call(bmArr,chcurrid+1)
 						const sortArr = Array.prototype.slice.call(chArr,chcurrid + 1)
 						for(var i=0;i<sortArr.length;i++){
-							const e = sortArr[i]
+							const ch = sortArr[i]
 							const b = bmsortArr[i]
 							
 							const chtitle = 'Chapter ' + (chcurrid + 1 + i)
-							e.children[0].innerHTML = chtitle
+							ch.children[0].innerHTML = chtitle
 							
 							const chname = e.children[1].innerHTML
 							const chfull = chtitle + ':' + chname

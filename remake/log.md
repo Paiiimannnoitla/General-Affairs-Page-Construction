@@ -28,12 +28,29 @@
 		-- processing
 	116. Re-order the chapter id
 		-- finished
+	117. Rewrite sop function menu as a external edit menu
+		-- finished
+	118. BUG: Rewrite function to fit externallize change
+		-- Delete-chapter
+			-- finished
+		-- Delete-row
+			-- processing
+		-- Note
+		-- Chapter
+		-- Step
 
 ---
 	## 2023.11.06		version 0.5.8 -- SOP-build
 	-- Function enhancement
+	-- Rewrite function
 	# Added
 	1. Add chapter order sorting function after deleting
+		-- finished
+	# Changed
+	1. Rewrite form function menu as an external menu to fix the position
+		-- finished
+	# Fixed
+	1. Fix the bug that delete chapter function not work at the last chapter
 		-- finished
 ---
 	## 2023.11.03		version 0.5.7 -- SOP-build
