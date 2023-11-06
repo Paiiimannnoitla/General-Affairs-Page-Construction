@@ -20,21 +20,21 @@
 	95. Add expand and collapse button
 		-- processing
 	108. Add upload processing display
-	110. BUG: New appended chapter cannot be tracked by bookmark
-		-- finished
 	111. Add display last editor information
 		-- processing
-	112. Add chapter delete function
-		-- finished
 	113. Re-arrange outro funcion in sop page
 		-- processing
 	114. Make function menu fix at bottom
 		-- processing
-	115. Delete chapter also delete bookmark
-		-- finished
 	116. Re-order the chapter id
-		-- processing
+		-- finished
 
+---
+	## 2023.11.06		version 0.5.8 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. Add chapter order sorting function after deleting
+		-- finished
 ---
 	## 2023.11.03		version 0.5.7 -- SOP-build
 	-- Function enhancement

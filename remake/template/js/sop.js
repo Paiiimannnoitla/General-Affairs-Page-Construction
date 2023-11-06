@@ -315,6 +315,23 @@ const sopFunc = ()=>{
 					const bmArr = sop.querySelectorAll('.sop-form-bookmark')
 					const bmtr = bmArr[chcurrid].parentNode
 					bmtr.remove()
+					// Sorting
+					if(!isLast){
+						const bmsortArr = Array.prototype.slice.call(bmArr,chcurrid+1)
+						const sortArr = Array.prototype.slice.call(chArr,chcurrid + 1)
+						for(var i=0;i<sortArr.length;i++){
+							const e = sortArr[i]
+							const b = bmsortArr[i]
+							
+							const chtitle = 'Chapter ' + (chcurrid + 1 + i)
+							e.children[0].innerHTML = chtitle
+							
+							const chname = e.children[1].innerHTML
+							const chfull = chtitle + ':' + chname
+							
+							b.innerHTML = chfull
+						}
+					}
 					
 				}
 			}
