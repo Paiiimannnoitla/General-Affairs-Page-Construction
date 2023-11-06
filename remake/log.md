@@ -36,7 +36,9 @@
 		-- Delete-row
 			-- finished
 		-- Note
+			-- no need to fix
 		-- Chapter
+			-- processing
 		-- Step
 
 ---
@@ -53,6 +55,8 @@
 	1. Fix the bug that delete chapter function not work at the last chapter
 		-- finished
 	2. Fix the bug that when there are multiple chapter delete steps caulsing step order miscalculating
+		-- finished
+	3. Fix the bug that insert chapter cannot properly update the catalog
 		-- finished
 ---
 	## 2023.11.03		version 0.5.7 -- SOP-build

@@ -21,11 +21,6 @@ const idWrite = (sopform)=>{
 		const isRow = currtr.children.classList('sop-id')
 		idArr[i].innerHTML = i
 	}
-	/*const idLen = idArr.length
-	for(var i=currid;i<idLen;i++){
-		const id = idArr[i]
-		id.innerHTML = i
-	}*/
 }
 	//Counting this element is position at the n-th
 const formCount = (e)=>{
@@ -35,7 +30,6 @@ const formCount = (e)=>{
 	return num
 }
 const sopSave = async()=>{
-	//uxCancel(false)
 	uxCancel()
 	const updateArr = document.querySelectorAll('.updated:not(.not-save)')
 	const receipt = []
@@ -442,10 +436,12 @@ const sopFunc = ()=>{
 					// Catalogue updating
 					const bmtitle = 'Chapter ' + newchidnum + ':'
 					const bmcontent = `<tr><td class="sop-form-bookmark edit-off">`+bmtitle+`</td></tr>`
+	
+					const bmnewid = newchidnum - 2
+					const bmArr = sopform.querySelectorAll('.sop-form-bookmark')
+					const bminsertPos = bmArr[bmnewid].parentNode
+					bminsertPos.insertAdjacentHTML('afterend',bmcontent)
 					
-					const outroPos = sopform.querySelector('.sop-bookmark-outro')
-					const bminsertPos = outroPos.parentNode
-					bminsertPos.insertAdjacentHTML('beforebegin',bmcontent)
 	
 				}
 			}
