@@ -248,7 +248,12 @@ const sopFunc = ()=>{
 		
 		if(isDelete){
 			//Side: Delete row
-			const selected = uxSelect()
+			let selected = uxSelect()
+			console.log(selected)
+			const isSort = has('sop-form-sort',selected)
+			if(isSort){
+				selected = selected.parentNode.nextElementSibling.children[0]
+			}
 			if(selected){
 				const isNormal = has(delArr,selected)
 				const isch = has('sop-form-chapter',selected)

@@ -34,13 +34,18 @@
 		-- Note
 			-- no need to fix
 		-- Chapter
-			-- processing
+			-- finished
+			-- should test this part after step over
 		-- Step
-	119. BUG: Insert chapter to the last step may cause position error
+	121. When delete sorting cell should delete the first row instead
 		-- finished
-	120. BUG: Cannot insert chapter at last chapter
-		-- finished	
-	121. BUG: Should allow sort be selected as a insert position
+	122. BUG: Sorting function when delete row is broken
+		-- processing
+---
+	## 2023.11.08		version 0.6.0 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. When delete sorting cells delete the first row instead
 		-- finished
 ---
 	## 2023.11.07		version 0.5.9 -- SOP-build
