@@ -26,10 +26,6 @@
 		-- processing
 	114. Make function menu fix at bottom
 		-- processing
-	116. Re-order the chapter id
-		-- finished
-	117. Rewrite sop function menu as a external edit menu
-		-- finished
 	118. BUG: Rewrite function to fit externallize change
 		-- Delete-chapter
 			-- finished
@@ -40,7 +36,15 @@
 		-- Chapter
 			-- processing
 		-- Step
-
+	119 BUG: Insert chapter to the last step may cause position error
+		-- processing
+---
+	## 2023.11.07		version 0.5.9 -- SOP-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that catalog not update properly after insert a new chapter
+		-- finished
+	
 ---
 	## 2023.11.06		version 0.5.8 -- SOP-build
 	-- Function enhancement

@@ -152,6 +152,7 @@ const sopFunc = ()=>{
 			const chid = e.previousElementSibling.innerHTML
 			const content = chid + ':' + chname
 			bookmark.innerHTML = content
+			console.log(content)
 		}	
 	})
 		//Side: SOP Form attach file input manager
@@ -423,17 +424,8 @@ const sopFunc = ()=>{
 					// Write chapter content					
 					const insertDiv = trArr[insertPos]
 					insertDiv.insertAdjacentHTML('afterend',content)
-					// Auto sort chapter id
-					const newch = insertDiv.nextElementSibling
-					const newchid = newch.querySelector('.sop-chapter-id')
-					for(var i=0;i<followArr.length;i++){
-						const e = followArr[i]
-						const id = chnumLen - followArr.length + i + 2
-						e.children[0].innerHTML = 'Chapter ' + id
-					}
-					const newchidnum = chnumLen - followArr.length + 1
-					newch.children[0].innerHTML = 'Chapter ' + newchidnum
 					// Catalogue updating
+					const newchidnum = chnumLen - followArr.length + 1
 					const bmtitle = 'Chapter ' + newchidnum + ':'
 					const bmcontent = `<tr><td class="sop-form-bookmark edit-off">`+bmtitle+`</td></tr>`
 	
@@ -441,6 +433,20 @@ const sopFunc = ()=>{
 					const bmArr = sopform.querySelectorAll('.sop-form-bookmark')
 					const bminsertPos = bmArr[bmnewid].parentNode
 					bminsertPos.insertAdjacentHTML('afterend',bmcontent)
+					// Auto sort chapter id
+					const newch = insertDiv.nextElementSibling
+					const newchid = newch.querySelector('.sop-chapter-id')
+					const evt = new Event("input",{bubbles:true})
+					for(var i=0;i<followArr.length;i++){
+						const e = followArr[i]
+						const id = chnumLen - followArr.length + i + 2
+						e.children[0].innerHTML = 'Chapter ' + id
+
+						e.children[1].dispatchEvent(evt)
+					}
+					
+					newch.children[0].innerHTML = 'Chapter ' + newchidnum
+					
 					
 	
 				}
