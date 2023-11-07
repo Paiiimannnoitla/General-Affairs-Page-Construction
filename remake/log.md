@@ -41,11 +41,17 @@
 		-- finished
 	122. BUG: Sorting function when delete row is broken
 		-- processing
+	123. BUG: idWrite is malfunctioned
+		-- processing
 ---
 	## 2023.11.08		version 0.6.0 -- SOP-build
 	-- Function enhancement
+	-- Bug fix
 	# Added
 	1. When delete sorting cells delete the first row instead
+		-- finished
+	# Fixed
+	1. Fix the bug that insert step cannot work
 		-- finished
 ---
 	## 2023.11.07		version 0.5.9 -- SOP-build

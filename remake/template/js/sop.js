@@ -474,7 +474,7 @@ const sopFunc = ()=>{
 				
 				const suffix = `</tr>`
 				const content = prefix + idPart + shortPart + longPart + attachPart + suffix 
-				
+				/*
 				const selForm = selected.closest('.sop-form')
 				const sopform= e.closest('.sop-form')
 				const isSame = selForm == sopform
@@ -489,6 +489,14 @@ const sopFunc = ()=>{
 					const rowArr = sopform.querySelectorAll('.sop-form-row')
 					const lastRow = rowArr[rowArr.length-1]
 					insertDiv = lastRow.parentNode
+				}*/
+				const sopform = selected.closest('.sop-form')
+				const isValid = has(['sop-form-row','sop-form-sort'],selected)
+				if(isValid){
+					insertDiv = selected.parentNode
+					while(has('sop-note',insertDiv.nextElementSibling)){
+						insertDiv = insertDiv.nextElementSibling
+					}
 				}
 				insertDiv.insertAdjacentHTML('afterend',content)
 				idWrite(sopform)		
