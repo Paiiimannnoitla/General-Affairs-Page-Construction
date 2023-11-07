@@ -36,13 +36,19 @@
 		-- Chapter
 			-- processing
 		-- Step
-	119 BUG: Insert chapter to the last step may cause position error
+	119. BUG: Insert chapter to the last step may cause position error
+		-- finished
+	120. BUG: Cannot insert chapter at last chapter
+		-- prcessing	
+	121. BUG: Should allow sort be selected as a insert position
 		-- processing
 ---
 	## 2023.11.07		version 0.5.9 -- SOP-build
 	-- Bug fix
 	# Fixed
 	1. Fix the bug that catalog not update properly after insert a new chapter
+		-- finished
+	2. Fix the bug that insert chapter add the last step causing inserting position locate at former chapter
 		-- finished
 	
 ---

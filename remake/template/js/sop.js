@@ -152,7 +152,6 @@ const sopFunc = ()=>{
 			const chid = e.previousElementSibling.innerHTML
 			const content = chid + ':' + chname
 			bookmark.innerHTML = content
-			console.log(content)
 		}	
 	})
 		//Side: SOP Form attach file input manager
@@ -409,8 +408,10 @@ const sopFunc = ()=>{
 					let followArr = []
 					const chnumLen = chnumArr.length
 					if(currPos>chnumArr[chnumLen-1]){
-						insertPos = trArr.length-2
+						insertPos = trArr.length-1
+						console.log(1)
 					}else{
+						console.log(2)
 						for(var i=0;i<chnumLen;i++){
 							const e = chnumArr[i]
 							if(e>currPos){
@@ -423,6 +424,7 @@ const sopFunc = ()=>{
 					
 					// Write chapter content					
 					const insertDiv = trArr[insertPos]
+					console.log(insertDiv)
 					insertDiv.insertAdjacentHTML('afterend',content)
 					// Catalogue updating
 					const newchidnum = chnumLen - followArr.length + 1
