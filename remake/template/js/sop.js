@@ -358,7 +358,7 @@ const sopFunc = ()=>{
 		if(isChapter){
 			const selected = uxSelect()
 			if(selected){
-				const clsArr = ['sop-form-row','sop-form-chapter']
+				const clsArr = ['sop-form-row','sop-form-sort','sop-form-chapter']
 				const isRow = has(clsArr,selected)
 				if(isRow){
 					// Chapter content making
@@ -423,9 +423,6 @@ const sopFunc = ()=>{
 					
 					// Write chapter content					
 					const insertDiv = trArr[insertPos]
-					console.log(insertDiv)
-					
-					console.log(trArr.length)
 					insertDiv.insertAdjacentHTML('afterend',content)
 					// Catalogue updating
 					const newchidnum = chnumLen - followArr.length + 1

@@ -41,7 +41,7 @@
 	120. BUG: Cannot insert chapter at last chapter
 		-- finished	
 	121. BUG: Should allow sort be selected as a insert position
-		-- processing
+		-- finished
 ---
 	## 2023.11.07		version 0.5.9 -- SOP-build
 	-- Bug fix
@@ -51,6 +51,8 @@
 	2. Fix the bug that insert chapter add the last step causing inserting position locate at former chapter
 		-- finished
 	3. Fix the bug that cannot insert chapter at the last chapter
+		-- finished
+	4. Fix the bug that sorting cell not allow to be insert chapter
 		-- finished
 	
 ---
