@@ -14,12 +14,51 @@ const sopBuild = async(test) =>{
 const idWrite = (sopform)=>{
 	const newRow = document.querySelector('.new-id')
 	newRow.classList.remove('new-id')
+	/*
 	const idArr = sopform.querySelectorAll('.sop-id')
 	const currid = Array.prototype.indexOf.call(idArr,newRow)
-	const currtr = newRow.parentNode
+	//const currtr = newRow.parentNode
+	console.log(idArr)
+	console.log(currid)
 	for(var i=currid;i<idArr;i++){
-		const isRow = currtr.children.classList('sop-id')
+		//const isRow = currtr.children.classList('sop-id')
+
 		idArr[i].innerHTML = i
+	}*/
+	const currtr = newRow.parentNode
+	let prevtr = currtr.previousElementSibling
+	const isNote = prevtr.classList.contains('sop-note')
+	if(isNote){
+		while(prevtr.classList.contains('sop-note')){
+			prevtr = prevtr.previousElementSibling
+		}
+	}
+	
+	const previd = prevtr.children[0]
+	const isSort = previd.classList.contains('sop-form-sort')
+	let currid = ''
+	
+	if(isSort){
+		currid = 1
+	}else{
+		currid = Number(previd.innerHTML) + 1
+	}
+	
+	let n = currid
+	const trArr = sopform.querySelectorAll('tr')
+	const currOrder = Array.prototype.indexOf.call(trArr,currtr)
+	for(var i=currOrder;i<trArr.length;i++){
+		const e = trArr[i]
+		const updateDiv = e.children[0]
+		const isSort = updateDiv.classList.contains('sop-form-sort')
+		const isid = updateDiv.classList.contains('sop-id')
+		const isValid = isid - isSort
+		if(isValid){
+			updateDiv.innerHTML = n
+			n = n + 1
+		}else if(updateDiv.classList.contains('sop-form-chapter')){
+			break
+		}
 	}
 }
 	//Counting this element is position at the n-th

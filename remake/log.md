@@ -42,6 +42,8 @@
 	122. BUG: Sorting function when delete row is broken
 		-- processing
 	123. BUG: idWrite is malfunctioned
+		-- finished
+	124. BUG: Insert step at the last step is broken
 		-- processing
 ---
 	## 2023.11.08		version 0.6.0 -- SOP-build
@@ -52,6 +54,8 @@
 		-- finished
 	# Fixed
 	1. Fix the bug that insert step cannot work
+		-- finished
+	2. Totally rewrite idWrite in a more flexible but also more complcated way to fit further developing
 		-- finished
 ---
 	## 2023.11.07		version 0.5.9 -- SOP-build
