@@ -44,7 +44,7 @@
 	123. BUG: idWrite is malfunctioned
 		-- finished
 	124. BUG: Insert step at the last step is broken
-		-- processing
+		-- finished
 ---
 	## 2023.11.08		version 0.6.0 -- SOP-build
 	-- Function enhancement
@@ -56,6 +56,8 @@
 	1. Fix the bug that insert step cannot work
 		-- finished
 	2. Totally rewrite idWrite in a more flexible but also more complcated way to fit further developing
+		-- finished
+	3. Fix the bug that while function malfunctioned when there is no following elements
 		-- finished
 ---
 	## 2023.11.07		version 0.5.9 -- SOP-build

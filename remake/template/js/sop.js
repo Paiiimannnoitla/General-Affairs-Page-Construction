@@ -276,6 +276,7 @@ const sopFunc = ()=>{
 				}
 				return n 
 			}else{
+				console.log(arr)
 				return el.classList.contains(arr)
 			}
 		}
@@ -533,9 +534,22 @@ const sopFunc = ()=>{
 				const isValid = has(['sop-form-row','sop-form-sort'],selected)
 				if(isValid){
 					insertDiv = selected.parentNode
+					/*
 					while(has('sop-note',insertDiv.nextElementSibling)){
 						insertDiv = insertDiv.nextElementSibling
+					}*/
+					const trArr = sopform.children[1].children
+					const currid = Array.prototype.indexOf.call(trArr,insertDiv)
+					for(var i=currid+1;i<trArr.length;i++){
+						const e = trArr[i]
+						const isNote = has('sop-note',e)
+						if(isNote){
+							insertDiv = e
+						}else{
+							break
+						}
 					}
+					
 				}
 				insertDiv.insertAdjacentHTML('afterend',content)
 				idWrite(sopform)		
