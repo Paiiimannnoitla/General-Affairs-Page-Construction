@@ -49,6 +49,7 @@
 	## 2023.11.08		version 0.6.0 -- SOP-build
 	-- Function enhancement
 	-- Bug fix
+	-- Clear wasted codes
 	# Added
 	1. When delete sorting cells delete the first row instead
 		-- finished
@@ -58,6 +59,8 @@
 	2. Totally rewrite idWrite in a more flexible but also more complcated way to fit further developing
 		-- finished
 	3. Fix the bug that while function malfunctioned when there is no following elements
+		-- finished
+	4. Fix the bug that new note is not editable
 		-- finished
 ---
 	## 2023.11.07		version 0.5.9 -- SOP-build

@@ -13,18 +13,7 @@ const sopBuild = async(test) =>{
 }
 const idWrite = (sopform)=>{
 	const newRow = document.querySelector('.new-id')
-	newRow.classList.remove('new-id')
-	/*
-	const idArr = sopform.querySelectorAll('.sop-id')
-	const currid = Array.prototype.indexOf.call(idArr,newRow)
-	//const currtr = newRow.parentNode
-	console.log(idArr)
-	console.log(currid)
-	for(var i=currid;i<idArr;i++){
-		//const isRow = currtr.children.classList('sop-id')
-
-		idArr[i].innerHTML = i
-	}*/
+	newRow.classList.remove('new-id')	
 	const currtr = newRow.parentNode
 	let prevtr = currtr.previousElementSibling
 	const isNote = prevtr.classList.contains('sop-note')
@@ -45,7 +34,7 @@ const idWrite = (sopform)=>{
 	}
 	
 	let n = currid
-	const trArr = sopform.querySelectorAll('tr')
+	const trArr = sopform.children[1].children
 	const currOrder = Array.prototype.indexOf.call(trArr,currtr)
 	for(var i=currOrder;i<trArr.length;i++){
 		const e = trArr[i]
@@ -392,7 +381,7 @@ const sopFunc = ()=>{
 					const tr = selected.parentNode
 					const prefix = `<tr class="sop-note">`
 					const headerPart = `<td contenteditable='true' class="sop-form-row sop-note-header">註解</td>`
-					const contentPart = `<td colspan="3" class="sop-form-row sop-note-content" style="">Insert note </td>`
+					const contentPart = `<td contenteditable='true' colspan="3" class="sop-form-row sop-note-content" style="">Insert note </td>`
 					const suffix = `</tr>`
 				
 					const content = prefix + headerPart + contentPart + suffix
@@ -514,30 +503,12 @@ const sopFunc = ()=>{
 				
 				const suffix = `</tr>`
 				const content = prefix + idPart + shortPart + longPart + attachPart + suffix 
-				/*
-				const selForm = selected.closest('.sop-form')
-				const sopform= e.closest('.sop-form')
-				const isSame = selForm == sopform
-				const isValid = has(['sop-form-row','sop-form-sort'],selected)
-				const isBoth = isSame + isValid == 2
-				if(isBoth){
-					insertDiv = selected.parentNode
-					while(has('sop-note',insertDiv.nextElementSibling)){
-						insertDiv = insertDiv.nextElementSibling
-					}
-				}else{				
-					const rowArr = sopform.querySelectorAll('.sop-form-row')
-					const lastRow = rowArr[rowArr.length-1]
-					insertDiv = lastRow.parentNode
-				}*/
+				
 				const sopform = selected.closest('.sop-form')
 				const isValid = has(['sop-form-row','sop-form-sort'],selected)
 				if(isValid){
 					insertDiv = selected.parentNode
-					/*
-					while(has('sop-note',insertDiv.nextElementSibling)){
-						insertDiv = insertDiv.nextElementSibling
-					}*/
+	
 					const trArr = sopform.children[1].children
 					const currid = Array.prototype.indexOf.call(trArr,insertDiv)
 					for(var i=currid+1;i<trArr.length;i++){
