@@ -270,7 +270,6 @@ const sopFunc = ()=>{
 				}
 				return n 
 			}else{
-				console.log(arr)
 				return el.classList.contains(arr)
 			}
 		}
@@ -283,7 +282,6 @@ const sopFunc = ()=>{
 		if(isDelete){
 			//Side: Delete row
 			let selected = uxSelect()
-			console.log(selected)
 			const isSort = has('sop-form-sort',selected)
 			if(isSort){
 				selected = selected.parentNode.nextElementSibling.children[0]
@@ -330,23 +328,29 @@ const sopFunc = ()=>{
 						chArr[i] = chidArr[i].parentNode
 					}
 					const currch = selected.parentNode
-					const currid = formCount(currch)
+					const [,currid] = formCount(currch)
 					
 					const chcurrid = Array.prototype.indexOf.call(chArr,currch)
 					
-					let lastid = ''
+					//let lastid 
+					let lastPos
 					const isLast = chcurrid == chArr.length - 1
 					if(isLast){
 						//const lastch = sopform.querySelector('.sop-btn-table').parentNode.parentNode
-						const lasttr = trArr[trArr.length-1]
-						lastid = formCount(lasttr) + 1
+						//const lasttr = trArr[trArr.length-1]
+						lastPos = trArr[trArr.length-1]
+						//[,lastid] = formCount(lasttr)
+						//lastid = lastid + 1
 						
 					}else{
 						const chlastid = chcurrid + 1
-						const lastch = chArr[chlastid]
-						lastid = formCount(lastch)
+						lastPos = chArr[chlastid]
+						//const lastch = chArr[chlastid]
+						//[,lastid] = formCount(lastch)
 					}
 					
+					const [,lastidraw] = formCount(lastPos)
+					const lastid = lastidraw + isLast
 					const delCount = lastid - currid
 					
 					// Delete Chapter
@@ -368,7 +372,7 @@ const sopFunc = ()=>{
 							const chtitle = 'Chapter ' + (chcurrid + 1 + i)
 							ch.children[0].innerHTML = chtitle
 							
-							const chname = e.children[1].innerHTML
+							const chname = ch.children[1].innerHTML
 							const chfull = chtitle + ':' + chname
 							
 							b.innerHTML = chfull
@@ -442,7 +446,7 @@ const sopFunc = ()=>{
 						chnumArr[i] = Array.prototype.indexOf.call(trArr,e)
 					}
 					
-					const [_,currPos] = formCount(tr)
+					const [,currPos] = formCount(tr)
 					let insertPos = ''
 					let followArr = []
 					const chnumLen = chnumArr.length
@@ -452,7 +456,6 @@ const sopFunc = ()=>{
 						console.log(currPos)
 						for(var i=0;i<chnumLen;i++){
 							const e = chnumArr[i]
-							console.log(e)
 							if(e>currPos){
 								insertPos = e - 1							
 								console.log(insertPos)

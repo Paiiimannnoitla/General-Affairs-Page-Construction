@@ -1,5 +1,4 @@
 const host = 'http://10.6.11.17:3000/'
-const _ = undefined
 const Postman = (id,func='page') =>{
 	const mode = func + '/'
 	const hostname = host + mode + id

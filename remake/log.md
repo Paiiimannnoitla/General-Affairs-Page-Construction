@@ -35,18 +35,11 @@
 			-- no need to fix
 		-- Chapter
 			-- finished
-			-- should test this part after step over
 		-- Step
-	121. When delete sorting cell should delete the first row instead
-		-- finished
-	122. BUG: Sorting function when delete row is broken
-		-- finished
-	123. BUG: idWrite is malfunctioned
-		-- finished
-	124. BUG: Insert step at the last step is broken
-		-- finished
 	125. Replace Array.prototype as formCount
-		-- processing
+		-- finished
+	126. BUG:Delete chapter is not working
+		-- finished
 ---
 	## 2023.11.09		version 0.6.1 -- SOP-build
 	-- Rewrite function
@@ -56,6 +49,8 @@
 		-- finished
 	# Fixed
 	1. Fix insert Chapter function misbehavior after the change of formCount
+		-- finished
+	2. Fix delete chapter sorting problems
 		-- finished
 	
 ---
