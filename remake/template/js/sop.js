@@ -11,6 +11,16 @@ const sopBuild = async(test) =>{
 		return output
 	}
 }
+	//Counting this element is position at the n-th
+const formCount = (e)=>{
+	const sopform = e.closest('.sop-form')
+	const trArr = sopform.children[1].children
+	const num = Array.prototype.indexOf.call(trArr,e)
+	//return num
+	return [trArr,num]
+}
+
+// Sorting steps id
 const idWrite = (sopform)=>{
 	const newRow = document.querySelector('.new-id')
 	newRow.classList.remove('new-id')	
@@ -34,8 +44,9 @@ const idWrite = (sopform)=>{
 	}
 	
 	let n = currid
-	const trArr = sopform.children[1].children
-	const currOrder = Array.prototype.indexOf.call(trArr,currtr)
+	//const trArr = sopform.children[1].children
+	//const currOrder = Array.prototype.indexOf.call(trArr,currtr)
+	const [trArr,currOrder] = formCount(currtr)
 	for(var i=currOrder;i<trArr.length;i++){
 		const e = trArr[i]
 		const updateDiv = e.children[0]
@@ -50,13 +61,7 @@ const idWrite = (sopform)=>{
 		}
 	}
 }
-	//Counting this element is position at the n-th
-const formCount = (e)=>{
-	const sopform = e.closest('.sop-form')
-	const trArr = sopform.children[1].children
-	const num = Array.prototype.indexOf.call(trArr,e)
-	return num
-}
+
 const sopSave = async()=>{
 	uxCancel()
 	const updateArr = document.querySelectorAll('.updated:not(.not-save)')
@@ -437,15 +442,17 @@ const sopFunc = ()=>{
 						chnumArr[i] = Array.prototype.indexOf.call(trArr,e)
 					}
 					
-					const currPos = formCount(tr)
+					const [_,currPos] = formCount(tr)
 					let insertPos = ''
 					let followArr = []
 					const chnumLen = chnumArr.length
 					if(currPos>=chnumArr[chnumLen-1]){
 						insertPos = trArr.length-1
 					}else{
+						console.log(currPos)
 						for(var i=0;i<chnumLen;i++){
 							const e = chnumArr[i]
+							console.log(e)
 							if(e>currPos){
 								insertPos = e - 1							
 								console.log(insertPos)
@@ -457,6 +464,9 @@ const sopFunc = ()=>{
 					
 					// Write chapter content					
 					const insertDiv = trArr[insertPos]
+					console.log(trArr)
+					console.log(insertPos)
+					console.log(insertDiv)
 					insertDiv.insertAdjacentHTML('afterend',content)
 					// Catalogue updating
 					const newchidnum = chnumLen - followArr.length + 1
@@ -509,8 +519,9 @@ const sopFunc = ()=>{
 				if(isValid){
 					insertDiv = selected.parentNode
 	
-					const trArr = sopform.children[1].children
-					const currid = Array.prototype.indexOf.call(trArr,insertDiv)
+					//const trArr = sopform.children[1].children
+					//const currid = Array.prototype.indexOf.call(trArr,insertDiv)
+					const [trArr,currid] = formCount(insertDiv)
 					for(var i=currid+1;i<trArr.length;i++){
 						const e = trArr[i]
 						const isNote = has('sop-note',e)
