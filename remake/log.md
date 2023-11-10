@@ -32,7 +32,7 @@
 		-- Delete-row
 			-- finished
 		-- Delete-intro
-			-- processing
+			-- finished
 		-- Note
 			-- no need to fix
 		-- Chapter
@@ -44,15 +44,21 @@
 	128. Delete intro should delete a chapter
 		-- finished
 	129. Prevent users change the number of the step
+		-- finished
+	130. Prevent new added SOP Form steps can be edited
 		-- processing
 ---
 	## 2023.11.10		version 0.6.2 -- SOP-build
 	-- Fix bug
+	-- Rewrite function
 	-- Function enhancement
 	# Added
 	1. When delete the intro delete whole chapter instead
 		-- finished
 	2. Add the last step clear function
+		-- finished
+	# Changed
+	1. Prevent users edit step id
 		-- finished
 	# Fixed
 	1. Fix the bug that error when no selected

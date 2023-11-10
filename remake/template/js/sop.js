@@ -356,7 +356,7 @@ const sopFunc = ()=>{
 				}else if(isch){
 					//Positioning
 					const sopform = selected.closest('.sop-form')
-					//const trArr = sopform.children[1].children
+					const trArr = sopform.children[1].children
 					const chidArr = sopform.querySelectorAll('.sop-chapter-id')
 					const chArr = []
 					for(var i=0;i<chidArr.length;i++){
@@ -539,7 +539,7 @@ const sopFunc = ()=>{
 			const selected = uxSelect()
 			if(selected){
 				const prefix = `<tr>`
-				const idPart = `<td class="sop-form-row sop-id new-id">id placeholder</td>`
+				const idPart = `<td class="sop-form-row sop-id edit-off new-id">id placeholder</td>`
 				const shortPart = `<td class="sop-form-row sop-short" contenteditable='true'>Please input short description</td>`
 				const longPart = `<td class="sop-form-row sop-long" contenteditable='true'>Please input long description</td>`
 				
@@ -557,8 +557,6 @@ const sopFunc = ()=>{
 				if(isValid){
 					insertDiv = selected.parentNode
 	
-					//const trArr = sopform.children[1].children
-					//const currid = Array.prototype.indexOf.call(trArr,insertDiv)
 					const [trArr,currid] = formCount(insertDiv)
 					for(var i=currid+1;i<trArr.length;i++){
 						const e = trArr[i]
