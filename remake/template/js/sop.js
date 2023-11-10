@@ -296,10 +296,40 @@ const sopFunc = ()=>{
 				const isch = has('sop-form-chapter',selected)
 				if(isNormal){
 					const delDiv = selected.closest('tr')
-					let sopRow = delDiv.nextElementSibling
+					const sopform = delDiv.closest('.sop-form')					
+					const trArr = sopform.children[1].children
+					let sopRow
 					
-					// Delete or Clear handler
-					const sopform = sopRow.closest('.sop-form') 
+					// Clear handler
+					const isLastStep = trArr[trArr.length-1] == delDiv
+					let isClear = false
+					if(!isLastStep){
+						sopRow = delDiv.nextElementSibling
+						let checkRow = sopRow
+						const isOnly = delDiv.children[0].innerHTML == 1
+						if(isOnly){
+							for(var i=0;i<trArr.length;i++){
+								const isPass = has('sop-note',sopRow)
+								if(isPass){
+									checkRow = checkRow.nextElementSibling
+								}else{
+									isClear = true
+								}	
+							}
+						}						
+					}else{
+						isClear = true
+					}
+					if(isClear){
+						delDiv.children[1].innerHTML = ''
+						delDiv.children[2].innerHTML = ''
+						return
+					}
+					
+					//let sopRow = delDiv.nextElementSibling
+					
+					// Delete handler
+					//const sopform = sopRow.closest('.sop-form') 
 					const idnum = sopform.querySelectorAll('.sop-id').length
 					if(idnum>2){
 						delDiv.remove()
@@ -326,7 +356,7 @@ const sopFunc = ()=>{
 				}else if(isch){
 					//Positioning
 					const sopform = selected.closest('.sop-form')
-					const trArr = sopform.children[1].children
+					//const trArr = sopform.children[1].children
 					const chidArr = sopform.querySelectorAll('.sop-chapter-id')
 					const chArr = []
 					for(var i=0;i<chidArr.length;i++){
