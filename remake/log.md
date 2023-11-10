@@ -31,14 +31,23 @@
 			-- finished
 		-- Delete-row
 			-- finished
+		-- Delete-intro
+			-- processing
 		-- Note
 			-- no need to fix
 		-- Chapter
 			-- finished
 		-- Step
-	125. Replace Array.prototype as formCount
-		-- finished
-	126. BUG:Delete chapter is not working
+			-- finished
+	127. Clear but not delete the only step in a chapter
+		-- processing
+	128. BUG:Delete intro should delete a chapter
+		-- processing
+---
+	## 2023.11.10		version 0.6.2 -- SOP-build
+	-- Fix bug
+	# Fixed
+	1. Fix the bug that error when no selected
 		-- finished
 ---
 	## 2023.11.09		version 0.6.1 -- SOP-build
