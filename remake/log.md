@@ -41,11 +41,15 @@
 			-- finished
 	127. Clear but not delete the only step in a chapter
 		-- processing
-	128. BUG:Delete intro should delete a chapter
-		-- processing
+	128. Delete intro should delete a chapter
+		-- finished
 ---
 	## 2023.11.10		version 0.6.2 -- SOP-build
 	-- Fix bug
+	-- Function enhancement
+	# Added
+	1. When delete the intro delete whole chapter instead
+		-- finished
 	# Fixed
 	1. Fix the bug that error when no selected
 		-- finished

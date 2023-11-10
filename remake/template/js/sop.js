@@ -285,9 +285,13 @@ const sopFunc = ()=>{
 			
 			if(selected){
 				const isSort = has('sop-form-sort',selected)
+				const isIntro = has('sop-form-intro',selected)
 				if(isSort){
 					selected = selected.parentNode.nextElementSibling.children[0]
+				}else if(isIntro){
+					selected = selected.parentNode.previousElementSibling.children[0]
 				}
+				
 				const isNormal = has(delArr,selected)
 				const isch = has('sop-form-chapter',selected)
 				if(isNormal){
