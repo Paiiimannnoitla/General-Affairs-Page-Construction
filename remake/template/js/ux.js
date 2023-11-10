@@ -199,7 +199,14 @@ const uxSelectInit = ()=>{
 					*/
 					const selected = document.querySelector('.selected')
 					bright(false)
-					cell.classList.add('selected')					
+					
+					// Selectable Checkbox
+					const isSelectable = cell.classList.contains('select-off')
+					if(!isSelectable){
+						console.log(cell)
+						cell.classList.add('selected')
+					}
+					//cell.classList.add('selected')					
 					if(selected){
 						selected.classList.remove('selected')
 					}	

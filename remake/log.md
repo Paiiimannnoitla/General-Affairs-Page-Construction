@@ -47,6 +47,8 @@
 		-- finished
 	130. Prevent new added SOP Form steps can be edited
 		-- processing
+	131. BUG: Prevent sop form be selected it looks weird
+		-- processing
 ---
 	## 2023.11.10		version 0.6.2 -- SOP-build
 	-- Fix bug
@@ -56,6 +58,8 @@
 	1. When delete the intro delete whole chapter instead
 		-- finished
 	2. Add the last step clear function
+		-- finished
+	3. Add inselectable element check
 		-- finished
 	# Changed
 	1. Prevent users edit step id
