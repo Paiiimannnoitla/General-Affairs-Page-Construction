@@ -39,16 +39,19 @@
 			-- finished
 		-- Step
 			-- finished
-	127. Clear but not delete the only step in a chapter
-		-- finished
-	128. Delete intro should delete a chapter
-		-- finished
-	129. Prevent users change the number of the step
-		-- finished
 	130. Prevent new added SOP Form steps can be edited
 		-- processing
 	131. BUG: Prevent sop form be selected it looks weird
 		-- processing
+	132. Back up the deleted sop form once
+		-- finished
+---
+	## 2023.11.13		version 0.6.3 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add backup function to store a deleted sop form until next same-id form is deleted
+		-- finished
+	
 ---
 	## 2023.11.10		version 0.6.2 -- SOP-build
 	-- Fix bug

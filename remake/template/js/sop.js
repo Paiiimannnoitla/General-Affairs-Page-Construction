@@ -158,7 +158,9 @@ const sopFunc = ()=>{
 			}else{
 				//Loading extra content
 				let html = await load('sop',[id],'sop')
+				console.log(id)
 				if(!html){
+					console.log(999)
 					html = await load('sop',[0],'sop')
 				}				
 				tbody.innerHTML = html	
@@ -256,7 +258,6 @@ const sopFunc = ()=>{
 		return true
 	}
 		//Side: SOP Form menu button function
-	//main.addEventListener('mousedown',(event)=>{
 	document.getElementById('sop-form-function-menu').addEventListener('mousedown',(event)=>{
 		const e = event.target
 		const delArr = ['sop-form-row']
@@ -610,6 +611,11 @@ const sopFunc = ()=>{
 		const selected = uxSelect()
 		if(selected){
 			const sopform = selected.closest('.sop-form-init')
+			const thead = sopform.children[0].children[0].children[0]
+			const id = thead.id.substring(4)
+			
+			backup('sop',[id],'sop')
+			return
 			sopform.remove()
 		}
 	})

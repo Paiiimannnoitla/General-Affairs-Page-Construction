@@ -25,6 +25,18 @@ app.get('/',(req,res)=>{
 	res.send(render('index'))
 	
 })
+app.post('/backup/:func',(req)=>{
+	const func = req.params.func + '/'
+	const exArr = req.body['data']
+	//const name = req.body['name']
+	
+	const extra = exArr.join('/')
+	const path = './template/load/' + func + extra 
+	
+	const newextra = 'delete-' + extra
+	const newpath = './template/load/' + func + newextra 
+	fs.rename(path,newpath,()=>{})
+})
 app.post('/load/:func',(req,res)=>{
 	const func = req.params.func + '/'
 	const exArr = req.body['data']

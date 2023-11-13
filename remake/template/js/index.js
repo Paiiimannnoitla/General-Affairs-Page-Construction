@@ -27,6 +27,19 @@ const Postman = (id,func='page') =>{
 	const reply = response()
 	return reply
 }
+const backup = (func,extra,name)=>{
+	const hostname = host + 'backup/' + func
+	const data = {'data':extra,'name':name}
+	const json = JSON.stringify(data)
+	const content = {
+		headers:{
+			'content-type':'application/json'
+		},
+		body : json,
+		method:'POST'
+	}
+	fetch(hostname,content)
+}
 const load = (func,extra,name)=>{
 	const hostname = host + 'load/' + func 
 	const data = {'data':extra,'name':name}
