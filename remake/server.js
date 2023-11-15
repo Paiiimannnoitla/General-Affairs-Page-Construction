@@ -28,14 +28,24 @@ app.get('/',(req,res)=>{
 app.post('/backup/:func',(req)=>{
 	const func = req.params.func + '/'
 	const exArr = req.body['data']
-	//const name = req.body['name']
+	if(func){
+		const extra = exArr.join('/')
+		const path = './template/load/' + func + extra 
 	
-	const extra = exArr.join('/')
-	const path = './template/load/' + func + extra 
+		const newextra = 'delete-' + extra
+		const newpath = './template/load/' + func + newextra 
+		fs.stat(newpath,(err,stat)=>{
+			if(stat){
+				fs.rm(newpath,{ recursive: true },()=>{
+					fs.rename(path,newpath,(res,err)=>{})
+				})
+			}else{
+				fs.rename(path,newpath,(res,err)=>{})
+			}
+		})
+	}
 	
-	const newextra = 'delete-' + extra
-	const newpath = './template/load/' + func + newextra 
-	fs.rename(path,newpath,()=>{})
+	//fs.rename(path,newpath,(res,err)=>{console.log(err)})
 })
 app.post('/load/:func',(req,res)=>{
 	const func = req.params.func + '/'

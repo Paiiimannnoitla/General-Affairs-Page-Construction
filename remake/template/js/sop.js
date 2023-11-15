@@ -61,7 +61,20 @@ const idWrite = (sopform)=>{
 		}
 	}
 }
-
+// Delete SOP form function
+const sopDelete = ()=>{
+	const delArr = document.querySelectorAll('.sop-deleted')
+	for(var i=0;i<delArr.length;i++){
+		const sopform = delArr[i]
+		const thead = sopform.children[0].children[0].children[0]
+		const id = thead.id.substring(4)
+		
+		backup('sop',[id],'sop')
+		sopform.remove()
+	}
+	return true
+}
+// Save SOP form function 
 const sopSave = async()=>{
 	uxCancel()
 	const updateArr = document.querySelectorAll('.updated:not(.not-save)')
@@ -82,7 +95,6 @@ const sopSave = async()=>{
 			}
 			const isSaved = await Delivery(func,id,content)
 			if(isSaved){		
-				//u.classList.remove('updated')
 				console.log(u.querySelector('.sop-form-header').innerHTML + ' is saved')
 				resolve(true)
 			}
@@ -606,33 +618,37 @@ const sopFunc = ()=>{
 		insertDiv.insertAdjacentHTML('afterend',content)	
 		
 	})
-		//Side: Delete SOP Form
+		//Side: Set Delete ,ark at SOP Form
 	document.getElementById('sop-btn-deleteform').addEventListener('click',()=>{
 		const selected = uxSelect()
 		if(selected){
 			const sopform = selected.closest('.sop-form-init')
+			sopform.classList.add('sop-deleted')
+			hide(sopform)
+			/*
 			const thead = sopform.children[0].children[0].children[0]
 			const id = thead.id.substring(4)
 			
 			backup('sop',[id],'sop')
-			return
-			sopform.remove()
+			sopform.remove()*/
 		}
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',async()=>{
 		const isUpload = await sopUpload()
 		if(isUpload){
-			console.log(2)
-			const isSaved = await sopSave()
-			if(isSaved){
-				const updateArr = document.querySelectorAll('.updated')
-				for(var i=0;i<updateArr.length;i++){
-					const u = updateArr[i]
-					u.classList.remove('updated')
-					u.children[1].innerHTML = ''
+			const isDelete = sopDelete()
+			if(isDelete){
+				const isSaved = await sopSave()
+				if(isSaved){
+					const updateArr = document.querySelectorAll('.updated')
+					for(var i=0;i<updateArr.length;i++){
+						const u = updateArr[i]
+						u.classList.remove('updated')
+						u.children[1].innerHTML = ''
+					}
+					uxSave()
 				}
-				uxSave()
 			}
 		}
 	})

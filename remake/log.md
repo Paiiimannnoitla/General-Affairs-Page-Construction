@@ -26,24 +26,20 @@
 		-- processing
 	114. Make function menu fix at bottom
 		-- processing
-	118. BUG: Rewrite function to fit externallize change
-		-- Delete-chapter
-			-- finished
-		-- Delete-row
-			-- finished
-		-- Delete-intro
-			-- finished
-		-- Note
-			-- no need to fix
-		-- Chapter
-			-- finished
-		-- Step
-			-- finished
 	130. Prevent new added SOP Form steps can be edited
 		-- processing
 	131. BUG: Prevent sop form be selected it looks weird
 		-- processing
-	132. Back up the deleted sop form once
+	133. Do not remove form immediately, remove at save
+		-- processing
+		
+---
+	## 2023.11.15		VERSION 0.6.4 -- SOP-build
+	-- Function implemetation
+	# Added
+	1. Add delay delete function
+		-- finished
+	2. Add delete check function
 		-- finished
 ---
 	## 2023.11.13		version 0.6.3 -- SOP-build
