@@ -29,18 +29,29 @@
 	130. Prevent new added SOP Form steps can be edited
 		-- processing
 	131. BUG: Prevent sop form be selected it looks weird
-		-- processing
+		-- finished
 	133. Do not remove form immediately, remove at save
+		-- finished
+	134. Apply select-off mechanism at sopform creation 
 		-- processing
 		
 ---
 	## 2023.11.15		VERSION 0.6.4 -- SOP-build
 	-- Function implemetation
+	-- Rewrite function
+	-- Bug fix
 	# Added
 	1. Add delay delete function
 		-- finished
 	2. Add delete check function
 		-- finished
+	# Changed
+	1. Add response to backup function to increase stability
+		-- finished
+	# Fixed
+	1. Apply select-off mechanism at sopform template
+		-- finished
+	
 ---
 	## 2023.11.13		version 0.6.3 -- SOP-build
 	-- Function implementation

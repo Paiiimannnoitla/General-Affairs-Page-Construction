@@ -25,7 +25,7 @@ app.get('/',(req,res)=>{
 	res.send(render('index'))
 	
 })
-app.post('/backup/:func',(req)=>{
+app.post('/backup/:func',(req,res)=>{
 	const func = req.params.func + '/'
 	const exArr = req.body['data']
 	if(func){
@@ -37,10 +37,14 @@ app.post('/backup/:func',(req)=>{
 		fs.stat(newpath,(err,stat)=>{
 			if(stat){
 				fs.rm(newpath,{ recursive: true },()=>{
-					fs.rename(path,newpath,(res,err)=>{})
+					fs.rename(path,newpath,(po,err)=>{
+						res.send(true)
+					})
 				})
 			}else{
-				fs.rename(path,newpath,(res,err)=>{})
+				fs.rename(path,newpath,(po,err)=>{
+					res.send(true)
+				})
 			}
 		})
 	}

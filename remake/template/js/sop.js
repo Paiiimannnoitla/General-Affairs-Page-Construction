@@ -170,9 +170,7 @@ const sopFunc = ()=>{
 			}else{
 				//Loading extra content
 				let html = await load('sop',[id],'sop')
-				console.log(id)
 				if(!html){
-					console.log(999)
 					html = await load('sop',[0],'sop')
 				}				
 				tbody.innerHTML = html	
@@ -603,7 +601,7 @@ const sopFunc = ()=>{
 			id= id+1
 		}
 		const sopid = 'sop-' + id
-		const prefix = `<tr class='sop-form-init'><td class="edit-off"><table class="sop-form">`
+		const prefix = `<tr class='sop-form-init'><td class="select-off edit-off"><table class="sop-form">`
 		const suffix = `</table></td></tr>`
 			
 		const theadPrefix = `<thead id="`+ sopid +`">`
@@ -618,19 +616,14 @@ const sopFunc = ()=>{
 		insertDiv.insertAdjacentHTML('afterend',content)	
 		
 	})
-		//Side: Set Delete ,ark at SOP Form
+		//Side: Set Delete mark at SOP Form
 	document.getElementById('sop-btn-deleteform').addEventListener('click',()=>{
 		const selected = uxSelect()
 		if(selected){
 			const sopform = selected.closest('.sop-form-init')
 			sopform.classList.add('sop-deleted')
 			hide(sopform)
-			/*
-			const thead = sopform.children[0].children[0].children[0]
-			const id = thead.id.substring(4)
-			
-			backup('sop',[id],'sop')
-			sopform.remove()*/
+
 		}
 	})
 		//Side: Save Function
