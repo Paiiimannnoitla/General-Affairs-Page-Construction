@@ -645,7 +645,15 @@ const sopFunc = ()=>{
 			}
 		}
 	})
-
+		//Side: Bookmark function
+	main.addEventListener('click',(event)=>{
+		const e = event.target
+		const isBook = e.classList.contains('sop-form-bookmark')
+		if(isBook){
+			console.log('book')
+			main.scrollBy(0,-60)
+		}
+	})
 }
 const sopInit = async(test) =>{
 	const hasBuild = await sopBuild(test)

@@ -5,9 +5,7 @@
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
 	36. Make a smooth scroll animation for jump or move operation
-		-- announce 
-		-- manual
-		-- sop
+		-- finished
 	42. Should add column cut function in Member page
 	72. It should be a hint to show the file input area
 	73. Hover function-menu should have highlight effect
@@ -25,25 +23,34 @@
 	113. Re-arrange outro funcion in sop page
 		-- processing
 	114. Make function menu fix at bottom
-		-- processing
+		-- finished
 	130. Prevent new added SOP Form steps can be edited
-		-- processing
+		-- finished
 	131. BUG: Prevent sop form be selected it looks weird
 		-- finished
 	133. Do not remove form immediately, remove at save
 		-- finished
 	134. Apply select-off mechanism at sopform creation 
+		-- finished
+	135. Add bookshelf jump function
 		-- processing
 		
 ---
 	## 2023.11.15		VERSION 0.6.4 -- SOP-build
 	-- Function implemetation
+	-- Function enhancement
 	-- Rewrite function
 	-- Bug fix
 	# Added
 	1. Add delay delete function
 		-- finished
 	2. Add delete check function
+		-- finished
+	3. Add select-off to sop form creation
+		-- finished
+	4. Add smooth scrolling function to uxMove
+		-- finished
+	5. Add smooth scrolling function to manual page
 		-- finished
 	# Changed
 	1. Add response to backup function to increase stability

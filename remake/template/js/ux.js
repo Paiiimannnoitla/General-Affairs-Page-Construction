@@ -19,12 +19,12 @@ const uxMove = ()=>{
 		const isTop = event.target.id == 'movetop-btn'
 		const table = document.querySelector('table')
 		if(isTop){
-			table.scrollTo(0,0)
+		table.scrollTo({top:0,behavior:'smooth'})
 		}
 		// Move to the bottom
 		const isBottom = event.target.id == 'movebottom-btn'
 		if(isBottom){
-			table.scrollTo(0,table.scrollHeight)
+			table.scrollTo({top:table.scrollHeight,behavior:'smooth'})
 		}
 	})
 }
