@@ -650,8 +650,20 @@ const sopFunc = ()=>{
 		const e = event.target
 		const isBook = e.classList.contains('sop-form-bookmark')
 		if(isBook){
-			console.log('book')
-			main.scrollBy(0,-60)
+			// Positioning
+			const sop = document.getElementById('sop')
+			const sopform = e.closest('.sop-form')
+			const bookshelf = sopform.querySelectorAll('.sop-form-bookmark')
+			const bookid = Array.prototype.indexOf.call(bookshelf,e)
+			
+			const chArr = sopform.querySelectorAll('.sop-chapter-id')
+			const target = chArr[bookid]
+			// Reset 
+			sop.scrollTo({top:0,behavior:'smooth'})
+			// Jump
+			const placeholder = window.outerHeight - window.innerHeight
+			const height = target.getBoundingClientRect().top - placeholder
+			sop.scrollTo({top:height,behavior:'smooth'})
 		}
 	})
 }
