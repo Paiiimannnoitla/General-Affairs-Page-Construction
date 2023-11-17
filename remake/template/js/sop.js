@@ -662,11 +662,11 @@ const sopFunc = ()=>{
 		//Side: Jump to the bookshelf
 	document.getElementById('movebookshelf-btn').addEventListener('click',()=>{
 		const selected = uxSelect()
-	if(selected){
-		const sopform = selected.closest('.sop-form')
-		const bookshelf = sopform.querySelector('.sop-form-bookshelf')
-		uxMove(bookshelf)
-	}
+		if(selected){
+			const sopform = selected.closest('.sop-form')
+			const bookshelf = sopform.querySelector('.sop-form-bookshelf')
+			uxMove(bookshelf)
+		}
 	})
 }
 const sopInit = async(test) =>{

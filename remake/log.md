@@ -28,10 +28,10 @@
 		-- processing
 	138. Enhance uxMove function
 		-- finished
-	139. BUG: Prevent title can beselected as an insert target in manual page
+	139. BUG: Prevent title can be selected as an insert target in manual page
 		-- processing
 	140. BUG: Attachment is missing in new added sopform
-		-- processing
+		-- finished
 ---
 	## 2023.11.17		version 0.6.6 -- SOP-build
 	-- Functioni enhancement
@@ -43,6 +43,9 @@
 		-- finished
 	# Changed
 	1. Apply new uxMove function to manual page and sop page
+		-- finished
+	# Fixed
+	1. Fix the bug that attachment is hiding when create a new sopform
 		-- finished
 ---
 	## 2023.11.16		version 0.6.5 -- SOP-build
