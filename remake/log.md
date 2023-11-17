@@ -29,7 +29,7 @@
 	138. Enhance uxMove function
 		-- finished
 	139. BUG: Prevent title can be selected as an insert target in manual page
-		-- processing
+		-- finished
 	140. BUG: Attachment is missing in new added sopform
 		-- finished
 ---
@@ -46,6 +46,8 @@
 		-- finished
 	# Fixed
 	1. Fix the bug that attachment is hiding when create a new sopform
+		-- finished
+	2. Fix the bug that manual title can be selected as insert position and lead to corrupted cells
 		-- finished
 ---
 	## 2023.11.16		version 0.6.5 -- SOP-build

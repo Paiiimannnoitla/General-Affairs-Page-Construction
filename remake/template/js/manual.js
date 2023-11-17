@@ -75,6 +75,10 @@ const mnlFunc = ()=>{
 	document.getElementById('new-btn').addEventListener('click',(event)=>{
 		const selected = uxSelect()
 		if(selected){
+			const isTitle = selected.id == 'mnl-title'
+			if(isTitle){
+				return
+			}
 			const tr = selected.closest('tr')
 			if(tr.classList.length){
 				const department = tr.classList[0]	
