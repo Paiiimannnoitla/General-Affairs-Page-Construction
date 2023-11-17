@@ -27,15 +27,25 @@
 	137. Jump to bookshelf function
 		-- processing
 	138. Enhance uxMove function
+		-- finished
+	139. BUG: Prevent title can beselected as an insert target in manual page
 		-- processing
+---
+	## 2023.11.17		version 0.6.6 -- SOP-build
+	-- Functioni enhancement
+	-- Rewrite function
+	# Added
+	1. Add custom position function to uxMove
+		-- finished
+	# Changed
+	1. Apply new uxMove function to manual page and sop page
+		-- finished
 ---
 	## 2023.11.16		version 0.6.5 -- SOP-build
 	-- Function implementation
 	# Added
 	1. Add bookmark and bookshelf function
-		-- finished
-		
-	
+		-- finished	
 ---
 	## 2023.11.15		version 0.6.4 -- SOP-build
 	-- Function implemetation

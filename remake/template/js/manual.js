@@ -27,9 +27,11 @@ const mnlFunc = ()=>{
 			// Move
 			const department = e.classList[0]
 			const header = document.getElementById(department)
+			uxMove(header)
+			/*
 			const placeholder = window.outerHeight - window.innerHeight
 			const height = header.getBoundingClientRect().top - placeholder
-			table.scrollTo({top:height,behavior:'smooth'})
+			table.scrollTo({top:height,behavior:'smooth'})*/
 		}
 	})
 	//Side: Content edit

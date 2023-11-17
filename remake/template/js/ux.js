@@ -13,7 +13,32 @@ const uxCheck = ()=>{
 	}	
 }
 // Move Function
-const uxMove = ()=>{
+const uxMove = (e='')=>{
+	// Basic Move function setup
+	if(e){
+		const funcArea = e.closest('.function-area')
+		//Reset
+		funcArea.scrollTo({top:0,behavior:'smooth'})
+		//Jump
+		const placeholder = window.outerHeight - window.innerHeight
+		const height = e.getBoundingClientRect().top - placeholder
+		funcArea.scrollTo({top:height,behavior:'smooth'})
+	}else{
+		document.getElementById('main-display').addEventListener('click',(event)=>{
+			// Move to the top
+			const isTop = event.target.id == 'movetop-btn'
+			const table = document.querySelector('table')
+			if(isTop){
+			table.scrollTo({top:0,behavior:'smooth'})
+			}
+			// Move to the bottom
+			const isBottom = event.target.id == 'movebottom-btn'
+			if(isBottom){
+				table.scrollTo({top:table.scrollHeight,behavior:'smooth'})
+			}
+		})
+	}
+	/*
 	document.getElementById('main-display').addEventListener('click',(event)=>{
 		// Move to the top
 		const isTop = event.target.id == 'movetop-btn'
@@ -26,7 +51,7 @@ const uxMove = ()=>{
 		if(isBottom){
 			table.scrollTo({top:table.scrollHeight,behavior:'smooth'})
 		}
-	})
+	})*/
 }
 
 // Edit mode
