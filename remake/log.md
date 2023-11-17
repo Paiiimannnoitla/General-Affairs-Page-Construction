@@ -30,12 +30,16 @@
 		-- finished
 	139. BUG: Prevent title can beselected as an insert target in manual page
 		-- processing
+	140. BUG: Attachment is missing in new added sopform
+		-- processing
 ---
 	## 2023.11.17		version 0.6.6 -- SOP-build
 	-- Functioni enhancement
 	-- Rewrite function
 	# Added
 	1. Add custom position function to uxMove
+		-- finished
+	2. Add jump to bookshelf function
 		-- finished
 	# Changed
 	1. Apply new uxMove function to manual page and sop page

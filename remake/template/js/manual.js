@@ -22,16 +22,10 @@ const mnlFunc = ()=>{
 		const isMove = e.id == 'mnl-btn-move'
 		if(isMove){
 			const table = document.querySelector('table')
-			//Reset position
 			table.scrollTo({top:0,behavior:'smooth'})
-			// Move
 			const department = e.classList[0]
 			const header = document.getElementById(department)
 			uxMove(header)
-			/*
-			const placeholder = window.outerHeight - window.innerHeight
-			const height = header.getBoundingClientRect().top - placeholder
-			table.scrollTo({top:height,behavior:'smooth'})*/
 		}
 	})
 	//Side: Content edit

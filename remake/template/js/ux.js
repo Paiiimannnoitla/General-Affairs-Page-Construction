@@ -14,8 +14,9 @@ const uxCheck = ()=>{
 }
 // Move Function
 const uxMove = (e='')=>{
-	// Basic Move function setup
+	
 	if(e){
+		// Move to any position
 		const funcArea = e.closest('.function-area')
 		//Reset
 		funcArea.scrollTo({top:0,behavior:'smooth'})
@@ -24,6 +25,7 @@ const uxMove = (e='')=>{
 		const height = e.getBoundingClientRect().top - placeholder
 		funcArea.scrollTo({top:height,behavior:'smooth'})
 	}else{
+		// Basic Move function setup
 		document.getElementById('main-display').addEventListener('click',(event)=>{
 			// Move to the top
 			const isTop = event.target.id == 'movetop-btn'
@@ -38,20 +40,6 @@ const uxMove = (e='')=>{
 			}
 		})
 	}
-	/*
-	document.getElementById('main-display').addEventListener('click',(event)=>{
-		// Move to the top
-		const isTop = event.target.id == 'movetop-btn'
-		const table = document.querySelector('table')
-		if(isTop){
-		table.scrollTo({top:0,behavior:'smooth'})
-		}
-		// Move to the bottom
-		const isBottom = event.target.id == 'movebottom-btn'
-		if(isBottom){
-			table.scrollTo({top:table.scrollHeight,behavior:'smooth'})
-		}
-	})*/
 }
 
 // Edit mode
