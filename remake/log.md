@@ -23,15 +23,17 @@
 	135. Add bookshelf jump function
 		-- finished
 	136. BUG: Upload button should not editable
-		-- processing
+		-- finished
 	137. Jump to bookshelf function
-		-- processing
+		-- finished
 	138. Enhance uxMove function
 		-- finished
 	139. BUG: Prevent title can be selected as an insert target in manual page
 		-- finished
 	140. BUG: Attachment is missing in new added sopform
 		-- finished
+	141. BUG: Delete row function is interfered by clear step function
+		-- processing
 ---
 	## 2023.11.17		version 0.6.6 -- SOP-build
 	-- Functioni enhancement
@@ -48,6 +50,8 @@
 	1. Fix the bug that attachment is hiding when create a new sopform
 		-- finished
 	2. Fix the bug that manual title can be selected as insert position and lead to corrupted cells
+		-- finished
+	3. Fix the bug that upload button can be edited
 		-- finished
 ---
 	## 2023.11.16		version 0.6.5 -- SOP-build

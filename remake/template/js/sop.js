@@ -471,7 +471,7 @@ const sopFunc = ()=>{
 					const rowid = `<td class="sop-form-row sop-id">1</td>`
 					const rowShort = `<td contenteditable='true' class="sop-form-row sop-short"></td>`
 					const rowLong = `<td contenteditable='true' class="sop-form-row sop-long"></td>`
-					const rowAttach = `<td class="sop-form-row sop-attach"><input class="edit-mode upload-btn" type="file"><p class="send-btn edit-mode">Upload</p></td>`
+					const rowAttach = `<td class="sop-form-row sop-attach"><input class="edit-mode upload-btn" type="file"><p class="send-btn edit-mode edit-off">Upload</p></td>`
 					const rowPart = prefix + rowid + rowShort + rowLong + rowAttach + suffix
 					
 					const content = chPart + introPart + sortPart + rowPart
@@ -554,7 +554,7 @@ const sopFunc = ()=>{
 				const shortPart = `<td class="sop-form-row sop-short" contenteditable='true'>Please input short description</td>`
 				const longPart = `<td class="sop-form-row sop-long" contenteditable='true'>Please input long description</td>`
 				
-				const atchPrefix = `<td class="sop-form-row sop-attach">`
+				const atchPrefix = `<td class="sop-form-row sop-attach edit-off">`
 				const atchInput = `<input class="edit-mode upload-btn" type="file">`
 				const atchUpload = `<p class="send-btn edit-mode">Upload</p>`
 				const atchSuffix = `</td>`
