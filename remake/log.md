@@ -22,11 +22,17 @@
 		-- processing
 	141. BUG: Delete row function is interfered by clear step function
 		-- finished
+	142. Add sopform sorting function
+		-- processing
+	143. Add sopform sort tag 
+		-- processing
 ---
 	## 2023.11.23		version 0.6.7 -- SOP-build
 	-- Bug fix
 	# Fixed
 	1. Fix the bug that clear function not stop to detect after finding second steps
+		-- finished
+	2. Fix select related minor bug in sopform 1
 		-- finished
 ---
 	## 2023.11.17		version 0.6.6 -- SOP-build
