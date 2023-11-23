@@ -320,11 +320,18 @@ const sopFunc = ()=>{
 						const isOnly = delDiv.children[0].innerHTML == 1
 						if(isOnly){
 							for(var i=0;i<trArr.length;i++){
-								const isPass = has('sop-note',sopRow)
+								const isPass = has('sop-note',checkRow)
 								if(isPass){
 									checkRow = checkRow.nextElementSibling
+									continue
 								}else{
-									isClear = true
+									const isAnother = has('sop-id',checkRow.children[0])
+									if(isAnother){
+										break
+									}else{
+										isClear = true
+										break
+									}
 								}	
 							}
 						}						

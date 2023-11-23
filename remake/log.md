@@ -20,20 +20,14 @@
 		-- processing
 	113. Re-arrange outro funcion in sop page
 		-- processing
-	135. Add bookshelf jump function
-		-- finished
-	136. BUG: Upload button should not editable
-		-- finished
-	137. Jump to bookshelf function
-		-- finished
-	138. Enhance uxMove function
-		-- finished
-	139. BUG: Prevent title can be selected as an insert target in manual page
-		-- finished
-	140. BUG: Attachment is missing in new added sopform
-		-- finished
 	141. BUG: Delete row function is interfered by clear step function
-		-- processing
+		-- finished
+---
+	## 2023.11.23		version 0.6.7 -- SOP-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that clear function not stop to detect after finding second steps
+		-- finished
 ---
 	## 2023.11.17		version 0.6.6 -- SOP-build
 	-- Functioni enhancement
