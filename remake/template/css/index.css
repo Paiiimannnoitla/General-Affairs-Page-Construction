@@ -267,6 +267,14 @@ p{
 .sop-form-abstract{
 	background:			rgb(236,248,240);
 }
+.sop-form-tag{
+	background:			rgb(249,248,197);
+}
+.sop-form-tag-dropmenu{
+	background:			rgb(249,248,197);
+	border:				none;
+	width:				100%;
+}
 .sop-form-subheader{
 	background:			rgb(179,242,250);
 }

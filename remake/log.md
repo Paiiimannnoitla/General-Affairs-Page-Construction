@@ -28,7 +28,11 @@
 		-- processing
 ---
 	## 2023.11.23		version 0.6.7 -- SOP-build
+	-- Function implementation
 	-- Bug fix
+	# Add
+	1. Add sorting dropmenu for further sorting function
+		-- finished
 	# Fixed
 	1. Fix the bug that clear function not stop to detect after finding second steps
 		-- finished
