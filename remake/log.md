@@ -34,6 +34,8 @@
 		-- finished
 	2. Fix select related minor bug in sopform 1
 		-- finished
+	3. Fix the bug that sopform content need double click to display
+		-- finished
 ---
 	## 2023.11.17		version 0.6.6 -- SOP-build
 	-- Functioni enhancement

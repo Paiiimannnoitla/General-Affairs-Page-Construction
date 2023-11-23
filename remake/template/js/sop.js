@@ -150,6 +150,7 @@ const sopFunc = ()=>{
 		//Side: SOP content loader
 	main.addEventListener('click',async(event)=>{
 		const e = event.target
+		console.log(e)
 		const isHead = e.classList.contains('sop-form-header')
 		if(isHead){		
 			const isEdit = uxCheck() == 'Edit'
@@ -179,6 +180,7 @@ const sopFunc = ()=>{
 				if(isEdit){
 					sopEdit()
 				}
+				unhide(tbody)
 			}
 		}		
 	})
