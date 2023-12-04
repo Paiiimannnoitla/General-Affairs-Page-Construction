@@ -24,11 +24,17 @@
 		-- processing
 	143. Add sopform sort tag 
 		-- finished
+	144. BUG:Repeatedly operation may cause option selected error
+		-- processing
 ---
 	## 2023.12.04		version 0.6.8 -- SOP-build
 	-- Function implementation
+	-- Rewrite function
 	# Added
 	1. Record the last tag modified
+		-- finished
+	# Changed
+	1. Re-arrange the order of options
 		-- finished
 ---
 	## 2023.11.23		version 0.6.7 -- SOP-build

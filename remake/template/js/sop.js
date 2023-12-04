@@ -615,7 +615,7 @@ const sopFunc = ()=>{
 		const theadPrefix = `<thead id="`+ sopid +`">`
 		const trPart = `<tr><th colspan="4" class="sop-form-header" contenteditable="true">Title</th></tr>`
 		const theadSuffix = `</thead>`
-		const tbodyPart = `<tbody class="`+ sopid +`"></tbody>`
+		const tbodyPart = `<tbody class="`+ sopid +` sop-none"></tbody>`
 		const theadPart = theadPrefix + trPart + theadSuffix
 		const contentPart = theadPart + tbodyPart
 			
@@ -646,7 +646,6 @@ const sopFunc = ()=>{
 					const updateArr = document.querySelectorAll('.updated')
 					for(var i=0;i<updateArr.length;i++){
 						const u = updateArr[i]
-						//sopSort(u)
 						
 						u.classList.remove('updated')
 						u.children[1].innerHTML = ''
