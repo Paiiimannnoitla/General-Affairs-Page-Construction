@@ -150,7 +150,6 @@ const sopFunc = ()=>{
 		//Side: SOP content loader
 	main.addEventListener('click',async(event)=>{
 		const e = event.target
-		console.log(e)
 		const isHead = e.classList.contains('sop-form-header')
 		if(isHead){		
 			const isEdit = uxCheck() == 'Edit'
@@ -637,6 +636,7 @@ const sopFunc = ()=>{
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',async()=>{
+		
 		const isUpload = await sopUpload()
 		if(isUpload){
 			const isDelete = sopDelete()
@@ -646,8 +646,12 @@ const sopFunc = ()=>{
 					const updateArr = document.querySelectorAll('.updated')
 					for(var i=0;i<updateArr.length;i++){
 						const u = updateArr[i]
+						//sopSort(u)
+						
 						u.classList.remove('updated')
 						u.children[1].innerHTML = ''
+						
+						
 					}
 					uxSave()
 				}
@@ -677,6 +681,31 @@ const sopFunc = ()=>{
 			uxMove(bookshelf)
 		}
 	})
+		//Side: Sorting dropmenu selector
+	main.addEventListener('click',(event)=>{
+		const e = event.target
+		console.log(e)
+		const isOption = e.classList.contains('sop-form-tag-dropmenu')
+		if(isOption){
+			const value = e.value
+			const tag = e.options[e.selectedIndex]
+			tag.removeAttribute('selected')
+			
+			const currsort = e.options[e.selectedIndex]
+			currsort.setAttribute('selected',true)
+			
+			const newsort = 'sop-' + value
+			const tbody = e.closest('tbody')
+			
+			const oldsort = tbody.classList[1]
+			if(!oldsort){
+				tbody.classList.add(newsort)
+			}else{
+				tbody.classList.replace(oldsort,newsort)
+			}
+		}
+	})
+		
 }
 const sopInit = async(test) =>{
 	const hasBuild = await sopBuild(test)

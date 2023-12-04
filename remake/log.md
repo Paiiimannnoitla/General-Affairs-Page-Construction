@@ -20,17 +20,21 @@
 		-- processing
 	113. Re-arrange outro funcion in sop page
 		-- processing
-	141. BUG: Delete row function is interfered by clear step function
-		-- finished
 	142. Add sopform sorting function
 		-- processing
 	143. Add sopform sort tag 
-		-- processing
+		-- finished
+---
+	## 2023.12.04		version 0.6.8 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Record the last tag modified
+		-- finished
 ---
 	## 2023.11.23		version 0.6.7 -- SOP-build
 	-- Function implementation
 	-- Bug fix
-	# Add
+	# Added
 	1. Add sorting dropmenu for further sorting function
 		-- finished
 	# Fixed
