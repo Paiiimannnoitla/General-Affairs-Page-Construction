@@ -25,16 +25,22 @@
 	143. Add sopform sort tag 
 		-- finished
 	144. BUG:Repeatedly operation may cause option selected error
+		-- finished
+	145. Add a 'waiting for sorting' sort and force to sort
 		-- processing
 ---
 	## 2023.12.04		version 0.6.8 -- SOP-build
 	-- Function implementation
 	-- Rewrite function
+	-- Bug fix
 	# Added
 	1. Record the last tag modified
 		-- finished
 	# Changed
 	1. Re-arrange the order of options
+		-- finished
+	# Fixed
+	1. Fix the bug that multiplde click may cause sorting menu error
 		-- finished
 ---
 	## 2023.11.23		version 0.6.7 -- SOP-build

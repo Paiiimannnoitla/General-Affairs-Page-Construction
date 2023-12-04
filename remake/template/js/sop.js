@@ -687,9 +687,15 @@ const sopFunc = ()=>{
 		const isOption = e.classList.contains('sop-form-tag-dropmenu')
 		if(isOption){
 			const value = e.value
+			const opArr = e.options
+			console.log(opArr.length)
+			for(var i=0;i<opArr.length;i++){
+				opArr[i].removeAttribute('selected')
+			}
+			/*
 			const tag = e.options[e.selectedIndex]
 			tag.removeAttribute('selected')
-			
+			*/
 			const currsort = e.options[e.selectedIndex]
 			currsort.setAttribute('selected',true)
 			
