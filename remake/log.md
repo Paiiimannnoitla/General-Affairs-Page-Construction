@@ -29,6 +29,12 @@
 	145. Add a 'waiting for sorting' sort and force to sort
 		-- processing
 ---
+	## 2023.12.05		version 0.6.9 -- SOP-build
+	-- Rewirte function
+	# Changed
+	1. Set sort tag on table rather than tbody
+		-- finished
+---
 	## 2023.12.04		version 0.6.8 -- SOP-build
 	-- Function implementation
 	-- Rewrite function

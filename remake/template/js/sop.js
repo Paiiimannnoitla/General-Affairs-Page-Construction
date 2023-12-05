@@ -609,13 +609,13 @@ const sopFunc = ()=>{
 			id= id+1
 		}
 		const sopid = 'sop-' + id
-		const prefix = `<tr class='sop-form-init'><td class="select-off edit-off"><table class="sop-form">`
+		const prefix = `<tr class='sop-form-init'><td class="select-off edit-off"><table class="sop-form sop-none">`
 		const suffix = `</table></td></tr>`
 			
 		const theadPrefix = `<thead id="`+ sopid +`">`
 		const trPart = `<tr><th colspan="4" class="sop-form-header" contenteditable="true">Title</th></tr>`
 		const theadSuffix = `</thead>`
-		const tbodyPart = `<tbody class="`+ sopid +` sop-none"></tbody>`
+		const tbodyPart = `<tbody class="`+ sopid +`"></tbody>`
 		const theadPart = theadPrefix + trPart + theadSuffix
 		const contentPart = theadPart + tbodyPart
 			
@@ -692,14 +692,11 @@ const sopFunc = ()=>{
 			for(var i=0;i<opArr.length;i++){
 				opArr[i].removeAttribute('selected')
 			}
-			/*
-			const tag = e.options[e.selectedIndex]
-			tag.removeAttribute('selected')
-			*/
 			const currsort = e.options[e.selectedIndex]
 			currsort.setAttribute('selected',true)
 			
 			const newsort = 'sop-' + value
+			/*
 			const tbody = e.closest('tbody')
 			
 			const oldsort = tbody.classList[1]
@@ -707,6 +704,13 @@ const sopFunc = ()=>{
 				tbody.classList.add(newsort)
 			}else{
 				tbody.classList.replace(oldsort,newsort)
+			}*/
+			const sopform = e.closest('.sop-form')
+			const oldsort = sopform.classList[1]
+			if(!oldsort){
+				sopform.classList.add(newsort)
+			}else{
+				sopform.classList.replace(oldsort,newsort)
 			}
 		}
 	})
