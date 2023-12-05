@@ -118,6 +118,22 @@ const sopFunc = ()=>{
 	uxLoginCheck()
 	const main = document.getElementById('sop-main')
 	//Main: Edit Function
+		//Side: SOP form sorting function
+	document.getElementById('sop-sort-btn').addEventListener('click',()=>{
+		const selected = document.getElementById('sop-sort-menu').value
+		const isAll = selected == 'all'
+		if(isAll){
+			const sopArr = document.querySelectorAll('.sop-form.hide')
+			unhide(sopArr)
+		}else{
+			const sort = '.sop-' + selected
+			const sopArr = document.querySelectorAll('.sop-form')
+			hide(sopArr)
+			
+			const sortArr = document.querySelectorAll(sort)
+			unhide(sortArr)
+		}
+	})
 		//Side: Content edit 
 	document.getElementById('edit-btn').addEventListener('click',()=>{
 		sopEdit()

@@ -37,6 +37,8 @@
 	# Added
 	1. Add sop form sorting panel
 		-- finished
+	2. Add sop form sorting function
+		-- finished
 	# Changed
 	1. Set sort tag on table rather than tbody
 		-- finished
