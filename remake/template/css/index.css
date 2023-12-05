@@ -258,6 +258,11 @@ p{
 	padding:			0;
 	display:			none;
 }
+#sop-sort-display{
+	background:			rgb(182,247,212);
+	white-space:		pre;
+}
+
 .sop-form-header{
 	background:			rgb(234,230,242);
 }

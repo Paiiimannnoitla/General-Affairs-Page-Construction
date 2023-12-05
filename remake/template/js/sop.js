@@ -683,12 +683,10 @@ const sopFunc = ()=>{
 		//Side: Sorting dropmenu selector
 	main.addEventListener('click',(event)=>{
 		const e = event.target
-		console.log(e)
 		const isOption = e.classList.contains('sop-form-tag-dropmenu')
 		if(isOption){
 			const value = e.value
 			const opArr = e.options
-			console.log(opArr.length)
 			for(var i=0;i<opArr.length;i++){
 				opArr[i].removeAttribute('selected')
 			}
@@ -696,15 +694,6 @@ const sopFunc = ()=>{
 			currsort.setAttribute('selected',true)
 			
 			const newsort = 'sop-' + value
-			/*
-			const tbody = e.closest('tbody')
-			
-			const oldsort = tbody.classList[1]
-			if(!oldsort){
-				tbody.classList.add(newsort)
-			}else{
-				tbody.classList.replace(oldsort,newsort)
-			}*/
 			const sopform = e.closest('.sop-form')
 			const oldsort = sopform.classList[1]
 			if(!oldsort){

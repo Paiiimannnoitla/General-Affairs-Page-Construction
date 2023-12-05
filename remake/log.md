@@ -30,9 +30,17 @@
 		-- processing
 ---
 	## 2023.12.05		version 0.6.9 -- SOP-build
+	-- Function implementation
 	-- Rewirte function
+	-- Style change
+	-- Clear wasted codes
+	# Added
+	1. Add sop form sorting panel
+		-- finished
 	# Changed
 	1. Set sort tag on table rather than tbody
+		-- finished
+	2. Set sop form sorting panel styles
 		-- finished
 ---
 	## 2023.12.04		version 0.6.8 -- SOP-build
