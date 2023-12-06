@@ -1,3 +1,16 @@
+
+@keyframes shaking{
+	0%{transform:		translateX(0)}
+	25%{transform:		translateX(5px)}
+	50%{transform:		translateX(-5px)}
+	75%{transform:		translateX(5px)}
+	100%{transform:		translateX(0)}
+}
+.shaking{
+	animation-name:		shaking;
+	animation-duration: 0.5s;
+    animation-iteration-count: 3;
+}
 body{
 	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
@@ -261,6 +274,9 @@ p{
 #sop-sort-display{
 	background:			rgb(182,247,212);
 	white-space:		pre;
+}
+.sop-form{
+	
 }
 .sop-form-header{
 	background:			rgb(234,230,242);

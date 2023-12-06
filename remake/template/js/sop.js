@@ -103,6 +103,34 @@ const sopSave = async()=>{
 	const output = await Promise.all(promiseChain)
 	return output
 }
+// Warning and check before enter save function
+const sopSaveCheck = ()=>{
+	let pass = true
+	// Sort check
+	const unsortArr = document.querySelectorAll('.sop-notsort')
+	if(unsortArr.length){
+		let target
+		for(var i=0;i<unsortArr.length;i++){
+			const e = unsortArr[i]
+			const formRoot = e.closest('.sop-form-init')
+			const isDeleted = formRoot.classList.contains('sop-deleted')
+			if(isDeleted){
+				continue
+			}
+			target = e
+			break
+		}
+		if(target){
+			uxMove(target)
+			target.addEventListener('animationend',()=>{
+				target.classList.remove('shaking')
+			},{once:true})
+			target.classList.add('shaking')
+			pass = false
+		}
+	}
+	return pass
+}
 // Activate cells edit attribute
 const sopEdit = ()=>{
 	const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
@@ -625,7 +653,7 @@ const sopFunc = ()=>{
 			id= id+1
 		}
 		const sopid = 'sop-' + id
-		const prefix = `<tr class='sop-form-init'><td class="select-off edit-off"><table class="sop-form sop-none">`
+		const prefix = `<tr class='sop-form-init'><td class="select-off edit-off"><table class="sop-form sop-notsort">`
 		const suffix = `</table></td></tr>`
 			
 		const theadPrefix = `<thead id="`+ sopid +`">`
@@ -652,7 +680,11 @@ const sopFunc = ()=>{
 	})
 		//Side: Save Function
 	document.getElementById('save-btn').addEventListener('click',async()=>{
-		
+		const isDone = sopSaveCheck()
+		if(!isDone){
+			console.log('not yet')
+			return
+		}
 		const isUpload = await sopUpload()
 		if(isUpload){
 			const isDelete = sopDelete()

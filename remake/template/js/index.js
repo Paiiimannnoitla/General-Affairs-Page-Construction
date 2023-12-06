@@ -62,29 +62,7 @@ const load = (func,extra,name)=>{
 	const reply = response()
 	return reply
 }
-/*
-const save = (func,extra,html)=>{
-	const hostname = host + 'save/' + func 
-	const data = {'path':extra,'data':html}
-	const json = JSON.stringify(data)
-	const content = {
-		headers:{
-			'content-type':'application/json'
-		},
-		body : json,
-		method:'POST'
-	}
-	const response = ()=>{
-		const output = new Promise((resolve)=>{
-			fetch(hostname,content).then((res)=>{
-				resolve(res.text())
-			})
-		})
-		return output
-	}
-	const reply = response()
-	return reply
-}*/
+
 const Delivery = (address,path='',textData = '') =>{
 	let t = ''
 	if(textData){

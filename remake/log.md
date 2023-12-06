@@ -21,13 +21,20 @@
 	113. Re-arrange outro funcion in sop page
 		-- processing
 	142. Add sopform sorting function
-		-- processing
-	143. Add sopform sort tag 
-		-- finished
-	144. BUG:Repeatedly operation may cause option selected error
-		-- finished
+		-- finishded
 	145. Add a 'waiting for sorting' sort and force to sort
 		-- processing
+	146. BUG: Sometimes cannot find insert position when insert steps
+		-- processing
+---
+	## 2023.12.06		version 0.7.0 -- SOP-build
+	-- Function implementation
+	-- Clear wasted codes
+	# Added
+	1. Add sopSaveCheck to handle everything need to be done before saving
+		-- finished
+	2. Add unsort form stopper function
+		-- finished
 ---
 	## 2023.12.05		version 0.6.9 -- SOP-build
 	-- Function implementation
