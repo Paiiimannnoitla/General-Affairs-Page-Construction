@@ -8,24 +8,32 @@
 	72. It should be a hint to show the file input area
 	73. Hover function-menu should have highlight effect
 	80. SOP page Style
-		-- processing
+		-- finished
 	88. Warn before delete whole SOP form
-		-- processing
+		-- merged to 147
 	90. Cut big size data into segment and combine them after upload
 		-- processing
 	95. Add expand and collapse button
-		-- processing
+		-- no longer need
 	108. Add upload processing display
+		-- merged to 147
 	111. Add display last editor information
-		-- processing
 	113. Re-arrange outro funcion in sop page
-		-- processing
+		-- no longer need
 	142. Add sopform sorting function
 		-- finishded
 	145. Add a 'waiting for sorting' sort and force to sort
-		-- processing
+		-- merged to 147
 	146. BUG: Sometimes cannot find insert position when insert steps
-		-- processing
+		-- finished
+	147. Add box function to handle:
+		-global:	uploading progress bar
+		-sop:		sopform not-sort saving warning
+		-sop:		delete whole sopform warning
+		 
+---
+	## 2023.12.07		version 0.7.0 -- SOP-build
+	-- Switch to box branch to add warning function
 ---
 	## 2023.12.06		version 0.7.0 -- SOP-build
 	-- Function implementation
