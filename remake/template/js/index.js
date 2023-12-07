@@ -12,11 +12,13 @@ const Postman = (id,func='page') =>{
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
 			fetch(hostname,content).then((res)=>{
+				resolve(res.text())
+				/*
 				if(func=='page'){
 					resolve(res.text())
 				}else{
 					resolve(res.json())
-				}
+				}*/
 				//resolve(res.text())
 			})
 		})
@@ -25,9 +27,51 @@ const Postman = (id,func='page') =>{
 	const reply = response()
 	return reply
 }
-const Delivery = (address) =>{
-	const main = document.getElementById('main-display')
-	const html = {'html':main.innerHTML}
+const backup = (func,extra,name)=>{
+	const hostname = host + 'backup/' + func
+	const data = {'data':extra,'name':name}
+	const json = JSON.stringify(data)
+	const content = {
+		headers:{
+			'content-type':'application/json'
+		},
+		body : json,
+		method:'POST'
+	}
+	fetch(hostname,content)
+}
+const load = (func,extra,name)=>{
+	const hostname = host + 'load/' + func 
+	const data = {'data':extra,'name':name}
+	const json = JSON.stringify(data)
+	const content = {
+		headers:{
+			'content-type':'application/json'
+		},
+		body : json,
+		method:'POST'
+	}
+	const response = ()=>{
+		const output = new Promise((resolve)=>{
+			fetch(hostname,content).then((res)=>{
+				resolve(res.text())
+			})
+		})
+		return output
+	}
+	const reply = response()
+	return reply
+}
+
+const Delivery = (address,path='',textData = '') =>{
+	let t = ''
+	if(textData){
+		t = textData
+	}else{
+		const main = document.getElementById('main-display')
+		t = main.innerHTML
+	}	
+	const html = {'html':t,'path':path}
 	const data = JSON.stringify(html)
 	const hostname = host + 'post/' + address
 	const content = {
@@ -40,7 +84,8 @@ const Delivery = (address) =>{
 	const response = ()=>{
 		const output = new Promise((resolve)=>{
 			fetch(hostname,content).then((res)=>{
-				resolve(res)
+				//resolve(res)
+				resolve(true)
 			})
 		})
 		return output
@@ -91,8 +136,9 @@ const download = async(url,name)=>{
 	e.click()
 	e.remove()
 }
-const pack = async(e,address,id,order) =>{
+const pack = async(e,address,id,order,name) =>{
 	const f = e[0]
+	
 	const filename = f['name']
 	const fileLoader = (f)=>{
 		const output = new Promise((resolve)=>{
@@ -120,12 +166,12 @@ const pack = async(e,address,id,order) =>{
 	const response = await ajaxconvert(arrayBuffer)
 	return response
 }
-const Render = async(e)=>{
-	const mail = await Postman(e)
+const Render = async(e,func='page')=>{
+	const mail = await Postman(e,func)
 	const updateDiv = document.getElementById('main-display')
 	const output = new Promise((resolve)=>{
 		updateDiv.innerHTML = mail
-		resolve(true)		
+		resolve(true)				
 	})
 	return output
 }
@@ -143,6 +189,9 @@ const tbfunc = ()=>{
 		}
 		mode['tb-business']=(t)=>{
 			busInit(t)
+		}
+		mode['tb-sop']=(t)=>{
+			sopInit(t)
 		}
 		mode['tb-test']=async(t)=>{
 			const main = document.getElementById('main-display')
@@ -168,6 +217,7 @@ const tbfunc = ()=>{
 		try{
 			mode[code](false)
 		}catch(err){
+			console.log(err)
 			console.log('You should build page:' + code)
 		}		
 	}

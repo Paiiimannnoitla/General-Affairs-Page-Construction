@@ -22,12 +22,10 @@ const mnlFunc = ()=>{
 		const isMove = e.id == 'mnl-btn-move'
 		if(isMove){
 			const table = document.querySelector('table')
-			table.scrollTo(0,0)
+			table.scrollTo({top:0,behavior:'smooth'})
 			const department = e.classList[0]
 			const header = document.getElementById(department)
-			const placeholder = window.outerHeight - window.innerHeight
-			const height = header.getBoundingClientRect().top - placeholder
-			table.scrollTo(0,height)
+			uxMove(header)
 		}
 	})
 	//Side: Content edit
@@ -60,7 +58,7 @@ const mnlFunc = ()=>{
 			let content = ''
 			for(var a=0;a<receipt.length;a++){
 				const r = receipt[a]
-				const arr = r.split('/')
+				//const arr = r.split('/')
 				const name = extDate(true,'-')
 				const url = `<p id='` + r + `' class='dl-link select-item'>` + name + `</p>`
 				content = content + url
@@ -77,6 +75,10 @@ const mnlFunc = ()=>{
 	document.getElementById('new-btn').addEventListener('click',(event)=>{
 		const selected = uxSelect()
 		if(selected){
+			const isTitle = selected.id == 'mnl-title'
+			if(isTitle){
+				return
+			}
 			const tr = selected.closest('tr')
 			if(tr.classList.length){
 				const department = tr.classList[0]	

@@ -1,18 +1,419 @@
 @@@Road Map
 	1. 	Change http to https
-	8. 	Selecting style in Announce page
 	10. Update the announcement given by colleagues.
 	11. Dynamically set style between each page maybe can use some animation
 	26. When save should move all related files and template to recycle bin instead of overriding
 	30. Remove the warning when download file without https
-	36. Make a smooth scroll animation for jump or move operation
-		-- announce 
-		-- manual
 	42. Should add column cut function in Member page
 	72. It should be a hint to show the file input area
-		-- processing
 	73. Hover function-menu should have highlight effect
-	78. Add new member function
+	80. SOP page Style
+		-- finished
+	88. Warn before delete whole SOP form
+		-- merged to 147
+	90. Cut big size data into segment and combine them after upload
+		-- processing
+	95. Add expand and collapse button
+		-- no longer need
+	108. Add upload processing display
+		-- merged to 147
+	111. Add display last editor information
+	113. Re-arrange outro funcion in sop page
+		-- no longer need
+	142. Add sopform sorting function
+		-- finishded
+	145. Add a 'waiting for sorting' sort and force to sort
+		-- merged to 147
+	146. BUG: Sometimes cannot find insert position when insert steps
+		-- finished
+	147. Add box function to handle:
+		-global:	uploading progress bar
+		-sop:		sopform not-sort saving warning
+		-sop:		delete whole sopform warning
+		 
+---
+	## 2023.12.07		version 0.7.0 -- SOP-build
+	-- Switch to box branch to add warning function
+---
+	## 2023.12.06		version 0.7.0 -- SOP-build
+	-- Function implementation
+	-- Clear wasted codes
+	# Added
+	1. Add sopSaveCheck to handle everything need to be done before saving
+		-- finished
+	2. Add unsort form stopper function
+		-- finished
+---
+	## 2023.12.05		version 0.6.9 -- SOP-build
+	-- Function implementation
+	-- Rewirte function
+	-- Style change
+	-- Clear wasted codes
+	# Added
+	1. Add sop form sorting panel
+		-- finished
+	2. Add sop form sorting function
+		-- finished
+	# Changed
+	1. Set sort tag on table rather than tbody
+		-- finished
+	2. Set sop form sorting panel styles
+		-- finished
+---
+	## 2023.12.04		version 0.6.8 -- SOP-build
+	-- Function implementation
+	-- Rewrite function
+	-- Bug fix
+	# Added
+	1. Record the last tag modified
+		-- finished
+	# Changed
+	1. Re-arrange the order of options
+		-- finished
+	# Fixed
+	1. Fix the bug that multiplde click may cause sorting menu error
+		-- finished
+---
+	## 2023.11.23		version 0.6.7 -- SOP-build
+	-- Function implementation
+	-- Bug fix
+	# Added
+	1. Add sorting dropmenu for further sorting function
+		-- finished
+	# Fixed
+	1. Fix the bug that clear function not stop to detect after finding second steps
+		-- finished
+	2. Fix select related minor bug in sopform 1
+		-- finished
+	3. Fix the bug that sopform content need double click to display
+		-- finished
+---
+	## 2023.11.17		version 0.6.6 -- SOP-build
+	-- Functioni enhancement
+	-- Rewrite function
+	# Added
+	1. Add custom position function to uxMove
+		-- finished
+	2. Add jump to bookshelf function
+		-- finished
+	# Changed
+	1. Apply new uxMove function to manual page and sop page
+		-- finished
+	# Fixed
+	1. Fix the bug that attachment is hiding when create a new sopform
+		-- finished
+	2. Fix the bug that manual title can be selected as insert position and lead to corrupted cells
+		-- finished
+	3. Fix the bug that upload button can be edited
+		-- finished
+---
+	## 2023.11.16		version 0.6.5 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add bookmark and bookshelf function
+		-- finished	
+---
+	## 2023.11.15		version 0.6.4 -- SOP-build
+	-- Function implemetation
+	-- Function enhancement
+	-- Rewrite function
+	-- Bug fix
+	# Added
+	1. Add delay delete function
+		-- finished
+	2. Add delete check function
+		-- finished
+	3. Add select-off to sop form creation
+		-- finished
+	4. Add smooth scrolling function to uxMove
+		-- finished
+	5. Add smooth scrolling function to manual page
+		-- finished
+	# Changed
+	1. Add response to backup function to increase stability
+		-- finished
+	# Fixed
+	1. Apply select-off mechanism at sopform template
+		-- finished
+	
+---
+	## 2023.11.13		version 0.6.3 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add backup function to store a deleted sop form until next same-id form is deleted
+		-- finished
+	
+---
+	## 2023.11.10		version 0.6.2 -- SOP-build
+	-- Fix bug
+	-- Rewrite function
+	-- Function enhancement
+	# Added
+	1. When delete the intro delete whole chapter instead
+		-- finished
+	2. Add the last step clear function
+		-- finished
+	3. Add inselectable element check
+		-- finished
+	# Changed
+	1. Prevent users edit step id
+		-- finished
+	# Fixed
+	1. Fix the bug that error when no selected
+		-- finished
+---
+	## 2023.11.09		version 0.6.1 -- SOP-build
+	-- Rewrite function
+	-- Bug fix
+	# Changed
+	1. Replace all Array.prototype method as formCount function	
+		-- finished
+	# Fixed
+	1. Fix insert Chapter function misbehavior after the change of formCount
+		-- finished
+	2. Fix delete chapter sorting problems
+		-- finished
+	
+---
+	## 2023.11.08		version 0.6.0 -- SOP-build
+	-- Function enhancement
+	-- Bug fix
+	-- Clear wasted codes
+	# Added
+	1. When delete sorting cells delete the first row instead
+		-- finished
+	# Fixed
+	1. Fix the bug that insert step cannot work
+		-- finished
+	2. Totally rewrite idWrite in a more flexible but also more complicated way to fit further developing
+		-- finished
+	3. Fix the bug that while function malfunctioned when there is no following elements
+		-- finished
+	4. Fix the bug that new note is not editable
+		-- finished
+---
+	## 2023.11.07		version 0.5.9 -- SOP-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bug that catalog not update properly after insert a new chapter
+		-- finished
+	2. Fix the bug that insert chapter add the last step causing inserting position locate at former chapter
+		-- finished
+	3. Fix the bug that cannot insert chapter at the last chapter
+		-- finished
+	4. Fix the bug that sorting cell not allow to be insert chapter
+		-- finished
+	
+---
+	## 2023.11.06		version 0.5.8 -- SOP-build
+	-- Function enhancement
+	-- Rewrite function
+	# Added
+	1. Add chapter order sorting function after deleting
+		-- finished
+	# Changed
+	1. Rewrite form function menu as an external menu to fix the position
+		-- finished
+	# Fixed
+	1. Fix the bug that delete chapter function not work at the last chapter
+		-- finished
+	2. Fix the bug that when there are multiple chapter delete steps caulsing step order miscalculating
+		-- finished
+	3. Fix the bug that insert chapter cannot properly update the catalog
+		-- finished
+---
+	## 2023.11.03		version 0.5.7 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. Add chapter delete function
+		-- finished
+	2. Remove corresponding bookmark
+		-- finished
+---
+	## 2023.11.02		version 0.5.6 -- SOP-build
+	-- Bug fix
+	# Fixed
+	1. Fix the bookmark chapter auto tracker function by giving a default value
+		-- finished
+---
+	## 2023.10.30		version 0.5.5 -- SOP-build
+	-- Function implementation
+	-- Function enhancement
+	# Added
+	1. Add append new chapter function
+		-- finished
+	2. Add auto append bookmark function
+		-- finished
+	3. Auto re-order the id of chapter
+		-- finished
+---
+	## 2023.10.20		version 0.5.4 -- SOP-build
+	-- Function implementation
+	-- Function enhancement
+	-- Bug fix
+	# Added
+	1. Append new file input after file upload (before send)
+		-- finished
+	2. Clear empty file input only keep one
+		-- finished
+	3. Clear all notes belonged to deleted steps
+		-- finished
+	4. Add append note function
+		-- finished
+	5. Add chapter change tracker function
+		-- finished
+	# Fixed
+	1. Fix the bug that remove highlight function cannot properly apply at sop form function menu
+		-- finished
+	2. Fix the bug that users can delete all steps 
+		-- finished
+	3. Fix the bug that sep is added to wrong position when there is note
+		-- finished
+---
+	## 2023.10.19		version 0.5.3 -- SOP-build
+	-- Function implementation
+	-- Function enhancement
+	# Added
+	1. Rewrite sop upload function as sopUpload 
+		-- finished
+	2. Add update support to add new step function
+		-- finished
+	# Fixed
+	1. Fix the bug that upload button not hide out of edit mode
+		-- finished
+	2. Fix the update display issue by change save uxCancel setting
+		-- finished
+	
+---
+	## 2023.10.13		version 0.5.2 -- SOP-build
+	-- Function enhancement
+	-- Style Change
+	# Added
+	1. Add id writer support to delete row function
+		-- finished
+---
+	## 2023.10.12		version 0.5.1 -- SOP-build
+	-- Function enhancement
+	-- Function implementation
+	-- Clear wasted codes
+	# Added
+	1. Add id generation and writing functions
+		-- finished
+	2. id generation and writer function is separated as an independent function called idWrite
+		-- finished
+	3. Add new step cross form support make sure always append at correct position
+		-- finished
+---
+	## 2023.10.11		version 0.5.0 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add form menu protect function
+		-- finished
+	2. Add insert new step function
+		-- finished
+---
+	## 2023.10.06		version 0.4.9 -- SOP-build
+	-- Function enhancement
+	-- Function implementation
+	# Added
+	1. Add not-save and focused attribute clean process into uxCancel
+		-- finished
+	2. Add not-save area do not save function into sopSave
+		-- finished
+	3. Add SOP form delete function
+		-- finished
+	4. Add SOP form row delete function
+		-- finished
+---
+	## 2023.10.05		version 0.4.8 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add expanding and collapsing function to sop form
+		-- finisehd
+---
+	## 2023.10.04		version 0.4.7 -- SOP-build
+	-- Function enhancement
+	-- Function implementation
+	# Added
+	1. Add id-0 as the basic template if no content then load it
+		-- finished
+	2. Add a function to auto select all content for first edit to increase edit efficiency
+		-- finished
+	3. Add sopEdit function to activate contenteditable attributes
+		-- finished
+	# Fixed
+	1. Fix the bug that load sop form will disable contenteditable status
+		-- finished
+---
+	## 2023.10.03		version 0.4.6 -- SOP-build
+	-- Function enhancement
+	# Added
+	1. When no nothing selected, insert new after the last form
+		-- finished
+---
+	## 2023.10.02		version 0.4.5 -- SOP-build
+	-- Function implementation
+	# Added
+	1. Add append new SOP form function
+		-- finished
+---
+	## 2023.09.28		version 0.4.4 -- SOP-build
+	-- Bug fix
+	-- Rewrite function
+	# Fixed
+	1. Fix the bug that edit-off class is useless in SOP page
+		-- finished
+	2. Fix the bug that there are many edit status leftover
+		-- finished
+	# Changed
+	1. Rewrite uxCancel function to prevent hiding when partial save function
+		-- finished
+---
+	## 2023.09.27		version 0.4.3 -- SOP-build
+	-- Function implementatation
+	-- Function enhancement
+	-- Rewrite function
+	# Added
+	1. Add partial save function
+		-- finished
+	2. Rewrite sopSave function
+		-- finished
+	3. Add save function to SOP page
+		-- finished
+	# Changed
+	1. Rewrite load function
+		-- finished
+	2. Rewrite SOP content loader
+		-- finished
+---
+	## 2023.09.25		version 0.4.2 -- SOP-build
+	-- Style change
+	# Changed
+	1. Set color theme
+		-- finished
+	2. Set text align and size
+		-- finished	
+---
+	## 2023.09.22		version 0.4.1 -- SOP-build
+	-- Page build
+	-- Bug fix
+	# Added
+	1. Table build
+		-- finished
+	# Fixed
+	1. Fix the bug that sop function works in other pages
+		-- finished
+---
+	## 2023.09.21		version 0.4.0 -- SOP-build
+	-- Function implementatation
+	# Added
+	1. Add load function to realize partial content loading
+		-- finished
+---
+	## 2023.09.20		version 0.3.9 -- SOP-build
+	-- Infrastructrue building
+	# Added
+	1. Basic page build
 		-- finished
 ---
 	## 2023.09.20		version 0.3.9 -- Buisness-build

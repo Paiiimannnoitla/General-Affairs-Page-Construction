@@ -1,3 +1,16 @@
+
+@keyframes shaking{
+	0%{transform:		translateX(0)}
+	25%{transform:		translateX(5px)}
+	50%{transform:		translateX(-5px)}
+	75%{transform:		translateX(5px)}
+	100%{transform:		translateX(0)}
+}
+.shaking{
+	animation-name:		shaking;
+	animation-duration: 0.5s;
+    animation-iteration-count: 3;
+}
 body{
 	background:			rgb(173,216,230);
 	font-family:		微軟正黑體;
@@ -80,7 +93,33 @@ p{
 	background:			rgb(255,250,240);
 	width:				90vw;
 }
-
+#box{
+	height:			100vh;
+	width:			100vw;
+	position:		fixed;
+	left:			0;
+	top:			0;
+	display:		block;
+}
+#box-filter{
+	height:			100%;
+	width:			100%;
+	background:		rgb(14,14,14);
+	z-index:		9997;
+	position:		fixed;
+	display:		block;
+	opacity:		0.3;
+}
+#box-main{
+	height:			250px;
+	width:			400px;
+	background:		rgb(247,247,247);
+	z-index:		9998;
+	position:		fixed;
+	left:			calc(50vw - 200px);
+	top:			calc(50vh - 125px);
+	display:		block;
+}
 #announce th{
 	background:			rgb(225,228,244);
 }
@@ -231,6 +270,101 @@ p{
 .bus-empty{
 	padding:			0;
 	display:			none;
+}
+#sop-sort-display{
+	background:			rgb(182,247,212);
+	white-space:		pre;
+}
+.sop-form{
+	
+}
+.sop-form-header{
+	background:			rgb(234,230,242);
+}
+.sop-form-abstract-header{
+	background:			rgb(230,242,234);
+}
+.sop-form-abstract{
+	background:			rgb(236,248,240);
+}
+.sop-form-tag{
+	background:			rgb(249,248,197);
+}
+.sop-form-tag-dropmenu{
+	background:			rgb(249,248,197);
+	border:				none;
+	width:				100%;
+}
+.sop-form-subheader{
+	background:			rgb(179,242,250);
+}
+.sop-form-chapter{
+	background:			rgb(187,250,255);
+}
+.sop-form-intro{
+	background:			rgb(219,255,255);
+}
+.sop-form-sort{
+	background:			rgb(230,242,234);
+}
+.sop-form-row{
+	background:			rgb(239,251,243);
+}
+.sop-outro-header{
+	background:			rgb(231,223,219);
+}
+.sop-outro-row{
+	background:			rgb(251,243,239);
+}
+.sop-form-bookshelf{
+	background:			rgb(255,193,255);
+}
+.sop-form-bookmark{
+	background:			rgb(255,230,255);
+}
+.sop-form-bookmark.sop-bookmark-outro{
+	background:			rgb(255,211,252);
+}
+.sop-btn{
+	background:			rgb(211,225,239);
+	text-align:			center;
+	width:				25%;
+}
+.sop-btn-warn{
+	background:			rgb(255,208,229);
+	text-align:			center;
+	width:				25%;
+}
+.sop-chapter-id{
+	width:				10%;
+}
+.sop-chapter-content{
+	width:				90%;
+}
+.sop-id{
+	width:				5%;
+	text-align:			center;
+}
+.sop-short{
+	width:				25%;
+}
+.sop-long{
+	width:				50%;
+}
+.sop-attach{
+	width:				20%;
+}
+.sop-note{
+	
+}
+.sop-note-header{
+	width:				5%;
+	text-align:			center;
+	background:			rgb(255,219,220);	
+}
+.sop-note-content{
+	width:				95%;
+	background:			rgb(255,239,239);
 }
 .dl-title{
 	width:				100%;

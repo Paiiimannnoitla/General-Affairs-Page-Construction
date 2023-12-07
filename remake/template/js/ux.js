@@ -13,20 +13,33 @@ const uxCheck = ()=>{
 	}	
 }
 // Move Function
-const uxMove = ()=>{
-	document.getElementById('main-display').addEventListener('click',(event)=>{
-		// Move to the top
-		const isTop = event.target.id == 'movetop-btn'
-		const table = document.querySelector('table')
-		if(isTop){
-			table.scrollTo(0,0)
-		}
-		// Move to the bottom
-		const isBottom = event.target.id == 'movebottom-btn'
-		if(isBottom){
-			table.scrollTo(0,table.scrollHeight)
-		}
-	})
+const uxMove = (e='')=>{
+	
+	if(e){
+		// Move to any position
+		const funcArea = e.closest('.function-area')
+		//Reset
+		funcArea.scrollTo({top:0,behavior:'smooth'})
+		//Jump
+		const placeholder = window.outerHeight - window.innerHeight
+		const height = e.getBoundingClientRect().top - placeholder
+		funcArea.scrollTo({top:height,behavior:'smooth'})
+	}else{
+		// Basic Move function setup
+		document.getElementById('main-display').addEventListener('click',(event)=>{
+			// Move to the top
+			const isTop = event.target.id == 'movetop-btn'
+			const table = document.querySelector('table')
+			if(isTop){
+			table.scrollTo({top:0,behavior:'smooth'})
+			}
+			// Move to the bottom
+			const isBottom = event.target.id == 'movebottom-btn'
+			if(isBottom){
+				table.scrollTo({top:table.scrollHeight,behavior:'smooth'})
+			}
+		})
+	}
 }
 
 // Edit mode
@@ -59,7 +72,7 @@ const uxEdit = ()=>{
 }
 
 // Quit edit mode
-const uxCancel = ()=>{
+const uxCancel = (isAll=true)=>{
 	const editArr = document.querySelectorAll('td,th')
 	for(var i=0;i<editArr.length;i++){
 		editArr[i].removeAttribute('contenteditable')
@@ -77,11 +90,20 @@ const uxCancel = ()=>{
 	for(var i=0;i<itemArr.length;i++){
 		itemArr[i].classList.remove('item-selected')
 	}
-	const editmodeArr = document.querySelectorAll('.edit-mode')
-	const readArr = document.querySelectorAll('.read-mode')
-	hide(editmodeArr)
-	unhide(readArr)
-	
+	const focusArr = document.querySelectorAll('.focused')
+	for(var i=0;i<focusArr.length;i++){
+		focusArr[i].classList.remove('focused')
+	}
+	const notArr = document.querySelectorAll('.not-save')
+	for(var i=0;i<notArr.length;i++){
+		notArr[i].classList.remove('not-save')
+	}
+	if(isAll){
+		const editmodeArr = document.querySelectorAll('.edit-mode')
+		const readArr = document.querySelectorAll('.read-mode')
+		hide(editmodeArr)
+		unhide(readArr)
+	}	
 }
 
 // Delete function
@@ -190,7 +212,14 @@ const uxSelectInit = ()=>{
 					*/
 					const selected = document.querySelector('.selected')
 					bright(false)
-					cell.classList.add('selected')					
+					
+					// Selectable Checkbox
+					const isSelectable = cell.classList.contains('select-off')
+					if(!isSelectable){
+						//console.log(cell)
+						cell.classList.add('selected')
+					}
+					//cell.classList.add('selected')					
 					if(selected){
 						selected.classList.remove('selected')
 					}	
@@ -304,14 +333,11 @@ const uxDownload = ()=>{
 		if(isLink){
 			const isEdit = uxCheck() == 'Edit'
 			if(!isEdit){
-				//const href = window.location.href + 'download/'
 				const href = ''
 				const dlurl = e.id
-				console.log(dlurl)
 				const url = href + dlurl 
 				const arr = dlurl.split('/')
 				const name = arr[arr.length-1]
-				//const name = e.innerHTML
 				download(url,name)
 			}		
 		}

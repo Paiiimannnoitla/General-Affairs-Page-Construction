@@ -3,7 +3,7 @@ const fs = require('fs')
 const express = require('express')
 const app = express()
 const cors = require('cors')
-app.use(express.json({limit: '100mb'}))
+app.use(express.json({limit: '100gb'}))
 //app.use(express.urlencoded({limit: '100mb'}))
 app.use(cors())
 app.set('port',process.env.PORT || 3000)
@@ -20,70 +20,45 @@ const render = (name,data=false) =>{
 	return html
 }
 // Scripts import
-/*
-const scriptImporter = () =>{
-	const scriptDir = ('./script')
-	const filelist = fs.readdirSync(scriptDir)
-	for(var i=0;i<filelist.length;i++){
-		require(scriptDir + filelist[i])
-	}
-}*/
-/*
-app.get('/',(req,res)=>{
-	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
-	const isExist = fs.existsSync(path)
-	if(isExist){
-		console.log('downloading')
-		res.download(path,'data.pdf')
-	}else{
-		console.log('no file')
-	}
-})*/
-/*
-app.post('/apple',(req,res)=>{
-	res.send('apple')
-	res.end()
-})*/
-/*
-app.post('/',(req,res)=>{
-	const path = __dirname + "\\download\\111災害防救演練調查表(陳核).pdf"
-	const isExist = fs.existsSync(path)
-	if(isExist){
-		console.log('downloading')
-		res.download(path,'data.pdf')
-	}else{
-		console.log('no file')
-	}
-})
-app.get('/',(req,res)=>{
-	const page = 'testpage.html'
-	res.render(page,{
-		name:'apple'
-	},(err,html)=>{
-		res.send(html)
-	})
-})
-*/
-/*
-app.use((req,res)=>{
-	res.type('text/plain')
-	res.status(404)
-	res.send(render('404'))
-})*/
-/*
-app.get('/load/member',(req,res)=>{
-	const file = fs.readFileSync('./template/data/Member/member.json')
-	//console.log(file)
-	const json = JSON.parse(file)
-	res.send(json)
-})*/
-/*
-app.get('/redirect',(req,res)=>{
-	res.send(render('redirect'))
-})*/
+
 app.get('/',(req,res)=>{
 	res.send(render('index'))
 	
+})
+app.post('/backup/:func',(req,res)=>{
+	const func = req.params.func + '/'
+	const exArr = req.body['data']
+	if(func){
+		const extra = exArr.join('/')
+		const path = './template/load/' + func + extra 
+	
+		const newextra = 'delete-' + extra
+		const newpath = './template/load/' + func + newextra 
+		fs.stat(newpath,(err,stat)=>{
+			if(stat){
+				fs.rm(newpath,{ recursive: true },()=>{
+					fs.rename(path,newpath,(po,err)=>{
+						res.send(true)
+					})
+				})
+			}else{
+				fs.rename(path,newpath,(po,err)=>{
+					res.send(true)
+				})
+			}
+		})
+	}
+	
+	//fs.rename(path,newpath,(res,err)=>{console.log(err)})
+})
+app.post('/load/:func',(req,res)=>{
+	const func = req.params.func + '/'
+	const exArr = req.body['data']
+	const name = req.body['name']
+	const extra = exArr.join('/')
+	const page = fs.readFile('./template/load/' + func + extra + '/' + name + '.html','utf8',(err,data)=>{
+		res.send(data)
+	})
 })
 app.get('/page/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
@@ -97,7 +72,15 @@ app.post('/test', (req, res)=>{
 app.post('/post/:pagename',(req,res)=>{
 	const pagename = req.params.pagename
 	const html = req.body['html']
-	fs.writeFileSync('./template/' + pagename + '.html',html)
+	const path = req.body['path']
+	if(path){
+		const loadPath = './template/load/'+ pagename + '/' + path + '/'
+		fs.mkdirSync(loadPath, { recursive: true })
+		fs.writeFileSync(loadPath + pagename + '.html',html)
+	}else{
+		fs.writeFileSync('./template/' + path + '/' + pagename + '.html',html)
+	}
+	//fs.writeFileSync('./template/' + pagename + '.html',html)
 	res.send(true)
 })
 app.post('/upload',async(req,res)=>{
