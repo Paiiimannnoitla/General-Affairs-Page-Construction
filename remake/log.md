@@ -30,7 +30,13 @@
 		-global:	uploading progress bar
 		-sop:		sopform not-sort saving warning
 		-sop:		delete whole sopform warning
-		 
+
+---
+	## 2023.12.07		version 0.7.1 -- Document-build
+	-- Infrastructure building
+	# Added
+	1. Build a basic page of document 
+		-- finished
 ---
 	## 2023.12.07		version 0.7.0 -- SOP-build
 	-- Switch to box branch to add warning function

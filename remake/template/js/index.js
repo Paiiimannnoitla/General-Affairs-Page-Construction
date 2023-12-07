@@ -193,6 +193,9 @@ const tbfunc = ()=>{
 		mode['tb-sop']=(t)=>{
 			sopInit(t)
 		}
+		mode['tb-document']=(t)=>{
+			docInit(t)
+		}
 		mode['tb-test']=async(t)=>{
 			const main = document.getElementById('main-display')
 			const currPage = main.querySelectorAll('.function-area')
