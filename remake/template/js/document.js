@@ -16,18 +16,7 @@ const docBuild = async(t)=>{
 // Main: Edit Function
 const docFunc = ()=>{
 	uxLoginCheck()
-	//Side: Move to specifc Area
-	document.getElementById('function-menu').addEventListener('click',(event)=>{
-		const e = event.target
-		const isMove = e.id == 'doc-btn-move'
-		if(isMove){
-			const table = document.querySelector('table')
-			table.scrollTo({top:0,behavior:'smooth'})
-			const department = e.classList[0]
-			const header = document.getElementById(department)
-			uxMove(header)
-		}
-	})
+	const main = document.getElementById('doc-main')
 	//Side: Content edit
 	document.getElementById('edit-btn').addEventListener('click',()=>{
 		const btnArr = document.querySelectorAll('td:not(.edit-off),th:not(.edit-off)')
@@ -69,7 +58,6 @@ const docFunc = ()=>{
 		}
 		uxSave()
 	})
-
 	//Side: Add new file
 	document.getElementById('new-btn').addEventListener('click',(event)=>{
 		const selected = uxSelect()
@@ -94,6 +82,29 @@ const docFunc = ()=>{
 				start.insertAdjacentHTML('afterend',content)
 			}					
 		}		
+	})
+	//Side: Setting document sort 
+	main.addEventListener('click',(event)=>{
+		const e = event.target
+		const isOption = e.classList.contains('doc-depart-menu')
+		if(isOption){
+			const value = e.value
+			const opArr = e.options
+			for(var i=0;i<opArr.length;i++){
+				opArr[i].removeAttribute('selected')
+			}
+			const currsort = e.options[e.selectedIndex]
+			currsort.setAttribute('selected',true)
+			
+			const newsort = 'doc-' + value
+			const docrow = e.closest('.doc-row')
+			const oldsort = docrow.classList[1]
+			if(!oldsort){
+				docrow.classList.add(newsort)
+			}else{
+				docrow.classList.replace(oldsort,newsort)
+			}
+		}
 	})
 }
 // Initialize

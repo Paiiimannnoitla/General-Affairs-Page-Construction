@@ -11,9 +11,16 @@
 			<th class="doc-sort-header doc-send edit-off">陳核檔</th>
 			<th class="doc-sort-header doc-raw edit-off">電子檔</th>
 		</tr>
-		<tr class="doc-row">
+		<tr class="doc-row doc-notsort">
 			<th class="doc-sort doc-id edit-off">1</th>
-			<th class="doc-sort doc-depart edit-off"></th>
+			<th class="doc-sort doc-depart edit-off select-off">
+				<select class='doc-depart-menu'>
+					<option value='none'>無分類</option>
+					<option value='buisness'>事務課</option>
+					<option value='document'>文書課</option>
+					<option value='budget'>預算課</option>
+				</select>
+			</th>
 			<th class="doc-sort doc-date"></th>
 			<th class="doc-sort doc-num"></th>
 			<th class="doc-sort doc-subject"></th>
@@ -23,9 +30,6 @@
 	</tbody>
 </table>
 <div id="function-menu" class="function-area">
-	<p id="doc-btn-move" class="mnl-affairs">To the Top of Affairs</p>
-	<p id="doc-btn-move" class="mnl-finance">To the Top of Finance</p>
-	<p id="doc-btn-move" class="mnl-document">To the Top of Document</p>
 	<p id="edit-btn" class="login-mode hide">Edit</p>
 	<p id="unedit-btn" class="edit-mode hide">Cancel</p>
 	<p id="new-btn" class="edit-mode hide">Add new document</p>
