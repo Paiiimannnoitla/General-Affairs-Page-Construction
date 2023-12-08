@@ -7,35 +7,31 @@
 	42. Should add column cut function in Member page
 	72. It should be a hint to show the file input area
 	73. Hover function-menu should have highlight effect
-	80. SOP page Style
-		-- finished
-	88. Warn before delete whole SOP form
-		-- merged to 147
-	90. Cut big size data into segment and combine them after upload
-		-- processing
-	95. Add expand and collapse button
-		-- no longer need
-	108. Add upload processing display
-		-- merged to 147
-	111. Add display last editor information
-	113. Re-arrange outro funcion in sop page
-		-- no longer need
-	142. Add sopform sorting function
-		-- finishded
-	145. Add a 'waiting for sorting' sort and force to sort
-		-- merged to 147
-	146. BUG: Sometimes cannot find insert position when insert steps
-		-- finished
+	90. Cut big size data into segment and combine them after upload	
 	147. Add box function to handle:
 		-global:	uploading progress bar
 		-sop:		sopform not-sort saving warning
 		-sop:		delete whole sopform warning
-
+	148. Basic page building of Document page
+		-- prcoessing
+		
+		
+---
+	## 2023.12.08		version 0.7.2 -- Document-build
+	-- Infrastructure building
+	-- Function implementation
+	# Added
+	1. Add date support in document page
+		-- finished
+	2. Add upload function in Document page
+		-- finished
 ---
 	## 2023.12.07		version 0.7.1 -- Document-build
 	-- Infrastructure building
 	# Added
 	1. Build a basic page of document 
+		-- finished
+	2. Add basic document table
 		-- finished
 ---
 	## 2023.12.07		version 0.7.0 -- SOP-build
