@@ -25,6 +25,8 @@
 		-- finished
 	2. Add upload function in Document page
 		-- finished
+	3. Add upload file format
+		-- finished
 ---
 	## 2023.12.07		version 0.7.1 -- Document-build
 	-- Infrastructure building
