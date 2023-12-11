@@ -59,29 +59,35 @@ const docFunc = ()=>{
 		uxSave()
 	})
 	//Side: Add new file
-	document.getElementById('new-btn').addEventListener('click',(event)=>{
-		const selected = uxSelect()
-		if(selected){
-			const isTitle = selected.id == 'doc-title'
-			if(isTitle){
-				return
-			}
-			const tr = selected.closest('tr')
-			if(tr.classList.length){
-				const department = tr.classList[0]	
-				const start = document.querySelector('.' + department + '.doc-title')
-				const firstData = start.nextElementSibling
-				const lastid = firstData.children[0].innerHTML
-				let id = Number(lastid) + 1
-				const prefix = `<tr class="`+ department +`">`
-				const idPart = `<td class="doc-id edit-off">`+ id +`</td>`
-				const namePart = `<td class="doc-name" contenteditable="true">name</td>`
-				const attachPart = `<td class="doc-file edit-off"><input class="edit-mode upload-btn" type="file"><p class="send-btn edit-mode">Upload</p></td>`
-				const suffix = `</tr>`
-				const content = prefix + idPart + namePart + attachPart + suffix
-				start.insertAdjacentHTML('afterend',content)
-			}					
-		}		
+	document.getElementById('new-btn').addEventListener('click',async()=>{
+		const rowArr = document.querySelectorAll('.doc-row')
+		const insertPos = rowArr[0]
+		
+		const doctr = await load('doc',[0],'row-default')
+		insertPos.insertAdjacentHTML('afterend',doctr)
+		/*
+			const trPrefix = `<tr class="doc-row doc-notsort">`	
+			const trSuffix = `</tr>`
+			
+			const idPart = `<th class="doc-sort doc-id edit-off"></th>`
+			
+			const departPrefix = `<th class="doc-sort doc-depart edit-off select-off">`
+			const departSuffix = `</th>`
+			const menuPrefix = `<select class='doc-depart-menu'>`
+			const menuSuffix = `</select>`
+			const optNone = `<option value='none'>無分類</option>`
+			const optBus = `<option value='buisness'>事務課</option>`
+			const optDoc = `<option value='document'>文書課</option>`
+			const optBud = `<option value='budget'>預算課</option>`
+			const departMenu = menuPrefix + optNone + optBus + optDoc + optBud + menuSuffix
+			const departPart = departPrefix + departMenu + departSuffix
+			
+			const datePart = `<th class="doc-sort doc-date"></th>`
+			
+			const numPart = `<th class="doc-sort doc-num"></th>`
+			
+			const subjectPart = `<th class="doc-sort doc-subject"></th>`*/
+			
 	})
 	//Side: Setting document sort 
 	main.addEventListener('click',(event)=>{

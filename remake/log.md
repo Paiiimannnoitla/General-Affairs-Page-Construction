@@ -15,7 +15,13 @@
 	148. Basic page building of Document page
 		-- prcoessing
 		
-		
+	
+---
+	## 2023.12.11		version 0.7.3 -- Document-build
+	-- Function impldementation
+	# Added
+	1. Add insert new document function
+		-- finished
 ---
 	## 2023.12.08		version 0.7.2 -- Document-build
 	-- Infrastructure building
@@ -26,6 +32,8 @@
 	2. Add upload function in Document page
 		-- finished
 	3. Add upload file format
+		-- finished
+	4. Add document sorting tag set up function
 		-- finished
 ---
 	## 2023.12.07		version 0.7.1 -- Document-build
