@@ -43,8 +43,31 @@ const docUpload = async()=>{
 }
 // Save process
 const docSaveCheck = (arr)=>{
-	console.log(arr)
-	return false
+	let pass = true
+	//Sort Check
+	const unsortArr = document.querySelectorAll('.doc-notsort')
+	if(unsortArr.length){
+		let target
+		for(var i=0;i<unsortArr.length;i++){
+			const e = unsortArr[i]
+			const formRoot = e.closest('tr')
+			const isDeleted = formRoot.classList.contains('doc-deleted')
+			if(isDeleted){
+				continue
+			}
+			target = e
+			break
+		}
+		if(target){
+			uxMove(target)
+			target.addEventListener('animationend',()=>{
+				target.classList.remove('shaking')
+			},{once:true})
+			target.classList.add('shaking')
+			pass = false
+		}
+	}
+	return pass
 }
 // Main: Edit Function
 const docFunc = ()=>{

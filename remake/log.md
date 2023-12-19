@@ -14,6 +14,8 @@
 		-sop:		delete whole sopform warning
 	148. Basic page building of Document page
 		-- prcoessing
+	149. Add content lock function to increase the performance of updated mark 
+		-- processing
 		
 
 ---
@@ -21,6 +23,8 @@
 	-- Function implementation
 	# Added
 	1. Add updated mark function for save check
+		-- finished
+	2. Add sorting save check 
 		-- finished
 	
 ---
