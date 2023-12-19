@@ -15,6 +15,13 @@
 	148. Basic page building of Document page
 		-- prcoessing
 		
+
+---
+	## 2023.12.19		version 0.7.4 -- Document-build
+	-- Function implementation
+	# Added
+	1. Add updated mark function for save check
+		-- finished
 	
 ---
 	## 2023.12.11		version 0.7.3 -- Document-build
