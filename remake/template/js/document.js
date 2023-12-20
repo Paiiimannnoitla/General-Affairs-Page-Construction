@@ -37,7 +37,6 @@ const docUpload = async()=>{
 		const uploadPart = `<p class='send-btn edit-mode hide'>Upload</p>`
 		content = content + inputPart + uploadPart
 		td.innerHTML = content
-		console.log(1)
 	}
 	return true
 }
@@ -145,7 +144,11 @@ const docFunc = ()=>{
 		}
 		const isUpload = await docUpload()
 		if(isUpload){
-			
+			for(var i=0;i<updateArr.length;i++){
+				const u = updateArr[i]
+				u.classList.remove('updated')
+			}
+			uxSave()
 		}
 	})
 }

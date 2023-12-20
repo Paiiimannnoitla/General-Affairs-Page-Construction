@@ -16,8 +16,17 @@
 		-- prcoessing
 	149. Add content lock function to increase the performance of updated mark 
 		-- processing
+	146. Lock dropmenu options in sop and document pages
+		-- processing
 		
 
+
+---
+	## 2023.12.20		version 0.7.5 -- Document-build
+	-- Function implementation
+	# Added
+	1. Add Save function 
+		-- finished
 ---
 	## 2023.12.19		version 0.7.4 -- Document-build
 	-- Function implementation
@@ -26,7 +35,6 @@
 		-- finished
 	2. Add sorting save check 
 		-- finished
-	
 ---
 	## 2023.12.11		version 0.7.3 -- Document-build
 	-- Function impldementation
