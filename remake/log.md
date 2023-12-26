@@ -18,9 +18,12 @@
 		-- processing
 	146. Lock dropmenu options in sop and document pages
 		-- processing
+	147. Auto clear outdated download
 		
 
-
+---
+	## 2023.12.26		version 0.7.6 -- Document-build
+	-- Server test
 ---
 	## 2023.12.20		version 0.7.5 -- Document-build
 	-- Function implementation
