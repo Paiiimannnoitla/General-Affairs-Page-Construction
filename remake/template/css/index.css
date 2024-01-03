@@ -366,6 +366,16 @@ p{
 	width:				95%;
 	background:			rgb(255,239,239);
 }
+.doc-sort-header{
+	background:			rgb(255,219,220);
+}
+.doc-sort{
+	background:			rgb(255,244,244);
+}
+.doc-depart-menu{
+	background:			rgb(255,244,244);
+	border:				0px;
+}
 .dl-title{
 	width:				100%;
 	background:			rgb(255,235,205);
