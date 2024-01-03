@@ -24,7 +24,7 @@
 		-- Next branch
 
 ---
-	## 2024.01.03		version 0.7.6 -- Document
+	## 2024.01.03		version 0.7.6 -- DAW-build
 	-- Transfer branch
 ---	
 	## 2023.12.26		version 0.7.5 -- Document-build
