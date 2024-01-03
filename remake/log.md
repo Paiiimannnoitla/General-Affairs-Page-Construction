@@ -13,14 +13,15 @@
 		-sop:		sopform not-sort saving warning
 		-sop:		delete whole sopform warning
 	148. Basic page building of Document page
-		-- prcoessing
+		-- Document-build
 	149. Add content lock function to increase the performance of updated mark 
-		-- processing
+		-- Document-build
 	146. Lock dropmenu options in sop and document pages
-		-- processing
+		-- Document-build
 	147. Auto clear outdated download
 	148. Read host file to decide which to host
 	149. Finish Document build	
+		-- Next branch
 
 ---
 	## 2024.01.03		version 0.7.6 -- Document
