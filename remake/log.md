@@ -26,6 +26,10 @@
 ---
 	## 2024.01.03		version 0.7.6 -- DAW-build
 	-- Transfer branch
+	-- Infrastructure building
+	# Added
+	1. Build pages
+		-- finished
 ---	
 	## 2023.12.26		version 0.7.5 -- Document-build
 	-- Server test
